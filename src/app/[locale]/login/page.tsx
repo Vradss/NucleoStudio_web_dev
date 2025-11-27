@@ -112,7 +112,7 @@ export default async function LoginPage({ params }: LoginPageProps) {
       <div className="relative hidden w-1/2 items-center justify-center bg-gradient-to-b from-[#6F31FF] to-[#C3BDFF] md:flex">
         <div className="space-y-4 px-10 text-left text-[#0A0A0A]">
           <p className="text-xl font-artifictrial-super uppercase">
-            "{t('loginQuote')}"
+            &ldquo;{t('loginQuote')}&rdquo;
           </p>
           <div className="flex items-center gap-3 text-sm font-artifictrial-regular text-[#0A0A0A]/80">
             <div>

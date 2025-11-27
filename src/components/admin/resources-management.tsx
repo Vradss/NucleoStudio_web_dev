@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
@@ -20,11 +20,7 @@ export function ResourcesManagement() {
   const [resources, setResources] = useState<Resource[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    loadResources()
-  }, [])
-
-  async function loadResources() {
+  const loadResources = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('resources')
@@ -38,7 +34,11 @@ export function ResourcesManagement() {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [supabase])
+
+  useEffect(() => {
+    loadResources()
+  }, [loadResources])
 
   async function handleDelete(id: string) {
     if (!confirm(t('deleteConfirm'))) return
