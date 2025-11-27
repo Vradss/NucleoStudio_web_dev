@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 41 20% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 41 20% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 41 20% 96%;
+    --primary: 258 100% 60%;
+    --primary-foreground: 41 20% 96%;
+    --secondary: 246 100% 87%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 246 29% 78%;
+    --accent: 246 100% 87%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 84% 53%;
+    --destructive-foreground: 41 20% 96%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 258 100% 60%;
+    --radius: 0.5rem;
+    --chart-1: 258 100% 60%;
+    --chart-2: 246 100% 87%;
+    --chart-3: 0 0% 25%;
+    --chart-4: 41 20% 96%;
+    --chart-5: 0 0% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 41 20% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 41 20% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 41 20% 96%;
+    --primary: 258 100% 60%;
+    --primary-foreground: 41 20% 96%;
+    --secondary: 246 100% 87%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 246 29% 78%;
+    --accent: 246 100% 87%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 84% 53%;
+    --destructive-foreground: 41 20% 96%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 258 100% 60%;
+    --chart-1: 258 100% 60%;
+    --chart-2: 246 100% 87%;
+    --chart-3: 0 0% 25%;
+    --chart-4: 41 20% 96%;
+    --chart-5: 0 0% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .section-spacing {
+    @apply px-16 py-16 lg:px-24 lg:py-24;
+  }
+
+  .heading-title {
+    @apply font-artifictrial-super;
+    color: hsl(var(--foreground));
+  }
+
+  .heading-subtitle {
+    @apply font-artifictrial-regular;
+    font-size: 16px;
+    color: #F7F6F3;
+  }
+
+  .hero-noise {
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27/%3E%3C/filter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url(%2523n)%27%20fill%3D%27%25231E1E1E%27%20opacity%3D%271%27/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  .problem-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #101010;
+  }
+
+  .problem-card::after {
+    content: '';
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at 30% 30%, rgba(195, 189, 255, 0.4), transparent 60%),
+      radial-gradient(circle at 70% 60%, rgba(111, 49, 255, 0.25), transparent 65%);
+    opacity: 0;
+    transform: translate3d(-15%, -10%, 0) scale(1);
+    transition: opacity 0.5s ease, transform 0.8s ease;
+    pointer-events: none;
+    filter: blur(10px);
+  }
+
+  .problem-card:hover::after {
+    opacity: 1;
+    animation: problemGlow 4s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes problemGlow {
+    from {
+      transform: translate3d(-20%, -15%, 0) scale(1);
+    }
+    to {
+      transform: translate3d(15%, 10%, 0) scale(1.1);
+    }
+  }
+}
+

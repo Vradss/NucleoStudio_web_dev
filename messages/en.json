@@ -1,0 +1,175 @@
+{
+  "common": {
+    "appName": "Nucleo Studio",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "download": "Download",
+    "upload": "Upload",
+    "view": "View",
+    "close": "Close"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "logout": "Logout",
+    "login": "Login",
+    "pricing": "Pricing",
+    "webAudit": "Web Audit",
+    "resources": "Resources",
+    "createAccount": "Create Account"
+  },
+  "auth": {
+    "loginWithGoogle": "Continue with Google",
+    "loginTitle": "Sign in with your Google account",
+    "loginHeroTitle": "Welcome back",
+    "loginHeroSubtitle": "Exclusive access for product teams building measurable impact.",
+    "loginGoogleOnly": "Only Google OAuth is enabled. The form is a preview of the internal flow.",
+    "loginDisabledGitHub": "Continue with GitHub (disabled)",
+    "loginDisabledSSO": "Continue with SSO (disabled)",
+    "loginLockedTitle": "Customer Access",
+    "loginLockedSubtitle": "Your private login is provisioned after a discovery audit with the Nucleo team.",
+    "loginContactLink": "Talk to us",
+    "loginDomain": "app.nucleostudio.com/login",
+    "loginDivider": "or",
+    "loginButtonText": "Sign in",
+    "loginLegalPrefix": "By continuing you agree to",
+    "loginTerms": "Terms",
+    "loginPrivacy": "Privacy",
+    "loginAnd": "and",
+    "loginQuote": "First time integrating Nucleo into our stack. It just works—product, content, and revenue speaking the same language.",
+    "loginQuoteAuthor": "Mariana Ríos",
+    "loginQuoteTitle": "Chief Product Marketing · Sintaxis",
+    "loginDocButton": "Documentation",
+    "loggingIn": "Loading...",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "You have an incredible B2B product, but you don't know how to communicate all its value.",
+    "subtitle": "We help B2B tech companies clarify and differentiate their products with a clear positioning strategy to not lose sales opportunities.",
+    "ctaConversemos": "Let's Talk",
+    "ctaViewTemplates": "View templates",
+    "companiesTitle": "B2B technology and SaaS companies in LatAm have already trusted Núcleo:",
+    "tagline": "Product & content marketing studio",
+    "cards": {
+      "build": {
+        "title": "Your product evolved, you need repositioning and channel alignment",
+        "detail": "Refresh the story without slowing operations, aligning sales, growth, and content teams."
+      },
+      "brand": {
+        "title": "Your product is complex, it must be understood in seconds",
+        "detail": "Every touchpoint should explain the value without someone from your team jumping in every time."
+      },
+      "ai": {
+        "title": "You're launching a new product or service",
+        "detail": "You need a clear narrative to announce it, test demand, and convert the right leads."
+      }
+    }
+  },
+  "problem": {
+    "highlight": "Your marketing efforts fail",
+    "titleRest": " when you can't clearly explain what you sell, who you serve, and how you create value",
+    "subtitle": "Does this sound familiar?",
+    "points": {
+      "one": "It's hard to communicate your unique value through your site, LinkedIn, and meetings",
+      "two": "You juggle multiple segments and struggle to decide who to talk to and what to say",
+      "three": "You don't want to keep spending on content, ads, and outreach that don't resonate"
+    }
+  },
+  "frameworks": {
+    "title": "We make your product understood in your customers' language, so they say 'this is what I need' from the first interaction"
+  },
+  "steps": {
+    "titleLine1": "This is how we'll guide you so",
+    "titleLine2": "you differentiate and stand out online",
+    "cards": {
+      "stage1": {
+        "label": "STAGE 1",
+        "title": "We understand the market and spot opportunities",
+        "subtitle": "We benchmark how your main competitors position themselves and capture insights from their messaging and persuasion tactics.",
+        "imageAlt": "Competitive research board"
+      },
+      "stage2": {
+        "label": "STAGE 2",
+        "title": "We define the customer segments you will focus on",
+        "subtitle": "Selling to B2B teams means speaking to users, decision-makers, and influencers. We prioritize who matters most so your story lands with the right people.",
+        "imageAlt": "Key segment definition"
+      },
+      "stage3": {
+        "label": "STAGE 3",
+        "title": "We turn the narrative into prototypes and assets",
+        "subtitle": "We craft wireframes, mockups, and visual guidelines to translate the story into your site, sales decks, and editorial content.",
+        "imageAlt": "Prototypes and visual assets"
+      },
+      "stage4": {
+        "label": "STAGE 4",
+        "title": "We activate, measure, and keep improving",
+        "subtitle": "We outline launch campaigns, metric dashboards, and iteration routines so your positioning stays alive in every channel.",
+        "imageAlt": "Activation plan and metrics"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Manage and access your digital resources",
+    "searchPlaceholder": "Search resources...",
+    "filterAll": "All",
+    "filterVideo": "Video",
+    "filterDocument": "Document",
+    "filterTemplate": "Template",
+    "noResources": "No resources found with the selected filters.",
+    "errorLoading": "Error loading resources"
+  },
+  "resources": {
+    "title": "Resources",
+    "backToDashboard": "Back to Dashboard",
+    "type": "Type",
+    "size": "Size",
+    "category": "Category",
+    "downloadFile": "Download File",
+    "downloading": "Downloading...",
+    "downloadError": "Error downloading file",
+    "videoNotSupported": "Your browser does not support video playback."
+  },
+  "admin": {
+    "title": "Administration Panel",
+    "description": "Manage resources and system users",
+    "uploadResource": "Upload Resource",
+    "manageResources": "Manage Resources",
+    "existingResources": "Existing Resources",
+    "noResources": "No resources available.",
+    "deleteConfirm": "Are you sure you want to delete this resource?",
+    "deleteError": "Error deleting resource",
+    "uploadSuccess": "Resource uploaded successfully",
+    "uploadError": "Error uploading resource",
+    "uploading": "Uploading...",
+    "form": {
+      "title": "Title",
+      "titleRequired": "Title *",
+      "description": "Description",
+      "type": "Type",
+      "typeRequired": "Type *",
+      "category": "Category",
+      "file": "File",
+      "fileRequired": "File *",
+      "submit": "Upload Resource"
+    }
+  },
+  "types": {
+    "video": "Video",
+    "documento": "Document",
+    "template": "Template"
+  }
+}
+
