@@ -21,6 +21,7 @@ export function AnimatedIcons({ className }: AnimatedIconsProps) {
       gsap.set(path, {
         strokeDasharray: pathLength,
         strokeDashoffset: pathLength,
+        opacity: 0.5,
       })
 
       gsap.to(path, {
@@ -31,10 +32,11 @@ export function AnimatedIcons({ className }: AnimatedIconsProps) {
       })
 
       gsap.to(path, {
-        opacity: [0.5, 1, 0.5],
-        duration: 3,
+        opacity: 1,
+        duration: 1.5,
         delay: index * 0.3,
         repeat: -1,
+        yoyo: true,
         ease: 'power1.inOut',
       })
     })
