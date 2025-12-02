@@ -244,7 +244,7 @@
     min-width: calc(90vw - 80px);
     height: 100%;
     max-height: 100%;
-    background-color: #F7F6F3;
+    background-color: #0A0A0A;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(10, 10, 10, 0.1);
@@ -257,13 +257,15 @@
     justify-content: center;
     background-color: #1e1e1e;
     padding: 40px;
+    border-radius: 16px;
+    overflow: hidden;
   }
   
   .scroll-horizontal-image {
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 4px;
+    border-radius: 16px;
   }
   
   .scroll-horizontal-card-content {
@@ -272,7 +274,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 60px;
-    background-color: #1E1E1E;
+    background-color: #0a0a0a;
   }
   
   .scroll-horizontal-card-title {

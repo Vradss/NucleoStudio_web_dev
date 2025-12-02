@@ -29,7 +29,7 @@ export function Header() {
               alt="Nucleo Studio"
               width={150}
               height={32}
-              className="h-8 w-auto"
+              className="h-5 w-auto md:h-8"
               priority
             />
           </Link>
@@ -120,7 +120,7 @@ export function Header() {
                     alt="Nucleo Studio"
                     width={150}
                     height={32}
-                    className="h-8 w-auto"
+                    className="h-5 w-auto md:h-8"
                     priority
                   />
                 </Link>

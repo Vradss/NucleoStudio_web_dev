@@ -12,7 +12,7 @@ export function AnimatedCaso({ casoNumber }: AnimatedCasoProps) {
       {/* Imagen PNG en la parte superior del card */}
       <div className="relative h-[340px] w-full p-4 pt-6">
         <Image
-          src={`/images/caso_USO_${casoNumber}.png`}
+          src={`/images/caso_uso_${casoNumber}.png`}
           alt={`Caso ${casoNumber}`}
           fill
           className="object-contain"

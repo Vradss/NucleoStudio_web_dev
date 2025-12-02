@@ -93,8 +93,13 @@ export function TestimonialsSection() {
 
           {/* Título */}
           <FadeIn delay={0.1}>
-            <h2 className="text-center text-[32px] font-artifictrial-semibold leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
-              {t('title')}
+            <h2 className="text-center text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
+              {t('title').split('/n/n').map((line, index, array) => (
+                <span key={index}>
+                  {line}
+                  {index < array.length - 1 && <br />}
+                </span>
+              ))}
             </h2>
           </FadeIn>
 
@@ -183,7 +188,7 @@ export function TestimonialsSection() {
                         {/* Contenido principal - Centrado verticalmente */}
                         <div className="relative z-10 flex-1 flex flex-col justify-center">
                           {/* Testimonio con saltos de línea */}
-                          <div className="font-artifictrial-regular text-base sm:text-lg md:text-xl lg:text-3xl 2xl:text-2xl text-[#F7F6F3] mb-8 md:mb-16 lg:mb-24 leading-relaxed md:leading-12 text-left">
+                          <div className="font-artifictrial-regular text-base sm:text-lg md:text-xl lg:text-[22px] 2xl:text-[26px] text-[#F7F6F3] mb-8 md:mb-16 lg:mb-24 leading-relaxed md:leading-12 text-left">
                             {t(`testimonial${testimonialIndex}.quote`).split('/n/n').map((paragraph, index, array) => (
                               <p key={index} className={index < array.length - 1 ? 'mb-4' : ''}>
                                 {paragraph}
@@ -211,7 +216,7 @@ export function TestimonialsSection() {
                           </div>
 
                           {/* Desktop: Nombre, puesto e industria */}
-                          <div className="hidden md:flex justify-between items-end mt-12">
+                          <div className="hidden md:flex justify-between items-end">
                             {/* Nombre y puesto a la izquierda */}
                             <div className="text-left">
                               <p className="font-artifictrial-semibold text-xl text-[#F7F6F3]">

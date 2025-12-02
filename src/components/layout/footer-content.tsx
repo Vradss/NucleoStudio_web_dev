@@ -23,7 +23,7 @@ export function FooterContent() {
         <div className="flex flex-col md:hidden gap-12 mb-12">
           {/* Logo y descripción */}
           <div>
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="hidden inline-block mb-6">
               <Image
                 src="/images/nucleo_logo/nucleo_logo_blanco.svg"
                 alt="Nucleo Studio"
