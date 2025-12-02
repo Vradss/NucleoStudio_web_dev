@@ -7,7 +7,7 @@ export async function ProblemSection() {
   const points = ['one', 'two', 'three'] as const
 
   return (
-    <section className="relative section-spacing bg-[#0A0A0A] text-[#F7F6F3]">
+    <section className="relative bg-[#0A0A0A] text-[#F7F6F3] py-16 px-6 lg:px-24 lg:py-24">
       <div className="mx-auto max-w-7xl text-center">
         <FadeIn delay={0}>
         <div className="flex items-center justify-center gap-2">
@@ -25,8 +25,8 @@ export async function ProblemSection() {
         </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h3 className="mx-auto mt-6 max-w-5xl text-xl font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl">
-          <span className="font-artifictrial-super">{t('highlight')}</span>
+          <h3 className="mx-auto mt-6 max-w-5xl text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl">
+          <span className="font-artifictrial-super text-[32px] sm:text-4xl">{t('highlight')}</span>
           {t('titleRest')}
         </h3>
         </FadeIn>

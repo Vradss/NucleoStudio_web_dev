@@ -1,11 +1,25 @@
 .paragraph {
   display: flex;
-  font-size: 60px;
+  font-size: 32px;
   line-height: 1;
-  padding: 40px;
+  padding: 20px;
   max-width: 1280px;
   color: white;
   flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .paragraph {
+    font-size: 36px;
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .paragraph {
+    font-size: 60px;
+    padding: 40px;
+  }
 }
 
 .word {

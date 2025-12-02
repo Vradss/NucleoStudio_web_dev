@@ -16,13 +16,13 @@ export function FaqsSection() {
   }
 
   return (
-    <section className="relative bg-[#0A0A0A] section-spacing">
+    <section className="relative bg-[#0A0A0A] py-16 px-6 lg:px-24 lg:py-24">
       <div className="mx-auto max-w-4xl">
         {/* Label */}
 
         {/* Título */}
         <FadeIn delay={0.1}>
-          <h2 className="text-center text-4xl font-artifictrial-semibold leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
+          <h2 className="text-center text-[32px] font-artifictrial-semibold leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
             {t('title')}
           </h2>
         </FadeIn>

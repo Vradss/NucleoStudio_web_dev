@@ -102,28 +102,28 @@
         "title": "We understand the market and spot opportunities",
         "subtitle": "We benchmark how your main competitors position themselves and capture insights from their messaging and persuasion tactics.",
         "imageAlt": "Competitive research board",
-        "image": "/images/stage1.jpg"
+        "image": "/images/bench_1.png"
       },
       "stage2": {
         "label": "STAGE 2",
         "title": "We define the customer segments you will focus on",
         "subtitle": "Selling to B2B teams means speaking to users, decision-makers, and influencers. We prioritize who matters most so your story lands with the right people.",
         "imageAlt": "Key segment definition",
-        "image": "/images/stage2.jpg"
+        "image": "/images/segmento_cliente.png"
       },
       "stage3": {
         "label": "STAGE 3",
         "title": "We turn the narrative into prototypes and assets",
         "subtitle": "We craft wireframes, mockups, and visual guidelines to translate the story into your site, sales decks, and editorial content.",
         "imageAlt": "Prototypes and visual assets",
-        "image": "/images/stage3.jpg"
+        "image": "/images/posicionamiento_pro.png"
       },
       "stage4": {
         "label": "STAGE 4",
         "title": "We activate, measure, and keep improving",
         "subtitle": "We outline launch campaigns, metric dashboards, and iteration routines so your positioning stays alive in every channel.",
         "imageAlt": "Activation plan and metrics",
-        "image": "/images/stage4.jpg"
+        "image": "/images/wireframe_baja_tag.png"
       }
     }
   },
@@ -180,54 +180,54 @@
   },
   "testimonials": {
     "label": "TESTIMONIALS",
-    "title": "What our clients say",
+    "title": "Learn about the experience of other \n\nB2B tech companies working with us",
     "testimonial1": {
       "companyName": "Company 1",
-      "companyLogo": "/images/logos/Logo_BioActiva.svg",
-      "quote": "Nucleo Studio completely transformed how we communicate our product's value. Now our clients immediately understand what we do and why we're different.",
-      "name": "María González",
-      "position": "CEO, TechSolutions",
-      "photo": "/images/testimonials/person1.jpg"
+      "companyLogo": "/images/logos/Colectivo_23.png",
+      "quote": "We grew from 3 to 9 programs without a clear message architecture. The response rate on first contact was low and we needed better nurturing to convert./n/nLaurita restructured the narrative of the brochures, proposed new communication hierarchies and created strategic lead magnets. /n/nThis increased the response rate, the sales team explained the programs more easily and closed faster. It was the first foundation for our product marketing plan.",
+      "name": "Jefferson Leguía,",
+      "position": "Former Marketing manager, Colectivo23",
+      "industria": "Education startup"
     },
     "testimonial2": {
       "companyName": "Company 2",
       "companyLogo": "/images/logos/Logo_shift.svg",
-      "quote": "The positioning work they did helped us increase our conversions by 40%. Their content strategies really resonate with our target audience.",
-      "name": "Carlos Rodríguez",
-      "position": "CMO, DataFlow",
-      "photo": "/images/testimonials/person2.jpg"
+      "quote": "Communicating what SHIFT does was a challenge for years. We weren't showing everything we offered to get new partners./n/nNúcleo came with deep research from day 1. They have very fine criteria that you don't see just anywhere in the market. They repositioned our value proposition via homepage and landing pages from scratch. /n/nThey created visuals that show how we work in simple terms. Now we communicate with coherence and know what to highlight for new partners.",
+      "name": "Cinthia Aibar",
+      "position": "Head of Partnerships, SHIFT",
+      "industria": "Innovation community for corporates"
     },
     "testimonial3": {
       "companyName": "Company 3",
-      "companyLogo": "/images/logos/Colectivo_23.png",
-      "quote": "We finally have a clear message that works across all channels. The Nucleo team perfectly understood our complexity and simplified it without losing meaning.",
-      "name": "Ana Martínez",
-      "position": "Product Director, CloudTech",
-      "photo": "/images/testimonials/person3.jpg"
+      "companyLogo": "/images/logos/INVOINET_LOGO.svg",
+      "quote": "The methodology they used was key to aligning our product strategy and rethinking our business strategy. /n/nFrom market analysis to implementing the new positioning, the entire process created a clearer foundation for scaling other initiatives.",
+      "name": "Tomás Lnazillota",
+      "position": "CEO, InvoiNet",
+      "industria": "Fintech & SaaS"
     },
     "testimonial4": {
       "companyName": "Company 4",
-      "companyLogo": "/images/logos/Ngrowth_logo.svg",
-      "quote": "Their differentiation approach helped us stand out in a very competitive market. Now our leads understand from the first contact why to choose us.",
-      "name": "Roberto Sánchez",
-      "position": "VP of Marketing, SaaSPro",
-      "photo": "/images/testimonials/person4.jpg"
+      "companyLogo": "/images/logos/reevalua_logo.svg",
+      "quote": "It's a challenge to communicate what we do at Reevalúa, especially because we're looking for PMF./n/nWith Laurita we laid the foundations for product marketing. /n/nWe restructured the value propositions on websites and in B2B a calculator was designed to capture leads. The quality was at a level I must applaud.",
+      "name": "Luis Chau",
+      "position": "CEO & Co-founder, Reevalúa",
+      "industria": "Finance & HR startup"
     },
     "testimonial5": {
       "companyName": "Company 5",
       "companyLogo": "/images/logos/reevalua_logo.svg",
-      "quote": "The repositioning they did was exactly what we needed. Our sales team now has a consistent and effective message.",
-      "name": "Laura Fernández",
-      "position": "Sales Director, InnovateLab",
-      "photo": "/images/testimonials/person5.jpg"
+      "quote": "We had several AHA moments about how to communicate our services with content, and they took us out of our comfort zone as leaders./n/nIf you want to stay in the status quo, don't work with Laurita. But if you want a powerful, clear and precise message that impacts your sales, hire her.",
+      "name": "Made Silva",
+      "position": "CEO, OKR University",
+      "industria": "B2B Education & consulting"
     },
     "testimonial6": {
       "companyName": "Company 6",
-      "companyLogo": "/images/logos/vtex_logo.svg",
-      "quote": "Working with Nucleo Studio was an exceptional experience. They understood our vision and translated it into a communication strategy that really works.",
-      "name": "Diego López",
-      "position": "Founder, NextGen Solutions",
-      "photo": "/images/testimonials/person6.jpg"
+      "companyLogo": "/images/logos/Logo_BioActiva.svg",
+      "quote": "Our technology innovation services are so specialized that it was difficult for us to explain them, we could lose opportunities because it wasn't well understood how we differentiate ourselves./n/nLaurita was key to questioning and adjusting the value proposition. She guided us to clarify it and maintained our own technical language./n/nShe was of great help to relaunch our website. That clarity impacted conversion rates.",
+      "name": "Katia Samanamud",
+      "position": "General Manager, BioActiva",
+      "industria": "B2B Consulting & innovation hub"
     }
   },
   "faqs": {

@@ -28,8 +28,23 @@ export function TestimonialsSection() {
   const scrollToCard = (index: number) => {
     if (scrollContainerRef.current) {
       const isMobile = window.innerWidth < 768
-      // En mobile: calc(100vw - 2.5rem) = 100vw - 40px (20px cada lado) + gap de 16px
-      const cardWidth = isMobile ? (window.innerWidth - 40) + 16 : 950 + 24
+      const isLg = window.innerWidth >= 1024 && window.innerWidth < 1280
+      const isXl = window.innerWidth >= 1280 && window.innerWidth < 1536
+      const is2xl = window.innerWidth >= 1536
+      
+      let cardWidth: number
+      if (isMobile) {
+        cardWidth = (window.innerWidth - 40) + 16
+      } else if (isLg) {
+        cardWidth = 1000 + 24
+      } else if (isXl) {
+        cardWidth = 1100 + 24
+      } else if (is2xl) {
+        cardWidth = 1200 + 24
+      } else {
+        cardWidth = 950 + 24
+      }
+      
       scrollContainerRef.current.scrollTo({
         left: index * cardWidth,
         behavior: 'smooth'
@@ -57,7 +72,7 @@ export function TestimonialsSection() {
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Contenido */}
-      <div className="relative z-10 section-spacing">
+      <div className="relative z-10 py-16 px-6 lg:px-24 lg:py-24">
         <div className="mx-auto max-w-7xl">
           {/* Label */}
           <FadeIn delay={0}>
@@ -78,7 +93,7 @@ export function TestimonialsSection() {
 
           {/* Título */}
           <FadeIn delay={0.1}>
-            <h2 className="text-center text-4xl font-artifictrial-semibold leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
+            <h2 className="text-center text-[32px] font-artifictrial-semibold leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
               {t('title')}
             </h2>
           </FadeIn>
@@ -96,7 +111,23 @@ export function TestimonialsSection() {
               onScroll={(e) => {
                 const container = e.currentTarget
                 const isMobile = window.innerWidth < 768
-                const cardWidth = isMobile ? (window.innerWidth - 128) + 16 : 950 + 24
+                const isLg = window.innerWidth >= 1024 && window.innerWidth < 1280
+                const isXl = window.innerWidth >= 1280 && window.innerWidth < 1536
+                const is2xl = window.innerWidth >= 1536
+                
+                let cardWidth: number
+                if (isMobile) {
+                  cardWidth = (window.innerWidth - 40) + 16
+                } else if (isLg) {
+                  cardWidth = 1000 + 24
+                } else if (isXl) {
+                  cardWidth = 1100 + 24
+                } else if (is2xl) {
+                  cardWidth = 1200 + 24
+                } else {
+                  cardWidth = 950 + 24
+                }
+                
                 const scrollLeft = container.scrollLeft
                 const newIndex = Math.round(scrollLeft / cardWidth)
                 if (newIndex !== currentIndex && newIndex >= 0 && newIndex < testimonials.length) {
@@ -113,7 +144,7 @@ export function TestimonialsSection() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: isActive ? 1 : 0.6, scale: isActive ? 1 : 0.95 }}
                       transition={{ duration: 0.3 }}
-                      className="w-[calc(100vw-2.5rem)] md:w-[950px] flex-shrink-0"
+                      className="w-[calc(100vw-2.5rem)] md:w-[950px] lg:w-[1000px] xl:w-[1100px] 2xl:w-[1200px] flex-shrink-0"
                     >
                       <div className="bg-[#0A0A0A] rounded-3xl border border-[#1F1F1F] p-6 md:p-16 lg:p-24 xl:p-40 relative h-[600px] md:min-h-[600px] md:max-h-[700px] lg:max-h-[800px] xl:max-h-[900px] 2xl:max-h-[1000px] flex flex-col overflow-hidden">
                         {/* Icono de comillas en esquina superior izquierda */}
@@ -167,13 +198,13 @@ export function TestimonialsSection() {
                               <p className="font-artifictrial-semibold text-sm text-[#F7F6F3]">
                                 {t(`testimonial${testimonialIndex}.name`)}
                               </p>
-                              <p className="font-artifictrial-regular text-[11px] text-[#C3BDFF] mt-1">
+                              <p className="font-artifictrial-regular uppercase text-base text-[#C3BDFF] mt-1">
                                 {t(`testimonial${testimonialIndex}.position`)}
                               </p>
                             </div>
                             {/* Industria debajo */}
                             <div className="text-center">
-                              <p className="font-artifictrial-regular uppercase text-sm text-[#C3BDFF]">
+                              <p className="font-artifictrial-regular text-sm text-[#C3BDFF]">
                                 {t(`testimonial${testimonialIndex}.industria`)}
                               </p>
                             </div>

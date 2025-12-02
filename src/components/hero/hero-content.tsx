@@ -34,9 +34,9 @@ export function HeroContent() {
     id,
     title: t(`cards.${id}.title`),
     detail: t(`cards.${id}.detail`),
-    image: id === 'build' ? '/images/caso_USO_1.png' 
-      : id === 'brand' ? '/images/caso_USO_2.png' 
-      : '/images/caso_USO_3.png'
+    image: id === 'build' ? '/images/caso_uso_1.png' 
+      : id === 'brand' ? '/images/caso_uso_2.png' 
+      : '/images/caso_uso_3.png'
   }))
 
   return (
@@ -61,14 +61,14 @@ export function HeroContent() {
       </motion.div>
 
       <motion.h1
-        className="mr-10 font-artifictrial-super text-4xl uppercase leading-tight sm:text-5xl lg:text-6xl"
+        className="mr-10 font-artifictrial-super text-[32px] uppercase leading-tight sm:text-5xl lg:text-6xl"
         variants={itemVariants}
       >
         {t('title')}
       </motion.h1>
 
       <motion.p
-        className="max-w-4xl font-artifictrial-regular text-lg text-[#F7F6F3] sm:text-xl lg:text-lg"
+        className="max-w-4xl font-artifictrial-regular text-base text-[#F7F6F3] sm:text-xl lg:text-lg"
         variants={itemVariants}
       >
         {t('subtitle')}
@@ -80,12 +80,6 @@ export function HeroContent() {
           className="inline-flex items-center justify-center rounded-full bg-[#6F31FF] px-8 py-4 text-base font-semibold transition-colors hover:bg-[#C3BDFF] hover:text-[#0A0A0A] sm:px-10"
         >
           {t('ctaConversemos')}
-        </Link>
-        <Link
-          href="/dashboard"
-          className="inline-flex items-center justify-center rounded-full border-2 border-[#C3BDFF] px-8 py-4 text-base font-semibold transition-colors hover:bg-[#C3BDFF]/10 sm:px-10"
-        >
-          {t('ctaViewTemplates')}
         </Link>
       </motion.div>
 

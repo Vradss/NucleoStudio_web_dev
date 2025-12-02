@@ -86,7 +86,7 @@ export async function CompaniesSection() {
     <section className="relative bg-[#0A0A0A] py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <FadeIn delay={0}>
-          <h2 className="font-artifictrial-regular mb-12 text-center text-[32px] text-[#F7F6F3] sm:text-base lg:text-lg">
+          <h2 className="font-artifictrial-regular mb-12 text-center text-base text-[#F7F6F3] sm:text-base lg:text-lg">
             {t('companiesTitle')}
           </h2>
         </FadeIn>
