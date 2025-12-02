@@ -25,9 +25,10 @@
     "admin": "Admin",
     "logout": "Salir",
     "login": "Login",
-    "pricing": "Pricing",
+    "pricing": "Planes",
     "webAudit": "Web Audit",
-    "resources": "Resources",
+    "product": "Producto",
+    "resources": "Recursos",
     "contact": "Conversemos",
     "createAccount": "Crear mi cuenta"
   },

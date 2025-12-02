@@ -36,6 +36,12 @@ export function Header() {
           
           <nav className="hidden items-center gap-8 md:flex">
             <Link
+              href="/product"
+              className="text-sm font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
+            >
+              {t('product')}
+            </Link>
+            <Link
               href="/pricing"
               className="text-sm font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
             >

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { Link } from '@/i18n/routing'
 import { AnimatedCaso } from './animated-caso'
 
@@ -29,6 +29,7 @@ const itemVariants = {
 }
 
 export function HeroContent() {
+  const locale = useLocale()
   const t = useTranslations('hero')
   const cards = heroCardIds.map(id => ({
     id,
@@ -41,6 +42,7 @@ export function HeroContent() {
 
   return (
     <motion.div
+      key={locale}
       className="relative z-20 mx-auto max-w-7xl space-y-8 px-6 py-20 text-left text-[#F7F6F3] lg:py-28"
       variants={containerVariants}
       initial="hidden"
