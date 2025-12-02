@@ -28,6 +28,7 @@
     "pricing": "Pricing",
     "webAudit": "Web Audit",
     "resources": "Resources",
+    "contact": "Conversemos",
     "createAccount": "Crear mi cuenta"
   },
   "auth": {
@@ -61,7 +62,7 @@
     "ctaConversemos": "Conversemos",
     "ctaViewTemplates": "View templates",
     "companiesTitle": "Empresas B2B de tecnología y SaaS en LatAm ya confiaron en Núcleo:",
-    "tagline": "Studio de product & content marketing",
+    "tagline": "Studio de producto & content marketing",
     "cards": {
       "build": {
         "title": "Tu producto evolucionó, buscas reposicionamiento y alineación en canales",
@@ -78,6 +79,7 @@
     }
   },
   "problem": {
+    "label": "EL PROBLEMA",
     "highlight": "Tus acciones de marketing no funcionan",
     "titleRest": " si no comunicas bien qué vendes, a quién le vendes y cómo generas valor",
     "subtitle": "¿Esto no te suena familiar?",
@@ -91,6 +93,7 @@
     "title": "Hacemos que tu producto se entienda en el lenguaje de tus clientes, para que digan 'esto es lo que necesito' desde la primera interacción"
   },
   "steps": {
+    "label": "SOLUCIÓN",
     "titleLine1": "Así es cómo te guiaremos para que",
     "titleLine2": "te diferencies y destaques en internet",
     "cards": {
@@ -98,25 +101,29 @@
         "label": "ETAPA 1",
         "title": "Entendemos el mercado e identificamos oportunidades",
         "subtitle": "Analizamos cómo se posicionan tus competidores principales e insights sobre sus mensajes y técnicas de persuasión.",
-        "imageAlt": "Investigación competitiva"
+        "imageAlt": "Investigación competitiva",
+        "image": "/images/bench_1.png"
       },
       "stage2": {
         "label": "ETAPA 2",
         "title": "Definimos los segmentos de clientes en los que te centrarás",
         "subtitle": "Para venderle a empresas B2B, conversas con usuarios, decisor final, influenciadores. Seleccionamos estratégicamente en quiénes enfocarnos para diseñar mensajes que resuenen.",
-        "imageAlt": "Definición de segmentos clave"
+        "imageAlt": "Definición de segmentos clave",
+        "image": "/images/segmento_cliente.png"
       },
       "stage3": {
         "label": "ETAPA 3",
         "title": "Identificamos cuáles son los atributos únicos de tus servicios o productos",
         "subtitle": "Analizamos y determinamos cuáles son las características, beneficios, capacidades y casos de uso que más resuenan con tus segmentos de clientes.",
-        "imageAlt": "Prototipos y assets visuales"
+        "imageAlt": "Prototipos y assets visuales",
+        "image": "/images/posicionamiento_pro.png"
       },
       "stage4": {
         "label": "ETAPA 4",
         "title": "Desarrollamos el wireframe con el copy de tu página principal alineado a tu posicionamiento y mensajes",
         "subtitle": "Definiremos la narrativa más adecuada alineada a tus expectativas de negocio y de tu audiencia, para crear el copy de tu homepage ",
-        "imageAlt": "Plan de activación y métricas"
+        "imageAlt": "Plan de activación y métricas",
+        "image": "/images/wireframe_baja_tag.png"
       }
     }
   },
@@ -170,6 +177,91 @@
     "video": "Video",
     "documento": "Documento",
     "template": "Template"
+  },
+  "testimonials": {
+    "label": "TESTIMONIOS",
+    "title": "Conoce la experiencia de otras \n\nempresas tech B2B trabajando con nosotros",
+    "testimonial1": {
+      "companyName": "Empresa 1",
+      "companyLogo": "/images/logos/Colectivo_23.png",
+      "quote": "Crecimos de 3 a 9 programas sin arquitectura clara de mensajes. La tasa de respuesta en el primer contacto era baja y necesitábamos nutrir mejor para convertir./n/nLaurita reeestructuró la narrativa de los brochures, propuso nuevas jerarquías de comunicación y creó lead magnets estratégicos. /n/nEsto aumentó la tasa de respuesta, el equipo comercial explicaba los programas más fácil y cerraba más rápido. Fue la primera base para nuestro plan de product marketing.",
+      "name": "Jefferson Leguía,",
+      "position": "Former Marketing manager, Colectivo23",
+      "industria": "Startup de educación"},
+    "testimonial2": {
+      "companyName": "Empresa 2",
+      "companyLogo": "/images/logos/Logo_shift.svg",
+      "quote": "Comunicar qué hace SHIFT fue un reto de hace años. No mostrábamos todo lo que ofrecíamos para conseguir nuevos socios./n/nNúcleo llegó con research profundo desde el día 1. Tienen criterios muy finos, que no se ven así nada más en el mercado. Reposicionaron nuestra propuesta de valor vía homepage y landing pages de cero. /n/nCrearon visuales que muestran cómo funcionamos en simple. Ahora comunicamos con coherencia y sabemos qué destacar para nuevos socios.",
+      "name": "Cinthia Aibar",
+      "position": "Head of Partnerships, SHIFT",
+      "industria": "Comunidad de innovación para corporativos"
+    },
+    "testimonial3": {
+      "companyName": "Empresa 3",
+      "companyLogo": "/images/logos/INVOINET_LOGO.svg",
+      "quote": "La metodología que usaron fue clave para alinear nuestra estrategia de producto y repensar la de negocio. /n/nDesde el análisis del mercado hasta la implementación del nuevo posicionamiento, todo el proceso generó una base más clara para escalar otras iniciativas.",
+      "name": "Tomás Lnazillota",
+      "position": "CEO, InvoiNet",
+      "industria": "Fintech & SaaS"
+    },
+    "testimonial4": {
+      "companyName": "Empresa 4",
+      "companyLogo": "/images/logos/reevalua_logo.svg",
+      "quote": "Es un reto comunicar lo que hacemos en Reevalúa, más aún porque estamos buscando PMF./n/nCon Laurita sentamos las bases de product marketing. /n/nReestructuramos las propuestas de valor en webs y en B2B se diseñó una calculadora para capturar leads.La calidad estuvo a un nivel que debo aplaudir.",
+      "name": "Luis Chau",
+      "position": "CEO & Co-founder, Reevalúa",
+      "industria": "Startup de finanzas & HR"
+    },
+    "testimonial5": {
+      "companyName": "Empresa 5",
+      "companyLogo": "/images/logos/reevalua_logo.svg",
+      "quote": "Tuvimos varios AHA moments sobre cómo comunicar nuestros servicios con contenido, y nos sacaron de nuestra zona de comfort como líderes./n/nSi deseas mantenerte en el status quo, no trabajes con Laurita. Pero si deseas un mensaje poderoso, claro y preciso que impacte en tus ventas, contrátala.",
+      "name": "Made Silva",
+      "position": "CEO, OKR University",
+      "industria": " Educación & consultoría B2B"
+    },
+    "testimonial6": {
+      "companyName": "Empresa 6",
+      "companyLogo": "/images/logos/Logo_BioActiva.svg",
+      "quote": "Nuestros servicios de innovación tecnológica son tan especializados que nos resultaba difícil explicarlos, podíamos perder oportunidades porque no se entendía bien cómo nos diferenciamos./n/nLaurita fue clave para cuestionar y ajustar la propuesta de valor. Nos guió para clarificarla y mantuvo nuestro propio lenguaje técnico./n/nFue de gran ayuda para relanzar nuestra web. Esa claridad impactó en los ratios de conversión.",
+      "name": "Katia Samanamud",
+      "position": "Gerente General, BioActiva",
+      "industria": "Consultoría B2B & Hub de innovación"
+    }
+  },
+  "faqs": {
+    "label": "PREGUNTAS FRECUENTES",
+    "title": "Preguntas frecuentes",
+    "faq1": {
+      "question": "¿Cómo funciona el proceso de trabajo con Núcleo?",
+      "answer": "Nuestro proceso comienza con una auditoría profunda de tu mercado y competencia. Luego definimos los segmentos de clientes clave, identificamos tus atributos únicos y desarrollamos el posicionamiento y mensajes. Finalmente, creamos el wireframe y copy de tu página principal alineado a tu estrategia."
+    },
+    "faq2": {
+      "question": "¿Cuánto tiempo toma completar un proyecto?",
+      "answer": "El tiempo varía según la complejidad del proyecto, pero típicamente un proyecto completo de posicionamiento y mensajes toma entre 8-12 semanas. Esto incluye investigación, desarrollo de estrategia, creación de contenido y revisión de iteraciones."
+    },
+    "faq3": {
+      "question": "¿Trabajan con empresas de todos los tamaños?",
+      "answer": "Sí, trabajamos con empresas B2B de tecnología y SaaS de diferentes tamaños, desde startups hasta empresas establecidas. Nuestro enfoque se adapta a las necesidades específicas de cada cliente y su etapa de crecimiento."
+    },
+    "faq4": {
+      "question": "¿Qué incluye el servicio de posicionamiento?",
+      "answer": "Nuestro servicio incluye análisis de mercado y competencia, definición de segmentos de clientes, identificación de atributos únicos, desarrollo de posicionamiento y mensajes clave, y creación de wireframe y copy para tu página principal. Todo alineado a tu estrategia de negocio."
+    }
+  },
+  "footer": {
+    "description": "Transformamos la forma en que las empresas tech B2B comunican su valor. Creamos mensajes claros, estrategias de posicionamiento y experiencias digitales que conectan con tu audiencia.",
+    "newsletterPlaceholder": "Tu email",
+    "newsletterButton": "Suscribirse",
+    "products": "Productos",
+    "home": "Home",
+    "solution": "Solution",
+    "webAudit": "Web Audit",
+    "pricing": "Pricing",
+    "contact": "Conversemos",
+    "allRightsReserved": "Todos los derechos reservados",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
   }
 }
 

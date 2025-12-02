@@ -1,21 +1,27 @@
 import { HeroSection } from '@/components/hero/hero-section'
 import { CompaniesSection } from '@/components/hero/companies-section'
 import { ProblemSection } from '@/components/hero/problem-section'
-import { FrameworksSection } from '@/components/hero/frameworks-section'
 import { Header } from '@/components/layout/header'
-import { StepSection } from '@/components/hero/step-section'
+import { FrameworksSection } from '@/components/hero/frameworks-section'
+import ScrollHorizontal from '@/components/hero/scroll-horizontal'
+import { TestimonialsSection } from '@/components/hero/testimonials-section'
+import { FaqsSection } from '@/components/hero/faqs-section'
+import { Footer } from '@/components/layout/footer'
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="relative">
         <HeroSection />
         <CompaniesSection />
         <ProblemSection />
         <FrameworksSection />
-        <StepSection />
+        <ScrollHorizontal />
+        <TestimonialsSection />
+        <FaqsSection />
       </main>
+      <Footer />
     </>
   )
 }

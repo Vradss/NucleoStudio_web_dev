@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/routing'
+import { AnimatedCaso } from './animated-caso'
 
 const heroCardIds = ['build', 'brand', 'ai'] as const
 
@@ -33,11 +34,14 @@ export function HeroContent() {
     id,
     title: t(`cards.${id}.title`),
     detail: t(`cards.${id}.detail`),
+    image: id === 'build' ? '/images/caso_USO_1.png' 
+      : id === 'brand' ? '/images/caso_USO_2.png' 
+      : '/images/caso_USO_3.png'
   }))
 
   return (
     <motion.div
-      className="relative z-20 mx-auto max-w-6xl space-y-8 px-6 py-20 text-left text-[#F7F6F3] lg:py-28"
+      className="relative z-20 mx-auto max-w-7xl space-y-8 px-6 py-20 text-left text-[#F7F6F3] lg:py-28"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -97,19 +101,17 @@ export function HeroContent() {
         {cards.map(card => (
           <article
             key={card.id}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#050505]"
+            className="group relative h-[450px] overflow-hidden rounded-3xl border border-white/10 bg-[#0A0A0A]"
           >
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-cover bg-center opacity-70 transition duration-500 group-hover:scale-105"
-              style={{
-                backgroundImage: "url('/images/Post%20mkt%203.jpg')",
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/90" />
-            <div className="relative flex min-h-[520px] flex-col">
-              <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-transparent via-black/20 to-black/70" />
-              <div className="absolute inset-x-4 bottom-4 rounded-3xl bg-black/40 p-5 backdrop-blur-xl transition-all duration-500 group-hover:-translate-y-6 group-hover:border-white/20 group-hover:bg-black/65">
+            {/* Imagen PNG con líneas animadas en la parte superior */}
+            <AnimatedCaso casoNumber={
+              card.id === 'build' ? 1 : card.id === 'brand' ? 2 : 3
+            } />
+            
+            {/* Gradiente sutil solo en la parte inferior para el texto */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
+            <div className="relative flex h-full flex-col justify-end pb-4">
+              <div className="relative mx-4 rounded-3xl bg-black/50 p-5 backdrop-blur-md transition-all duration-500 group-hover:backdrop-blur-2xl group-hover:bg-black/70">
                 <div className="flex items-center justify-between gap-4">
                   <p className="font-artifictrial-regular text-lg leading-tight text-white">
                     {card.title}
@@ -119,7 +121,7 @@ export function HeroContent() {
                     alt="Ver más"
                     width={20}
                     height={20}
-                    className="transition duration-300 group-hover:scale-110"
+                    className="flex-shrink-0 transition duration-300 group-hover:scale-110"
                   />
                 </div>
                 <p className="max-h-0 overflow-hidden font-artifictrial-regular text-sm text-[#F7F6F3] opacity-0 transition-all duration-500 ease-out group-hover:mt-3 group-hover:max-h-40 group-hover:opacity-100">

@@ -1,14 +1,15 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
-import { FadeSection } from '@/components/motion/fade-section'
+import { FadeIn } from '@/components/motion/fade-in'
 
 export async function ProblemSection() {
   const t = await getTranslations('problem')
   const points = ['one', 'two', 'three'] as const
 
   return (
-    <FadeSection className="section-spacing bg-[#0A0A0A] text-[#F7F6F3]">
-      <div className="mx-auto max-w-5xl text-center">
+    <section className="relative section-spacing bg-[#0A0A0A] text-[#F7F6F3]">
+      <div className="mx-auto max-w-7xl text-center">
+        <FadeIn delay={0}>
         <div className="flex items-center justify-center gap-2">
           <Image
             src="/images/isotipo_detail.svg"
@@ -19,36 +20,42 @@ export async function ProblemSection() {
             priority
           />
           <span className="font-space-mono text-xs tracking-[0.3em] uppercase text-[#C3BDFF]">
-            THE PROBLEM
+              {t('label')}
           </span>
         </div>
-        <h3 className="mx-auto mt-6 max-w-4xl text-xl font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl">
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h3 className="mx-auto mt-6 max-w-5xl text-xl font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl">
           <span className="font-artifictrial-super">{t('highlight')}</span>
           {t('titleRest')}
         </h3>
+        </FadeIn>
+        <FadeIn delay={0.2}>
         <p className="heading-subtitle mt-6 text-base sm:text-lg ">{t('subtitle')}</p>
+        </FadeIn>
 
         <div className="mt-12 grid gap-8 text-left sm:grid-cols-3">
-          {points.map(point => (
+          {points.map((point, index) => (
+            <FadeIn key={point} delay={0.3 + index * 0.1}>
             <div
-              key={point}
-              className="problem-card group flex flex-col items-center rounded-3xl border border-[#1F1F1F] bg-[#101010] p-6 text-center shadow-sm"
+                className="problem-card group flex h-[250px] flex-col items-center justify-center rounded-3xl border border-[#1E1E1E] bg-[#101010] p-6 text-center shadow-sm"
             >
               <Image
                 src="/images/plus_card.svg"
                 alt="Ver más"
                 width={24}
                 height={24}
-                className="transition duration-300 group-hover:scale-110"
+                  className="transition duration-300 group-hover:scale-110 rotate-45"
               />
-              <p className="mt-4 font-artifictrial-regular text-base text-[#F7F6F3]">
+                <p className="mt-8 font-artifictrial-regular text-base text-[#F7F6F3]">
                 {t(`points.${point}`)}
               </p>
             </div>
+            </FadeIn>
           ))}
         </div>
       </div>
-    </FadeSection>
+    </section>
   )
 }
 

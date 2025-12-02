@@ -27,6 +27,7 @@
     "login": "Login",
     "pricing": "Pricing",
     "webAudit": "Web Audit",
+    "contact": "Let's Talk",
     "resources": "Resources",
     "createAccount": "Create Account"
   },
@@ -78,6 +79,7 @@
     }
   },
   "problem": {
+    "label": "THE PROBLEM",
     "highlight": "Your marketing efforts fail",
     "titleRest": " when you can't clearly explain what you sell, who you serve, and how you create value",
     "subtitle": "Does this sound familiar?",
@@ -91,6 +93,7 @@
     "title": "We make your product understood in your customers' language, so they say 'this is what I need' from the first interaction"
   },
   "steps": {
+    "label": "OUR SOLUTION",
     "titleLine1": "This is how we'll guide you so",
     "titleLine2": "you differentiate and stand out online",
     "cards": {
@@ -98,25 +101,29 @@
         "label": "STAGE 1",
         "title": "We understand the market and spot opportunities",
         "subtitle": "We benchmark how your main competitors position themselves and capture insights from their messaging and persuasion tactics.",
-        "imageAlt": "Competitive research board"
+        "imageAlt": "Competitive research board",
+        "image": "/images/stage1.jpg"
       },
       "stage2": {
         "label": "STAGE 2",
         "title": "We define the customer segments you will focus on",
         "subtitle": "Selling to B2B teams means speaking to users, decision-makers, and influencers. We prioritize who matters most so your story lands with the right people.",
-        "imageAlt": "Key segment definition"
+        "imageAlt": "Key segment definition",
+        "image": "/images/stage2.jpg"
       },
       "stage3": {
         "label": "STAGE 3",
         "title": "We turn the narrative into prototypes and assets",
         "subtitle": "We craft wireframes, mockups, and visual guidelines to translate the story into your site, sales decks, and editorial content.",
-        "imageAlt": "Prototypes and visual assets"
+        "imageAlt": "Prototypes and visual assets",
+        "image": "/images/stage3.jpg"
       },
       "stage4": {
         "label": "STAGE 4",
         "title": "We activate, measure, and keep improving",
         "subtitle": "We outline launch campaigns, metric dashboards, and iteration routines so your positioning stays alive in every channel.",
-        "imageAlt": "Activation plan and metrics"
+        "imageAlt": "Activation plan and metrics",
+        "image": "/images/stage4.jpg"
       }
     }
   },
@@ -170,6 +177,92 @@
     "video": "Video",
     "documento": "Document",
     "template": "Template"
+  },
+  "testimonials": {
+    "label": "TESTIMONIALS",
+    "title": "What our clients say",
+    "testimonial1": {
+      "companyName": "Company 1",
+      "companyLogo": "/images/logos/Logo_BioActiva.svg",
+      "quote": "Nucleo Studio completely transformed how we communicate our product's value. Now our clients immediately understand what we do and why we're different.",
+      "name": "María González",
+      "position": "CEO, TechSolutions",
+      "photo": "/images/testimonials/person1.jpg"
+    },
+    "testimonial2": {
+      "companyName": "Company 2",
+      "companyLogo": "/images/logos/Logo_shift.svg",
+      "quote": "The positioning work they did helped us increase our conversions by 40%. Their content strategies really resonate with our target audience.",
+      "name": "Carlos Rodríguez",
+      "position": "CMO, DataFlow",
+      "photo": "/images/testimonials/person2.jpg"
+    },
+    "testimonial3": {
+      "companyName": "Company 3",
+      "companyLogo": "/images/logos/Colectivo_23.png",
+      "quote": "We finally have a clear message that works across all channels. The Nucleo team perfectly understood our complexity and simplified it without losing meaning.",
+      "name": "Ana Martínez",
+      "position": "Product Director, CloudTech",
+      "photo": "/images/testimonials/person3.jpg"
+    },
+    "testimonial4": {
+      "companyName": "Company 4",
+      "companyLogo": "/images/logos/Ngrowth_logo.svg",
+      "quote": "Their differentiation approach helped us stand out in a very competitive market. Now our leads understand from the first contact why to choose us.",
+      "name": "Roberto Sánchez",
+      "position": "VP of Marketing, SaaSPro",
+      "photo": "/images/testimonials/person4.jpg"
+    },
+    "testimonial5": {
+      "companyName": "Company 5",
+      "companyLogo": "/images/logos/reevalua_logo.svg",
+      "quote": "The repositioning they did was exactly what we needed. Our sales team now has a consistent and effective message.",
+      "name": "Laura Fernández",
+      "position": "Sales Director, InnovateLab",
+      "photo": "/images/testimonials/person5.jpg"
+    },
+    "testimonial6": {
+      "companyName": "Company 6",
+      "companyLogo": "/images/logos/vtex_logo.svg",
+      "quote": "Working with Nucleo Studio was an exceptional experience. They understood our vision and translated it into a communication strategy that really works.",
+      "name": "Diego López",
+      "position": "Founder, NextGen Solutions",
+      "photo": "/images/testimonials/person6.jpg"
+    }
+  },
+  "faqs": {
+    "label": "FREQUENTLY ASKED QUESTIONS",
+    "title": "Frequently asked questions",
+    "faq1": {
+      "question": "How does the work process with Núcleo work?",
+      "answer": "Our process begins with a deep audit of your market and competition. Then we define key customer segments, identify your unique attributes, and develop positioning and messaging. Finally, we create the wireframe and copy for your main page aligned to your strategy."
+    },
+    "faq2": {
+      "question": "How long does it take to complete a project?",
+      "answer": "The time varies depending on the complexity of the project, but typically a complete positioning and messaging project takes between 8-12 weeks. This includes research, strategy development, content creation, and review of iterations."
+    },
+    "faq3": {
+      "question": "Do you work with companies of all sizes?",
+      "answer": "Yes, we work with B2B technology and SaaS companies of different sizes, from startups to established companies. Our approach adapts to the specific needs of each client and their growth stage."
+    },
+    "faq4": {
+      "question": "What does the positioning service include?",
+      "answer": "Our service includes market and competition analysis, customer segment definition, identification of unique attributes, development of positioning and key messages, and creation of wireframe and copy for your main page. Everything aligned to your business strategy."
+    }
+  },
+  "footer": {
+    "description": "We transform how B2B tech companies communicate their value. We create clear messages, positioning strategies, and digital experiences that connect with your audience.",
+    "newsletterPlaceholder": "Your email",
+    "newsletterButton": "Subscribe",
+    "products": "Products",
+    "home": "Home",
+    "solution": "Solution",
+    "webAudit": "Web Audit",
+    "pricing": "Pricing",
+    "contact": "Let's Talk",
+    "allRightsReserved": "All rights reserved",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
   }
 }
 

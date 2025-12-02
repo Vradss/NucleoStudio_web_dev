@@ -64,7 +64,8 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: transparent;
   }
 }
 
@@ -97,17 +98,39 @@
     background-color: #101010;
   }
 
+  /* Capa de ruido (encima del degradado) */
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='5' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.5s ease;
+  }
+
+  .problem-card:hover::before {
+    opacity: 0.5;
+  }
+
+  /* Capa de degradado morado */
   .problem-card::after {
     content: '';
     position: absolute;
     inset: -40%;
-    background: radial-gradient(circle at 30% 30%, rgba(195, 189, 255, 0.4), transparent 60%),
-      radial-gradient(circle at 70% 60%, rgba(111, 49, 255, 0.25), transparent 65%);
+    background: 
+      /* Degradado 1: MORADO CLARO #CDB9FF - Aumentado la opacidad */
+      radial-gradient(circle at 30% 30%, rgba(205, 185, 255, 0.8), transparent 80%),
+      /* Degradado 2: MORADO OSCURO #6F31FF - Aumentado la opacidad */
+      radial-gradient(circle at 70% 60%, rgba(111, 49, 255, 0.6), transparent 65%);
+    background-blend-mode: normal, normal;
     opacity: 0;
     transform: translate3d(-15%, -10%, 0) scale(1);
     transition: opacity 0.5s ease, transform 0.8s ease;
     pointer-events: none;
-    filter: blur(10px);
+      filter: blur(8px);
   }
 
   .problem-card:hover::after {
@@ -136,6 +159,185 @@
     }
     to {
       transform: translate3d(15%, 10%, 0) scale(1.1);
+    }
+  }
+
+  /* Scroll Horizontal Component Styles */
+  .scroll-horizontal-section {
+    background-color: #0a0a0a;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .scroll-horizontal-section.scroll-horizontal-mobile {
+    height: auto;
+    min-height: auto;
+  }
+  
+  .scroll-horizontal-sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px 0 40px 0;
+    overflow: hidden;
+    background-color: #0a0a0a;
+    z-index: 10;
+  }
+  
+  .scroll-horizontal-sticky.scroll-horizontal-mobile-sticky {
+    position: relative;
+    height: auto;
+    min-height: auto;
+    padding: 60px 0;
+    overflow: visible;
+  }
+  
+  .scroll-horizontal-title-container {
+    margin-bottom: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .scroll-horizontal-title {
+    @apply font-artifictrial-regular;
+    font-size: 36px;
+    font-weight: regular;
+    color: #F7F6F3;
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+  .scroll-horizontal-cards-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    transform: translateZ(0);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .scroll-horizontal-cards-wrapper {
+    display: flex;
+    gap: 40px;
+    width: fit-content;
+    padding: 0 40px;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  .scroll-horizontal-card {
+    display: flex;
+    width: calc(90vw - 80px);
+    max-width: 1200px;
+    min-width: calc(90vw - 80px);
+    height: 100%;
+    max-height: 100%;
+    background-color: #F7F6F3;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(10, 10, 10, 0.1);
+  }
+  
+  .scroll-horizontal-card-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e1e;
+    padding: 40px;
+  }
+  
+  .scroll-horizontal-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  
+  .scroll-horizontal-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    background-color: #1E1E1E;
+  }
+  
+  .scroll-horizontal-card-title {
+    @apply font-artifictrial-semibold;
+    font-size: 48px;
+    font-weight: bold;
+    color: #0A0A0A;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }
+  
+  .scroll-horizontal-card-subtitle {
+    @apply font-artifictrial-regular;
+    font-size: 24px;
+    color: #0A0A0A;
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+  
+  /* Responsive - Mobile */
+  @media (max-width: 767px) {
+    .scroll-horizontal-title-container {
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+  
+    .scroll-horizontal-title {
+      font-size: 36px;
+      margin-top: 24px;
+    }
+  
+    .scroll-horizontal-cards-container {
+      overflow: visible;
+      padding: 20px 0;
+    }
+  
+    .scroll-horizontal-cards-wrapper {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 20px;
+      gap: 30px;
+    }
+  
+    .scroll-horizontal-card {
+      flex-direction: column;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  
+    .scroll-horizontal-card-image {
+      padding: 20px;
+    }
+  
+    .scroll-horizontal-card-content {
+      padding: 30px 20px;
+    }
+  
+    .scroll-horizontal-card-title {
+      font-size: 32px;
+    }
+  
+    .scroll-horizontal-card-subtitle {
+      font-size: 18px;
     }
   }
 }

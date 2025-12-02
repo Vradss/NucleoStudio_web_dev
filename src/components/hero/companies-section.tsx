@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
-import { FadeSection } from '@/components/motion/fade-section'
+import { FadeIn } from '@/components/motion/fade-in'
 
 const companies = [
   { name: 'BioActiva', logo: '/images/logos/Logo_BioActiva.svg', alt: 'Logo de BioActiva' },
@@ -14,6 +14,7 @@ const companies = [
   { name: 'Freenanzas', logo: '/images/logos/freenanzas_logo.svg', alt: 'Logo de Freenanzas', textOnly: true },
   { name: 'VTEX', logo: '/images/logos/vtex_logo.svg', alt: 'Logo de VTEX' },
   { name: 'Worthit', logo: '/images/logos/WORTHIT 24.svg', alt: 'Logo de Worthit', textOnly: true },
+  { name: 'Invoinet', logo: '/images/logos/INVOINET_LOGO.svg', alt: 'Logo de Invoinet' },
 ]
 
 // Helper function to encode file names with spaces
@@ -82,26 +83,30 @@ export async function CompaniesSection() {
   const t = await getTranslations('hero')
 
   return (
-    <FadeSection className="relative bg-[#0A0A0A] py-16 lg:py-24">
+    <section className="relative bg-[#0A0A0A] py-16 lg:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="font-artifictrial-regular mb-12 text-center text-2xl text-[#F7F6F3] lg:text-lg">
-          {t('companiesTitle')}
-        </h2>
-        <div className="relative overflow-hidden">
-          {/* Gradiente izquierdo */}
-          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent" />
-          {/* Gradiente derecho */}
-          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent" />
-          
-          {/* Marquee container */}
-          <div className="flex animate-marquee gap-24">
-            {/* Primera fila de logos */}
-            {companies.map((company) => renderLogo(company, company.name))}
-            {/* Duplicar logos para efecto infinito */}
-            {companies.map((company) => renderLogo(company, `duplicate-${company.name}`))}
+        <FadeIn delay={0}>
+          <h2 className="font-artifictrial-regular mb-12 text-center text-[32px] text-[#F7F6F3] sm:text-base lg:text-lg">
+            {t('companiesTitle')}
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div className="relative overflow-hidden">
+            {/* Gradiente izquierdo */}
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent" />
+            {/* Gradiente derecho */}
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent" />
+            
+            {/* Marquee container */}
+            <div className="flex animate-marquee md:animate-marquee-desktop gap-12 md:gap-24">
+              {/* Primera fila de logos */}
+              {companies.map((company) => renderLogo(company, company.name))}
+              {/* Duplicar logos para efecto infinito */}
+              {companies.map((company) => renderLogo(company, `duplicate-${company.name}`))}
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
-    </FadeSection>
+    </section>
   )
 }
