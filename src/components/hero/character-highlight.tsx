@@ -29,7 +29,13 @@ export default function Paragraph({paragraph = "Hacemos que tu producto se entie
   )
 }
 
-const Word = ({children, progress, range}) => {
+interface WordProps {
+  children: string
+  progress: any
+  range: [number, number]
+}
+
+const Word = ({children, progress, range}: WordProps) => {
   const amount = range[1] - range[0]
   const step = amount / children.length
   return (
@@ -45,7 +51,13 @@ const Word = ({children, progress, range}) => {
   )
 }
 
-const Char = ({children, progress, range}) => {
+interface CharProps {
+  children: string
+  progress: any
+  range: [number, number]
+}
+
+const Char = ({children, progress, range}: CharProps) => {
   const opacity = useTransform(progress, range, [0,1])
   return (
     <span>
