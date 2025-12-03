@@ -139,7 +139,7 @@ export default function ScrollHorizontal() {
         {isMobile ? (
           <>
             <FadeIn delay={0}>
-              <div className="mx-auto max-w-7xl text-center mb-8">
+              <div className="mx-auto max-w-7xl text-center">
                 <div className="flex items-center justify-center gap-2">
                   <Image
                     src="/images/isotipo_detail.svg"
@@ -149,7 +149,7 @@ export default function ScrollHorizontal() {
                     className="h-4 w-4 sm:h-5 sm:w-5"
                     priority
                   />
-                  <span className="font-space-mono text-xs tracking-[0.3em] uppercase text-[#C3BDFF]">
+                  <span className="font-space-mono text-xs lg:text-xl tracking-[0.3em] uppercase text-[#C3BDFF]">
                     {t('label')}
                   </span>
                 </div>
@@ -158,15 +158,14 @@ export default function ScrollHorizontal() {
             <FadeIn delay={0.1}>
               <div className="scroll-horizontal-title-container max-w-[800px] mx-auto">
                 <h2 className="scroll-horizontal-title">
-                  {t('titleLine1')} te<br />
-                  {t('titleLine2').replace('te ', '')}
+                  {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
                 </h2>
               </div>
             </FadeIn>
           </>
         ) : (
           <>
-            <div className="mx-auto max-w-7xl text-center mb-8">
+            <div className="mx-auto max-w-7xl text-center ">
               <div className="flex items-center justify-center gap-2">
                 <Image
                   src="/images/isotipo_detail.svg"
@@ -181,10 +180,9 @@ export default function ScrollHorizontal() {
                 </span>
               </div>
             </div>
-            <div className="scroll-horizontal-title-container max-w-[800px] mx-auto">
+            <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
               <h2 className="scroll-horizontal-title">
-                {t('titleLine1')} te<br />
-                {t('titleLine2').replace('te ', '')}
+                {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
               </h2>
             </div>
           </>
@@ -198,7 +196,7 @@ export default function ScrollHorizontal() {
             {cards.map((card, index) => {
               const cardContent = (
                 <div className="scroll-horizontal-card">
-                  <div className="scroll-horizontal-card-image">
+                  <div className={`scroll-horizontal-card-image card-${card.id}`}>
                     <Image 
                       src={t(`cards.${card.key}.image`)}
                       alt={t(`cards.${card.key}.imageAlt`)}

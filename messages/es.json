@@ -58,7 +58,7 @@
     "logout": "Salir"
   },
   "hero": {
-    "title": "Tienes un producto B2B increíble, pero no sabes comunicar todo su valor.",
+    "title": "Es difícil crecer si no entienden /n/nqué haces ni cómo te diferencias",
     "subtitle": "Ayudamos a empresas tech B2B a clarificar diferenciar sus productos con una estrategia clara de posicionamiento para no perder oportunidades de venta.",
     "ctaConversemos": "Conversemos",
     "ctaViewTemplates": "View templates",
@@ -80,17 +80,23 @@
     }
   },
   "problem": {
-    "label": "EL PROBLEMA",
+    "label": "PROBLEMA",
     "highlight": "Tus acciones de marketing no funcionan",
-    "titleRest": " si no comunicas bien qué vendes, a quién le vendes y cómo generas valor",
+    "titleRest": "/n/nsi no comunicas bien qué vendes,/n/na quién le vendes y cómo generas valor",
     "subtitle": "¿Esto no te suena familiar?",
     "points": {
       "one": "Se te complica explicar tu valor único a través de tu web, LinkedIn y reuniones",
       "two": "Tienes múltiples segmentos y no sabes a quién hablarle ni qué decir",
       "three": "No quieres gastar más en contenido, ads y outreach que NO resuena"
+    },
+    "icons": {
+      "one": "/images/PocaComunicacion.svg",
+      "two": "/images/Segmentos.svg",
+      "three": "/images/Broke_card.svg"
     }
   },
   "frameworks": {
+    "label": "FRAMEWORKS",
     "title": "Hacemos que tu producto se entienda en el lenguaje de tus clientes, para que digan 'esto es lo que necesito' desde la primera interacción"
   },
   "steps": {
@@ -100,31 +106,31 @@
     "cards": {
       "stage1": {
         "label": "ETAPA 1",
-        "title": "Entendemos el mercado e identificamos oportunidades",
-        "subtitle": "Analizamos cómo se posicionan tus competidores principales e insights sobre sus mensajes y técnicas de persuasión.",
+        "title": "Identificamos tus oportunidades únicas de diferenciación",
+        "subtitle": "Analizamos cómo se posicionan tus competidores principales y analizamos información de tus clientes para identificar insights que te harán destacar.",
         "imageAlt": "Investigación competitiva",
-        "image": "/images/bench_1.png"
+        "image": "/images/card_1.png"
       },
       "stage2": {
         "label": "ETAPA 2",
-        "title": "Definimos los segmentos de clientes en los que te centrarás",
-        "subtitle": "Para venderle a empresas B2B, conversas con usuarios, decisor final, influenciadores. Seleccionamos estratégicamente en quiénes enfocarnos para diseñar mensajes que resuenen.",
+        "title": "Te guiamos para elegir los segmentos en los que te centrarás",
+        "subtitle": "Para venderle a B2B, conversas con usuarios, decisor final, influenciadores. Seleccionamos estratégicamente en quiénes enfocarnos para diseñar mensajes que resuenen.",
         "imageAlt": "Definición de segmentos clave",
-        "image": "/images/segmento_cliente.png"
+        "image": "/images/card_2.png"
       },
       "stage3": {
         "label": "ETAPA 3",
-        "title": "Identificamos cuáles son los atributos únicos de tus servicios o productos",
-        "subtitle": "Analizamos y determinamos cuáles son las características, beneficios, capacidades y casos de uso que más resuenan con tus segmentos de clientes.",
+        "title": "Clarificamos la propuesta de valor de tus servicios o productos B2B en tus mensajes",
+        "subtitle": "Determinamos cuáles son las características,  capacidades y casos de uso que resuenan más con tus segmentos, creamos mensajes y los estructuramos en wireframes.",
         "imageAlt": "Prototipos y assets visuales",
-        "image": "/images/posicionamiento_pro.png"
+        "image": "/images/card_3.png"
       },
       "stage4": {
         "label": "ETAPA 4",
-        "title": "Desarrollamos el wireframe con el copy de tu página principal alineado a tu posicionamiento y mensajes",
-        "subtitle": "Definiremos la narrativa más adecuada alineada a tus expectativas de negocio y de tu audiencia, para crear el copy de tu homepage ",
+        "title": "Creamos nuevos  assets de contenido alineada tu posicionamiento",
+        "subtitle": "Desarrollamos tu nueva homepage, landing pages, presentación comercial o contenidos para generar autoridad, nutrir y convertir tus nuevos segmentos.",
         "imageAlt": "Plan de activación y métricas",
-        "image": "/images/wireframe_baja_tag.png"
+        "image": "/images/card_4.png"
       }
     }
   },

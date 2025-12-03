@@ -13,7 +13,17 @@ declare global {
   }
 }
 
-export function UnicornEmbed() {
+interface UnicornEmbedProps {
+  projectId: string
+  className?: string
+  style?: React.CSSProperties
+}
+
+export function UnicornEmbed({ 
+  projectId, 
+  className = '', 
+  style = {} 
+}: UnicornEmbedProps) {
   const pathname = usePathname()
   const scriptLoadedRef = useRef(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -68,14 +78,14 @@ export function UnicornEmbed() {
       const timeoutId = setTimeout(() => {
         const embedElement = containerRef.current
         if (embedElement && window.UnicornStudio) {
-          const projectId = embedElement.getAttribute('data-us-project')
+          const currentProjectId = embedElement.getAttribute('data-us-project')
           
-          if (projectId) {
+          if (currentProjectId) {
             // Remover y re-agregar el atributo para forzar reinicialización
             embedElement.removeAttribute('data-us-project')
             requestAnimationFrame(() => {
-              if (embedElement && projectId && window.UnicornStudio) {
-                embedElement.setAttribute('data-us-project', projectId)
+              if (embedElement && currentProjectId && window.UnicornStudio) {
+                embedElement.setAttribute('data-us-project', currentProjectId)
                 // Reinicializar Unicorn Studio
                 window.UnicornStudio.init()
               }
@@ -90,17 +100,14 @@ export function UnicornEmbed() {
     } else {
       lastPathnameRef.current = pathname
     }
-  }, [pathname])
+  }, [pathname, projectId])
 
   return (
     <div 
       ref={containerRef}
-      data-us-project="QxaWWtJXzz6UPXFpnDbs" 
-      className="fixed inset-0 z-0"
-      style={{
-        width: '100vw',
-        height: '100vh',
-      }}
+      data-us-project={projectId} 
+      className={className}
+      style={style}
     />
   )
 }

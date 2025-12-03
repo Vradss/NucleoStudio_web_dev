@@ -29,6 +29,13 @@
     --chart-3: 0 0% 25%;
     --chart-4: 41 20% 96%;
     --chart-5: 0 0% 50%;
+    
+    /* Variables para componentes Scroll Horizontal */
+    --scroll-bg-dark: #0a0a0a;
+    --scroll-bg-darker: #111111;
+    --scroll-border-radius-sm: 8px;
+    --scroll-border-radius-md: 16px;
+    --scroll-text-dark: #0A0A0A;
   }
 
   .dark {
@@ -115,28 +122,7 @@
     opacity: 0.5;
   }
 
-  /* Capa de degradado morado */
-  .problem-card::after {
-    content: '';
-    position: absolute;
-    inset: -40%;
-    background: 
-      /* Degradado 1: MORADO CLARO #CDB9FF - Aumentado la opacidad */
-      radial-gradient(circle at 30% 30%, rgba(205, 185, 255, 0.8), transparent 80%),
-      /* Degradado 2: MORADO OSCURO #6F31FF - Aumentado la opacidad */
-      radial-gradient(circle at 70% 60%, rgba(111, 49, 255, 0.6), transparent 65%);
-    background-blend-mode: normal, normal;
-    opacity: 0;
-    transform: translate3d(-15%, -10%, 0) scale(1);
-    transition: opacity 0.5s ease, transform 0.8s ease;
-    pointer-events: none;
-      filter: blur(8px);
-  }
-
-  .problem-card:hover::after {
-    opacity: 1;
-    animation: problemGlow 4s ease-in-out infinite alternate;
-  }
+  /* Capa de degradado morado - Removida */
 }
 
 @layer utilities {
@@ -164,7 +150,7 @@
 
   /* Scroll Horizontal Component Styles */
   .scroll-horizontal-section {
-    background-color: #0a0a0a;
+    background-color: var(--scroll-bg-dark);
     position: relative;
     min-height: 100vh;
   }
@@ -185,7 +171,7 @@
     justify-content: flex-start;
     padding: 80px 0 40px 0;
     overflow: hidden;
-    background-color: #0a0a0a;
+    background-color: var(--scroll-bg-dark);
     z-index: 10;
   }
   
@@ -205,13 +191,9 @@
   }
   
   .scroll-horizontal-title {
-    @apply font-artifictrial-regular;
-    font-size: 36px;
-    font-weight: regular;
-    color: #F7F6F3;
-    margin: 0;
-    line-height: 1.2;
+    @apply font-artifictrial-regular text-[32px] sm:text-4xl lg:text-5xl leading-tight text-[#F7F6F3];
     text-align: center;
+    margin-top: 16px;
   }
   
   .scroll-horizontal-cards-container {
@@ -221,7 +203,7 @@
     position: relative;
     transform: translateZ(0);
     flex: 1;
-    min-height: 0;
+    min-height: 200px;
     display: flex;
     align-items: center;
   }
@@ -242,30 +224,98 @@
     width: calc(90vw - 80px);
     max-width: 1200px;
     min-width: calc(90vw - 80px);
+    /* 
+     * Height responsive:
+     * - height: 100% intenta usar todo el espacio del contenedor flex
+     * - max-height limita para evitar que se corte considerando:
+     *   * Padding sticky: 80px + 40px = 120px
+     *   * Título: ~76px + 60px margin = 136px
+     *   * Padding container: 20px + 20px = 40px
+     *   Total: 296px que deben restarse del viewport
+     * - min-height asegura un tamaño mínimo funcional
+     */
     height: 100%;
-    max-height: 100%;
-    background-color: #0A0A0A;
-    border-radius: 8px;
+    max-height: calc(100vh - 296px);
+    min-height: 500px;
+    background-color: var(--scroll-bg-dark);
+    border-radius: var(--scroll-border-radius-sm);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(10, 10, 10, 0.1);
+    /* Asegurar que el background cubra todo el área del card */
+    position: relative;
   }
   
+  /* Ajustes para tablets y pantallas medianas */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .scroll-horizontal-card {
+      max-height: calc(100vh - 280px);
+      min-height: 550px;
+    }
+  }
+  
+  /* Ajustes para pantallas grandes */
+  @media (min-width: 1024px) {
+    .scroll-horizontal-card {
+      max-height: calc(100vh - 260px);
+      min-height: 600px;
+    }
+  }
+  
+  /**
+   * CONTENEDOR DE IMAGEN DE LOS CARDS - Base
+   * Padding base que aplica a todos los cards
+   */
   .scroll-horizontal-card-image {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 16px;
+    background-color: var(--scroll-bg-dark);
+    padding: 80px;
     overflow: hidden;
+    /* Asegurar que ocupe toda la altura disponible */
+    min-height: 100%;
+    align-self: stretch;
+    /* Asegurar que respete el border-radius del padre en la primera esquina */
+    border-top-left-radius: var(--scroll-border-radius-sm);
+    border-bottom-left-radius: var(--scroll-border-radius-sm);
+  }
+  
+  /**
+   * PADDINGS ESPECÍFICOS POR CARD
+   * Cada card puede tener su propio padding. Si no especificas uno, usará el padding base (80px)
+   * 
+   * EJEMPLO DE USO:
+   * - padding: 40px; → 40px en todos los lados
+   * - padding: 60px 40px; → 60px arriba/abajo, 40px izquierda/derecha
+   * - padding: 40px 60px 40px 60px; → arriba, derecha, abajo, izquierda
+   */
+  
+  /* Card 1 (ETAPA 1) - Padding personalizable */
+  .scroll-horizontal-card-image.card-1 {
+    padding: 130px;
+  }
+  
+  /* Card 2 (ETAPA 2) - Padding personalizable */
+  .scroll-horizontal-card-image.card-2 {
+    padding: 100px;
+  }
+  
+  /* Card 3 (ETAPA 3) - Padding personalizable */
+  .scroll-horizontal-card-image.card-3 {
+    padding: 80px 80px 0px 80px;
+  }
+  
+  /* Card 4 (ETAPA 4) - Padding personalizable */
+  .scroll-horizontal-card-image.card-4 {
+    padding: 80px;
   }
   
   .scroll-horizontal-image {
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 16px;
+    border-radius: var(--scroll-border-radius-md);
   }
   
   .scroll-horizontal-card-content {
@@ -274,14 +324,20 @@
     flex-direction: column;
     justify-content: center;
     padding: 60px;
-    background-color: #0a0a0a;
+    background-color: var(--scroll-bg-dark);
+    /* Asegurar que ocupe toda la altura disponible */
+    min-height: 100%;
+    align-self: stretch;
+    /* Asegurar que respete el border-radius del padre en la última esquina */
+    border-top-right-radius: var(--scroll-border-radius-sm);
+    border-bottom-right-radius: var(--scroll-border-radius-sm);
   }
   
   .scroll-horizontal-card-title {
     @apply font-artifictrial-semibold;
     font-size: 48px;
     font-weight: bold;
-    color: #0A0A0A;
+    color: var(--scroll-text-dark);
     margin: 0 0 20px 0;
     line-height: 1.2;
   }
@@ -289,7 +345,7 @@
   .scroll-horizontal-card-subtitle {
     @apply font-artifictrial-regular;
     font-size: 24px;
-    color: #0A0A0A;
+    color: var(--scroll-text-dark);
     margin: 0;
     line-height: 1.5;
     opacity: 0.8;
@@ -303,7 +359,6 @@
     }
   
     .scroll-horizontal-title {
-      font-size: 32px;
       margin-top: 24px;
     }
   
@@ -324,14 +379,61 @@
       width: 100%;
       min-width: 100%;
       max-width: 100%;
+      background-color: var(--scroll-bg-darker);
+
+      /* En mobile: altura automática para que se adapte al contenido */
+      height: auto;
+      min-height: auto;
+      max-height: none;
     }
   
+    /* En mobile, ajustar border-radius de los hijos para layout vertical */
     .scroll-horizontal-card-image {
-      padding: 20px;
+      border-top-left-radius: var(--scroll-border-radius-sm);
+      border-top-right-radius: var(--scroll-border-radius-sm);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      /* Padding base en mobile - se puede sobrescribir por card */
+      padding: 40px;
     }
-  
+    
+    /**
+     * PADDINGS PERSONALIZADOS POR CARD EN MOBILE
+     * Puedes personalizar el padding de cada card individualmente para mobile
+     * Estos valores sobrescriben el padding base de 40px
+     * 
+     * EJEMPLO DE USO:
+     * - padding: 30px; → 30px en todos los lados
+     * - padding: 50px 30px; → 50px arriba/abajo, 30px izquierda/derecha
+     * - padding: 30px 40px 20px 40px; → arriba, derecha, abajo, izquierda
+     */
+    
+    /* Card 1 (ETAPA 1) - Padding personalizable para mobile */
+    .scroll-horizontal-card-image.card-1 {
+      padding: 40px;
+    }
+    
+    /* Card 2 (ETAPA 2) - Padding personalizable para mobile */
+    .scroll-horizontal-card-image.card-2 {
+      padding: 40px;
+    }
+    
+    /* Card 3 (ETAPA 3) - Padding personalizable para mobile */
+    .scroll-horizontal-card-image.card-3 {
+      padding: 40px 40px 0px 40px;
+    }
+    
+    /* Card 4 (ETAPA 4) - Padding personalizable para mobile */
+    .scroll-horizontal-card-image.card-4 {
+      padding: 40px;
+    }
+    
     .scroll-horizontal-card-content {
       padding: 30px 20px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: var(--scroll-border-radius-sm);
+      border-bottom-right-radius: var(--scroll-border-radius-sm);
     }
   
     .scroll-horizontal-card-title {

@@ -79,11 +79,36 @@ function renderLogo(company: CompanyLogo, key: string) {
   )
 }
 
+export async function CompaniesContent() {
+  const t = await getTranslations('hero')
+
+  return (
+    <>
+      <FadeIn delay={0}>
+        <h2 className="font-artifictrial-regular mb-12 text-center text-base text-[#F7F6F3] sm:text-base lg:text-lg">
+          {t('companiesTitle')}
+        </h2>
+      </FadeIn>
+      <FadeIn delay={0.1}>
+        <div className="relative overflow-hidden">
+          {/* Marquee container */}
+          <div className="flex animate-marquee md:animate-marquee-desktop gap-12 md:gap-24">
+            {/* Primera fila de logos */}
+            {companies.map((company) => renderLogo(company, company.name))}
+            {/* Duplicar logos para efecto infinito */}
+            {companies.map((company) => renderLogo(company, `duplicate-${company.name}`))}
+          </div>
+        </div>
+      </FadeIn>
+    </>
+  )
+}
+
 export async function CompaniesSection() {
   const t = await getTranslations('hero')
 
   return (
-    <section className="relative bg-[#0A0A0A] py-16 lg:py-24">
+    <section className="relative z-20 bg-[#0A0A0A] py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <FadeIn delay={0}>
           <h2 className="font-artifictrial-regular mb-12 text-center text-base text-[#F7F6F3] sm:text-base lg:text-lg">

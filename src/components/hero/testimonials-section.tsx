@@ -70,7 +70,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-[#0A0A0A]">
       {/* Contenido */}
       <div className="relative z-10 py-16 px-6 lg:px-24 lg:py-24">
         <div className="mx-auto max-w-7xl">
@@ -93,7 +93,7 @@ export function TestimonialsSection() {
 
           {/* Título */}
           <FadeIn delay={0.1}>
-            <h2 className="text-center text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
+            <h2 className="text-center text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl lg:text-5xl mb-12">
               {t('title').split('/n/n').map((line, index, array) => (
                 <span key={index}>
                   {line}

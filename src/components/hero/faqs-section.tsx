@@ -22,7 +22,7 @@ export function FaqsSection() {
 
         {/* Título */}
         <FadeIn delay={0.1}>
-          <h2 className="text-center text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl mb-12">
+          <h2 className="text-center text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl lg:text-5xl mb-12">
             {t('title')}
           </h2>
         </FadeIn>

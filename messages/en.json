@@ -58,7 +58,7 @@
     "logout": "Logout"
   },
   "hero": {
-    "title": "You have an incredible B2B product, but you don't know how to communicate all its value.",
+    "title": "You have an incredible B2B product, but you don't know how to communicate all its value",
     "subtitle": "We help B2B tech companies clarify and differentiate their products with a clear positioning strategy to not lose sales opportunities.",
     "ctaConversemos": "Let's Talk",
     "ctaViewTemplates": "View templates",
@@ -66,15 +66,15 @@
     "tagline": "Product & content marketing studio",
     "cards": {
       "build": {
-        "title": "Your product evolved, you need repositioning and channel alignment",
+        "title": "Your product evolved",
         "detail": "Refresh the story without slowing operations, aligning sales, growth, and content teams."
       },
       "brand": {
-        "title": "Your product is complex, it must be understood in seconds",
+        "title": "Your product is complex",
         "detail": "Every touchpoint should explain the value without someone from your team jumping in every time."
       },
       "ai": {
-        "title": "You're launching a new product or service",
+        "title": "You're launching a new product",
         "detail": "You need a clear narrative to announce it, test demand, and convert the right leads."
       }
     }
@@ -88,9 +88,15 @@
       "one": "It's hard to communicate your unique value through your site, LinkedIn, and meetings",
       "two": "You juggle multiple segments and struggle to decide who to talk to and what to say",
       "three": "You don't want to keep spending on content, ads, and outreach that don't resonate"
+    },
+    "icons": {
+      "one": "/images/plus_card.svg",
+      "two": "/images/plus_card.svg",
+      "three": "/images/plus_card.svg"
     }
   },
   "frameworks": {
+    "label": "FRAMEWORKS",
     "title": "We make your product understood in your customers' language, so they say 'this is what I need' from the first interaction"
   },
   "steps": {

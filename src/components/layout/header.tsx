@@ -22,34 +22,34 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md">
-        <div className="container mx-auto flex h-12 items-center justify-between px-6 text-[#F7F6F3]">
+        <div className="container mx-auto flex h-16 items-center justify-between px-6 text-[#F7F6F3]">
           <Link href="/" className="flex items-center" onClick={closeMenu}>
             <Image
               src="/images/nucleo_logo/nucleo_logo_blanco.svg"
               alt="Nucleo Studio"
               width={150}
               height={32}
-              className="h-5 w-auto md:h-8"
+              className="h-5 w-auto md:h-6"
               priority
             />
           </Link>
           
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-10 md:flex">
             <Link
               href="/product"
-              className="text-sm font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
+              className="text-sm sm:text-base font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
             >
               {t('product')}
             </Link>
             <Link
               href="/pricing"
-              className="text-sm font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
+              className="text-sm sm:text-base font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
             >
               {t('pricing')}
             </Link>
             <Link
               href="/web-audit"
-              className="text-sm font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
+              className="text-sm sm:text-base font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
             >
               {t('resources')}
             </Link>
@@ -58,7 +58,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden rounded-full bg-[#6F31FF] px-5 py-2 text-sm font-medium text-[#F7F6F3] transition-colors hover:bg-[#C3BDFF] hover:text-[#0A0A0A] md:inline-block"
+              className="hidden rounded-full bg-[#1e1e1e] border border-[#1E1E1E] px-5 py-2 text-sm font-medium text-[#F7F6F3] transition-colors hover:bg-[#0A0A0A] hover:text-[#F7F6F3] md:inline-block"
             >
               {t('contact')}
             </Link>

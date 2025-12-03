@@ -8,9 +8,7 @@ interface AnimatedCasoProps {
 
 export function AnimatedCaso({ casoNumber }: AnimatedCasoProps) {
   return (
-    <div className="absolute inset-0 flex flex-col">
-      {/* Imagen PNG en la parte superior del card */}
-      <div className="relative h-[340px] w-full p-4 pt-6">
+    <div className="relative h-full w-full p-4">
         <Image
           src={`/images/caso_uso_${casoNumber}.png`}
           alt={`Caso ${casoNumber}`}
@@ -18,10 +16,6 @@ export function AnimatedCaso({ casoNumber }: AnimatedCasoProps) {
           className="object-contain"
           priority
         />
-      </div>
-      
-      {/* Espaciador para empujar el contenido hacia abajo */}
-      <div className="flex-1" />
     </div>
   )
 }

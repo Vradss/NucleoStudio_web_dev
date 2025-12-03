@@ -7,8 +7,8 @@ export async function ProblemSection() {
   const points = ['one', 'two', 'three'] as const
 
   return (
-    <section className="relative bg-[#0A0A0A] text-[#F7F6F3] py-16 px-6 lg:px-24 lg:py-24">
-      <div className="mx-auto max-w-7xl text-center">
+    <section className="relative z-20 bg-[#0A0A0A] text-[#F7F6F3] py-16 px-6 lg:px-24 lg:py-24">
+      <div className="mx-auto max-w-7xl text-center py-10">
         <FadeIn delay={0}>
         <div className="flex items-center justify-center gap-2">
           <Image
@@ -25,29 +25,30 @@ export async function ProblemSection() {
         </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h3 className="mx-auto mt-6 max-w-5xl text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl">
-          <span className="font-artifictrial-super text-[32px] sm:text-4xl">{t('highlight')}</span>
-          {t('titleRest')}
-        </h3>
+          <h3 className="mx-auto mt-4 max-w-8xl text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl lg:text-5xl">
+            <span className="font-artifictrial-semibold text-[#F7F6F3] text-[32px] sm:text-4xl lg:text-5xl block">{t('highlight')}</span>
+            <span className="block whitespace-pre-line font-artifictrial-semibold sm:text-5xl">
+              {t('titleRest').replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()}
+            </span>
+          </h3>
         </FadeIn>
-        <FadeIn delay={0.2}>
-        <p className="heading-subtitle mt-6 text-base sm:text-lg ">{t('subtitle')}</p>
-        </FadeIn>
-
-        <div className="mt-12 grid gap-8 text-left sm:grid-cols-3">
+        <div className="mt-24 grid gap-8 text-left sm:grid-cols-3">
           {points.map((point, index) => (
             <FadeIn key={point} delay={0.3 + index * 0.1}>
+            {/* Card: HEIGHT FIJO h-[250px] = 250px */}
             <div
                 className="problem-card group flex h-[250px] flex-col items-center justify-center rounded-3xl border border-[#1E1E1E] bg-[#101010] p-6 text-center shadow-sm"
             >
-              <Image
-                src="/images/plus_card.svg"
-                alt="Ver más"
-                width={24}
-                height={24}
-                  className="transition duration-300 group-hover:scale-110 rotate-45"
-              />
-                <p className="mt-8 font-artifictrial-regular text-base text-[#F7F6F3]">
+              {/* Icono: h-8 (32px) en móvil, h-11 (44px) en desktop */}
+              <div className="relative h-8 w-8 sm:h-11 sm:w-11">
+                <Image
+                  src={t(`icons.${point}`)}
+                  alt="Icono de problema"
+                  fill
+                  className="object-contain transition duration-300 group-hover:scale-110"
+                />
+              </div>
+                <p className="mt-8 font-artifictrial-regular text-xl text-[#F7F6F3]">
                 {t(`points.${point}`)}
               </p>
             </div>
