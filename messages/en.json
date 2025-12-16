@@ -95,42 +95,67 @@
       "three": "/images/plus_card.svg"
     }
   },
+  "nivelesMensajes": {
+    "label": "LEVELS",
+    "title": "With Nucleo, you move from confused to differentiated messages and increase your sales opportunities in your B2B channels",
+    "subtitle": "This requires clarity at 5 levels. Most tech companies are between 1 and 2. We take you to level 5 with strategic guidance.",
+    "benefitsTitle": "This is the impact of improving your messages:",
+    "benefits": {
+      "one": {
+        "text": "Shorter sales cycles from now on",
+        "alt": "Sales cycles icon"
+      },
+      "two": {
+        "text": "Better qualification of your ideal client",
+        "alt": "Qualification icon"
+      },
+      "three": {
+        "text": "Your teams explain your differentiation easily",
+        "alt": "Teams icon"
+      }
+    },
+    "icons": {
+      "one": "/images/icono_ciclos_ventas.svg",
+      "two": "/images/icono_calificacion.svg",
+      "three": "/images/icono_equipos.svg"
+    }
+  },
   "frameworks": {
     "label": "FRAMEWORKS",
     "title": "We make your product understood in your customers' language, so they say 'this is what I need' from the first interaction"
   },
   "steps": {
-    "label": "OUR SOLUTION",
+    "label": "SOLUTION",
     "titleLine1": "This is how we'll guide you so",
     "titleLine2": "you differentiate and stand out online",
     "cards": {
       "stage1": {
         "label": "STAGE 1",
-        "title": "We understand the market and spot opportunities",
-        "subtitle": "We benchmark how your main competitors position themselves and capture insights from their messaging and persuasion tactics.",
-        "imageAlt": "Competitive research board",
-        "image": "/images/bench_1.png"
+        "title": "We identify your unique differentiation opportunities",
+        "subtitle": "We analyze how your main competitors position themselves and analyze your customer information to identify insights that will make you stand out.",
+        "imageAlt": "Competitive research",
+        "image": "/images/card_1.png"
       },
       "stage2": {
         "label": "STAGE 2",
-        "title": "We define the customer segments you will focus on",
-        "subtitle": "Selling to B2B teams means speaking to users, decision-makers, and influencers. We prioritize who matters most so your story lands with the right people.",
+        "title": "We guide you to choose the segments you will focus on",
+        "subtitle": "To sell to B2B, you talk to users, final decision-makers, and influencers. We strategically select who to focus on to design messages that resonate.",
         "imageAlt": "Key segment definition",
-        "image": "/images/segmento_cliente.png"
+        "image": "/images/card_2.png"
       },
       "stage3": {
         "label": "STAGE 3",
-        "title": "We turn the narrative into prototypes and assets",
-        "subtitle": "We craft wireframes, mockups, and visual guidelines to translate the story into your site, sales decks, and editorial content.",
+        "title": "We clarify the value proposition of your B2B services or products in your messages",
+        "subtitle": "We determine which features, capabilities, and use cases resonate most with your segments, create messages, and structure them in wireframes.",
         "imageAlt": "Prototypes and visual assets",
-        "image": "/images/posicionamiento_pro.png"
+        "image": "/images/card_3.png"
       },
       "stage4": {
         "label": "STAGE 4",
-        "title": "We activate, measure, and keep improving",
-        "subtitle": "We outline launch campaigns, metric dashboards, and iteration routines so your positioning stays alive in every channel.",
+        "title": "We create new content assets aligned with your positioning",
+        "subtitle": "We develop your new homepage, landing pages, sales presentation, or content to generate authority, nurture, and convert your new segments.",
         "imageAlt": "Activation plan and metrics",
-        "image": "/images/wireframe_baja_tag.png"
+        "image": "/images/card_4.png"
       }
     }
   },
@@ -185,61 +210,117 @@
     "documento": "Document",
     "template": "Template"
   },
+  "metodologia": {
+    "label": "METHODOLOGY",
+    "title": "We convert complex B2B products into clear messages and strategic content",
+    "subtitle": "We apply our methodology to transform complex products into messages that connect with your audience.",
+    "tabs": {
+      "strategy": {
+        "label": "Differentiation Strategy",
+        "description1": "We start by clarifying your value proposition before creating content.",
+        "description2": "We apply our methodology and define your new key message architecture for each product.",
+        "points": {
+          "0": "Quick research of clients and market",
+          "1": "Positioning and messaging workshops",
+          "2": "Message architecture: what to say in each content"
+        },
+        "imageAlt": "Differentiation Strategy"
+      },
+      "web": {
+        "label": "Web & Landing pages",
+        "description1": "After defining how you position yourself and your messages, we generate wireframes for your website or product landing pages with a differentiated value proposition.",
+        "description2": "We design experiences that clearly communicate your value and guide your prospects to action.",
+        "points": {
+          "0": "Homepage and landing page wireframes",
+          "1": "Product content on website: use cases, comparisons, among others"
+        },
+        "imageAlt": "Web and Landing pages"
+      },
+      "content": {
+        "label": "Content to be a reference",
+        "description1": "We restructure your content pillars according to your value proposition and connect them with the expertise in your company.",
+        "description2": "We help you communicate it with content that generates visual authority.",
+        "points": {
+          "0": "Founder-led growth on LinkedIn",
+          "1": "Thought leadership content: newsletter, lead magnets",
+          "2": "Own frameworks"
+        },
+        "imageAlt": "Content to be a reference"
+      },
+      "conversion": {
+        "label": "Conversion Content",
+        "description1": "We design content that accelerates the sales process and reduces friction.",
+        "description2": "We create resources that help your sales teams close more and faster.",
+        "points": {
+          "0": "Sales decks and presentations",
+          "1": "One-pagers and product sheets",
+          "2": "Email sequences and nurtures"
+        },
+        "imageAlt": "Conversion Content"
+      }
+    }
+  },
   "testimonials": {
     "label": "TESTIMONIALS",
     "title": "Learn about the experience of other \n\nB2B tech companies working with us",
     "testimonial1": {
       "companyName": "Company 1",
       "companyLogo": "/images/logos/Colectivo_23.png",
-      "quote": "We grew from 3 to 9 programs without a clear message architecture. The response rate on first contact was low and we needed better nurturing to convert./n/nLaurita restructured the narrative of the brochures, proposed new communication hierarchies and created strategic lead magnets. /n/nThis increased the response rate, the sales team explained the programs more easily and closed faster. It was the first foundation for our product marketing plan.",
-      "name": "Jefferson Leguía,",
-      "position": "Former Marketing manager, Colectivo23",
+      "image": "/images/alejandor_colectivo.png",
+      "quote": "We had a very low response rate on first contact. As we grew from 3 to 9 programs, the need to better nurture prospects to convert became critical. Núcleo completely restructured the narrative. Thanks to this, the response rate increased significantly and today we close faster.",
+      "name": "Jefferson Leguía",
+      "position": "Former Marketing manager @Colectivo23",
       "industria": "Education startup"
     },
     "testimonial2": {
       "companyName": "Company 2",
       "companyLogo": "/images/logos/Logo_shift.svg",
-      "quote": "Communicating what SHIFT does was a challenge for years. We weren't showing everything we offered to get new partners./n/nNúcleo came with deep research from day 1. They have very fine criteria that you don't see just anywhere in the market. They repositioned our value proposition via homepage and landing pages from scratch. /n/nThey created visuals that show how we work in simple terms. Now we communicate with coherence and know what to highlight for new partners.",
+      "image": "/images/cinthia_aibar_shift.png",
+      "quote": "Communicating what SHIFT does was a challenge for years. We weren't showing everything we offered to get new partners./n/nNúcleo came with deep research from day 1. They have very fine criteria that you don't see just anywhere in the market. They repositioned our value proposition via homepage and landing pages from scratch.",
       "name": "Cinthia Aibar",
-      "position": "Head of Partnerships, SHIFT",
+      "position": "Head of Partnerships @SHIFT",
       "industria": "Innovation community for corporates"
     },
     "testimonial3": {
       "companyName": "Company 3",
       "companyLogo": "/images/logos/INVOINET_LOGO.svg",
+      "image": "/images/tomas_lanzillota_invoinet.png",
       "quote": "The methodology they used was key to aligning our product strategy and rethinking our business strategy. /n/nFrom market analysis to implementing the new positioning, the entire process created a clearer foundation for scaling other initiatives.",
-      "name": "Tomás Lnazillota",
-      "position": "CEO, InvoiNet",
+      "name": "Tomás Lanzillota",
+      "position": "CEO @InvoiNet",
       "industria": "Fintech & SaaS"
     },
     "testimonial4": {
       "companyName": "Company 4",
       "companyLogo": "/images/logos/reevalua_logo.svg",
-      "quote": "It's a challenge to communicate what we do at Reevalúa, especially because we're looking for PMF./n/nWith Laurita we laid the foundations for product marketing. /n/nWe restructured the value propositions on websites and in B2B a calculator was designed to capture leads. The quality was at a level I must applaud.",
+      "image": "/images/Luis_chao_revalua.png",
+      "quote": "It's a challenge to communicate what we do at Reevalúa, especially because we're looking for PMF./n/nWith Núcleo we laid the foundations for product marketing. /n/nWe restructured the value propositions on websites and in B2B a calculator was designed to capture leads. The quality was at a level I must applaud.",
       "name": "Luis Chau",
-      "position": "CEO & Co-founder, Reevalúa",
+      "position": "CEO & Co-founder @Reevalúa",
       "industria": "Finance & HR startup"
     },
     "testimonial5": {
       "companyName": "Company 5",
       "companyLogo": "/images/logos/reevalua_logo.svg",
+      "image": "/images/made_silva.png",
       "quote": "We had several AHA moments about how to communicate our services with content, and they took us out of our comfort zone as leaders./n/nIf you want to stay in the status quo, don't work with Laurita. But if you want a powerful, clear and precise message that impacts your sales, hire her.",
       "name": "Made Silva",
-      "position": "CEO, OKR University",
+      "position": "CEO @OKR University",
       "industria": "B2B Education & consulting"
     },
     "testimonial6": {
       "companyName": "Company 6",
       "companyLogo": "/images/logos/Logo_BioActiva.svg",
-      "quote": "Our technology innovation services are so specialized that it was difficult for us to explain them, we could lose opportunities because it wasn't well understood how we differentiate ourselves./n/nLaurita was key to questioning and adjusting the value proposition. She guided us to clarify it and maintained our own technical language./n/nShe was of great help to relaunch our website. That clarity impacted conversion rates.",
+      "image": "/images/Katia_samanamud_bioactiva.png",
+      "quote": "Our technology innovation services are so specialized that it was difficult for us to explain them, we could lose opportunities because it wasn't well understood how we differentiate ourselves./n/nNúcleo was key to questioning and adjusting the value proposition. They guided us to clarify it and maintained our own technical language. That clarity impacted conversion rates.",
       "name": "Katia Samanamud",
-      "position": "General Manager, BioActiva",
+      "position": "General Manager @BioActiva",
       "industria": "B2B Consulting & innovation hub"
     }
   },
   "faqs": {
-    "label": "FREQUENTLY ASKED QUESTIONS",
-    "title": "Frequently asked questions",
+    "label": "FAQS",
+    "title": "FAQS",
     "faq1": {
       "question": "How does the work process with Núcleo work?",
       "answer": "Our process begins with a deep audit of your market and competition. Then we define key customer segments, identify your unique attributes, and develop positioning and messaging. Finally, we create the wireframe and copy for your main page aligned to your strategy."

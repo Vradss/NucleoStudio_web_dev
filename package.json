@@ -13,6 +13,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.0",
+    "geist": "^1.5.1",
     "gsap": "^3.12.2",
     "lenis": "^1.0.29",
     "lucide-react": "^0.294.0",

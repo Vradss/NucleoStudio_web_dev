@@ -131,14 +131,14 @@ function Paragraph({paragraph = "Hacemos que tu producto se entienda en el lengu
              * CONTENEDOR DE LA FRASE DESTACADA "ESTO ES LO QUE NECESITO"
              * 
              * Aquí puedes cambiar la fuente agregando clases de Tailwind:
-             * - font-artifictrial-super: fuente superbold
+             * - font-geist-super: fuente superbold
              * - font-artifictrial-regular: fuente regular
-             * - font-artifictrial-semibold: fuente semibold (actual del párrafo)
+             * - font-geist-semibold: fuente semibold (actual del párrafo)
              * - font-space-mono: fuente monoespaciada
              * 
-             * Ejemplo para cambiar a superbold: className={`${styles.highlightGroup} font-artifictrial-super`}
+             * Ejemplo para cambiar a superbold: className={`${styles.highlightGroup} font-geist-super`}
              */}
-            <span className={`${styles.highlightGroup} font-artifictrial-super`}>
+            <span className={`${styles.highlightGroup} font-geist-super`}>
               {highlightedWords}
             </span>
             {/* Salto de línea solo en desktop - ocupa todo el ancho para forzar salto */}
@@ -167,7 +167,7 @@ function Paragraph({paragraph = "Hacemos que tu producto se entienda en el lengu
   return (
     <p 
       ref={container}         
-      className={`${styles.paragraph} font-artifictrial-semibold`}
+      className={`${styles.paragraph} font-geist-semibold`}
     >
       {renderWords()}
     </p>
@@ -176,8 +176,8 @@ function Paragraph({paragraph = "Hacemos que tu producto se entienda en el lengu
 
 export function CharacterHighlight({ paragraph }: CharacterHighlightProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-      <div className="relative z-10 w-full max-w-7xl mx-auto py-12">
+    <section className="section-layout relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="section-container relative z-10">
         <Paragraph paragraph={paragraph} />
       </div>
     </section>
@@ -220,7 +220,7 @@ interface CharProps {
 
 const Char = ({children, progress, range, isHighlighted = false}: CharProps) => {
   const opacity = useTransform(progress, range, [0,1])
-  const highlightColor = "#CDB9FF"
+  const highlightColor = "var(--nucleo-highlight)"
   
   return (
     <span>

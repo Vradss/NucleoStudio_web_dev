@@ -6,9 +6,7 @@ import './globals.css'
 import { SmoothScroll } from '@/components/layout/smooth-scroll'
 import {
   spaceMonoRegular,
-  artifictrialSuperbold,
-  artifictrialRegular,
-  artifictrialSemibold,
+  geistSans,
 } from '@/lib/fonts'
 
 export const metadata: Metadata = {
@@ -27,7 +25,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${spaceMonoRegular.variable} ${artifictrialSuperbold.variable} ${artifictrialRegular.variable} ${artifictrialSemibold.variable} antialiased`}
+        className={`${spaceMonoRegular.variable} ${geistSans.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll />

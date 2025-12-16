@@ -5,7 +5,7 @@
   padding: 0;
   margin: 0;
   max-width: 1280px;
-  color: #F7F6F3;
+  color: var(--foreground);
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;

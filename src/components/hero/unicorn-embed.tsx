@@ -50,7 +50,7 @@ export function UnicornEmbed({
         }
         
         const script = document.createElement('script')
-        script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.36/dist/unicornStudio.umd.js'
+        script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.5.3/dist/unicornStudio.umd.js'
         script.async = true
         script.onload = function() {
           if (window.UnicornStudio) {

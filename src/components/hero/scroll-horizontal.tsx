@@ -50,21 +50,21 @@ export default function ScrollHorizontal() {
             const containerWidth = cardsContainer.current.offsetWidth;
             // El scroll distance es la diferencia entre el ancho total y el ancho visible
             // Esto nos dice cuánto necesitamos desplazar horizontalmente
-            // Agregamos un pequeño buffer para asegurar que el último card sea completamente visible
-            const distance = Math.max(0, wrapperWidth - containerWidth + 20);
+            // Reducimos el buffer para una transición más precisa
+            const distance = Math.max(0, wrapperWidth - containerWidth);
             setScrollDistance(distance);
             
             // Calcular la altura de la sección basada en el scroll distance
             // Necesitamos suficiente altura para que el scroll horizontal se complete
             const viewportHeight = window.innerHeight;
             // La altura debe ser suficiente para que el scroll vertical permita
-            // completar el scroll horizontal. 
+            // completar el scroll horizontal de manera fluida
             // Usamos: viewport height + scroll distance (para que cada pixel de scroll vertical
             // mueva aproximadamente 1 pixel de scroll horizontal)
-            // Agregamos un buffer adicional para asegurar que se complete sin trabas
-            const calculatedHeight = viewportHeight + distance + (viewportHeight * 0.3);
-            // Mínimo 3 viewports para asegurar que haya suficiente espacio para los 4 cards
-            setSectionHeight(Math.max(calculatedHeight, viewportHeight * 3));
+            // Reducimos el buffer para evitar el "cuelgue" al final
+            const calculatedHeight = viewportHeight + distance + (viewportHeight * 0.1);
+            // Mínimo 2.5 viewports para asegurar que haya suficiente espacio sin exceso
+            setSectionHeight(Math.max(calculatedHeight, viewportHeight * 2.5));
           }
         });
       }
@@ -125,7 +125,7 @@ export default function ScrollHorizontal() {
     [0, 1], 
     [0, scrollDistance > 0 ? -scrollDistance : 0],
     {
-      clamp: false
+      clamp: true // Cambiar a true para evitar que el scroll continúe más allá del límite
     }
   );
 
@@ -149,7 +149,7 @@ export default function ScrollHorizontal() {
                     className="h-4 w-4 sm:h-5 sm:w-5"
                     priority
                   />
-                  <span className="font-space-mono text-xs lg:text-xl tracking-[0.3em] uppercase text-[#C3BDFF]">
+                  <span className="tagline-primary">
                     {t('label')}
                   </span>
                 </div>
@@ -168,14 +168,14 @@ export default function ScrollHorizontal() {
             <div className="mx-auto max-w-7xl text-center ">
               <div className="flex items-center justify-center gap-2">
                 <Image
-                  src="/images/isotipo_detail.svg"
+                  src="/images/isotipo_morado_fuerte.svg"
                   alt="Detalle isotipo decorativo"
                   width={26}
                   height={25}
                   className="h-4 w-4 sm:h-5 sm:w-5"
                   priority
                 />
-                <span className="font-space-mono text-xs tracking-[0.3em] uppercase text-[#C3BDFF]">
+                <span className="tagline-primary">
                   {t('label')}
                 </span>
               </div>
@@ -205,7 +205,7 @@ export default function ScrollHorizontal() {
                       className="scroll-horizontal-image"
                     />
                   </div>
-                  <div className="scroll-horizontal-card-content ">
+                  <div className="scroll-horizontal-card-content">
                     <div className="flex items-center gap-2">
                       <Image
                         src="/images/isotipo_detail.svg"
@@ -214,14 +214,14 @@ export default function ScrollHorizontal() {
                         height={25}
                         className="h-4 w-4 sm:h-5 sm:w-5"
                       />
-                      <p className="font-space-mono text-xs font-semibold uppercase tracking-[0.3em] text-[#C3BDFF] sm:text-xs">
+                      <p className="tagline-secondary font-semibold">
                         {t(`cards.${card.key}.label`)}
                       </p>
                     </div>
-                    <h3 className="font-artifictrial-semibold mt-3 text-2xl leading-tight text-[#F7F6F3] sm:mt-4 sm:text-3xl lg:text-4xl">
+                    <h3 className="font-geist-semibold mt-2 text-2xl leading-tight text-nucleo-light sm:mt-3 sm:text-3xl lg:text-4xl">
                       {t(`cards.${card.key}.title`)}
                     </h3>
-                    <p className="heading-subtitle mt-3 text-sm text-[#F7F6F3] opacity-80 sm:mt-4 sm:text-base lg:text-lg">
+                    <p className="heading-subtitle mt-2 text-sm text-nucleo-light opacity-80 sm:mt-3 sm:text-base lg:text-lg">
                       {t(`cards.${card.key}.subtitle`)}
                     </p>
                   </div>

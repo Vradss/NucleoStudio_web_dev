@@ -95,6 +95,31 @@
       "three": "/images/Broke_card.svg"
     }
   },
+  "nivelesMensajes": {
+    "label": "NIVELES",
+    "title": "Con Núcleo, pasas de mensajes confusos a diferenciados y aumentas tus oportunidades de venta en tus canales B2B",
+    "subtitle": "Esto requiere claridad en 5 niveles. La mayoría de empresas tech está entre 1 y 2. Nosotros te llevamos al 5 con guía estratégica.",
+    "benefitsTitle": "Este es el impacto de mejorar tus mensajes:",
+    "benefits": {
+      "one": {
+        "text": "Ciclos de ventas más cortos a partir de ahora",
+        "alt": "Icono de ciclos de ventas"
+      },
+      "two": {
+        "text": "Mejor calificación de tu cliente ideal",
+        "alt": "Icono de calificación"
+      },
+      "three": {
+        "text": "Tus equipos explican tu diferenciación fácilmente",
+        "alt": "Icono de equipos"
+      }
+    },
+    "icons": {
+      "one": "/images/icono_ciclos_ventas.svg",
+      "two": "/images/icono_calificacion.svg",
+      "three": "/images/icono_equipos.svg"
+    }
+  },
   "frameworks": {
     "label": "FRAMEWORKS",
     "title": "Hacemos que tu producto se entienda en el lenguaje de tus clientes, para que digan 'esto es lo que necesito' desde la primera interacción"
@@ -185,60 +210,116 @@
     "documento": "Documento",
     "template": "Template"
   },
+  "metodologia": {
+    "label": "METODOLOGÍA",
+    "title": "Convertimos productos B2B complejos en mensajes claros y contenido estratégico",
+    "subtitle": "Aplicamos nuestra metodología para transformar productos complejos en mensajes que conectan con tu audiencia.",
+    "tabs": {
+      "strategy": {
+        "label": "Estrategia de diferenciación",
+        "description1": "Comenzamos clarificando tu propuesta de valor antes de crear contenido.",
+        "description2": "Aplicamos nuestra metodología y definimos tu nueva arquitectura de mensajes clave de cada producto.",
+        "points": {
+          "0": "Quick research de clientes y mercado",
+          "1": "Workshops de posicionamiento y messaging",
+          "2": "Arquitectura de mensajes: qué decir en cada contenido"
+        },
+        "imageAlt": "Estrategia de diferenciación"
+      },
+      "web": {
+        "label": "Web & Landing pages",
+        "description1": "Luego de definir cómo te posicionas y tus mensajes, generamos wireframes de tu web o landing pages de productos con una propuesta de valor diferenciada.",
+        "description2": "Diseñamos experiencias que comunican claramente tu valor y guían a tus prospectos hacia la acción.",
+        "points": {
+          "0": "Wireframes de homepage y landing pages",
+          "1": "Contenido de productos en sitio web: casos de uso, comparativos, entre otros"
+        },
+        "imageAlt": "Web y Landing pages"
+      },
+      "content": {
+        "label": "Contenido para ser referente",
+        "description1": "Reestructuramos tus pilares de contenido según tu propuesta de valor y lo conectamos con el expertise en tu empresa.",
+        "description2": "Te ayudamos a comunicarlo con contenido que genere autoridad visuales.",
+        "points": {
+          "0": "Founder-led growth en LinkedIn",
+          "1": "Contenido thought leadership: newsletter, lead magnets",
+          "2": "Frameworks propios"
+        },
+        "imageAlt": "Contenido para ser referente"
+      },
+      "conversion": {
+        "label": "Contenido de conversión",
+        "description1": "Diseñamos contenido que acelera el proceso de venta y reduce fricción.",
+        "description2": "Creamos recursos que ayudan a tus equipos comerciales a cerrar más y más rápido.",
+        "points": {
+          "0": "Sales decks y presentaciones",
+          "1": "One-pagers y hojas de producto",
+          "2": "Email sequences y nurtures"
+        },
+        "imageAlt": "Contenido de conversión"
+      }
+    }
+  },
   "testimonials": {
     "label": "TESTIMONIOS",
     "title": "Conoce la experiencia de otras nempresas/n/ntech B2B trabajando con nosotros",
     "testimonial1": {
       "companyName": "Empresa 1",
       "companyLogo": "/images/logos/Colectivo_23.png",
-      "quote": "Crecimos de 3 a 9 programas sin arquitectura clara de mensajes. La tasa de respuesta en el primer contacto era baja y necesitábamos nutrir mejor para convertir./n/nLaurita reeestructuró la narrativa de los brochures, propuso nuevas jerarquías de comunicación y creó lead magnets estratégicos. /n/nEsto aumentó la tasa de respuesta, el equipo comercial explicaba los programas más fácil y cerraba más rápido. Fue la primera base para nuestro plan de product marketing.",
-      "name": "Jefferson Leguía,",
-      "position": "Former Marketing manager, Colectivo23",
+      "image": "/images/alejandor_colectivo.png",
+      "quote": "“Teníamos una tasa de respuesta muy baja en el primer contacto. Al crecer de 3 a 9 programas, la necesidad de nutrir mejor a los prospectos para convertir se hizo crítica.  Núcleo reestructuró la narrativa por completo. Gracias a esto, la tasa de respuesta subió significativamente y hoy cerramos más rápido.",
+      "name": "Jefferson Leguía",
+      "position": "Former Marketing manager @Colectivo23",
       "industria": "Startup de educación"},
     "testimonial2": {
       "companyName": "Empresa 2",
       "companyLogo": "/images/logos/Logo_shift.svg",
-      "quote": "Comunicar qué hace SHIFT fue un reto de hace años. No mostrábamos todo lo que ofrecíamos para conseguir nuevos socios./n/nNúcleo llegó con research profundo desde el día 1. Tienen criterios muy finos, que no se ven así nada más en el mercado. Reposicionaron nuestra propuesta de valor vía homepage y landing pages de cero. /n/nCrearon visuales que muestran cómo funcionamos en simple. Ahora comunicamos con coherencia y sabemos qué destacar para nuevos socios.",
+      "image": "/images/cinthia_aibar_shift.png",
+      "quote": "Comunicar qué hace SHIFT fue un reto de hace años. No mostrábamos todo lo que ofrecíamos para conseguir nuevos socios./n/nNúcleo llegó con research profundo desde el día 1. Tienen criterios muy finos, que no se ven así nada más en el mercado. Reposicionaron nuestra propuesta de valor vía homepage y landing pages de cero.",
       "name": "Cinthia Aibar",
-      "position": "Head of Partnerships, SHIFT",
+      "position": "Head of Partnerships @SHIFT",
       "industria": "Comunidad de innovación para corporativos"
     },
     "testimonial3": {
       "companyName": "Empresa 3",
       "companyLogo": "/images/logos/INVOINET_LOGO.svg",
+      "image": "/images/tomas_lanzillota_invoinet.png",
       "quote": "La metodología que usaron fue clave para alinear nuestra estrategia de producto y repensar la de negocio. /n/nDesde el análisis del mercado hasta la implementación del nuevo posicionamiento, todo el proceso generó una base más clara para escalar otras iniciativas.",
-      "name": "Tomás Lnazillota",
-      "position": "CEO, InvoiNet",
+      "name": "Tomás Lanzillota",
+      "position": "CEO @InvoiNet",
       "industria": "Fintech & SaaS"
     },
     "testimonial4": {
       "companyName": "Empresa 4",
       "companyLogo": "/images/logos/reevalua_logo.svg",
-      "quote": "Es un reto comunicar lo que hacemos en Reevalúa, más aún porque estamos buscando PMF./n/nCon Laurita sentamos las bases de product marketing. /n/nReestructuramos las propuestas de valor en webs y en B2B se diseñó una calculadora para capturar leads.La calidad estuvo a un nivel que debo aplaudir.",
+      "image": "/images/Luis_chao_revalua.png",
+      "quote": "Es un reto comunicar lo que hacemos en Reevalúa, más aún porque estamos buscando PMF./n/nCon Núcleo sentamos las bases de product marketing. /n/nReestructuramos las propuestas de valor en webs y en B2B se diseñó una calculadora para capturar leads.La calidad estuvo a un nivel que debo aplaudir.",
       "name": "Luis Chau",
-      "position": "CEO & Co-founder, Reevalúa",
+      "position": "CEO & Co-founder @Reevalúa",
       "industria": "Startup de finanzas & HR"
     },
     "testimonial5": {
       "companyName": "Empresa 5",
       "companyLogo": "/images/logos/reevalua_logo.svg",
+      "image": "/images/made_silva.png",
       "quote": "Tuvimos varios AHA moments sobre cómo comunicar nuestros servicios con contenido, y nos sacaron de nuestra zona de comfort como líderes./n/nSi deseas mantenerte en el status quo, no trabajes con Laurita. Pero si deseas un mensaje poderoso, claro y preciso que impacte en tus ventas, contrátala.",
       "name": "Made Silva",
-      "position": "CEO, OKR University",
+      "position": "CEO @OKR University",
       "industria": " Educación & consultoría B2B"
     },
     "testimonial6": {
       "companyName": "Empresa 6",
       "companyLogo": "/images/logos/Logo_BioActiva.svg",
-      "quote": "Nuestros servicios de innovación tecnológica son tan especializados que nos resultaba difícil explicarlos, podíamos perder oportunidades porque no se entendía bien cómo nos diferenciamos./n/nLaurita fue clave para cuestionar y ajustar la propuesta de valor. Nos guió para clarificarla y mantuvo nuestro propio lenguaje técnico./n/nFue de gran ayuda para relanzar nuestra web. Esa claridad impactó en los ratios de conversión.",
+      "image": "/images/Katia_samanamud_bioactiva.png",
+      "quote": "Nuestros servicios de innovación tecnológica son tan especializados que nos resultaba difícil explicarlos, podíamos perder oportunidades porque no se entendía bien cómo nos diferenciamos./n/nNúcleo fue clave para cuestionar y ajustar la propuesta de valor. Nos guió para clarificarla y mantuvo nuestro propio lenguaje técnico. Esa claridad impactó en los ratios de conversión.",
       "name": "Katia Samanamud",
-      "position": "Gerente General, BioActiva",
+      "position": "Gerente General @BioActiva",
       "industria": "Consultoría B2B & Hub de innovación"
     }
   },
   "faqs": {
-    "label": "PREGUNTAS FRECUENTES",
-    "title": "Preguntas frecuentes",
+    "label": "FAQS",
+    "title": "FAQS",
     "faq1": {
       "question": "¿Cómo funciona el proceso de trabajo con Núcleo?",
       "answer": "Nuestro proceso comienza con una auditoría profunda de tu mercado y competencia. Luego definimos los segmentos de clientes clave, identificamos tus atributos únicos y desarrollamos el posicionamiento y mensajes. Finalmente, creamos el wireframe y copy de tu página principal alineado a tu estrategia."

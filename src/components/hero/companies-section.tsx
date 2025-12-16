@@ -85,14 +85,14 @@ export async function CompaniesContent() {
   return (
     <>
       <FadeIn delay={0}>
-        <h2 className="font-artifictrial-regular mb-12 text-center text-base text-[#F7F6F3] sm:text-base lg:text-lg">
+        <h2 className="mx-auto max-w-3xl font-geist-regular text-base text-nucleo-light sm:text-xl lg:text-xl mb-12 text-center">
           {t('companiesTitle')}
         </h2>
       </FadeIn>
       <FadeIn delay={0.1}>
         <div className="relative overflow-hidden">
           {/* Marquee container */}
-          <div className="flex animate-marquee md:animate-marquee-desktop gap-12 md:gap-24">
+          <div className="flex animate-marquee md:animate-marquee-desktop gap-6 md:gap-24">
             {/* Primera fila de logos */}
             {companies.map((company) => renderLogo(company, company.name))}
             {/* Duplicar logos para efecto infinito */}
@@ -108,22 +108,22 @@ export async function CompaniesSection() {
   const t = await getTranslations('hero')
 
   return (
-    <section className="relative z-20 bg-[#0A0A0A] py-16 lg:py-24">
-      <div className="container mx-auto px-4">
+    <section className="section-layout relative z-20">
+      <div className="section-container">
         <FadeIn delay={0}>
-          <h2 className="font-artifictrial-regular mb-12 text-center text-base text-[#F7F6F3] sm:text-base lg:text-lg">
+          <h2 className="section-title mb-12 text-center">
             {t('companiesTitle')}
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
           <div className="relative overflow-hidden">
             {/* Gradiente izquierdo */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-[#0A0A0A] to-transparent" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-nucleo-dark to-transparent" />
             {/* Gradiente derecho */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-[#0A0A0A] to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-nucleo-dark to-transparent" />
             
             {/* Marquee container */}
-            <div className="flex animate-marquee md:animate-marquee-desktop gap-12 md:gap-24">
+            <div className="flex animate-marquee md:animate-marquee-desktop gap-6 md:gap-24">
               {/* Primera fila de logos */}
               {companies.map((company) => renderLogo(company, company.name))}
               {/* Duplicar logos para efecto infinito */}

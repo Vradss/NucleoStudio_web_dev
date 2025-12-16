@@ -22,7 +22,7 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md">
-        <div className="container mx-auto flex h-16 items-center justify-between px-6 text-[#F7F6F3]">
+        <div className="container mx-auto flex h-16 items-center justify-between px-6 text-nucleo-light">
           <Link href="/" className="flex items-center" onClick={closeMenu}>
             <Image
               src="/images/nucleo_logo/nucleo_logo_blanco.svg"
@@ -37,19 +37,19 @@ export function Header() {
           <nav className="hidden items-center gap-10 md:flex">
             <Link
               href="/product"
-              className="text-sm sm:text-base font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
+              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
             >
               {t('product')}
             </Link>
             <Link
               href="/pricing"
-              className="text-sm sm:text-base font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
+              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
             >
               {t('pricing')}
             </Link>
             <Link
               href="/web-audit"
-              className="text-sm sm:text-base font-medium text-[#F7F6F3]/80 transition-colors hover:text-[#C3BDFF]"
+              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
             >
               {t('resources')}
             </Link>
@@ -58,7 +58,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden rounded-full bg-[#1e1e1e] border border-[#1E1E1E] px-5 py-2 text-sm font-medium text-[#F7F6F3] transition-colors hover:bg-[#0A0A0A] hover:text-[#F7F6F3] md:inline-block"
+              className="hidden rounded-full bg-nucleo-dark-secondary border border-nucleo-dark-secondary px-5 py-2 text-sm font-medium text-nucleo-light transition-colors hover:bg-nucleo-dark hover:text-nucleo-light md:inline-block"
             >
               {t('contact')}
             </Link>
@@ -75,17 +75,17 @@ export function Header() {
               <motion.span
                 animate={isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="block h-0.5 w-6 bg-[#F7F6F3]"
+                className="block h-0.5 w-6 bg-nucleo-light"
               />
               <motion.span
                 animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="block h-0.5 w-6 bg-[#F7F6F3]"
+                className="block h-0.5 w-6 bg-nucleo-light"
               />
               <motion.span
                 animate={isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="block h-0.5 w-6 bg-[#F7F6F3]"
+                className="block h-0.5 w-6 bg-nucleo-light"
               />
             </button>
           </div>
@@ -102,7 +102,7 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-[#0A0A0A] z-40 md:hidden"
+              className="fixed inset-0 bg-nucleo-dark z-40 md:hidden"
               onClick={closeMenu}
             />
             
@@ -116,10 +116,10 @@ export function Header() {
                 damping: 25,
                 stiffness: 200
               }}
-              className="fixed inset-0 z-50 bg-[#0A0A0A] md:hidden flex flex-col"
+              className="fixed inset-0 z-50 bg-nucleo-dark md:hidden flex flex-col"
             >
               {/* Header del menú móvil */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-[#1F1F1F]">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-nucleo-dark-border">
                 <Link href="/" className="flex items-center" onClick={closeMenu}>
                   <Image
                     src="/images/nucleo_logo/nucleo_logo_blanco.svg"
@@ -142,7 +142,7 @@ export function Header() {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="text-[#F7F6F3]"
+                    className="text-nucleo-light"
                   >
                     <path d="M18 6L6 18M6 6l12 12" />
                   </svg>
@@ -160,7 +160,7 @@ export function Header() {
                   <Link
                     href="/"
                     onClick={closeMenu}
-                    className="block text-2xl font-artifictrial-semibold text-[#F7F6F3] transition-colors hover:text-[#C3BDFF]"
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary"
                   >
                     HOME
                   </Link>
@@ -177,14 +177,14 @@ export function Header() {
                         }
                       }
                     }}
-                    className="block text-2xl font-artifictrial-semibold text-[#F7F6F3] transition-colors hover:text-[#C3BDFF]"
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary"
                   >
                     SOLUTION
                   </Link>
                   <Link
                     href="/pricing"
                     onClick={closeMenu}
-                    className="block text-2xl font-artifictrial-semibold text-[#F7F6F3] transition-colors hover:text-[#C3BDFF]"
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary"
                   >
                     PRICING
                   </Link>
@@ -201,7 +201,7 @@ export function Header() {
                 <Link
                   href="/contact"
                   onClick={closeMenu}
-                  className="block w-full rounded-full bg-[#6F31FF] px-8 py-4 text-center text-lg font-artifictrial-semibold text-[#F7F6F3] transition-colors hover:bg-[#C3BDFF] hover:text-[#0A0A0A]"
+                  className="block w-full rounded-full bg-nucleo-primary px-8 py-4 text-center text-lg font-geist-semibold text-nucleo-light transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark"
                 >
                   CONVERSEMOS
                 </Link>

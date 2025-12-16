@@ -31,14 +31,14 @@ export function LanguageSelector() {
   }
 
   return (
-    <div className="flex items-center gap-2 rounded-full border border-[#1F1F1F] bg-[#141214] p-1">
+    <div className="flex items-center gap-2 rounded-full border border-nucleo-dark-border p-1" style={{ backgroundColor: 'var(--nucleo-bg-selector)' }}>
       <button
         onClick={() => switchLocale('es')}
         disabled={isPending}
         className={`rounded px-2 py-1 text-xs font-medium transition-colors ${
           currentLocale === 'es'
-            ? 'bg-[#6F31FF] text-[#F7F6F3]'
-            : 'text-[#C3BDFF] hover:text-[#F7F6F3]'
+            ? 'bg-nucleo-primary text-foreground'
+            : 'text-nucleo-secondary hover:text-foreground'
         } ${isPending ? 'opacity-50' : ''}`}
       >
         ES
@@ -48,8 +48,8 @@ export function LanguageSelector() {
         disabled={isPending}
         className={`rounded px-2 py-1 text-xs font-medium transition-colors ${
           currentLocale === 'en'
-            ? 'bg-[#6F31FF] text-[#F7F6F3]'
-            : 'text-[#C3BDFF] hover:text-[#F7F6F3]'
+            ? 'bg-nucleo-primary text-foreground'
+            : 'text-nucleo-secondary hover:text-foreground'
         } ${isPending ? 'opacity-50' : ''}`}
       >
         EN

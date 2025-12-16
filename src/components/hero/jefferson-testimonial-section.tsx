@@ -18,10 +18,10 @@ export function JeffersonTestimonialSection() {
           height: '100vh',
         }}
       />
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-20">
+      <div className="section-container relative z-10">
         <FadeIn delay={0}>
-          <div className="text-center text-white">
-            <p className="font-artifictrial-regular text-lg sm:text-xl lg:text-2xl leading-relaxed mb-8 whitespace-pre-line">
+          <div className="text-center text-nucleo-light">
+            <p className="font-geist-regular text-lg sm:text-xl lg:text-2xl leading-relaxed mb-8 whitespace-pre-line">
               {t('quote').replace(/\/n\/n/g, '\n\n')}
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
@@ -34,10 +34,10 @@ export function JeffersonTestimonialSection() {
                 />
               </div>
               <div className="text-left">
-                <p className="font-artifictrial-semibold uppercase text-base sm:text-lg text-white lg:text-xl">
+                <p className="font-geist-semibold uppercase text-base sm:text-lg text-nucleo-light lg:text-xl">
                   {t('name')}
                 </p>
-                <p className="font-artifictrial-regular uppercase text-sm sm:text-base text-white/80 mt-2 lg:text-lg">
+                <p className="font-geist-regular uppercase text-sm sm:text-base text-nucleo-light-opacity-80 mt-2 lg:text-lg">
                   {t('position')}
                 </p>
               </div>

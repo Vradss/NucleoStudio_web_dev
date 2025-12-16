@@ -17,13 +17,13 @@ export function FooterContent() {
   }
 
   return (
-    <footer className="bg-[#0A0A0A] text-[#F7F6F3] w-full h-full">
-      <div className="container mx-auto px-6 py-16 lg:py-24 h-full flex flex-col">
+    <footer className="bg-nucleo-dark text-nucleo-light w-full h-full">
+      <div className="container mx-auto px-6 pt-16 pb-0 lg:pt-24 lg:pb-0 h-full flex flex-col">
         {/* Mobile Layout */}
         <div className="flex flex-col md:hidden gap-12 mb-12">
           {/* Logo y descripción */}
           <div>
-            <Link href="/" className="hidden inline-block mb-6">
+            <Link href="/" className="inline-block mb-6">
               <Image
                 src="/images/nucleo_logo/nucleo_logo_blanco.svg"
                 alt="Nucleo Studio"
@@ -33,21 +33,21 @@ export function FooterContent() {
                 priority
               />
             </Link>
-            <p className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 max-w-md">
+            <p className="font-geist-regular text-sm text-nucleo-light/80 max-w-md">
               {t('description')}
             </p>
           </div>
 
           {/* Productos */}
           <div>
-            <h3 className="font-artifictrial-semibold text-lg mb-6 text-[#F7F6F3]">
+            <h3 className="font-geist-semibold text-lg mb-6 text-nucleo-light">
               {t('products')}
             </h3>
             <ul className="space-y-4">
               <li>
                 <Link
                   href="/"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('home')}
                 </Link>
@@ -64,7 +64,7 @@ export function FooterContent() {
                       }
                     }
                   }}
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('solution')}
                 </Link>
@@ -72,7 +72,7 @@ export function FooterContent() {
               <li>
                 <Link
                   href="/web-audit"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('webAudit')}
                 </Link>
@@ -82,14 +82,14 @@ export function FooterContent() {
 
           {/* Pricing y Redes sociales */}
           <div>
-            <h3 className="font-artifictrial-semibold text-lg mb-6 text-[#F7F6F3]">
+            <h3 className="font-geist-semibold text-lg mb-6 text-nucleo-light">
               {t('pricing')}
             </h3>
             <ul className="space-y-4 mb-6">
               <li>
                 <Link
                   href="/pricing"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('pricing')}
                 </Link>
@@ -97,7 +97,7 @@ export function FooterContent() {
               <li>
                 <Link
                   href="/contact"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('contact')}
                 </Link>
@@ -109,7 +109,7 @@ export function FooterContent() {
                 href="https://www.linkedin.com/company/nucleo-studio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                className="text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -125,6 +125,31 @@ export function FooterContent() {
             </div>
           </div>
 
+          {/* Legal */}
+          <div>
+            <h3 className="font-geist-semibold text-lg mb-6 text-nucleo-light">
+              LEGAL
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
+                >
+                  {t('privacyPolicy')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms-of-service"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
+                >
+                  {t('termsOfService')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Newsletter - debajo de productos y pricing en mobile */}
           <div>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
@@ -133,12 +158,12 @@ export function FooterContent() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('newsletterPlaceholder')}
-                className="flex-1 px-4 py-3 rounded-full bg-[#1F1F1F] border border-[#1F1F1F] text-[#F7F6F3] placeholder:text-[#F7F6F3]/50 focus:outline-none focus:border-[#6F31FF] transition-colors"
+                className="flex-1 px-4 py-3 rounded-full bg-nucleo-dark-border border border-nucleo-dark-border text-nucleo-light placeholder:text-nucleo-light/50 focus:outline-none focus:border-nucleo-primary transition-colors"
                 required
               />
               <button
                 type="submit"
-                className="px-6 py-3 rounded-full bg-[#6F31FF] text-[#F7F6F3] font-artifictrial-semibold text-sm transition-colors hover:bg-[#C3BDFF] hover:text-[#0A0A0A] whitespace-nowrap"
+                className="px-6 py-3 rounded-full bg-nucleo-primary text-nucleo-light font-geist-semibold text-sm transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark whitespace-nowrap"
               >
                 {t('newsletterButton')}
               </button>
@@ -147,7 +172,7 @@ export function FooterContent() {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Logo y descripción */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
@@ -160,7 +185,7 @@ export function FooterContent() {
                 priority
               />
             </Link>
-            <p className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 max-w-md mb-8">
+            <p className="font-geist-regular text-sm text-nucleo-light/80 max-w-md mb-8">
               {t('description')}
             </p>
             
@@ -171,12 +196,12 @@ export function FooterContent() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('newsletterPlaceholder')}
-                className="flex-1 px-4 py-3 rounded-full bg-[#1F1F1F] border border-[#1F1F1F] text-[#F7F6F3] placeholder:text-[#F7F6F3]/50 focus:outline-none focus:border-[#6F31FF] transition-colors"
+                className="flex-1 px-4 py-3 rounded-full bg-nucleo-dark-border border border-nucleo-dark-border text-nucleo-light placeholder:text-nucleo-light/50 focus:outline-none focus:border-nucleo-primary transition-colors"
                 required
               />
               <button
                 type="submit"
-                className="px-6 py-3 rounded-full bg-[#6F31FF] text-[#F7F6F3] font-artifictrial-semibold text-sm transition-colors hover:bg-[#C3BDFF] hover:text-[#0A0A0A] whitespace-nowrap"
+                className="px-6 py-3 rounded-full bg-nucleo-primary text-nucleo-light font-geist-semibold text-sm transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark whitespace-nowrap"
               >
                 {t('newsletterButton')}
               </button>
@@ -185,14 +210,14 @@ export function FooterContent() {
 
           {/* Productos */}
           <div>
-            <h3 className="font-artifictrial-semibold text-lg mb-6 text-[#F7F6F3]">
+            <h3 className="font-geist-semibold text-lg mb-6 text-nucleo-light">
               {t('products')}
             </h3>
             <ul className="space-y-4">
               <li>
                 <Link
                   href="/"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('home')}
                 </Link>
@@ -209,7 +234,7 @@ export function FooterContent() {
                       }
                     }
                   }}
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('solution')}
                 </Link>
@@ -217,7 +242,7 @@ export function FooterContent() {
               <li>
                 <Link
                   href="/web-audit"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('webAudit')}
                 </Link>
@@ -227,14 +252,14 @@ export function FooterContent() {
 
           {/* Pricing y Redes sociales */}
           <div>
-            <h3 className="font-artifictrial-semibold text-lg mb-6 text-[#F7F6F3]">
+            <h3 className="font-geist-semibold text-lg mb-6 text-nucleo-light">
               {t('pricing')}
             </h3>
             <ul className="space-y-4 mb-6">
               <li>
                 <Link
                   href="/pricing"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('pricing')}
                 </Link>
@@ -242,7 +267,7 @@ export function FooterContent() {
               <li>
                 <Link
                   href="/contact"
-                  className="font-artifictrial-regular text-sm text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 >
                   {t('contact')}
                 </Link>
@@ -254,7 +279,7 @@ export function FooterContent() {
                 href="https://www.linkedin.com/company/nucleo-studio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#F7F6F3]/80 hover:text-[#C3BDFF] transition-colors"
+                className="text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -269,30 +294,53 @@ export function FooterContent() {
               </a>
             </div>
           </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="font-geist-semibold text-lg mb-6 text-nucleo-light">
+              Legal
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
+                >
+                  {t('privacyPolicy')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms-of-service"
+                  className="font-geist-regular text-sm text-nucleo-light/80 hover:text-nucleo-secondary transition-colors"
+                >
+                  {t('termsOfService')}
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Copyright y links legales */}
-        <div className="border-t border-[#1F1F1F] pt-8 mt-auto">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-[#F7F6F3]/60">
-            <p className="font-artifictrial-regular">
-              © 2025 Nucleo. {t('allRightsReserved')}
-            </p>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/privacy-policy"
-                className="font-artifictrial-regular hover:text-[#C3BDFF] transition-colors"
-              >
-                {t('privacyPolicy')}
-              </Link>
-              <span className="text-[#F7F6F3]/40">|</span>
-              <Link
-                href="/terms-of-service"
-                className="font-artifictrial-regular hover:text-[#C3BDFF] transition-colors"
-              >
-                {t('termsOfService')}
-              </Link>
+        <div className="border-t border-[#202025] pt-4 mt-auto">
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex justify-right items-end text-sm text-nucleo-light/60">
+              <p className="font-geist-regular text-nucleo-dark-hover-light">
+                © 2025 Nucleo. {t('allRightsReserved')}
+              </p>
             </div>
           </div>
+            {/* Logo */}
+            <div className="w-full flex justify-center">
+              <Image
+                src="/images/LOGO_DESKTOP.svg"
+                alt="Nucleo"
+                width={1368}
+                height={363}
+                className="h-auto w-full max-w-full"
+                priority
+              />
+            </div>
         </div>
       </div>
     </footer>

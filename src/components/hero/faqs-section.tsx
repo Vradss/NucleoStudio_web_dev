@@ -16,13 +16,13 @@ export function FaqsSection() {
   }
 
   return (
-    <section className="relative bg-[#0A0A0A] py-16 px-6 lg:px-24 lg:py-24">
-      <div className="mx-auto max-w-4xl">
+    <section className="section-layout" style={{ backgroundColor: '#FFFFFA' }}>
+      <div className="section-container max-w-4xl">
         {/* Label */}
 
         {/* Título */}
         <FadeIn delay={0.1}>
-          <h2 className="text-center text-[32px] font-artifictrial-regular leading-tight text-[#F7F6F3] sm:text-4xl lg:text-5xl mb-12">
+          <h2 className="section-title text-center mb-12 text-nucleo-dark">
             {t('title')}
           </h2>
         </FadeIn>
@@ -33,13 +33,13 @@ export function FaqsSection() {
             const isOpen = openIndex === index
             return (
               <FadeIn key={faqIndex} delay={0.2 + index * 0.1}>
-                <div className="border border-[#1F1F1F] rounded-2xl bg-[#101010] overflow-hidden">
+                <div className="border border-gray-200 rounded-2xl bg-white overflow-hidden">
                   {/* Pregunta */}
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-[#151515] transition-colors"
+                    className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                   >
-                    <h3 className="font-artifictrial-semibold text-lg text-[#F7F6F3] pr-4">
+                    <h3 className="font-geist-semibold text-lg text-nucleo-dark pr-4">
                       {t(`faq${faqIndex}.question`)}
                     </h3>
                     <motion.div
@@ -53,7 +53,7 @@ export function FaqsSection() {
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="text-[#C3BDFF]"
+                        className="text-nucleo-primary"
                       >
                         <path
                           d="M12 5V19M5 12H19"
@@ -77,7 +77,7 @@ export function FaqsSection() {
                         className="overflow-hidden"
                       >
                         <div className="px-6 pb-6">
-                          <p className="font-artifictrial-regular text-base text-[#F7F6F3]/80 leading-relaxed">
+                          <p className="font-geist-regular text-base text-gray-700 leading-relaxed">
                             {t(`faq${faqIndex}.answer`)}
                           </p>
                         </div>
