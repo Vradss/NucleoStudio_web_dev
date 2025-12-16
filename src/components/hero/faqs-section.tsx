@@ -9,15 +9,15 @@ import Image from 'next/image'
 export function FaqsSection() {
   const t = useTranslations('faqs')
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const faqs = [1, 2, 3, 4] as const
+  const faqs = [1, 2, 3, 4, 5, 6, 7] as const
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
   }
 
   return (
-    <section className="section-layout" style={{ backgroundColor: '#FFFFFA' }}>
-      <div className="section-container max-w-4xl">
+    <section id="faqs" className="section-layout" style={{ backgroundColor: '#FFFFFA' }}>
+      <div className="section-container max-w-7xl">
         {/* Label */}
 
         {/* Título */}
@@ -28,16 +28,18 @@ export function FaqsSection() {
         </FadeIn>
 
         {/* FAQs */}
-        <div className="space-y-4">
+        <div className="space-y-0">
           {faqs.map((faqIndex, index) => {
             const isOpen = openIndex === index
+            const isLast = index === faqs.length - 1
             return (
               <FadeIn key={faqIndex} delay={0.2 + index * 0.1}>
-                <div className="border border-gray-200 rounded-2xl bg-white overflow-hidden">
+                <div className={`overflow-hidden ${!isLast ? 'border-b border-gray-200' : ''}`} style={{ backgroundColor: '#FFFFFA' }}>
                   {/* Pregunta */}
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                    className="w-full flex items-center justify-between p-6 text-left transition-colors"
+                    style={{ backgroundColor: '#FFFFFA' }}
                   >
                     <h3 className="font-geist-semibold text-lg text-nucleo-dark pr-4">
                       {t(`faq${faqIndex}.question`)}

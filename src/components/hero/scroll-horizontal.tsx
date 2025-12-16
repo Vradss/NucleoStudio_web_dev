@@ -132,6 +132,7 @@ export default function ScrollHorizontal() {
   return (
     <section 
       ref={container} 
+      id="solucion"
       className={`scroll-horizontal-section ${isMobile ? 'scroll-horizontal-mobile' : ''}`}
       style={!isMobile ? { height: `${sectionHeight}px` } : {}}
     >

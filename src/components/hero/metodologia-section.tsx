@@ -28,7 +28,7 @@ export function MetodologiaSection() {
   const [activeTab, setActiveTab] = useState<'strategy' | 'web' | 'content' | 'conversion'>('strategy')
 
   return (
-    <section className="section-layout relative z-20">
+    <section id="entregables" className="section-layout relative z-20">
       <div className="section-container text-left">
         <FadeIn delay={0}>
           <div className="flex items-center gap-2">

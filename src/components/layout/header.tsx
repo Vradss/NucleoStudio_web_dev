@@ -1,15 +1,51 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { LanguageSelector } from './language-selector'
-import { Link } from '@/i18n/routing'
+import { Link, usePathname } from '@/i18n/routing'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export function Header() {
   const t = useTranslations('nav')
+  const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      // Si estamos en la parte superior, siempre mostrar el header
+      if (currentScrollY < 10) {
+        setIsVisible(true)
+        setLastScrollY(currentScrollY)
+        return
+      }
+
+      // Si el menú móvil está abierto, no ocultar el header
+      if (isMenuOpen) {
+        setLastScrollY(currentScrollY)
+        return
+      }
+
+      // Detectar dirección del scroll
+      if (currentScrollY > lastScrollY) {
+        // Scroll hacia abajo - ocultar
+        setIsVisible(false)
+      } else if (currentScrollY < lastScrollY) {
+        // Scroll hacia arriba - mostrar
+        setIsVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY, isMenuOpen])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -19,9 +55,42 @@ export function Header() {
     setIsMenuOpen(false)
   }
 
+  const scrollToSection = (sectionId: string) => {
+    closeMenu()
+    
+    // Verificar si estamos en la página principal (puede ser /, /es, o /en)
+    const isHomePage = pathname === '/' || pathname === '/es' || pathname === '/en'
+    
+    // Si no estamos en la página principal, navegar primero
+    if (!isHomePage) {
+      window.location.href = pathname.startsWith('/en') ? '/en' : '/es'
+      return
+    }
+
+    // Pequeño delay para asegurar que la página esté cargada
+    setTimeout(() => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        const headerHeight = 64 // altura del header
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
+  }
+
   return (
     <>
-      <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md">
+      <motion.header
+        initial={{ y: 0 }}
+        animate={{ y: isVisible ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="sticky top-0 z-50 bg-transparent backdrop-blur-md"
+      >
         <div className="container mx-auto flex h-16 items-center justify-between px-6 text-nucleo-light">
           <Link href="/" className="flex items-center" onClick={closeMenu}>
             <Image
@@ -35,24 +104,30 @@ export function Header() {
           </Link>
           
           <nav className="hidden items-center gap-10 md:flex">
-            <Link
-              href="/product"
+            <button
+              onClick={() => scrollToSection('solucion')}
               className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
             >
-              {t('product')}
-            </Link>
+              {t('solution')}
+            </button>
+            <button
+              onClick={() => scrollToSection('entregables')}
+              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
+            >
+              {t('deliverables')}
+            </button>
             <Link
               href="/pricing"
               className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
             >
               {t('pricing')}
             </Link>
-            <Link
-              href="/web-audit"
+            <button
+              onClick={() => scrollToSection('faqs')}
               className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
             >
-              {t('resources')}
-            </Link>
+              {t('faqs')}
+            </button>
           </nav>
 
           <div className="flex items-center gap-4">
@@ -90,7 +165,7 @@ export function Header() {
             </button>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Menú móvil con animación de despliegue */}
       <AnimatePresence>
@@ -164,23 +239,24 @@ export function Header() {
                   >
                     HOME
                   </Link>
-                  <Link
-                    href="/"
-                    onClick={(e) => {
-                      closeMenu()
-                      // Scroll suave a la sección de solución (scroll-horizontal)
-                      if (window.location.pathname === '/') {
-                        e.preventDefault()
-                        const solutionSection = document.querySelector('.scroll-horizontal-section')
-                        if (solutionSection) {
-                          solutionSection.scrollIntoView({ behavior: 'smooth' })
-                        }
-                      }
-                    }}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary"
+                  <button
+                    onClick={() => scrollToSection('solucion')}
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
-                    SOLUTION
-                  </Link>
+                    {t('solution').toUpperCase()}
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('entregables')}
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                  >
+                    {t('deliverables').toUpperCase()}
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('faqs')}
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                  >
+                    {t('faqs').toUpperCase()}
+                  </button>
                   <Link
                     href="/pricing"
                     onClick={closeMenu}

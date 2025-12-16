@@ -30,7 +30,10 @@
     "product": "Product",
     "contact": "Let's Talk",
     "resources": "Resources",
-    "createAccount": "Create Account"
+    "createAccount": "Create Account",
+    "solution": "Solution",
+    "deliverables": "Deliverables",
+    "faqs": "FAQS"
   },
   "auth": {
     "loginWithGoogle": "Continue with Google",
@@ -319,23 +322,35 @@
     }
   },
   "faqs": {
-    "label": "FAQS",
+    "label": "Frequently Asked Questions",
     "title": "FAQS",
     "faq1": {
-      "question": "How does the work process with Núcleo work?",
-      "answer": "Our process begins with a deep audit of your market and competition. Then we define key customer segments, identify your unique attributes, and develop positioning and messaging. Finally, we create the wireframe and copy for your main page aligned to your strategy."
+      "question": "Who is this service for?",
+      "answer": "Do you feel like your product is good but when you explain it, it sounds confusing? Do you lose opportunities because you can't differentiate yourself from competitors in sales meetings? This is for you. We work with founders and B2B tech companies that already have active clients and are ready to communicate their value with clarity. With our service, you'll have the strategic messages you need so your sales team closes faster and your prospects say 'this is exactly what I need'."
     },
     "faq2": {
-      "question": "How long does it take to complete a project?",
-      "answer": "The time varies depending on the complexity of the project, but typically a complete positioning and messaging project takes between 8-12 weeks. This includes research, strategy development, content creation, and review of iterations."
+      "question": "What makes Núcleo different from other agencies or freelancers?",
+      "answer": "Agencies do nice visual branding but don't solve your core problem: you don't know how to differentiate yourself. Copywriters write texts without strategic context. We work differently. First, we clarify your positioning so you understand who you're really competing against and why they choose you. Then we translate that strategy into concrete messages for web, sales deck, and content. It's not just about making things look nice, it's about making them strategically correct."
     },
     "faq3": {
-      "question": "Do you work with companies of all sizes?",
-      "answer": "Yes, we work with B2B technology and SaaS companies of different sizes, from startups to established companies. Our approach adapts to the specific needs of each client and their growth stage."
+      "question": "What exactly will I receive at the end of the project?",
+      "answer": "With Plan 1, you receive everything needed to clarify your commercial proposal: complete competitive analysis, strategic positioning of your product, wireframe copy of your homepage with the right messages, and a professional sales deck. With Plan 2, we amplify your credibility: LinkedIn content strategy, monthly editorial plan, and templates to position yourself as a reference. All deliverables are editable so you can use them with your team. It does not include web development or final UI design."
     },
     "faq4": {
-      "question": "What does the positioning service include?",
-      "answer": "Our service includes market and competition analysis, customer segment definition, identification of unique attributes, development of positioning and key messages, and creation of wireframe and copy for your main page. Everything aligned to your business strategy."
+      "question": "How much does it cost?",
+      "answer": "The price depends on the complexity of your case: more products means more competitive analysis, multiple segments requires message differentiation by audience, and larger teams need more strategic alignment. Check our plans and prices here. You can also schedule a 30-minute discovery call for a budget tailored to your specific situation."
+    },
+    "faq5": {
+      "question": "Do you design the homepage or just write the texts?",
+      "answer": "We deliver the complete wireframe copy: the structure of your homepage with all strategic messages and final texts, but in wireframe format without UI design. If you need visual design and web development, we can recommend trusted designers who work on our wireframes, or your team can implement it directly."
+    },
+    "faq6": {
+      "question": "How long does the project take and how much time do I need to invest?",
+      "answer": "The project takes between 4 and 5 weeks and you need to invest about 6 hours in total distributed across strategic workshops, deliverable validations, and sharing information about your product. It's collaborative because the knowledge of your business is in your head, not ours. We depend on you being the expert in your industry and customers for the project to work. Commercial results like better conversion typically appear 3-6 months after implementation."
+    },
+    "faq7": {
+      "question": "Will you interview our clients?",
+      "answer": "We don't interview your end clients. We work directly with you and your internal team: founders, decision makers, and marketing team if you have one. The project works because you already know your clients better than anyone, and we help you translate that knowledge into clear strategic messages. We depend on you sharing that expertise in the workshops to structure your value proposition in a way that resonates with your audience."
     }
   },
   "footer": {

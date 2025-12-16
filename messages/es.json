@@ -30,7 +30,10 @@
     "product": "Producto",
     "resources": "Recursos",
     "contact": "Conversemos",
-    "createAccount": "Crear mi cuenta"
+    "createAccount": "Crear mi cuenta",
+    "solution": "Solución",
+    "deliverables": "Entregables",
+    "faqs": "FAQS"
   },
   "auth": {
     "loginWithGoogle": "Continuar con Google",
@@ -262,14 +265,14 @@
   },
   "testimonials": {
     "label": "TESTIMONIOS",
-    "title": "Conoce la experiencia de otras nempresas/n/ntech B2B trabajando con nosotros",
+    "title": "Conoce la experiencia de otras empresas/n/ntech B2B trabajando con nosotros",
     "testimonial1": {
       "companyName": "Empresa 1",
       "companyLogo": "/images/logos/Colectivo_23.png",
       "image": "/images/alejandor_colectivo.png",
       "quote": "“Teníamos una tasa de respuesta muy baja en el primer contacto. Al crecer de 3 a 9 programas, la necesidad de nutrir mejor a los prospectos para convertir se hizo crítica.  Núcleo reestructuró la narrativa por completo. Gracias a esto, la tasa de respuesta subió significativamente y hoy cerramos más rápido.",
       "name": "Jefferson Leguía",
-      "position": "Former Marketing manager @Colectivo23",
+      "position": "Former Marketing Manager @Colectivo23",
       "industria": "Startup de educación"},
     "testimonial2": {
       "companyName": "Empresa 2",
@@ -318,23 +321,35 @@
     }
   },
   "faqs": {
-    "label": "FAQS",
+    "label": "Preguntas frecuentes",
     "title": "FAQS",
     "faq1": {
-      "question": "¿Cómo funciona el proceso de trabajo con Núcleo?",
-      "answer": "Nuestro proceso comienza con una auditoría profunda de tu mercado y competencia. Luego definimos los segmentos de clientes clave, identificamos tus atributos únicos y desarrollamos el posicionamiento y mensajes. Finalmente, creamos el wireframe y copy de tu página principal alineado a tu estrategia."
+      "question": "¿A quién va dirigido nuestro servicio?",
+      "answer": "¿Sientes que tu producto es bueno pero cuando lo explicas suena confuso? ¿Pierdes oportunidades porque no logras diferenciarte de competidores en reuniones comerciales? Esto es para ti. Trabajamos con founders y empresas B2B tech que ya tienen clientes activos y están listos para comunicar su valor con claridad. Con nuestro servicio vas a tener los mensajes estratégicos que necesitas para que tu equipo comercial cierre más rápido y tus prospectos digan 'esto es exactamente lo que necesito'."
     },
     "faq2": {
-      "question": "¿Cuánto tiempo toma completar un proyecto?",
-      "answer": "El tiempo varía según la complejidad del proyecto, pero típicamente un proyecto completo de posicionamiento y mensajes toma entre 8-12 semanas. Esto incluye investigación, desarrollo de estrategia, creación de contenido y revisión de iteraciones."
+      "question": "¿Qué hace diferente a Núcleo de otras agencias o freelancers?",
+      "answer": "Las agencias hacen branding visual bonito pero no resuelven tu problema de fondo: no sabes cómo diferenciarte. Los copywriters te escriben textos sin contexto estratégico. Nosotros trabajamos diferente. Primero clarificamos tu posicionamiento para que entiendas contra quién compites realmente y por qué te eligen. Después traducimos esa estrategia en mensajes concretos para web, sales deck y contenido. No es solo hacer las cosas bonitas, es hacerlas estratégicamente correctas."
     },
     "faq3": {
-      "question": "¿Trabajan con empresas de todos los tamaños?",
-      "answer": "Sí, trabajamos con empresas B2B de tecnología y SaaS de diferentes tamaños, desde startups hasta empresas establecidas. Nuestro enfoque se adapta a las necesidades específicas de cada cliente y su etapa de crecimiento."
+      "question": "¿Qué voy a recibir exactamente al final del proyecto?",
+      "answer": "Con el Plan 1 recibes todo lo necesario para clarificar tu propuesta comercial: análisis competitivo completo, posicionamiento estratégico de tu producto, wireframe copy de tu homepage con los mensajes correctos, y un sales deck profesional. Con el Plan 2 amplificamos tu credibilidad: estrategia de contenido para LinkedIn, plan editorial mensual y templates para posicionarte como referente. Todos los entregables son editables para que los uses con tu equipo. No incluye desarrollo web ni diseño UI final."
     },
     "faq4": {
-      "question": "¿Qué incluye el servicio de posicionamiento?",
-      "answer": "Nuestro servicio incluye análisis de mercado y competencia, definición de segmentos de clientes, identificación de atributos únicos, desarrollo de posicionamiento y mensajes clave, y creación de wireframe y copy para tu página principal. Todo alineado a tu estrategia de negocio."
+      "question": "¿Cuánto cuesta?",
+      "answer": "El precio depende de la complejidad de tu caso: más productos significa más análisis competitivo, múltiples segmentos requiere diferenciación de mensajes por audiencia, y equipos más grandes necesitan más alineación estratégica. Revisa nuestros planes y precios aquí. También puedes agendar un discovery call de 30 minutos para un presupuesto ajustado a tu situación específica."
+    },
+    "faq5": {
+      "question": "¿Ustedes diseñan la homepage o solo escriben los textos?",
+      "answer": "Entregamos el wireframe copy completo: la estructura de tu homepage con todos los mensajes estratégicos y textos finales, pero en formato wireframe sin diseño UI. Si necesitas el diseño visual y desarrollo web, podemos recomendarte diseñadores de confianza que trabajen sobre nuestros wireframes, o tu equipo puede implementarlo directamente."
+    },
+    "faq6": {
+      "question": "¿Cuánto dura el proyecto y qué necesito invertir de mi tiempo?",
+      "answer": "El proyecto toma entre 4 y 5 semanas y necesitas invertir unas 6 horas en total distribuidas en workshops estratégicos, validaciones de entregables, y compartir información de tu producto. Es colaborativo porque el conocimiento de tu negocio está en tu cabeza, no en la nuestra. Dependemos de que seas el experto en tu industria y clientes para que el proyecto funcione. Los resultados comerciales como mejor conversión normalmente aparecen 3-6 meses después de implementar."
+    },
+    "faq7": {
+      "question": "¿Van a entrevistar a nuestros clientes?",
+      "answer": "No entrevistamos a tus clientes finales. Trabajamos directamente contigo y tu equipo interno: founders, tomadores de decisión, y equipo de marketing si lo tienes. El proyecto funciona porque tú ya conoces a tus clientes mejor que nadie, y nosotros te ayudamos a traducir ese conocimiento en mensajes estratégicos claros. Dependemos de que compartas esa expertise en los workshops para estructurar tu propuesta de valor de forma que resuene con tu audiencia."
     }
   },
   "footer": {

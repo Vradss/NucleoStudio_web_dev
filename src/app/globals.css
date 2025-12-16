@@ -351,6 +351,11 @@
     }
   }
 
+  /* Ocultar scrollbar en el contenedor de testimonios */
+  .testimonials-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
   @keyframes problemGlow {
     from {
       transform: translate3d(-20%, -15%, 0) scale(1);
