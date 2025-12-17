@@ -2,15 +2,44 @@ import Image from 'next/image'
 import { getTranslations } from 'next-intl/server'
 import { FadeIn } from '@/components/motion/fade-in'
 
+function renderTitleWithHighlight(titleRest: string, isMobile: boolean) {
+  // Dividir el texto en partes
+  const highlightText = 'no comunicas bien qué vendes'
+  const parts = titleRest.split(highlightText)
+  
+  if (parts.length === 2) {
+    // Mobile: reemplazar saltos de línea con espacios
+    const beforeText = isMobile 
+      ? parts[0].replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').replace(/^\s+/, '').trim()
+      : parts[0].replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()
+    
+    const afterText = isMobile
+      ? parts[1].replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').trim()
+      : parts[1].replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').trim()
+    
+    return (
+      <>
+        {beforeText} <span className="font-geist-medium text-nucleo-highlight">{highlightText}</span>{afterText}
+      </>
+    )
+  }
+  
+  // Fallback: si no se encuentra el texto a resaltar, mostrar el texto original
+  return isMobile
+    ? titleRest.replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').replace(/^\s+/, '').trim()
+    : titleRest.replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()
+}
+
 export async function ProblemSection() {
   const t = await getTranslations('problem')
   const points = ['one', 'two', 'three'] as const
+  const titleRest = t('titleRest')
 
   return (
     <section className="section-layout relative z-20 lg:min-h-[100vh] flex flex-col">
       <div className="section-container text-center flex-1 flex flex-col justify-center">
         <FadeIn delay={0}>
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 mb-4">
           <Image
             src="/images/isotipo_detail.svg"
             alt="Detalle isotipo decorativo"
@@ -25,14 +54,14 @@ export async function ProblemSection() {
         </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h3 className="section-title mx-auto mt-4 max-w-8xl">
+          <h3 className="section-title mx-auto max-w-8xl">
             <span className="block">{t('highlight')}</span>
-            <span className="mt-4 block font-geist-light text-[18px] sm:text-2xl lg:text-[32px] text-nucleo-light">
+            <span className="mt-4 block font-geist-light text-[20px] sm:text-2xl lg:text-[32px] text-nucleo-light">
               <span className="sm:hidden">
-                {t('titleRest').replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').replace(/^\s+/, '').trim()}
+                {renderTitleWithHighlight(titleRest, true)}
               </span>
               <span className="hidden sm:block whitespace-pre-line">
-                {t('titleRest').replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()}
+                {renderTitleWithHighlight(titleRest, false)}
               </span>
             </span>
           </h3>
@@ -44,14 +73,23 @@ export async function ProblemSection() {
             <div
                 className="problem-card flex min-h-[200px] sm:h-[250px] flex-col items-center justify-center rounded-3xl border border-nucleo-dark-secondary bg-nucleo-dark-tertiary p-4 sm:p-6 text-center shadow-sm"
             >
-              {/* Icono: h-8 (32px) en móvil, h-11 (44px) en desktop */}
-              <div className="relative h-8 w-8 sm:h-11 sm:w-11">
-                <Image
-                  src={t(`icons.${point}`)}
-                  alt="Icono de problema"
-                  fill
-                  className="object-contain"
-                />
+              {/* Icono: h-8 (32px) en móvil, h-11 (44px) en desktop - más grande para cards 2 y 3 */}
+              <div className={`relative ${point === 'one' ? 'h-8 w-8 sm:h-11 sm:w-11' : 'h-10 w-10 sm:h-14 sm:w-14'}`}>
+                {point === 'two' ? (
+                  <svg width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                    <rect x="1" y="23" width="20" height="13" rx="1" stroke="#C3BDFF" strokeWidth="2"/>
+                    <rect x="29" y="23" width="20" height="13" rx="1" stroke="#C3BDFF" strokeWidth="2"/>
+                    <rect x="15" y="1" width="20" height="13" rx="1" stroke="#C3BDFF" strokeWidth="2"/>
+                    <path d="M25 14V18M25 18H11.5C10.9477 18 10.5 18.4477 10.5 19V22M25 18H38.5C39.0523 18 39.5 18.4477 39.5 19V22" stroke="#C3BDFF" strokeWidth="2"/>
+                  </svg>
+                ) : (
+                  <Image
+                    src={t(`icons.${point}`)}
+                    alt="Icono de problema"
+                    fill
+                    className="object-contain"
+                  />
+                )}
               </div>
                 <p className="mt-6 sm:mt-8 text-card-title">
                 {t(`points.${point}`)}

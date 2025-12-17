@@ -28,6 +28,23 @@ const itemVariants = {
   },
 }
 
+function renderSubtitleWithHighlight(subtitle: string, locale: string) {
+  // Textos a resaltar según el idioma
+  const highlightText = locale === 'es' ? 'empresas tech B2B' : 'B2B tech companies'
+  const parts = subtitle.split(highlightText)
+  
+  if (parts.length === 2) {
+    return (
+      <>
+        {parts[0]}<span className="font-geist-medium text-nucleo-highlight">{highlightText}</span>{parts[1]}
+      </>
+    )
+  }
+  
+  // Fallback: si no se encuentra el texto a resaltar, mostrar el texto original
+  return subtitle
+}
+
 export function HeroContent() {
   const locale = useLocale()
   const t = useTranslations('hero')
@@ -35,6 +52,7 @@ export function HeroContent() {
     id,
     title: t(`cards.${id}.title`),
   }))
+  const subtitle = t('subtitle')
 
   return (
     <motion.div
@@ -44,22 +62,22 @@ export function HeroContent() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="flex items-center justify-center gap-2 text-nucleo-secondary" variants={itemVariants}>
+      <motion.div className="flex items-center justify-center gap-1.5 sm:gap-2 text-nucleo-secondary whitespace-nowrap mb-4" variants={itemVariants}>
         <Image
           src="/images/isotipo_detail.svg"
           alt="Detalle isotipo decorativo"
           width={26}
           height={25}
-          className="h-3 w-3 sm:h-5 sm:w-5"
+          className="h-3 w-3 flex-shrink-0 sm:h-5 sm:w-5"
           priority
         />
-        <span className="tagline">
+        <span className="tagline whitespace-nowrap text-[12px] sm:text-sm tracking-[0.08em] sm:tracking-[0.1em]">
           {t('tagline')}
         </span>
       </motion.div>
 
       <motion.h1
-        className="mx-auto font-geist-semibold text-[40px] leading-tight sm:text-5xl lg:text-7xl whitespace-pre-line"
+        className="mx-auto font-geist-super text-[41px] leading-tight sm:text-5xl lg:text-7xl whitespace-pre-line"
         variants={itemVariants}
       >
         {t('title').replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()}
@@ -69,7 +87,7 @@ export function HeroContent() {
         className="mx-auto max-w-3xl font-geist-regular text-base text-nucleo-light sm:text-xl lg:text-xl"
         variants={itemVariants}
       >
-        {t('subtitle')}
+        {renderSubtitleWithHighlight(subtitle, locale)}
       </motion.p>
 
       <motion.div className="flex flex-col items-center justify-center gap-4 sm:flex-row" variants={itemVariants}>

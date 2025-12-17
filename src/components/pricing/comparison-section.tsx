@@ -99,17 +99,24 @@ export function ComparisonSection() {
         {/* Title */}
         <FadeIn delay={0.1}>
           <div className="text-center mb-16">
-            <h2 className="section-title mb-4">
-              {t('title')}
+            <h2 className="section-title mb-4 whitespace-pre-line">
+              {t('title').split('necesitas')[0]}necesitas
+              {'\n'}
+              {t('title').split('necesitas')[1].split('Aquí va.')[0]}
+              {'\n'}
+              <span className="text-nucleo-highlight">Aquí va.</span>
             </h2>
           </div>
         </FadeIn>
 
         {/* Plan Headers */}
-        <FadeIn delay={0.2}>
           {/* Desktop version with empty first column */}
           <div className="hidden md:grid md:grid-cols-4 border border-nucleo-dark-border mb-0">
-            <div className="p-6 border-r border-nucleo-dark-border"></div> {/* Empty cell for feature names */}
+            <div className="p-6 border-r border-nucleo-dark-border flex items-start">
+              <h4 className="font-geist-semibold text-lg text-nucleo-light">
+                {t('featuresLabel')}
+              </h4>
+            </div> {/* Features header */}
             {planIds.map((planId, index) => {
               const plan = getPlanData(planId)
               const isLast = index === planIds.length - 1
@@ -194,11 +201,9 @@ export function ComparisonSection() {
               )
             })}
           </div>
-        </FadeIn>
 
         {/* Comparison Table - Desktop only */}
-        <FadeIn delay={0.3}>
-          <div className="hidden md:block space-y-12">
+        <div className="hidden md:block space-y-12 mt-6">
             {categoryIds.map((categoryId, categoryIndex) => {
               const categoryName = t(`categories.${categoryId}.name`)
               
@@ -249,7 +254,6 @@ export function ComparisonSection() {
               )
             })}
           </div>
-        </FadeIn>
       </div>
     </section>
   )

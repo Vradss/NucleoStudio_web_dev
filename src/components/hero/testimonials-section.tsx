@@ -9,7 +9,7 @@ export function TestimonialsSection() {
   const t = useTranslations('testimonials')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
-  const testimonials = [1, 2, 3, 4, 5, 6] as const
+  const testimonials = [1, 2, 3, /* 4 */ 5, 6] as const // Comentado: Luis Chao (testimonial 4)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const autoScrollIntervalRef = useRef<number | null>(null)
   const pauseTimeoutRef = useRef<number | null>(null)
@@ -136,7 +136,7 @@ export function TestimonialsSection() {
         <div className="mx-auto max-w-7xl">
           {/* Label */}
           <FadeIn delay={0}>
-            <div className="flex items-center justify-left gap-2 mb-6">
+            <div className="flex items-center justify-left gap-2 mb-4">
               <Image
                 src="/images/isotipo_morado_fuerte.svg"
                 alt="Detalle isotipo decorativo"

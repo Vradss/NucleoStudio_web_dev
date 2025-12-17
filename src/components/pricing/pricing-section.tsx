@@ -80,7 +80,14 @@ export function PricingSection() {
               </span>
             </div>
             <h1 className="section-title mb-4">
-              {t('title')}
+              <span className="block md:inline">
+                {t('title').split('¿Cuál es el mejor para ti?')[0]}
+              </span>
+              <span className="block md:inline md:ml-1">
+                <span className="block md:inline font-geist-bold text-nucleo-highlight">
+                  ¿Cuál es el mejor para ti?
+                </span>
+              </span>
             </h1>
           </div>
         </FadeIn>
@@ -171,7 +178,7 @@ export function PricingSection() {
                             />
                           </svg>
                         </div>
-                        <span className="font-geist-regular text-sm text-nucleo-dark-hover-light leading-relaxed">
+                        <span className="font-geist-regular text-base text-nucleo-dark-hover-light leading-relaxed">
                           {feature}
                         </span>
                       </li>

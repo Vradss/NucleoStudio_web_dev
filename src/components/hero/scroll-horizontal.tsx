@@ -141,7 +141,7 @@ export default function ScrollHorizontal() {
           <>
             <FadeIn delay={0}>
               <div className="mx-auto max-w-8xl text-center">
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center justify-center gap-2 mb-4">
                   <Image
                     src="/images/isotipo_morado_fuerte.svg"
                     alt="Detalle isotipo decorativo"
@@ -167,7 +167,7 @@ export default function ScrollHorizontal() {
         ) : (
           <>
             <div className="mx-auto max-w-7xl text-center ">
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center gap-2 mb-4">
                 <Image
                   src="/images/isotipo_morado_fuerte.svg"
                   alt="Detalle isotipo decorativo"

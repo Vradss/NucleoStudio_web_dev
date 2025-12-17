@@ -62,7 +62,7 @@
   },
   "hero": {
     "title": "Es difícil crecer si no entienden /n/nqué haces ni cómo te diferencias",
-    "subtitle": "Ayudamos a empresas tech B2B a clarificar diferenciar sus productos con una estrategia clara de posicionamiento para no perder oportunidades de venta.",
+    "subtitle": "Ayudamos a empresas tech B2B a definir qué hace único a sus productos complejos, crear mensajes clave y expandirlos en su web, LinkedIn y contenido hasta su conversión.",
     "ctaConversemos": "Conversemos",
     "ctaViewTemplates": "View templates",
     "companiesTitle": "Empresas B2B de tecnología y SaaS en LatAm ya confiaron en Núcleo:",
@@ -360,7 +360,7 @@
       "starter": {
         "name": "Sprint de Messaging Clarify",
         "pricePrefix": "desde",
-        "price": "$0",
+        "price": "$899",
         "priceSubtext": "/ mes",
         "timeline": "3-4 semanas / one time project",
         "description": "Tu propuesta de valor cambió y no logras comunicar bien por qué deben elegirte entre tus competidores.\n\nEste plan te ayuda a diferenciarte en los primeros segundos en tus canales principales B2B: Sitio web y LinkedIn ",
@@ -411,6 +411,7 @@
     },
     "afterEstrategia": {
       "title": "Ya sabes qué decir, pero necesitas ayuda para crear ese contenido. Aquí va.",
+      "featuresLabel": "Features",
       "plans": {
         "starter": {
           "name": "Starter",
@@ -573,22 +574,17 @@
   "footer": {
     "description": "Transformamos la forma en que las empresas tech B2B comunican su valor. Creamos mensajes claros, estrategias de posicionamiento y experiencias digitales que conectan con tu audiencia.",
     "contactEmail": "hey@nucleostudio.com",
-    "newsletterPlaceholder": "Work Email",
+    "newsletterPlaceholder": "Email",
     "newsletterButton": "→",
-    "company": "Company",
-    "careers": "Careers",
-    "about": "About",
-    "products": "Products",
-    "pricing": "Pricing",
-    "bookDemo": "Book Demo",
-    "resources": "Resources",
-    "customers": "Customers",
-    "blog": "Blog",
-    "roiCalculator": "ROI Calculator",
-    "socials": "Socials",
+    "company": "Empresa",
+    "solution": "Solución",
+    "deliverables": "Entregables",
+    "products": "Productos",
+    "pricing": "Precios",
+    "socials": "Redes sociales",
     "allRightsReserved": "Todos los derechos reservados",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio"
   }
 }
 

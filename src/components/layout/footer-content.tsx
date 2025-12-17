@@ -18,14 +18,30 @@ export function FooterContent() {
   }
 
   const scrollToSection = (sectionId: string) => {
+    // Verificar si estamos en la página principal (puede ser /, /es, o /en)
     const isHomePage = pathname === '/' || pathname === '/es' || pathname === '/en'
     
+    // Si no estamos en la página principal, navegar primero
     if (!isHomePage) {
       const locale = pathname.startsWith('/en') ? '/en' : '/es'
-      window.location.href = `${locale}#${sectionId}`
+      window.location.href = locale
+      // Esperar a que la página cargue antes de hacer scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const headerHeight = 64
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
+        }
+      }, 500)
       return
     }
 
+    // Pequeño delay para asegurar que la página esté cargada
     setTimeout(() => {
       const element = document.getElementById(sectionId)
       if (element) {
@@ -61,7 +77,7 @@ export function FooterContent() {
  
               {/* Newsletter */}
               <div className="mb-4">
-                <h4 className="font-geist-semibold text-sm text-nucleo-light mb-3">Newsletter</h4>
+                <p className="font-geist-semibold text-base text-nucleo-light mb-3">Newsletter</p>
                 <form onSubmit={handleSubmit} className="flex gap-2 max-w-md">
                   <input
                     type="email"
@@ -86,9 +102,9 @@ export function FooterContent() {
               <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 lg:gap-16 w-full md:w-auto">
                 {/* Company */}
                 <div>
-                  <h3 className="font-geist-semibold text-base md:text-lg mb-4 md:mb-6 text-nucleo-light">
+                  <p className="font-geist-semibold text-base mb-4 md:mb-6 text-nucleo-light">
                     {t('company')}
-                  </h3>
+                  </p>
                   <ul className="space-y-3 md:space-y-4">
                     <li>
                       <button
@@ -111,9 +127,9 @@ export function FooterContent() {
 
                 {/* Products */}
                 <div>
-                  <h3 className="font-geist-semibold text-base md:text-lg mb-4 md:mb-6 text-nucleo-light">
+                  <p className="font-geist-semibold text-base mb-4 md:mb-6 text-nucleo-light">
                     {t('products')}
-                  </h3>
+                  </p>
                   <ul className="space-y-3 md:space-y-4">
                     <li>
                       <Link
@@ -128,9 +144,9 @@ export function FooterContent() {
 
                 {/* Socials */}
                 <div>
-                  <h3 className="font-geist-semibold text-base md:text-lg mb-4 md:mb-6 text-nucleo-light">
+                  <p className="font-geist-semibold text-base mb-4 md:mb-6 text-nucleo-light">
                     {t('socials')}
-                  </h3>
+                  </p>
                   <div className="flex items-center gap-4">
                     <a
                       href="https://www.linkedin.com/company/nucleo-studio-pmm/?viewAsMember=true"

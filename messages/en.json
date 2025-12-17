@@ -62,7 +62,7 @@
   },
   "hero": {
     "title": "You have an incredible B2B product, but you don't know how to communicate all its value",
-    "subtitle": "We help B2B tech companies clarify and differentiate their products with a clear positioning strategy to not lose sales opportunities.",
+    "subtitle": "We help B2B tech companies define what makes their complex products unique, create key messages, and expand them across their website, LinkedIn, and content through conversion.",
     "ctaConversemos": "Let's Talk",
     "ctaViewTemplates": "View templates",
     "companiesTitle": "B2B technology and SaaS companies in LatAm have already trusted Núcleo:",
@@ -416,6 +416,7 @@
     },
     "afterEstrategia": {
       "title": "You already know what to say, but you need help creating that content. Here it is.",
+      "featuresLabel": "Features",
       "plans": {
         "starter": {
           "name": "Starter",

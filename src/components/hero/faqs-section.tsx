@@ -17,7 +17,7 @@ export function FaqsSection() {
 
   return (
     <section id="faqs" className="section-layout" style={{ backgroundColor: '#FFFFFA' }}>
-      <div className="section-container max-w-7xl">
+      <div className="section-container max-w-full md:max-w-7xl">
         {/* Label */}
 
         {/* Título */}
@@ -38,10 +38,10 @@ export function FaqsSection() {
                   {/* Pregunta */}
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-6 text-left transition-colors"
+                    className="w-full flex items-center justify-between px-0 py-4 md:p-6 text-left transition-colors"
                     style={{ backgroundColor: '#FFFFFA' }}
                   >
-                    <h3 className="font-geist-semibold text-lg text-nucleo-dark pr-4">
+                    <h3 className="font-geist-semibold text-lg text-nucleo-dark pr-2 md:pr-4">
                       {t(`faq${faqIndex}.question`)}
                     </h3>
                     <motion.div
@@ -78,7 +78,7 @@ export function FaqsSection() {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6">
+                        <div className="px-0 md:px-6 pb-4 md:pb-6">
                           <p className="font-geist-regular text-base text-gray-700 leading-relaxed">
                             {t(`faq${faqIndex}.answer`)}
                           </p>

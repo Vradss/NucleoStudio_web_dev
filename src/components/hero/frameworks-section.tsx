@@ -11,7 +11,7 @@ export function FrameworksSection() {
     <section className="section-layout">
       <div className="section-container">
         <FadeIn delay={0}>
-          <div className="flex items-center justify-left gap-2">
+          <div className="flex items-center justify-left gap-2 mb-4">
             <Image
               src="/images/isotipo_detail.svg"
               alt="Detalle isotipo decorativo"
@@ -26,7 +26,7 @@ export function FrameworksSection() {
           </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="section-title mx-auto mt-6 max-w-4xl text-left">
+          <h2 className="section-title mx-auto max-w-4xl text-left">
             {t('title')}
           </h2>
         </FadeIn>
