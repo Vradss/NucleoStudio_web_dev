@@ -35,10 +35,10 @@ export function LanguageSelector() {
       <button
         onClick={() => switchLocale('es')}
         disabled={isPending}
-        className={`rounded px-2 py-1 text-xs font-medium transition-colors ${
+        className={`px-3 py-1.5 text-xs font-medium transition-all ${
           currentLocale === 'es'
-            ? 'bg-nucleo-primary text-foreground'
-            : 'text-nucleo-secondary hover:text-foreground'
+            ? 'bg-nucleo-primary text-foreground rounded-full'
+            : 'text-nucleo-secondary hover:text-foreground rounded-full'
         } ${isPending ? 'opacity-50' : ''}`}
       >
         ES
@@ -46,10 +46,10 @@ export function LanguageSelector() {
       <button
         onClick={() => switchLocale('en')}
         disabled={isPending}
-        className={`rounded px-2 py-1 text-xs font-medium transition-colors ${
+        className={`px-3 py-1.5 text-xs font-medium transition-all ${
           currentLocale === 'en'
-            ? 'bg-nucleo-primary text-foreground'
-            : 'text-nucleo-secondary hover:text-foreground'
+            ? 'bg-nucleo-primary text-foreground rounded-full'
+            : 'text-nucleo-secondary hover:text-foreground rounded-full'
         } ${isPending ? 'opacity-50' : ''}`}
       >
         EN

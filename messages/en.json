@@ -93,34 +93,34 @@
       "three": "You don't want to keep spending on content, ads, and outreach that don't resonate"
     },
     "icons": {
-      "one": "/images/plus_card.svg",
-      "two": "/images/plus_card.svg",
-      "three": "/images/plus_card.svg"
+      "one": "/images/PocaComunicacion.svg",
+      "two": "/images/sitemap_problem.svg",
+      "three": "/images/Broke_card.svg"
     }
   },
   "nivelesMensajes": {
     "label": "LEVELS",
     "title": "With Nucleo, you move from confused to differentiated messages and increase your sales opportunities in your B2B channels",
-    "subtitle": "This requires clarity at 5 levels. Most tech companies are between 1 and 2. We take you to level 5 with strategic guidance.",
+    "subtitle": "This requires clarity at 5 levels. Most tech companies are between 1 and 2.\nWe take you to level 5 with strategic guidance.",
     "benefitsTitle": "This is the impact of improving your messages:",
     "benefits": {
       "one": {
-        "text": "Shorter sales cycles from now on",
+        "text": "Shorter sales cycles\nfrom now on",
         "alt": "Sales cycles icon"
       },
       "two": {
-        "text": "Better qualification of your ideal client",
+        "text": "Better qualification\nof your ideal client",
         "alt": "Qualification icon"
       },
       "three": {
-        "text": "Your teams explain your differentiation easily",
+        "text": "Your teams explain\nyour differentiation easily",
         "alt": "Teams icon"
       }
     },
     "icons": {
-      "one": "/images/icono_ciclos_ventas.svg",
-      "two": "/images/icono_calificacion.svg",
-      "three": "/images/icono_equipos.svg"
+      "one": "/images/clock-countdown.svg",
+      "two": "/images/lightning.svg",
+      "three": "/images/presentation.svg"
     }
   },
   "frameworks": {

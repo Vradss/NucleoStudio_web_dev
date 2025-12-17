@@ -39,7 +39,7 @@ export function HeroContent() {
   return (
     <motion.div
       key={locale}
-      className="relative z-20 mx-auto max-w-7xl space-y-10 px-6 py-20 text-center text-nucleo-light lg:py-28"
+      className="relative z-20 mx-auto max-w-7xl space-y-6 sm:space-y-8 lg:space-y-10 px-6 py-12 sm:py-16 lg:py-28 text-center text-nucleo-light"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -59,7 +59,7 @@ export function HeroContent() {
       </motion.div>
 
       <motion.h1
-        className="mx-auto font-geist-super text-[32px] leading-tight sm:text-5xl lg:text-7xl whitespace-pre-line"
+        className="mx-auto font-geist-semibold text-3xl leading-tight sm:text-5xl lg:text-7xl whitespace-pre-line"
         variants={itemVariants}
       >
         {t('title').replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()}
@@ -75,7 +75,10 @@ export function HeroContent() {
       <motion.div className="flex flex-col items-center justify-center gap-4 sm:flex-row" variants={itemVariants}>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center rounded-full bg-nucleo-dark-secondary border border-nucleo-light-opacity-10 px-8 py-4 text-base font-semibold transition-colors hover:bg-nucleo-dark hover:text-nucleo-light sm:px-10"
+          className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-nucleo-light transition-all hover:opacity-90 sm:px-10"
+          style={{
+            background: 'linear-gradient(135deg, #BBBFF9 -15%, #6F31FF 50%, #5F20E5 75%, #1A0B33 100%)',
+          }}
         >
           {t('ctaConversemos')}
         </Link>

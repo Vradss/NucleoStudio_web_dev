@@ -28,9 +28,9 @@ export function MetodologiaSection() {
   const [activeTab, setActiveTab] = useState<'strategy' | 'web' | 'content' | 'conversion'>('strategy')
 
   return (
-    <section id="entregables" className="section-layout relative z-20">
-      <div className="section-container text-left">
-        <FadeIn delay={0}>
+    <section id="entregables" className="section-layout relative z-20 min-h-screen flex flex-col py-8 lg:py-12">
+      <div className="section-container text-left flex-1 flex flex-col">
+        {/*<FadeIn delay={0}>
           <div className="flex items-center gap-2">
             <Image
               src="/images/isotipo_detail.svg"
@@ -44,38 +44,33 @@ export function MetodologiaSection() {
               {t('label')}
             </span>
           </div>
-        </FadeIn>
+        </FadeIn>*/}
         <FadeIn delay={0.1}>
           <h2 className="section-title mt-6 max-w-7xl">
             {t('title')}
           </h2>
         </FadeIn>
-        <FadeIn delay={0.2}>
-          <p className="mt-6 max-w-7xl font-geist-regular text-lg text-nucleo-light/80 sm:text-xl">
-            {t('subtitle')}
-          </p>
-        </FadeIn>
         
         {/* Tabs Navigation */}
         <FadeIn delay={0.3}>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 border-b" style={{ borderColor: '#3F3F50' }}>
+          <div className="mt-8 lg:mt-12 grid grid-cols-2 md:grid-cols-4 gap-0 border-b md:border-b-0" style={{ borderColor: '#3F3F50' }}>
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex items-center justify-center gap-2 pb-8 font-geist-medium text-base transition-colors sm:text-lg ${
+                className={`flex items-center justify-center gap-2 py-3 md:py-0 md:pb-5 font-geist-regular text-base transition-all sm:text-lg ${
                   activeTab === tab
-                    ? 'text-nucleo-light border-b-2'
-                    : 'hover:text-nucleo-light'
+                    ? 'text-nucleo-light md:border-b-2 rounded-lg md:rounded-none'
+                    : 'text-nucleo-light/60 hover:text-nucleo-light'
                 }`}
                 style={{
-                  color: activeTab === tab ? undefined : '#A0A0A0',
+                  backgroundColor: activeTab === tab ? '#27273F' : 'transparent',
                   borderBottomColor: activeTab === tab ? 'var(--nucleo-highlight)' : 'transparent',
                 }}
               >
                 {activeTab === tab && (
                   <div 
-                    className="h-4 w-4 sm:h-5 sm:w-5 relative flex-shrink-0"
+                    className="hidden sm:block h-4 w-4 sm:h-5 sm:w-5 relative flex-shrink-0"
                   >
                     <Image
                       src={tabIcons[tab]}
@@ -95,22 +90,22 @@ export function MetodologiaSection() {
         {/* Tab Content */}
         <FadeIn delay={0.4}>
           <div 
-            className="mt-8 border" 
+            className="mt-4 border flex-1 flex flex-col min-h-0" 
             style={{ 
               borderColor: '#3F3F50', 
-              borderRadius: '16px'
+              borderRadius: '12px'
             }}
           >
-            <div className="grid lg:grid-cols-2">
+            <div className="grid lg:grid-cols-2 flex-1 min-h-0">
               {/* Left: Text Content */}
-              <div className="p-8 flex flex-col justify-center lg:max-h-[575px] lg:overflow-y-auto">
-                <div className="space-y-4">
+              <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center lg:overflow-y-auto">
+                <div className="space-y-3 sm:space-y-4">
                   {(() => {
                     try {
                       const desc1 = t(`tabs.${activeTab}.description1`)
                       if (desc1 && typeof desc1 === 'string' && desc1.trim() !== '') {
                         return (
-                          <p className="font-geist-regular text-base text-nucleo-light/80 sm:text-lg">
+                          <p className="font-geist-regular text-base text-nucleo-light sm:text-xl">
                             {desc1}
                           </p>
                         )
@@ -125,7 +120,7 @@ export function MetodologiaSection() {
                       const desc2 = t(`tabs.${activeTab}.description2`)
                       if (desc2 && typeof desc2 === 'string' && desc2.trim() !== '') {
                         return (
-                          <p className="font-geist-regular text-base text-nucleo-light/80 sm:text-lg">
+                          <p className="font-geist-regular text-base text-nucleo-light sm:text-xl">
                             {desc2}
                           </p>
                         )
@@ -138,7 +133,7 @@ export function MetodologiaSection() {
                 </div>
                 
                 {/* Bullet Points */}
-                <ul className="mt-8 space-y-5">
+                <ul className="mt-6 sm:mt-8 space-y-4 sm:space-y-5">
                   {[0, 1, 2].map((index) => {
                     try {
                       const point = t(`tabs.${activeTab}.points.${index}`)
@@ -158,7 +153,7 @@ export function MetodologiaSection() {
                               marginTop: '0.4em',
                             }}
                           />
-                          <span className="font-geist-regular text-base text-nucleo-light/80 sm:text-lg leading-relaxed">
+                          <span className="font-geist-light text-base text-nucleo-light/80 sm:text-base leading-relaxed">
                             {point}
                           </span>
                         </li>
@@ -172,14 +167,14 @@ export function MetodologiaSection() {
               </div>
 
               {/* Right: Image */}
-              <div className="flex items-center justify-center p-8 lg:min-h-[575px]">
-                <div className="relative w-full flex items-center justify-center">
+              <div className="flex items-center justify-center p-4 sm:p-6 lg:p-6 min-h-0">
+                <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={tabImages[activeTab]}
                     alt={t(`tabs.${activeTab}.imageAlt`)}
                     width={800}
                     height={600}
-                    className="w-full h-auto"
+                    className="w-full max-w-[500px] h-full object-contain"
                     style={{ borderRadius: '12px' }}
                     priority={activeTab === 'strategy'}
                   />

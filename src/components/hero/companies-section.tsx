@@ -3,18 +3,18 @@ import { getTranslations } from 'next-intl/server'
 import { FadeIn } from '@/components/motion/fade-in'
 
 const companies = [
-  { name: 'BioActiva', logo: '/images/logos/Logo_BioActiva.svg', alt: 'Logo de BioActiva' },
-  { name: 'Shift', logo: '/images/logos/Logo_shift.svg', alt: 'Logo de Shift' },
-  { name: 'Colectivo23', logo: '/images/logos/Colectivo_23.png', alt: 'Logo de Colectivo 23' },
-  { name: 'DataScienceResearch', logo: '/images/logos/logo-Data_science_research.png', alt: 'Logo de Data Science Research', textOnly: true },
-  { name: 'Ngrowth', logo: '/images/logos/Ngrowth_logo.svg', alt: 'Logo de Ngrowth' },
-  { name: 'Reevalua', logo: '/images/logos/reevalua_logo.svg', alt: 'Logo de Reevalua', textOnly: true },
-  { name: 'MonkeyFit', logo: '/images/logos/MonekyFitLogo.svg', alt: 'Logo de MonkeyFit' },
-  { name: 'Seek', logo: '/images/logos/Seek_logo.svg', alt: 'Logo de Seek' },
-  { name: 'Freenanzas', logo: '/images/logos/freenanzas_logo.svg', alt: 'Logo de Freenanzas', textOnly: true },
-  { name: 'VTEX', logo: '/images/logos/vtex_logo.svg', alt: 'Logo de VTEX' },
-  { name: 'Worthit', logo: '/images/logos/WORTHIT 24.svg', alt: 'Logo de Worthit', textOnly: true },
-  { name: 'Invoinet', logo: '/images/logos/INVOINET_LOGO.svg', alt: 'Logo de Invoinet' },
+  { name: 'BioActiva', logo: '/images/logos/bioactiva.svg', alt: 'Logo de BioActiva' },
+  { name: 'Shift', logo: '/images/logos/shift.svg', alt: 'Logo de Shift' },
+  { name: 'Colectivo23', logo: '/images/logos/colectivo.svg', alt: 'Logo de Colectivo 23' },
+  { name: 'DataScienceResearch', logo: '/images/logos/data_science.svg', alt: 'Logo de Data Science Research', textOnly: true },
+  { name: 'Ngrowth', logo: '/images/logos/ngrowth.svg', alt: 'Logo de Ngrowth' },
+  { name: 'Reevalua', logo: '/images/logos/reevalua.svg', alt: 'Logo de Reevalua', textOnly: true },
+  { name: 'MonkeyFit', logo: '/images/logos/monket_fit.svg', alt: 'Logo de MonkeyFit' },
+  { name: 'Seek', logo: '/images/logos/seek.svg', alt: 'Logo de Seek' },
+  { name: 'Freenanzas', logo: '/images/logos/freenanzas.svg', alt: 'Logo de Freenanzas', textOnly: true },
+  { name: 'VTEX', logo: '/images/logos/vtex.svg', alt: 'Logo de VTEX' },
+  { name: 'Worthit', logo: '/images/logos/worthit.svg', alt: 'Logo de Worthit', textOnly: true },
+  { name: 'Invoinet', logo: '/images/logos/invoinet.svg', alt: 'Logo de Invoinet' },
 ]
 
 // Helper function to encode file names with spaces
@@ -40,18 +40,18 @@ function renderLogo(company: CompanyLogo, key: string) {
     <div
       key={key}
       className={`flex shrink-0 items-center justify-center transition-opacity hover:opacity-80 ${
-        isCompact ? 'h-16 px-1 py-0' : 'h-20'
+        isCompact ? 'h-20 px-1 py-0' : 'h-24'
       }`}
-      style={{ width: '150px' }}
+      style={{ width: '120px' }}
     >
       {isTextOnly ? (
-        <div className="h-12 w-auto">
+        <div className="h-20 w-auto">
           <Image
             src={encodeLogoPath(company.logo)}
             alt={company.alt}
             width={150}
             height={80}
-            className="h-12 w-auto object-contain"
+            className="h-20 w-auto object-contain"
             style={{
               maxWidth: '150px',
               maxHeight: '80px',
@@ -64,7 +64,7 @@ function renderLogo(company: CompanyLogo, key: string) {
           alt={company.alt}
           width={150}
           height={80}
-          className="h-12 w-auto object-contain"
+          className="h-20 w-auto object-contain"
           style={{
             maxWidth: '150px',
             maxHeight: '80px',
@@ -85,7 +85,7 @@ export async function CompaniesContent() {
   return (
     <>
       <FadeIn delay={0}>
-        <h2 className="mx-auto max-w-3xl font-geist-regular text-base text-nucleo-light sm:text-xl lg:text-xl mb-12 text-center">
+        <h2 className="mx-auto max-w-3xl font-geist-regular text-base text-nucleo-light sm:text-base lg:text-base mb-1 text-center">
           {t('companiesTitle')}
         </h2>
       </FadeIn>

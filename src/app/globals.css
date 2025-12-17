@@ -73,6 +73,7 @@
        - 800: Extrabold/Superbold
        - 900: Black
     */
+    --font-geist-weight-light: 300;
     --font-geist-weight-regular: 400;
     --font-geist-weight-medium: 500;
     --font-geist-weight-semibold: 600;
@@ -86,11 +87,11 @@
        Todos los títulos (h2, h3, section-title) usan estas variables.
        El h1 tiene su propio tamaño y no se modifica aquí.
     */
-    --heading-h2-mobile: 1.75rem;        /* 28px en móvil */
+    --heading-h2-mobile: 38px;        /* 28px en móvil */
     --heading-h2-desktop: 3rem;        /* 40px en desktop (clamp max) */
     --heading-h2-desktop-fixed: 42px;     /* 40px fijo en desktop (lg: 1024px+) */
     
-    --heading-h3-mobile: 1.5rem;         /* 24px en móvil */
+    --heading-h3-mobile: 16px;         /* 24px en móvil */
     --heading-h3-desktop: 2rem;           /* 32px en desktop */
   }
 
@@ -159,16 +160,16 @@
 
   /* Clase base para taglines que se repiten en todas las secciones */
   .tagline {
-    @apply font-space-mono text-sm tracking-[0.3em] uppercase;
+    @apply font-space-mono text-sm tracking-[0.1em] uppercase;
   }
   
   /* Variantes de color para taglines */
   .tagline-primary {
-    @apply font-space-mono text-sm tracking-[0.2em] uppercase text-nucleo-primary;
+    @apply font-space-mono text-sm tracking-[0.1em] uppercase text-nucleo-primary;
   }
   
   .tagline-secondary {
-    @apply font-space-mono text-sm tracking-[0.2em] uppercase text-nucleo-secondary;
+    @apply font-space-mono text-sm tracking-[0.1em] uppercase text-nucleo-secondary;
   }
 
   .hero-noise {
@@ -184,20 +185,6 @@
     background-color: var(--nucleo-dark-tertiary);
   }
 
-  /* Capa de ruido - siempre visible */
-  .problem-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='5' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.3;
-    mix-blend-mode: soft-light;
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  /* Capa de degradado morado - Removida */
-  
   /* ============================================
      CLASES DE UTILIDAD PARA GEIST SANS
      ============================================
@@ -213,6 +200,11 @@
      
      Para cambiar los pesos, modifica las variables en :root, no estas clases.
   */
+  .font-geist-light {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    font-weight: var(--font-geist-weight-light);
+  }
+  
   .font-geist-regular {
     font-family: var(--font-geist-sans), system-ui, sans-serif;
     font-weight: var(--font-geist-weight-regular);
@@ -308,6 +300,19 @@
     font-size: 0.75rem;
     line-height: 1.4;
     opacity: 0.8;
+  }
+  
+  /* Título de card - Para títulos dentro de cards */
+  .text-card-title {
+    @apply font-geist-regular text-nucleo-light;
+    font-size: 1rem; /* text-base en mobile */
+    line-height: 1.5;
+  }
+  
+  @media (min-width: 640px) {
+    .text-card-title {
+      font-size: 19px; /* text-xl en sm y superior */
+    }
   }
   
   /* Clases de color de texto (para usar con cualquier clase de fuente) */
@@ -468,10 +473,60 @@
       max-height: calc(100vh - 280px);
       min-height: 550px;
     }
+    
+    /* Paddings proporcionales para tablets */
+    .scroll-horizontal-card-image {
+      padding: 50px;
+    }
+    
+    .scroll-horizontal-card-image.card-1 {
+      padding: 75px 50px;
+    }
+    
+    .scroll-horizontal-card-image.card-2 {
+      padding: 50px;
+    }
+    
+    .scroll-horizontal-card-image.card-3 {
+      padding: 75px 50px;
+    }
+    
+    .scroll-horizontal-card-image.card-4 {
+      padding: 50px;
+    }
+  }
+  
+  /* Ajustes para monitores medianos */
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .scroll-horizontal-card {
+      max-height: calc(100vh - 260px);
+      min-height: 600px;
+    }
+    
+    /* Paddings proporcionales para monitores medianos */
+    .scroll-horizontal-card-image {
+      padding: 60px;
+    }
+    
+    .scroll-horizontal-card-image.card-1 {
+      padding: 90px 60px;
+    }
+    
+    .scroll-horizontal-card-image.card-2 {
+      padding: 60px;
+    }
+    
+    .scroll-horizontal-card-image.card-3 {
+      padding: 90px 60px;
+    }
+    
+    .scroll-horizontal-card-image.card-4 {
+      padding: 60px;
+    }
   }
   
   /* Ajustes para pantallas grandes */
-  @media (min-width: 1024px) {
+  @media (min-width: 1281px) {
     .scroll-horizontal-card {
       max-height: calc(100vh - 260px);
       min-height: 600px;
@@ -490,8 +545,11 @@
     justify-content: center;
     background-color: var(--scroll-bg-dark);
     min-height: 100%;
+    max-height: 100%;
     align-self: stretch;
     padding: 80px;
+    overflow: hidden;
+    box-sizing: border-box;
   }
   
   /**
@@ -499,9 +557,9 @@
    * Todos los cards usan el mismo padding base para mantener alineación
    */
   
-  /* Card 1 (ETAPA 1) - Padding uniforme */
+  /* Card 1 (ETAPA 1) - Padding aumentado para compensar imagen más grande */
   .scroll-horizontal-card-image.card-1 {
-    padding: 80px;
+    padding: 120px 80px;
   }
   
   /* Card 2 (ETAPA 2) - Padding uniforme */
@@ -509,9 +567,9 @@
     padding: 80px;
   }
   
-  /* Card 3 (ETAPA 3) - Padding uniforme */
+  /* Card 3 (ETAPA 3) - Padding aumentado para compensar imagen más grande (1587x1560) */
   .scroll-horizontal-card-image.card-3 {
-    padding: 80px;
+    padding: 120px 80px;
   }
   
   /* Card 4 (ETAPA 4) - Padding uniforme */
@@ -522,8 +580,16 @@
   .scroll-horizontal-image {
     width: 100%;
     height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     object-position: center;
+  }
+  
+  /* Ajuste específico para la etapa 1 si la imagen es más grande */
+  .scroll-horizontal-card-image.card-1 .scroll-horizontal-image {
+    max-width: 100%;
+    max-height: 100%;
   }
   
   .scroll-horizontal-card-content {
@@ -608,9 +674,9 @@
      * Todos los cards usan el mismo padding para mantener consistencia
      */
     
-    /* Card 1 (ETAPA 1) - Padding uniforme para mobile */
+    /* Card 1 (ETAPA 1) - Padding aumentado para mobile para compensar imagen más grande */
     .scroll-horizontal-card-image.card-1 {
-      padding: 40px;
+      padding: 60px 40px;
     }
     
     /* Card 2 (ETAPA 2) - Padding uniforme para mobile */
@@ -618,9 +684,9 @@
       padding: 40px;
     }
     
-    /* Card 3 (ETAPA 3) - Padding uniforme para mobile */
+    /* Card 3 (ETAPA 3) - Padding aumentado para mobile para compensar imagen más grande */
     .scroll-horizontal-card-image.card-3 {
-      padding: 40px;
+      padding: 60px 40px;
     }
     
     /* Card 4 (ETAPA 4) - Padding uniforme para mobile */

@@ -1,7 +1,10 @@
 import createMiddleware from 'next-intl/middleware'
 import { routing } from './i18n/routing'
 
-const intlMiddleware = createMiddleware(routing)
+const intlMiddleware = createMiddleware({
+  ...routing,
+  localeDetection: false, // Desactivar detección automática de idioma del navegador
+})
 
 export function middleware(request: any) {
   return intlMiddleware(request)

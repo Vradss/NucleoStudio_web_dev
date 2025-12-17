@@ -13,10 +13,18 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
+
+      // Detectar si se ha hecho scroll
+      if (currentScrollY > 10) {
+        setHasScrolled(true)
+      } else {
+        setHasScrolled(false)
+      }
 
       // Si estamos en la parte superior, siempre mostrar el header
       if (currentScrollY < 10) {
@@ -89,10 +97,13 @@ export function Header() {
         initial={{ y: 0 }}
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="sticky top-0 z-50 bg-transparent backdrop-blur-md"
+        className={`sticky top-0 z-50 bg-transparent transition-all duration-300 ${
+          hasScrolled ? 'backdrop-blur-md' : ''
+        }`}
       >
-        <div className="container mx-auto flex h-16 items-center justify-between px-6 text-nucleo-light">
-          <Link href="/" className="flex items-center" onClick={closeMenu}>
+        <div className="mx-auto max-w-7xl flex h-16 items-center justify-between text-nucleo-light">
+          {/* Logo a la izquierda */}
+          <Link href="/" className="flex items-center flex-shrink-0" onClick={closeMenu}>
             <Image
               src="/images/nucleo_logo/nucleo_logo_blanco.svg"
               alt="Nucleo Studio"
@@ -103,34 +114,36 @@ export function Header() {
             />
           </Link>
           
-          <nav className="hidden items-center gap-10 md:flex">
+          {/* Navegación en el centro */}
+          <nav className="hidden items-center gap-10 md:flex flex-1 justify-center">
             <button
               onClick={() => scrollToSection('solucion')}
-              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
+              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
             >
               {t('solution')}
             </button>
             <button
               onClick={() => scrollToSection('entregables')}
-              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
+              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
             >
               {t('deliverables')}
             </button>
             <Link
               href="/pricing"
-              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
+              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
             >
               {t('pricing')}
             </Link>
             <button
               onClick={() => scrollToSection('faqs')}
-              className="text-sm sm:text-base font-medium text-nucleo-light/80 transition-colors hover:text-nucleo-secondary"
+              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
             >
               {t('faqs')}
             </button>
           </nav>
 
-          <div className="flex items-center gap-4">
+          {/* CTA y controles a la derecha */}
+          <div className="flex items-center gap-4 flex-shrink-0">
             <Link
               href="/contact"
               className="hidden rounded-full bg-nucleo-dark-secondary border border-nucleo-dark-secondary px-5 py-2 text-sm font-medium text-nucleo-light transition-colors hover:bg-nucleo-dark hover:text-nucleo-light md:inline-block"

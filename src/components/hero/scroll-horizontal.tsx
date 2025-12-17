@@ -140,7 +140,7 @@ export default function ScrollHorizontal() {
         {isMobile ? (
           <>
             <FadeIn delay={0}>
-              <div className="mx-auto max-w-7xl text-center">
+              <div className="mx-auto max-w-8xl text-center">
                 <div className="flex items-center justify-center gap-2">
                   <Image
                     src="/images/isotipo_detail.svg"
@@ -157,8 +157,8 @@ export default function ScrollHorizontal() {
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="scroll-horizontal-title-container max-w-[800px] mx-auto">
-                <h2 className="scroll-horizontal-title">
+              <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
+                <h2 className="section-title text-nucleo-dark">
                   {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
                 </h2>
               </div>
@@ -215,14 +215,14 @@ export default function ScrollHorizontal() {
                         height={25}
                         className="h-4 w-4 sm:h-5 sm:w-5"
                       />
-                      <p className="tagline-secondary font-semibold">
+                      <p className="tagline-secondary">
                         {t(`cards.${card.key}.label`)}
                       </p>
                     </div>
-                    <h3 className="font-geist-semibold mt-2 text-2xl leading-tight text-nucleo-light sm:mt-3 sm:text-3xl lg:text-4xl">
+                    <h3 className="font-geist-semibold text-[32px] sm:text-3xl lg:text-4xl text-nucleo-light mt-6 leading-tight">
                       {t(`cards.${card.key}.title`)}
                     </h3>
-                    <p className="heading-subtitle mt-2 text-sm text-nucleo-light opacity-80 sm:mt-3 sm:text-base lg:text-lg">
+                    <p className="heading-subtitle mt-6 text-sm text-nucleo-light opacity-80 sm:text-base lg:text-lg">
                       {t(`cards.${card.key}.subtitle`)}
                     </p>
                   </div>
