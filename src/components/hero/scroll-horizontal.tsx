@@ -143,7 +143,7 @@ export default function ScrollHorizontal() {
               <div className="mx-auto max-w-8xl text-center">
                 <div className="flex items-center justify-center gap-2">
                   <Image
-                    src="/images/isotipo_detail.svg"
+                    src="/images/isotipo_morado_fuerte.svg"
                     alt="Detalle isotipo decorativo"
                     width={26}
                     height={25}
@@ -219,7 +219,7 @@ export default function ScrollHorizontal() {
                         {t(`cards.${card.key}.label`)}
                       </p>
                     </div>
-                    <h3 className="font-geist-semibold text-[32px] sm:text-3xl lg:text-4xl text-nucleo-light mt-6 leading-tight">
+                    <h3 className="font-geist-semibold text-[30px] sm:text-3xl lg:text-4xl text-nucleo-light mt-6 leading-tight">
                       {t(`cards.${card.key}.title`)}
                     </h3>
                     <p className="heading-subtitle mt-6 text-sm text-nucleo-light opacity-80 sm:text-base lg:text-lg">

@@ -352,16 +352,240 @@
       "answer": "No entrevistamos a tus clientes finales. Trabajamos directamente contigo y tu equipo interno: founders, tomadores de decisión, y equipo de marketing si lo tienes. El proyecto funciona porque tú ya conoces a tus clientes mejor que nadie, y nosotros te ayudamos a traducir ese conocimiento en mensajes estratégicos claros. Dependemos de que compartas esa expertise en los workshops para estructurar tu propuesta de valor de forma que resuene con tu audiencia."
     }
   },
+  "pricing": {
+    "tagline": "Pricing",
+    "title": "Estos son los planes para que comencemos a trabajar juntos ¿Cuál es el mejor para ti?",
+    "subtitle": "Elige el plan que mejor se adapte a las necesidades de tu empresa",
+    "plans": {
+      "starter": {
+        "name": "Sprint de Messaging Clarify",
+        "pricePrefix": "desde",
+        "price": "$0",
+        "priceSubtext": "/ mes",
+        "timeline": "3-4 semanas / one time project",
+        "description": "Tu propuesta de valor cambió y no logras comunicar bien por qué deben elegirte entre tus competidores.\n\nEste plan te ayuda a diferenciarte en los primeros segundos en tus canales principales B2B: Sitio web y LinkedIn ",
+        "cta": "Conversemos",
+        "ctaLink": "/contact",
+        "features": [
+          "Sesiones estratégicas 1:1 para definir cómo se posiciona y diferencia tu producto",
+          "Roadmap de mensajes: del producto al contenido",
+          "Deck comercial",
+          "Soporte vía Slack privado",
+          "Frameworks"
+        ]
+      },
+      "team": {
+        "name": "Sprint de Posicionamiento",
+        "pricePrefix": "desde",
+        "price": "$1400",
+        "priceSubtext": "/ mes",
+        "timeline": "3-4 semanas / one time project",
+        "description": "Tu propuesta de valor cambió y no logras comunicar bien por qué deben elegirte entre tus competidores.\n\nEste plan te ayuda a diferenciarte en los primeros segundos en tus canales principales B2B: Sitio web y LinkedIn ",
+        "cta": "Conversemos",
+        "ctaLink": "/contact",
+        "features": [
+          "Sesiones estratégicas 1:1 para definir cómo se posiciona y diferencia tu producto",
+          "Roadmap de mensajes: del producto al contenido",
+          "Deck comercial",
+          "Soporte vía Slack privado",
+          "Frameworks"
+        ]
+      },
+      "enterprise": {
+        "name": "Sprint de Linkedin Lead Growth",
+        "pricePrefix": "desde",
+        "price": "$1500",
+        "priceSubtext": "",
+        "timeline": "3-4 semanas / one time project",
+        "description": "Tu propuesta de valor cambió y no logras comunicar bien por qué deben elegirte entre tus competidores.\n\nEste plan te ayuda a diferenciarte en los primeros segundos en tus canales principales B2B: Sitio web y LinkedIn ",
+        "cta": "Conversemos",
+        "ctaLink": "/contact",
+        "features": [
+          "Sesiones estratégicas 1:1 para definir cómo se posiciona y diferencia tu producto",
+          "Roadmap de mensajes: del producto al contenido",
+          "Deck comercial",
+          "Soporte vía Slack privado",
+          "Frameworks"
+        ]
+      }
+    },
+    "afterEstrategia": {
+      "title": "Ya sabes qué decir, pero necesitas ayuda para crear ese contenido. Aquí va.",
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "description": "Ideal para equipos B2B que SABEN qué decir y requieren soporte específico para crear contenido de calidad",
+          "price": "$450",
+          "priceSubtext": "/mes",
+          "cta": "Conversemos",
+          "ctaLink": "/contact"
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Para equipos que necesitan contenido estratégico y soporte continuo",
+          "price": "$1,500",
+          "priceSubtext": "/mes",
+          "cta": "Conversemos",
+          "ctaLink": "/contact"
+        },
+        "fractional": {
+          "name": "Fractional partner",
+          "description": "Para empresas que requieren un partner estratégico de contenido a tiempo completo",
+          "price": "$3,000",
+          "priceSubtext": "/mes",
+          "cta": "Conversemos",
+          "ctaLink": "/contact"
+        }
+      },
+      "categories": {
+        "estrategia": {
+          "name": "Estrategia",
+          "features": {
+            "research": {
+              "name": "Research & insights",
+              "starter": null,
+              "pro": "Sales calls, demos, benchmark de competidores",
+              "fractional": "Entrevistas + mercado"
+            },
+            "posicionamiento": {
+              "name": "Estrategia de posicionamiento",
+              "starter": null,
+              "pro": null,
+              "fractional": "Definición y updates"
+            },
+            "messaging": {
+              "name": "Estrategia de messaging",
+              "starter": null,
+              "pro": "De Producto, contenido o venta",
+              "fractional": "Personalizada, Multiproducto"
+            },
+            "contenido": {
+              "name": "Estrategia de contenido",
+              "starter": null,
+              "pro": "Personalizada, 1 producto",
+              "fractional": "Personalizada, Multiproducto"
+            },
+            "equipo": {
+              "name": "Equipo",
+              "starter": null,
+              "pro": "Estratega senior",
+              "fractional": "Estratega senior"
+            }
+          }
+        },
+        "ejecucion": {
+          "name": "Ejecución & desarrollo de contenido",
+          "features": {
+            "founderLinkedIn": {
+              "name": "Contenido founder-led growth LinkedIn",
+              "starter": "para generar visibilidad",
+              "pro": "para generar visibilidad",
+              "fractional": "para generar visibilidad"
+            },
+            "producto": {
+              "name": "Contenido de producto",
+              "starter": "Comparativos, casos de uso, otros.",
+              "pro": "Comparativos, casos de uso, otros.",
+              "fractional": "Comparativos, casos de uso, otros."
+            },
+            "salesEnablement": {
+              "name": "Contenido de sales enablement",
+              "starter": "Casos de éxito o estudio, decks, one pagers",
+              "pro": "Casos de éxito, decks, one pagers",
+              "fractional": "Casos de éxito o estudio, decks, one pagers"
+            },
+            "thoughtLeadership": {
+              "name": "Contenido thought leadership",
+              "starter": null,
+              "pro": "Métodos de trabajo",
+              "fractional": "Frameworks, reportes, playbooks"
+            },
+            "leadGeneration": {
+              "name": "Contenido de generación de leads",
+              "starter": "Lead magnets",
+              "pro": "Lead magnets",
+              "fractional": "Lead magnets"
+            },
+            "wireframes": {
+              "name": "Wireframes simple con copy de sitio web y landing pages",
+              "starter": null,
+              "pro": null,
+              "fractional": null
+            },
+            "lifecycle": {
+              "name": "Lyfecycle content",
+              "starter": "Email workflows, nutrición de emailing",
+              "pro": "Email workflows, nutrición de emailing",
+              "fractional": "Email workflows, nutrición de emailing"
+            },
+            "creditos": {
+              "name": "Créditos x contenido",
+              "starter": "Email workflows, nutrición de emailing",
+              "pro": "Email workflows, nutrición de emailing",
+              "fractional": "Email workflows, nutrición de emailing"
+            }
+          }
+        },
+        "operaciones": {
+          "name": "Operaciones y soporte",
+          "features": {
+            "solicitudes": {
+              "name": "Solicitudes de contenido",
+              "starter": "2",
+              "pro": "3",
+              "fractional": ""
+            },
+            "revisiones": {
+              "name": "Revisiones y ajustes",
+              "starter": "Ilimitadas",
+              "pro": "Ilimitadas",
+              "fractional": "Ilimitadas"
+            },
+            "customerSupport": {
+              "name": "10/5 customer support",
+              "starter": "WhatsApp, email y Loom",
+              "pro": "WhatsApp, email y Loom",
+              "fractional": "WhatsApp, email y Loom"
+            },
+            "premiumSupport": {
+              "name": "Premium support",
+              "starter": null,
+              "pro": null,
+              "fractional": "Quick calls y rptas en 24 horas"
+            },
+            "contentOperations": {
+              "name": "Content operations + documentación de información",
+              "starter": null,
+              "pro": "Definimos de workflows",
+              "fractional": "Definimos de workflows"
+            },
+            "training": {
+              "name": "Training a equipo interno",
+              "starter": null,
+              "pro": null,
+              "fractional": null
+            }
+          }
+        }
+      }
+    }
+  },
   "footer": {
     "description": "Transformamos la forma en que las empresas tech B2B comunican su valor. Creamos mensajes claros, estrategias de posicionamiento y experiencias digitales que conectan con tu audiencia.",
-    "newsletterPlaceholder": "Tu email",
-    "newsletterButton": "Suscribirse",
-    "products": "Productos",
-    "home": "Home",
-    "solution": "Solution",
-    "webAudit": "Web Audit",
+    "contactEmail": "hey@nucleostudio.com",
+    "newsletterPlaceholder": "Work Email",
+    "newsletterButton": "→",
+    "company": "Company",
+    "careers": "Careers",
+    "about": "About",
+    "products": "Products",
     "pricing": "Pricing",
-    "contact": "Conversemos",
+    "bookDemo": "Book Demo",
+    "resources": "Resources",
+    "customers": "Customers",
+    "blog": "Blog",
+    "roiCalculator": "ROI Calculator",
+    "socials": "Socials",
     "allRightsReserved": "Todos los derechos reservados",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"

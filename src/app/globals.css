@@ -41,6 +41,7 @@
     --nucleo-dark-hover-light: #A0A0A0;  /* Negro para hover más claro */
     --nucleo-bg-selector: #141214;       /* Fondo para selector de idioma */
     --nucleo-highlight: #BF9FFF;         /* Morado highlight */
+    --nucleo-surface-color: #27273F;     /* Color de superficie para cards */
     
     /* Variables para opacidades y bordes */
     --nucleo-light-opacity-80: rgba(255, 255, 238, 0.8);  /* Texto claro con 80% opacidad */
@@ -87,7 +88,7 @@
        Todos los títulos (h2, h3, section-title) usan estas variables.
        El h1 tiene su propio tamaño y no se modifica aquí.
     */
-    --heading-h2-mobile: 38px;        /* 28px en móvil */
+    --heading-h2-mobile: 32px;        /* 28px en móvil */
     --heading-h2-desktop: 3rem;        /* 40px en desktop (clamp max) */
     --heading-h2-desktop-fixed: 42px;     /* 40px fijo en desktop (lg: 1024px+) */
     
@@ -160,16 +161,16 @@
 
   /* Clase base para taglines que se repiten en todas las secciones */
   .tagline {
-    @apply font-space-mono text-sm tracking-[0.1em] uppercase;
+    @apply font-space-mono text-xs sm:text-sm tracking-[0.1em] uppercase;
   }
   
   /* Variantes de color para taglines */
   .tagline-primary {
-    @apply font-space-mono text-sm tracking-[0.1em] uppercase text-nucleo-primary;
+    @apply font-space-mono text-xs sm:text-sm tracking-[0.1em] uppercase text-nucleo-primary;
   }
   
   .tagline-secondary {
-    @apply font-space-mono text-sm tracking-[0.1em] uppercase text-nucleo-secondary;
+    @apply font-space-mono text-xs sm:text-sm tracking-[0.1em] uppercase text-nucleo-secondary;
   }
 
   .hero-noise {
@@ -464,7 +465,7 @@
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(10, 10, 10, 0.1);
     position: relative;
-    
+    border-radius: 16px;
   }
   
   /* Ajustes para tablets y pantallas medianas */
@@ -652,6 +653,7 @@
       min-width: 100%;
       max-width: 100%;
       background-color: var(--scroll-bg-darker);
+      border-radius: 16px;
 
       /* En mobile: altura automática para que se adapte al contenido */
       height: auto;

@@ -26,6 +26,20 @@ const tabImages = {
 export function MetodologiaSection() {
   const t = useTranslations('metodologia')
   const [activeTab, setActiveTab] = useState<'strategy' | 'web' | 'content' | 'conversion'>('strategy')
+  const [expandedTabs, setExpandedTabs] = useState<Set<string>>(new Set(['strategy']))
+  
+  const toggleTab = (tab: string) => {
+    setExpandedTabs(prev => {
+      // Si el tab ya está expandido, colapsarlo
+      if (prev.has(tab)) {
+        return new Set()
+      } else {
+        // Si no está expandido, expandir solo este tab (colapsar los demás)
+        return new Set([tab])
+      }
+    })
+    setActiveTab(tab as typeof activeTab)
+  }
 
   return (
     <section id="entregables" className="section-layout relative z-20 min-h-screen flex flex-col py-8 lg:py-12">
@@ -51,46 +65,154 @@ export function MetodologiaSection() {
           </h2>
         </FadeIn>
         
-        {/* Tabs Navigation */}
+        {/* Desktop: Tabs Navigation */}
         <FadeIn delay={0.3}>
-          <div className="mt-8 lg:mt-12 grid grid-cols-2 md:grid-cols-4 gap-0 border-b md:border-b-0" style={{ borderColor: '#3F3F50' }}>
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`flex items-center justify-center gap-2 py-3 md:py-0 md:pb-5 font-geist-regular text-base transition-all sm:text-lg ${
-                  activeTab === tab
-                    ? 'text-nucleo-light md:border-b-2 rounded-lg md:rounded-none'
-                    : 'text-nucleo-light/60 hover:text-nucleo-light'
-                }`}
-                style={{
-                  backgroundColor: activeTab === tab ? '#27273F' : 'transparent',
-                  borderBottomColor: activeTab === tab ? 'var(--nucleo-highlight)' : 'transparent',
-                }}
-              >
-                {activeTab === tab && (
-                  <div 
-                    className="hidden sm:block h-4 w-4 sm:h-5 sm:w-5 relative flex-shrink-0"
-                  >
-                    <Image
-                      src={tabIcons[tab]}
-                      alt={`Icono ${t(`tabs.${tab}.label`)}`}
-                      width={20}
-                      height={20}
-                      className="h-full w-full"
-                    />
-                  </div>
-                )}
-                <span>{t(`tabs.${tab}.label`)}</span>
-              </button>
-            ))}
+          <div className="hidden md:block mt-8 lg:mt-12 border-b" style={{ borderColor: '#3F3F50' }}>
+            <div className="grid grid-cols-4 gap-0">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`flex items-center justify-center gap-2 py-0 pb-5 font-geist-regular text-[20px] transition-all ${
+                    activeTab === tab
+                      ? 'text-nucleo-highlight border-b-2'
+                      : 'text-nucleo-light/60 hover:text-nucleo-light'
+                  }`}
+                  style={{
+                    borderBottomColor: activeTab === tab ? 'var(--nucleo-highlight)' : 'transparent',
+                  }}
+                >
+                  {activeTab === tab && (
+                    <div className="h-5 w-5 relative flex-shrink-0">
+                      <Image
+                        src={tabIcons[tab]}
+                        alt={`Icono ${t(`tabs.${tab}.label`)}`}
+                        width={20}
+                        height={20}
+                        className="h-full w-full"
+                      />
+                    </div>
+                  )}
+                  <span>{t(`tabs.${tab}.label`)}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </FadeIn>
 
-        {/* Tab Content */}
+        {/* Mobile: Accordion */}
+        <div className="md:hidden mt-8">
+          {tabs.map((tab) => {
+            const isExpanded = expandedTabs.has(tab)
+            return (
+              <div key={tab} className="mb-4">
+                <button
+                  onClick={() => toggleTab(tab)}
+                  className={`w-full flex items-center justify-between py-3 px-4 font-geist-medium text-[18px] transition-all rounded-lg ${
+                    isExpanded
+                      ? 'text-nucleo-light'
+                      : 'text-nucleo-light/60'
+                  }`}
+                  style={{
+                    backgroundColor: isExpanded ? '#27273F' : 'transparent',
+                  }}
+                >
+                  <span>{t(`tabs.${tab}.label`)}</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {isExpanded && (
+                  <div className="mt-2 border rounded-lg" style={{ borderColor: '#3F3F50', borderRadius: '12px' }}>
+                    <div className="p-4">
+                      <div className="space-y-3">
+                        {(() => {
+                          try {
+                            const desc1 = t(`tabs.${tab}.description1`)
+                            if (desc1 && typeof desc1 === 'string' && desc1.trim() !== '') {
+                              return (
+                                <p className="font-geist-regular text-base text-nucleo-light">
+                                  {desc1}
+                                </p>
+                              )
+                            }
+                          } catch (e) {}
+                          return null
+                        })()}
+                        {(() => {
+                          try {
+                            const desc2 = t(`tabs.${tab}.description2`)
+                            if (desc2 && typeof desc2 === 'string' && desc2.trim() !== '') {
+                              return (
+                                <p className="font-geist-regular text-base text-nucleo-light">
+                                  {desc2}
+                                </p>
+                              )
+                            }
+                          } catch (e) {}
+                          return null
+                        })()}
+                      </div>
+                      
+                      <ul className="mt-6 space-y-2">
+                        {[0, 1, 2].map((index) => {
+                          try {
+                            const point = t(`tabs.${tab}.points.${index}`)
+                            if (!point || typeof point !== 'string' || point.trim() === '') {
+                              return null
+                            }
+                            return (
+                              <li key={index} className="flex items-baseline gap-3">
+                                <span 
+                                  className="flex-shrink-0"
+                                  style={{
+                                    width: '8px',
+                                    height: '8px',
+                                    border: '4px solid var(--nucleo-secondary)',
+                                    backgroundColor: 'transparent',
+                                    display: 'block',
+                                    marginTop: '0.4em',
+                                  }}
+                                />
+                                <span className="font-geist-light text-base text-nucleo-light/80 leading-relaxed">
+                                  {point}
+                                </span>
+                              </li>
+                            )
+                          } catch (e) {
+                            return null
+                          }
+                        })}
+                      </ul>
+                      
+                      <div className="mt-6 flex items-center justify-center">
+                        <Image
+                          src={tabImages[tab]}
+                          alt={t(`tabs.${tab}.imageAlt`)}
+                          width={800}
+                          height={600}
+                          className="w-full max-w-[500px] h-auto object-contain"
+                          style={{ borderRadius: '12px' }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Desktop: Tab Content */}
         <FadeIn delay={0.4}>
           <div 
-            className="mt-4 border flex-1 flex flex-col min-h-0" 
+            className="hidden md:flex mt-4 border flex-1 flex-col min-h-0" 
             style={{ 
               borderColor: '#3F3F50', 
               borderRadius: '12px'
@@ -98,14 +220,14 @@ export function MetodologiaSection() {
           >
             <div className="grid lg:grid-cols-2 flex-1 min-h-0">
               {/* Left: Text Content */}
-              <div className="p-4 sm:p-6 lg:p-8 flex flex-col justify-center lg:overflow-y-auto">
-                <div className="space-y-3 sm:space-y-4">
+              <div className="p-6 lg:p-8 flex flex-col justify-center lg:overflow-y-auto">
+                <div className="space-y-4">
                   {(() => {
                     try {
                       const desc1 = t(`tabs.${activeTab}.description1`)
                       if (desc1 && typeof desc1 === 'string' && desc1.trim() !== '') {
                         return (
-                          <p className="font-geist-regular text-base text-nucleo-light sm:text-xl">
+                          <p className="font-geist-regular text-[18px] text-nucleo-light">
                             {desc1}
                           </p>
                         )
@@ -120,7 +242,7 @@ export function MetodologiaSection() {
                       const desc2 = t(`tabs.${activeTab}.description2`)
                       if (desc2 && typeof desc2 === 'string' && desc2.trim() !== '') {
                         return (
-                          <p className="font-geist-regular text-base text-nucleo-light sm:text-xl">
+                          <p className="font-geist-regular text-[18px] text-nucleo-light">
                             {desc2}
                           </p>
                         )
@@ -133,7 +255,7 @@ export function MetodologiaSection() {
                 </div>
                 
                 {/* Bullet Points */}
-                <ul className="mt-6 sm:mt-8 space-y-4 sm:space-y-5">
+                <ul className="mt-8 space-y-5">
                   {[0, 1, 2].map((index) => {
                     try {
                       const point = t(`tabs.${activeTab}.points.${index}`)
@@ -167,7 +289,7 @@ export function MetodologiaSection() {
               </div>
 
               {/* Right: Image */}
-              <div className="flex items-center justify-center p-4 sm:p-6 lg:p-6 min-h-0">
+              <div className="flex items-center justify-center p-6 lg:p-6 min-h-0">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={tabImages[activeTab]}

@@ -27,12 +27,17 @@ export async function ProblemSection() {
         <FadeIn delay={0.1}>
           <h3 className="section-title mx-auto mt-4 max-w-8xl">
             <span className="block">{t('highlight')}</span>
-            <span className="mt-4 block whitespace-pre-line font-geist-light text-xl sm:text-2xl lg:text-[32px] text-nucleo-light">
-              {t('titleRest').replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()}
+            <span className="mt-4 block font-geist-light text-[18px] sm:text-2xl lg:text-[32px] text-nucleo-light">
+              <span className="sm:hidden">
+                {t('titleRest').replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').replace(/^\s+/, '').trim()}
+              </span>
+              <span className="hidden sm:block whitespace-pre-line">
+                {t('titleRest').replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()}
+              </span>
             </span>
           </h3>
         </FadeIn>
-        <div className="mt-12 sm:mt-16 lg:mt-24 grid gap-6 sm:gap-8 text-left sm:grid-cols-3">
+        <div className="mt-12 text-base sm:text-lg lg:text-xl sm:mt-16 lg:mt-24 grid gap-6 sm:gap-8 text-left sm:grid-cols-3">
           {points.map((point, index) => (
             <FadeIn key={point} delay={0.3 + index * 0.1}>
             {/* Card: HEIGHT FIJO h-[250px] = 250px */}

@@ -71,7 +71,21 @@ export function Header() {
     
     // Si no estamos en la página principal, navegar primero
     if (!isHomePage) {
-      window.location.href = pathname.startsWith('/en') ? '/en' : '/es'
+      const locale = pathname.startsWith('/en') ? '/en' : '/es'
+      window.location.href = locale
+      // Esperar a que la página cargue antes de hacer scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const headerHeight = 64
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
+        }
+      }, 500)
       return
     }
 
@@ -101,7 +115,7 @@ export function Header() {
           hasScrolled ? 'backdrop-blur-md' : ''
         }`}
       >
-        <div className="mx-auto max-w-7xl flex h-16 items-center justify-between text-nucleo-light">
+        <div className="mx-auto max-w-7xl flex h-16 items-center justify-between p-4 text-nucleo-light">
           {/* Logo a la izquierda */}
           <Link href="/" className="flex items-center flex-shrink-0" onClick={closeMenu}>
             <Image
@@ -245,38 +259,40 @@ export function Header() {
                   transition={{ delay: 0.1 }}
                   className="space-y-8"
                 >
-                  <Link
-                    href="/"
-                    onClick={closeMenu}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary"
+                  <button
+                    onClick={() => {
+                      closeMenu()
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }}
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
-                    HOME
-                  </Link>
+                    {t('home')}
+                  </button>
                   <button
                     onClick={() => scrollToSection('solucion')}
                     className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
-                    {t('solution').toUpperCase()}
+                    {t('solution')}
                   </button>
                   <button
                     onClick={() => scrollToSection('entregables')}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full "
                   >
-                    {t('deliverables').toUpperCase()}
-                  </button>
-                  <button
-                    onClick={() => scrollToSection('faqs')}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
-                  >
-                    {t('faqs').toUpperCase()}
+                    {t('deliverables')}
                   </button>
                   <Link
                     href="/pricing"
                     onClick={closeMenu}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary"
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
-                    PRICING
+                    {t('pricing')}
                   </Link>
+                  <button
+                    onClick={() => scrollToSection('faqs')}
+                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                  >
+                    {t('faqs')}
+                  </button>
                 </motion.div>
               </nav>
 
@@ -290,9 +306,9 @@ export function Header() {
                 <Link
                   href="/contact"
                   onClick={closeMenu}
-                  className="block w-full rounded-full bg-nucleo-primary px-8 py-4 text-center text-lg font-geist-semibold text-nucleo-light transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark"
+                  className="block w-full rounded-full bg-nucleo-primary px-8 py-4 text-center text-lg font-geist-semibold text-nucleo-light transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark lowercase"
                 >
-                  CONVERSEMOS
+                  {t('contact')}
                 </Link>
                 <div className="flex justify-center">
                   <LanguageSelector />

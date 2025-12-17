@@ -187,10 +187,10 @@ export function TestimonialsSection() {
                       className="w-[calc(100vw-3rem)] md:w-[800px] lg:max-w-[1000px] lg:w-[1000px] flex-shrink-0 h-full"
                     >
                       <div className="bg-nucleo-dark-secondary rounded-3xl p-6 md:p-8 lg:p-12 relative h-full flex flex-col md:flex-row overflow-hidden">
-                        {/* Div izquierda: Contenido (mobile: vertical, desktop: izquierda) */}
+                        {/* Div izquierda: Contenido */}
                         <div className="w-full md:w-3/5 flex flex-col justify-center md:pr-4 lg:pr-8">
                           {/* Testimonio con saltos de línea */}
-                          <div className="font-geist-regular text-sm sm:text-base md:text-lg lg:text-xl text-nucleo-light mb-6 md:mb-8 leading-relaxed text-left">
+                          <div className="font-geist-regular text-base md:text-lg lg:text-xl text-nucleo-light mb-6 md:mb-8 leading-relaxed text-left">
                             {t(`testimonial${testimonialIndex}.quote`).split('/n/n').map((paragraph, index, array) => (
                               <p key={index} className={index < array.length - 1 ? 'mb-4' : ''}>
                                 {paragraph}
@@ -199,34 +199,21 @@ export function TestimonialsSection() {
                           </div>
 
                           {/* Nombre */}
-                          <div className="text-left mb-4 md:mb-1">
+                          <div className="text-left mb-1">
                             <p className="font-geist-bold text-base md:text-lg lg:text-xl text-nucleo-highlight uppercase">
                               {t(`testimonial${testimonialIndex}.name`).replace(/,/g, '').toUpperCase()}
                             </p>
                           </div>
 
-                          {/* Imagen en mobile (debajo del nombre) */}
-                          <div className="w-full md:hidden flex items-center justify-center mb-4">
-                            <div className="relative w-full max-w-[200px] aspect-[3/4] rounded-2xl overflow-hidden">
-                              <Image
-                                src={t(`testimonial${testimonialIndex}.image`)}
-                                alt={t(`testimonial${testimonialIndex}.name`)}
-                                fill
-                                className="object-contain"
-                                sizes="200px"
-                              />
-                            </div>
-                          </div>
-
                           {/* Posición */}
                           <div className="text-left">
-                            <p className="font-geist-regular text-xs md:text-sm lg:text-base text-nucleo-dark-hover-light">
+                            <p className="font-geist-regular text-sm md:text-sm lg:text-base text-nucleo-dark-hover-light">
                               {t(`testimonial${testimonialIndex}.position`)}
                             </p>
                           </div>
                         </div>
 
-                        {/* Div derecha: Imagen (solo desktop) */}
+                        {/* Div derecha: Imagen - Solo visible en desktop */}
                         <div className="hidden md:flex md:w-2/5 flex-shrink-0 items-center justify-start">
                           <div className="relative w-full max-w-[280px] lg:max-w-[300px] aspect-[3/4] rounded-2xl overflow-hidden">
                             <Image
@@ -246,7 +233,7 @@ export function TestimonialsSection() {
             </div>
 
             {/* Navegación: Dots a la izquierda, flechas a la derecha */}
-            <div className="flex items-center justify-between w-full max-w-[1352px] mt-8 px-2 md:px-4 relative">
+            <div className="flex items-center justify-between w-full max-w-[1352px] mt-8 px-4 relative">
               {/* Indicadores (Dots) - Izquierda */}
               <div className="flex items-center gap-2">
                 {testimonials.map((_, index) => (
@@ -268,7 +255,7 @@ export function TestimonialsSection() {
                 {/* Flecha izquierda */}
                 <button
                   onClick={goToPrevious}
-                  className="bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 transition-colors flex items-center justify-center"
+                  className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors flex items-center justify-center"
                   aria-label="Testimonio anterior"
                 >
                   <svg
@@ -289,7 +276,7 @@ export function TestimonialsSection() {
                 {/* Flecha derecha */}
                 <button
                   onClick={goToNext}
-                  className="bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 transition-colors flex items-center justify-center"
+                  className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors flex items-center justify-center"
                   aria-label="Siguiente testimonio"
                 >
                   <svg

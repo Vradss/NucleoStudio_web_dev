@@ -50,7 +50,7 @@ export function HeroContent() {
           alt="Detalle isotipo decorativo"
           width={26}
           height={25}
-          className="h-4 w-4 sm:h-5 sm:w-5"
+          className="h-3 w-3 sm:h-5 sm:w-5"
           priority
         />
         <span className="tagline">
@@ -59,7 +59,7 @@ export function HeroContent() {
       </motion.div>
 
       <motion.h1
-        className="mx-auto font-geist-semibold text-3xl leading-tight sm:text-5xl lg:text-7xl whitespace-pre-line"
+        className="mx-auto font-geist-semibold text-[40px] leading-tight sm:text-5xl lg:text-7xl whitespace-pre-line"
         variants={itemVariants}
       >
         {t('title').replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()}

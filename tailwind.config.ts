@@ -42,6 +42,7 @@ const config: Config = {
           'dark-hover-light': 'var(--nucleo-dark-hover-light)',
           'bg-selector': 'var(--nucleo-bg-selector)',
           highlight: 'var(--nucleo-highlight)',
+          'surface-color': 'var(--nucleo-surface-color)',
         },
         secondary: {
           DEFAULT: 'var(--nucleo-secondary)',  /* Color secundario de Nucleo */

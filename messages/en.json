@@ -353,16 +353,244 @@
       "answer": "We don't interview your end clients. We work directly with you and your internal team: founders, decision makers, and marketing team if you have one. The project works because you already know your clients better than anyone, and we help you translate that knowledge into clear strategic messages. We depend on you sharing that expertise in the workshops to structure your value proposition in a way that resonates with your audience."
     }
   },
+  "pricing": {
+    "tagline": "Pricing!",
+    "title": "Pricing Plans",
+    "subtitle": "Choose the plan that best fits your company's needs",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "pricePrefix": "from",
+        "price": "$0",
+        "priceSubtext": "+ compute / month",
+        "timeline": "3-4 weeks / one time project",
+        "description": "Built for small teams and independent developers looking to level up.",
+        "cta": "Get started with $30 / month free credit",
+        "ctaLink": "/contact",
+        "features": [
+          "$30 / month free credits",
+          "3 workspace seats included",
+          "100 containers + 10 GPU concurrency",
+          "Crons and web endpoints (limited)",
+          "Real-time metrics and logs",
+          "Region selection"
+        ]
+      },
+      "team": {
+        "name": "Team",
+        "pricePrefix": "from",
+        "price": "$250",
+        "priceSubtext": "+ compute / month",
+        "timeline": "3-4 weeks / one time project",
+        "description": "Built for startups and larger organizations looking to scale quickly.",
+        "cta": "Sign in to upgrade",
+        "ctaLink": "/contact",
+        "features": [
+          "$100 / month free credits",
+          "Unlimited seats",
+          "1000 containers + 50 GPU concurrency",
+          "Unlimited crons and web endpoints",
+          "Custom domains",
+          "Static IP proxy",
+          "Deployment rollbacks"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "pricePrefix": "from",
+        "price": "Custom",
+        "priceSubtext": "",
+        "timeline": "3-4 weeks / one time project",
+        "description": "For organizations prioritizing security, support, and everlasting confidence.",
+        "cta": "Get in touch",
+        "ctaLink": "/contact",
+        "features": [
+          "Volume-based discounts",
+          "Unlimited seats",
+          "Higher GPU concurrency",
+          "Embedded ML engineering services",
+          "Support via private Slack",
+          "Audit logs, Okta SSO, and HIPAA"
+        ]
+      }
+    },
+    "afterEstrategia": {
+      "title": "You already know what to say, but you need help creating that content. Here it is.",
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "description": "Ideal for B2B teams that KNOW what to say and require specific support to create quality content",
+          "price": "$750",
+          "priceSubtext": "/month",
+          "cta": "Let's Talk",
+          "ctaLink": "/contact"
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "For teams that need strategic content and continuous support",
+          "price": "$1,500",
+          "priceSubtext": "/month",
+          "cta": "Let's Talk",
+          "ctaLink": "/contact"
+        },
+        "fractional": {
+          "name": "Fractional partner",
+          "description": "For companies that require a full-time strategic content partner",
+          "price": "$3,000",
+          "priceSubtext": "/month",
+          "cta": "Let's Talk",
+          "ctaLink": "/contact"
+        }
+      },
+      "categories": {
+        "estrategia": {
+          "name": "Strategy",
+          "features": {
+            "research": {
+              "name": "Research & insights",
+              "starter": null,
+              "pro": "Sales calls, demos, competitor benchmark",
+              "fractional": "Interviews + market"
+            },
+            "posicionamiento": {
+              "name": "Positioning strategy",
+              "starter": null,
+              "pro": null,
+              "fractional": "Definition and updates"
+            },
+            "messaging": {
+              "name": "Messaging strategy",
+              "starter": null,
+              "pro": "Of Product, content or sales",
+              "fractional": "Personalized, Multi-product"
+            },
+            "contenido": {
+              "name": "Content strategy",
+              "starter": null,
+              "pro": "Personalized, 1 product",
+              "fractional": "Personalized, Multi-product"
+            },
+            "equipo": {
+              "name": "Team",
+              "starter": null,
+              "pro": "Senior strategist",
+              "fractional": "Senior strategist"
+            }
+          }
+        },
+        "ejecucion": {
+          "name": "Execution & content development",
+          "features": {
+            "founderLinkedIn": {
+              "name": "Founder-led growth LinkedIn content",
+              "starter": "to generate visibility",
+              "pro": "to generate visibility",
+              "fractional": "to generate visibility"
+            },
+            "producto": {
+              "name": "Product content",
+              "starter": "Comparatives, use cases, others.",
+              "pro": "Comparatives, use cases, others.",
+              "fractional": "Comparatives, use cases, others."
+            },
+            "salesEnablement": {
+              "name": "Sales enablement content",
+              "starter": "Success stories or studies, decks, one pagers",
+              "pro": "Success stories, decks, one pagers",
+              "fractional": "Success stories or studies, decks, one pagers"
+            },
+            "thoughtLeadership": {
+              "name": "Thought leadership content",
+              "starter": null,
+              "pro": "Work methods",
+              "fractional": "Frameworks, reports, playbooks"
+            },
+            "leadGeneration": {
+              "name": "Lead generation content",
+              "starter": "Lead magnets",
+              "pro": "Lead magnets",
+              "fractional": "Lead magnets"
+            },
+            "wireframes": {
+              "name": "Simple wireframes with website copy and landing pages",
+              "starter": null,
+              "pro": null,
+              "fractional": null
+            },
+            "lifecycle": {
+              "name": "Lifecycle content",
+              "starter": "Email workflows, email nurturing",
+              "pro": "Email workflows, email nurturing",
+              "fractional": "Email workflows, email nurturing"
+            },
+            "creditos": {
+              "name": "Content credits",
+              "starter": "Email workflows, email nurturing",
+              "pro": "Email workflows, email nurturing",
+              "fractional": "Email workflows, email nurturing"
+            }
+          }
+        },
+        "operaciones": {
+          "name": "Operations and support",
+          "features": {
+            "solicitudes": {
+              "name": "Content requests",
+              "starter": "2",
+              "pro": "3",
+              "fractional": ""
+            },
+            "revisiones": {
+              "name": "Revisions and adjustments",
+              "starter": "Unlimited",
+              "pro": "Unlimited",
+              "fractional": "Unlimited"
+            },
+            "customerSupport": {
+              "name": "10/5 customer support",
+              "starter": "WhatsApp, email and Loom",
+              "pro": "WhatsApp, email and Loom",
+              "fractional": "WhatsApp, email and Loom"
+            },
+            "premiumSupport": {
+              "name": "Premium support",
+              "starter": null,
+              "pro": null,
+              "fractional": "Quick calls and responses in 24 hours"
+            },
+            "contentOperations": {
+              "name": "Content operations + information documentation",
+              "starter": null,
+              "pro": "We define workflows",
+              "fractional": "We define workflows"
+            },
+            "training": {
+              "name": "Internal team training",
+              "starter": null,
+              "pro": null,
+              "fractional": null
+            }
+          }
+        }
+      }
+    }
+  },
   "footer": {
     "description": "We transform how B2B tech companies communicate their value. We create clear messages, positioning strategies, and digital experiences that connect with your audience.",
-    "newsletterPlaceholder": "Your email",
-    "newsletterButton": "Subscribe",
+    "contactEmail": "hey@nucleostudio.com",
+    "newsletterPlaceholder": "Work Email",
+    "newsletterButton": "→",
+    "company": "Company",
+    "careers": "Careers",
+    "about": "About",
     "products": "Products",
-    "home": "Home",
-    "solution": "Solution",
-    "webAudit": "Web Audit",
     "pricing": "Pricing",
-    "contact": "Let's Talk",
+    "bookDemo": "Book Demo",
+    "resources": "Resources",
+    "customers": "Customers",
+    "blog": "Blog",
+    "roiCalculator": "ROI Calculator",
+    "socials": "Socials",
     "allRightsReserved": "All rights reserved",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"

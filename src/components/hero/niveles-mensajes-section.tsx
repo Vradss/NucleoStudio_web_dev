@@ -80,7 +80,7 @@ export async function NivelesMensajesSection() {
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="mt-6 max-w-6xl font-geist-light text-lg text-nucleo-light/80 sm:text-lg whitespace-pre-line leading-normal">
+          <p className="mt-6 max-w-6xl font-geist-light text-base text-nucleo-light/80 sm:text-lg whitespace-pre-line leading-normal">
             {t('subtitle')}
           </p>
         </FadeIn>
@@ -99,7 +99,7 @@ export async function NivelesMensajesSection() {
           </div>
         </FadeIn>
         <FadeIn delay={0.3}>
-          <h3 className="mt-12 max-w-7xl font-geist-regular text-xl text-nucleo-light sm:text-lg">
+          <h3 className="mt-12 max-w-7xl font-geist-regular text-[18px] text-nucleo-light sm:text-lg">
             {t('benefitsTitle')}
           </h3>
         </FadeIn>
