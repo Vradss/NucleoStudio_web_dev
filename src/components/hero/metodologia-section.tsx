@@ -42,8 +42,8 @@ export function MetodologiaSection() {
   }
 
   return (
-    <section id="entregables" className="section-layout relative z-20 min-h-screen flex flex-col py-8 lg:py-12">
-      <div className="section-container text-left flex-1 flex flex-col">
+    <section id="entregables" className="section-layout relative z-20 min-h-[125vh] flex flex-col py-24 lg:py-12">
+      <div className="section-container text-left flex-1 flex flex-col justify-center">
         {/*<FadeIn delay={0}>
           <div className="flex items-center gap-2">
             <Image
@@ -60,7 +60,7 @@ export function MetodologiaSection() {
           </div>
         </FadeIn>*/}
         <FadeIn delay={0.1}>
-          <h2 className="section-title mt-6 max-w-7xl">
+          <h2 className="section-title mt-6 max-w-7xl whitespace-pre-line">
             {t('title')}
           </h2>
         </FadeIn>
@@ -75,10 +75,11 @@ export function MetodologiaSection() {
                   onClick={() => setActiveTab(tab)}
                   className={`flex items-center justify-center gap-2 py-0 pb-5 font-geist-regular text-[20px] transition-all ${
                     activeTab === tab
-                      ? 'text-nucleo-highlight border-b-2'
-                      : 'text-nucleo-light/60 hover:text-nucleo-light'
+                      ? 'border-b-2'
+                      : ''
                   }`}
                   style={{
+                    color: activeTab === tab ? 'var(--nucleo-secondary)' : 'var(--nucleo-dark-hover-light)',
                     borderBottomColor: activeTab === tab ? 'var(--nucleo-highlight)' : 'transparent',
                   }}
                 >
@@ -108,12 +109,9 @@ export function MetodologiaSection() {
               <div key={tab} className="mb-4">
                 <button
                   onClick={() => toggleTab(tab)}
-                  className={`w-full flex items-center justify-between py-3 px-4 font-geist-medium text-[18px] transition-all rounded-lg ${
-                    isExpanded
-                      ? 'text-nucleo-light'
-                      : 'text-nucleo-light/60'
-                  }`}
+                  className="w-full flex items-center justify-between py-3 px-4 font-geist-medium text-[18px] transition-all rounded-lg"
                   style={{
+                    color: isExpanded ? 'var(--nucleo-secondary)' : 'var(--nucleo-dark-hover-light)',
                     backgroundColor: isExpanded ? '#27273F' : 'transparent',
                   }}
                 >

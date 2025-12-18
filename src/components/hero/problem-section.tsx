@@ -56,7 +56,7 @@ export async function ProblemSection() {
         <FadeIn delay={0.1}>
           <h3 className="section-title mx-auto max-w-8xl">
             <span className="block">{t('highlight')}</span>
-            <span className="mt-4 block font-geist-light text-[20px] sm:text-2xl lg:text-[32px] text-nucleo-light">
+            <span className="mt-4 block font-geist-regular text-[20px] sm:text-2xl lg:text-3xl text-nucleo-light">
               <span className="sm:hidden">
                 {renderTitleWithHighlight(titleRest, true)}
               </span>

@@ -87,12 +87,22 @@ export async function NivelesMensajesSection() {
         <FadeIn delay={0.2}>
           <div className="mt-12 flex justify-center">
             <div className="max-w-5xl w-full">
+              {/* Imagen para mobile */}
               <Image
-                src="/images/niveles_mensajes.svg"
+                src="/images/NIVELES_MOBILE.svg"
                 alt="Niveles de claridad"
                 width={1100}
                 height={519}
-                className="w-full h-auto"
+                className="w-full h-auto md:hidden"
+                priority
+              />
+              {/* Imagen para desktop */}
+              <Image
+                src="/images/niveles_msj.svg"
+                alt="Niveles de claridad"
+                width={1100}
+                height={519}
+                className="hidden md:block w-full h-auto"
                 priority
               />
             </div>

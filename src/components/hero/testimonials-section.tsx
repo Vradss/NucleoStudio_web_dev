@@ -130,7 +130,7 @@ export function TestimonialsSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen overflow-hidden py-16 px-6 lg:px-24 lg:py-24" style={{ backgroundColor: '#FFFFFA', position: 'relative', zIndex: 50 }}>
+    <section className="relative min-h-screen overflow-hidden py-24 px-6 lg:px-24 lg:py-24" style={{ backgroundColor: '#FFFFFA', position: 'relative', zIndex: 50 }}>
       {/* Contenido */}
       <div className="relative z-10">
         <div className="mx-auto max-w-7xl">

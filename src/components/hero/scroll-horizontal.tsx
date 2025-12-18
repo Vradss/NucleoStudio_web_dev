@@ -178,7 +178,7 @@ export default function ScrollHorizontal() {
                   {t('label')}
                 </span>
               </div>
-              <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
+              <div className="scroll-horizontal-title-container max-w-[1200px] mx-auto">
                 <h2 className="scroll-horizontal-title">
                   {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
                 </h2>
@@ -222,7 +222,7 @@ export default function ScrollHorizontal() {
                         {t(`cards.${card.key}.label`)}
                       </p>
                     </div>
-                    <h3 className="font-geist-semibold text-[30px] sm:text-3xl lg:text-4xl text-nucleo-light mt-6 leading-tight">
+                    <h3 className="font-geist-semibold text-[30px] sm:text-3xl lg:text-[40px] text-nucleo-light mt-6 leading-tight lg:leading-[1.2]">
                       {t(`cards.${card.key}.title`)}
                     </h3>
                     <p className="heading-subtitle mt-6 text-sm text-nucleo-light opacity-80 sm:text-base lg:text-lg">

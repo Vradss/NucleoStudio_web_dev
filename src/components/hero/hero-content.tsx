@@ -84,7 +84,7 @@ export function HeroContent() {
       </motion.h1>
 
       <motion.p
-        className="mx-auto max-w-3xl font-geist-regular text-base text-nucleo-light sm:text-xl lg:text-xl"
+        className="mx-auto max-w-3xl font-geist-regular text-base text-nucleo-light sm:text-xl lg:text-2xl"
         variants={itemVariants}
       >
         {renderSubtitleWithHighlight(subtitle, locale)}

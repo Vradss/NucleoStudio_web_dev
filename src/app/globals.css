@@ -88,7 +88,7 @@
        Todos los títulos (h2, h3, section-title) usan estas variables.
        El h1 tiene su propio tamaño y no se modifica aquí.
     */
-    --heading-h2-mobile: 32px;        /* 28px en móvil */
+    --heading-h2-mobile: 34px;        /* 28px en móvil */
     --heading-h2-desktop: 3rem;        /* 40px en desktop (clamp max) */
     --heading-h2-desktop-fixed: 44px;     /* 40px fijo en desktop (lg: 1024px+) */
     
@@ -118,7 +118,7 @@
 @layer components {
   /* Layout estándar para todas las secciones */
   .section-layout {
-    @apply relative bg-nucleo-dark text-nucleo-light py-16 px-6 lg:px-24 lg:py-24;
+    @apply relative bg-nucleo-dark text-nucleo-light py-24 px-6 lg:px-24 lg:py-12;
   }
   
   /* Contenedor interno estándar para secciones */
@@ -305,14 +305,14 @@
   
   /* Título de card - Para títulos dentro de cards */
   .text-card-title {
-    @apply font-geist-regular text-nucleo-light;
+    @apply font-geist-medium text-nucleo-light;
     font-size: 1rem; /* text-base en mobile */
     line-height: 1.5;
   }
   
   @media (min-width: 640px) {
     .text-card-title {
-      font-size: 19px; /* text-xl en sm y superior */
+      font-size: 21px; /* text-xl en sm y superior */
     }
   }
   
