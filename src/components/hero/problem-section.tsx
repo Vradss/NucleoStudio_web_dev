@@ -75,21 +75,12 @@ export async function ProblemSection() {
             >
               {/* Icono: h-8 (32px) en móvil, h-11 (44px) en desktop - más grande para cards 2 y 3 */}
               <div className={`relative ${point === 'one' ? 'h-8 w-8 sm:h-11 sm:w-11' : 'h-10 w-10 sm:h-14 sm:w-14'}`}>
-                {point === 'two' ? (
-                  <svg width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                    <rect x="1" y="23" width="20" height="13" rx="1" stroke="#C3BDFF" strokeWidth="2"/>
-                    <rect x="29" y="23" width="20" height="13" rx="1" stroke="#C3BDFF" strokeWidth="2"/>
-                    <rect x="15" y="1" width="20" height="13" rx="1" stroke="#C3BDFF" strokeWidth="2"/>
-                    <path d="M25 14V18M25 18H11.5C10.9477 18 10.5 18.4477 10.5 19V22M25 18H38.5C39.0523 18 39.5 18.4477 39.5 19V22" stroke="#C3BDFF" strokeWidth="2"/>
-                  </svg>
-                ) : (
-                  <Image
-                    src={t(`icons.${point}`)}
-                    alt="Icono de problema"
-                    fill
-                    className="object-contain"
-                  />
-                )}
+                <Image
+                  src={t(`icons.${point}`)}
+                  alt="Icono de problema"
+                  fill
+                  className="object-contain"
+                />
               </div>
                 <p className="mt-6 sm:mt-8 text-card-title">
                 {t(`points.${point}`)}

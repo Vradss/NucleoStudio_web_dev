@@ -154,19 +154,17 @@ export default function ScrollHorizontal() {
                     {t('label')}
                   </span>
                 </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
-                <h2 className="section-title text-nucleo-dark">
-                  {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
-                </h2>
+                <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
+                  <h2 className="section-title text-nucleo-dark">
+                    {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
+                  </h2>
+                </div>
               </div>
             </FadeIn>
           </>
         ) : (
           <>
-            <div className="mx-auto max-w-7xl text-center ">
+            <div className="mx-auto max-w-7xl text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Image
                   src="/images/isotipo_morado_fuerte.svg"
@@ -180,11 +178,11 @@ export default function ScrollHorizontal() {
                   {t('label')}
                 </span>
               </div>
-            </div>
-            <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
-              <h2 className="scroll-horizontal-title">
-                {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
-              </h2>
+              <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
+                <h2 className="scroll-horizontal-title">
+                  {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
+                </h2>
+              </div>
             </div>
           </>
         )}
@@ -204,6 +202,11 @@ export default function ScrollHorizontal() {
                       width={600}
                       height={500}
                       className="scroll-horizontal-image"
+                      unoptimized={true}
+                      style={{
+                        objectFit: 'contain',
+                        objectPosition: 'center',
+                      }}
                     />
                   </div>
                   <div className="scroll-horizontal-card-content">

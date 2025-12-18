@@ -111,7 +111,7 @@ export function ComparisonSection() {
 
         {/* Plan Headers */}
           {/* Desktop version with empty first column */}
-          <div className="hidden md:grid md:grid-cols-4 border border-nucleo-dark-border mb-0">
+          <div className="hidden md:grid md:grid-cols-4 border border-nucleo-dark-border rounded-2xl mb-0 overflow-hidden">
             <div className="p-6 border-r border-nucleo-dark-border flex items-start">
               <h4 className="font-geist-semibold text-lg text-nucleo-light">
                 {t('featuresLabel')}
@@ -221,7 +221,7 @@ export function ComparisonSection() {
                   </h4>
 
                   {/* Features */}
-                  <div className="border-l border-r border-b border-nucleo-dark-border">
+                  <div className="border border-nucleo-dark-border rounded-2xl overflow-hidden">
                     {features.map((featureId, featureIndex) => {
                       const feature = getFeatureData(categoryId, featureId)
                       const isLastFeature = featureIndex === features.length - 1
@@ -232,7 +232,7 @@ export function ComparisonSection() {
                           className={`grid grid-cols-4 border-b border-nucleo-dark-border ${isLastFeature ? 'border-b-0' : ''}`}
                         >
                           {/* Feature Name */}
-                          <div className="p-4 border-r border-nucleo-dark-border font-geist-regular text-base text-nucleo-light bg-nucleo-dark-tertiary">
+                          <div className={`p-4 border-r border-nucleo-dark-border font-geist-regular text-base text-nucleo-light bg-nucleo-dark-tertiary ${featureIndex === 0 ? 'rounded-tl-2xl' : ''} ${isLastFeature ? 'rounded-bl-2xl' : ''}`}>
                             {feature.name}
                           </div>
 

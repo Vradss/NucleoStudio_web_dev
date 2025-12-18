@@ -36,7 +36,7 @@
     --nucleo-dark-secondary: #1E1E1E;    /* Negro secundario */
     --nucleo-dark-tertiary: #1E1E25;     /* Negro terciario */
     --nucleo-dark-quaternary: #111111;   /* Negro cuaternario */
-    --nucleo-dark-border: #1F1F1F;       /* Negro para bordes */
+    --nucleo-dark-border: #3F3F50;       /* Negro para bordes */
     --nucleo-dark-hover: #151515;        /* Negro para hover */
     --nucleo-dark-hover-light: #A0A0A0;  /* Negro para hover más claro */
     --nucleo-bg-selector: #141214;       /* Fondo para selector de idioma */
@@ -90,7 +90,7 @@
     */
     --heading-h2-mobile: 32px;        /* 28px en móvil */
     --heading-h2-desktop: 3rem;        /* 40px en desktop (clamp max) */
-    --heading-h2-desktop-fixed: 42px;     /* 40px fijo en desktop (lg: 1024px+) */
+    --heading-h2-desktop-fixed: 44px;     /* 40px fijo en desktop (lg: 1024px+) */
     
     --heading-h3-mobile: 16px;         /* 24px en móvil */
     --heading-h3-desktop: 2rem;           /* 32px en desktop */
@@ -129,7 +129,7 @@
   /* Título uniforme para todas las secciones */
   .section-title {
     font-family: var(--font-geist-sans), system-ui, sans-serif;
-    font-weight: var(--font-geist-weight-semibold);
+    font-weight: var(--font-geist-weight-bold);
     color: var(--nucleo-light);
     font-size: clamp(var(--heading-h2-mobile), 4vw, var(--heading-h2-desktop));
     line-height: 1.2;
@@ -416,7 +416,7 @@
   .scroll-horizontal-title {
     @apply section-title text-nucleo-dark;
     text-align: center;
-    margin-top: 16px;
+    margin-top: 0;
   }
   
   .scroll-horizontal-cards-container {
@@ -475,25 +475,25 @@
       min-height: 550px;
     }
     
-    /* Paddings proporcionales para tablets */
+    /* Sin padding para tablets */
     .scroll-horizontal-card-image {
-      padding: 50px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-1 {
-      padding: 75px 50px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-2 {
-      padding: 50px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-3 {
-      padding: 75px 50px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-4 {
-      padding: 50px;
+      padding: 0;
     }
   }
   
@@ -504,25 +504,25 @@
       min-height: 600px;
     }
     
-    /* Paddings proporcionales para monitores medianos */
+    /* Sin padding para monitores medianos */
     .scroll-horizontal-card-image {
-      padding: 60px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-1 {
-      padding: 90px 60px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-2 {
-      padding: 60px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-3 {
-      padding: 90px 60px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-image.card-4 {
-      padding: 60px;
+      padding: 0;
     }
   }
   
@@ -548,7 +548,7 @@
     min-height: 100%;
     max-height: 100%;
     align-self: stretch;
-    padding: 80px;
+    padding: 0;
     overflow: hidden;
     box-sizing: border-box;
   }
@@ -558,24 +558,24 @@
    * Todos los cards usan el mismo padding base para mantener alineación
    */
   
-  /* Card 1 (ETAPA 1) - Padding aumentado para compensar imagen más grande */
+  /* Card 1 (ETAPA 1) - Sin padding */
   .scroll-horizontal-card-image.card-1 {
-    padding: 120px 80px;
+    padding: 0;
   }
   
-  /* Card 2 (ETAPA 2) - Padding uniforme */
+  /* Card 2 (ETAPA 2) - Sin padding */
   .scroll-horizontal-card-image.card-2 {
-    padding: 80px;
+    padding: 0;
   }
   
-  /* Card 3 (ETAPA 3) - Padding aumentado para compensar imagen más grande (1587x1560) */
+  /* Card 3 (ETAPA 3) - Sin padding */
   .scroll-horizontal-card-image.card-3 {
-    padding: 120px 80px;
+    padding: 0;
   }
   
-  /* Card 4 (ETAPA 4) - Padding uniforme */
+  /* Card 4 (ETAPA 4) - Sin padding */
   .scroll-horizontal-card-image.card-4 {
-    padding: 80px;
+    padding: 0;
   }
   
   .scroll-horizontal-image {
@@ -632,7 +632,7 @@
     }
   
     .scroll-horizontal-title {
-      margin-top: 24px;
+      margin-top: 0;
     }
   
     .scroll-horizontal-cards-container {
@@ -667,33 +667,32 @@
       border-top-right-radius: var(--scroll-border-radius-sm);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      /* Padding uniforme en mobile para mantener alineación */
-      padding: 40px;
+      /* Sin padding en mobile */
+      padding: 0;
     }
     
     /**
-     * PADDINGS UNIFORMES POR CARD EN MOBILE
-     * Todos los cards usan el mismo padding para mantener consistencia
+     * SIN PADDING POR CARD EN MOBILE
      */
     
-    /* Card 1 (ETAPA 1) - Padding aumentado para mobile para compensar imagen más grande */
+    /* Card 1 (ETAPA 1) - Sin padding */
     .scroll-horizontal-card-image.card-1 {
-      padding: 60px 40px;
+      padding: 0;
     }
     
-    /* Card 2 (ETAPA 2) - Padding uniforme para mobile */
+    /* Card 2 (ETAPA 2) - Sin padding */
     .scroll-horizontal-card-image.card-2 {
-      padding: 40px;
+      padding: 0;
     }
     
-    /* Card 3 (ETAPA 3) - Padding aumentado para mobile para compensar imagen más grande */
+    /* Card 3 (ETAPA 3) - Sin padding */
     .scroll-horizontal-card-image.card-3 {
-      padding: 60px 40px;
+      padding: 0;
     }
     
-    /* Card 4 (ETAPA 4) - Padding uniforme para mobile */
+    /* Card 4 (ETAPA 4) - Sin padding */
     .scroll-horizontal-card-image.card-4 {
-      padding: 40px;
+      padding: 0;
     }
     
     .scroll-horizontal-card-content {

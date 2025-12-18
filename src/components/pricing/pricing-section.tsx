@@ -81,11 +81,11 @@ export function PricingSection() {
             </div>
             <h1 className="section-title mb-4">
               <span className="block md:inline">
-                {t('title').split('¿Cuál es el mejor para ti?')[0]}
+                {t('title')}
               </span>
               <span className="block md:inline md:ml-1">
                 <span className="block md:inline font-geist-bold text-nucleo-highlight">
-                  ¿Cuál es el mejor para ti?
+                  {t('titleQuestion')}
                 </span>
               </span>
             </h1>
@@ -104,6 +104,7 @@ export function PricingSection() {
           {plans.map((planId, index) => {
             const plan = getPlanData(planId)
             const isMiddle = index === 1
+            const isPositioningCard = planId === 'team'
 
             return (
               <motion.div
@@ -112,15 +113,23 @@ export function PricingSection() {
                 className="relative flex flex-col h-full"
               >
                 <div
-                  className="relative flex flex-col h-full p-8 rounded-2xl overflow-hidden bg-nucleo-dark-tertiary"
+                  className={`relative flex flex-col h-full p-8 rounded-2xl border border-nucleo-dark-border overflow-hidden ${isPositioningCard ? 'bg-nucleo-surface-color' : 'bg-nucleo-dark-tertiary'}`}
                 >
+                  {isPositioningCard && (
+                    <div
+                      className="absolute inset-0 opacity-[0.15] pointer-events-none rounded-2xl mix-blend-overlay"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix in='colorNoise' type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E")`,
+                      }}
+                    />
+                  )}
                   {/* Timeline */}
                   <div className="font-space-mono text-sm text-nucleo-secondary mb-[20px]">
                     {plan.timeline}
                   </div>
 
                   {/* Plan Name */}
-                  <h3 className="font-geist-super text-3xl mb-[30px] text-nucleo-light">
+                  <h3 className="font-geist-super text-2xl md:text-2xl mb-[30px] text-nucleo-light">
                     {plan.name}
                   </h3>
 

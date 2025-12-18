@@ -94,7 +94,7 @@
     },
     "icons": {
       "one": "/images/PocaComunicacion.svg",
-      "two": "/images/sitemap_problem.svg",
+      "two": "/images/sitemap.svg",
       "three": "/images/Broke_card.svg"
     }
   },
@@ -355,7 +355,8 @@
   },
   "pricing": {
     "tagline": "Pricing!",
-    "title": "Pricing Plans",
+    "title": "These are the plans for us to start working together",
+    "titleQuestion": "Which one is best for you?",
     "subtitle": "Choose the plan that best fits your company's needs",
     "plans": {
       "starter": {

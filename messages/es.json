@@ -94,7 +94,7 @@
     },
     "icons": {
       "one": "/images/PocaComunicacion.svg",
-      "two": "/images/sitemap_problem.svg",
+      "two": "/images/sitemap4.svg",
       "three": "/images/Broke_card.svg"
     }
   },
@@ -137,28 +137,28 @@
         "title": "Descubrimos dónde puedes destacar en tu mercado",
         "subtitle": "Analizamos a tu competencia, clientes y productos;  te entregamos un mapa de oportunidades de diferenciación para  que sepas exactamente cómo destacar.",
         "imageAlt": "Investigación competitiva",
-        "image": "/images/card_1.png"
+        "image": "/images/card1.svg"
       },
       "stage2": {
         "label": "ESTRATEGIA DE POSICIONAMIENTO",
         "title": "Clarificamos tu propuesta de valor y segmentos clave",
         "subtitle": "Determinamos cuáles son tus características, capacidades y  casos de uso principales, y definimos los segmentos prioritarios  donde debes enfocarte.",
         "imageAlt": "Definición de segmentos clave",
-        "image": "/images/card_2.png"
+        "image": "/images/card2.svg"
       },
       "stage3": {
         "label": "MESSAGING & CONTENIDO",
         "title": "Definimos QUÉ decir y cómo comunicarlo con tu tono",
         "subtitle": "Desde messaging de producto, contenido o narrativa de venta:  te entregamos las herramientas para que tu equipo tenga claridad  total sobre qué comunicar a cada audiencia en cada canal.",
         "imageAlt": "Prototipos y assets visuales",
-        "image": "/images/card_3.png"
+        "image": "/images/card3.png"
       },
       "stage4": {
         "label": "EJECUCIÓN DE CONTENIDO",
         "title": "Creamos tus contenidos alineado al posicionamiento",
         "subtitle": "Desde rediseñar la nueva homepage, sales deck o primeras piezas de contenido:  creamos los assets que tu equipo puede usar desde el día 1  para generar autoridad, nutrir leads y cerrar más ventas.",
         "imageAlt": "Plan de activación y métricas",
-        "image": "/images/card_4.png"
+        "image": "/images/card4.png"
       }
     }
   },
@@ -354,7 +354,8 @@
   },
   "pricing": {
     "tagline": "Pricing",
-    "title": "Estos son los planes para que comencemos a trabajar juntos ¿Cuál es el mejor para ti?",
+    "title": "Estos son los planes para que comencemos a trabajar juntos.",
+    "titleQuestion": "¿Cuál es el mejor para ti?",
     "subtitle": "Elige el plan que mejor se adapte a las necesidades de tu empresa",
     "plans": {
       "starter": {
@@ -392,7 +393,7 @@
         ]
       },
       "enterprise": {
-        "name": "Sprint de Linkedin Lead Growth",
+        "name": "Sprint de Linkedin Growth",
         "pricePrefix": "desde",
         "price": "$1500",
         "priceSubtext": "",
