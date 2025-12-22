@@ -1,39 +1,103 @@
 import Image from 'next/image'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, getLocale } from 'next-intl/server'
 import { FadeIn } from '@/components/motion/fade-in'
 
-function renderTitleWithHighlight(titleRest: string, isMobile: boolean) {
-  // Dividir el texto en partes
-  const highlightText = 'no comunicas bien qué vendes'
-  const parts = titleRest.split(highlightText)
-  
-  if (parts.length === 2) {
-    // Mobile: reemplazar saltos de línea con espacios
-    const beforeText = isMobile 
-      ? parts[0].replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').replace(/^\s+/, '').trim()
-      : parts[0].replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()
-    
-    const afterText = isMobile
-      ? parts[1].replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').trim()
-      : parts[1].replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').trim()
-    
-    return (
-      <>
-        {beforeText} <span className="font-geist-medium text-nucleo-highlight">{highlightText}</span>{afterText}
-      </>
-    )
+function renderPointWithHighlight(text: string, point: 'one' | 'two' | 'three') {
+  // Definir los textos a resaltar según el punto para ambos idiomas
+  const highlightTexts: Record<'one' | 'two' | 'three', string[]> = {
+    one: ['múltiples segmentos', 'multiple segments'],
+    two: ['no captan tu valor', "don't capture your value"],
+    three: ['gastar más en contenido', 'spend more on content']
   }
   
-  // Fallback: si no se encuentra el texto a resaltar, mostrar el texto original
-  return isMobile
-    ? titleRest.replace(/\/n\/n/g, ' ').replace(/\/n/g, ' ').replace(/^\s+/, '').trim()
-    : titleRest.replace(/\/n\/n/g, '\n').replace(/\/n/g, '\n').replace(/^\s*\n+/, '').trim()
+  const possibleTexts = highlightTexts[point]
+  // Buscar cualquiera de los textos posibles
+  for (const highlightText of possibleTexts) {
+    const parts = text.split(highlightText)
+    if (parts.length === 2) {
+      return (
+        <>
+          {parts[0]}<span className="font-geist-bold">{highlightText}</span>{parts[1]}
+        </>
+      )
+    }
+  }
+  
+  return text
+}
+
+function renderHighlightWithColors(text: string, locale: string) {
+  // Definir los textos a resaltar según el idioma
+  const highlightTexts = locale === 'es' 
+    ? ['qué vendes']
+    : ['what you sell']
+  
+  let result = text
+  let lastIndex = 0
+  const parts: Array<{ text: string; highlight: boolean }> = []
+  
+  // Encontrar todas las coincidencias (case insensitive)
+  const matches: Array<{ start: number; end: number; originalText: string }> = []
+  
+  highlightTexts.forEach((highlightText) => {
+    const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(result)) !== null) {
+      matches.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        originalText: match[0] // Preservar el caso original
+      })
+    }
+  })
+  
+  // Ordenar matches por posición
+  matches.sort((a, b) => a.start - b.start)
+  
+  // Crear partes del texto
+  matches.forEach((match) => {
+    if (lastIndex < match.start) {
+      parts.push({
+        text: result.substring(lastIndex, match.start),
+        highlight: false,
+      })
+    }
+    parts.push({
+      text: match.originalText,
+      highlight: true,
+    })
+    lastIndex = match.end
+  })
+  
+  if (lastIndex < result.length) {
+    parts.push({
+      text: result.substring(lastIndex),
+      highlight: false,
+    })
+  }
+  
+  if (parts.length === 0) {
+    return text
+  }
+  
+  return (
+    <>
+      {parts.map((part, index) => 
+        part.highlight ? (
+          <span key={index} className="text-nucleo-highlight">{part.text}</span>
+        ) : (
+          <span key={index}>{part.text}</span>
+        )
+      )}
+    </>
+  )
 }
 
 export async function ProblemSection() {
   const t = await getTranslations('problem')
+  const locale = await getLocale()
   const points = ['one', 'two', 'three'] as const
-  const titleRest = t('titleRest')
+  const highlightText = t('highlight')
 
   return (
     <section className="section-layout relative z-20 lg:min-h-[100vh] flex flex-col">
@@ -54,17 +118,14 @@ export async function ProblemSection() {
         </div>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h3 className="section-title mx-auto max-w-8xl">
-            <span className="block">{t('highlight')}</span>
-            <span className="mt-4 block font-geist-regular text-[20px] sm:text-2xl lg:text-3xl text-nucleo-light">
-              <span className="sm:hidden">
-                {renderTitleWithHighlight(titleRest, true)}
-              </span>
-              <span className="hidden sm:block whitespace-pre-line">
-                {renderTitleWithHighlight(titleRest, false)}
-              </span>
-            </span>
+          <h3 className="section-title mx-auto max-w-8xl text-center">
+            <span className="block">{renderHighlightWithColors(highlightText, locale)}</span>
           </h3>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <p className="mt-6 mx-auto max-w-6xl font-geist-light text-base text-nucleo-light/80 sm:text-xl whitespace-pre-line leading-normal text-center">
+            {t('subtitle')}
+          </p>
         </FadeIn>
         <div className="mt-12 text-base sm:text-lg lg:text-xl sm:mt-16 lg:mt-24 grid gap-6 sm:gap-8 text-left sm:grid-cols-3">
           {points.map((point, index) => (
@@ -73,8 +134,8 @@ export async function ProblemSection() {
             <div
                 className="problem-card flex min-h-[200px] sm:h-[250px] flex-col items-center justify-center rounded-3xl border border-nucleo-dark-secondary bg-nucleo-dark-tertiary p-4 sm:p-6 text-center shadow-sm"
             >
-              {/* Icono: h-8 (32px) en móvil, h-11 (44px) en desktop - más grande para cards 2 y 3 */}
-              <div className={`relative ${point === 'one' ? 'h-8 w-8 sm:h-11 sm:w-11' : 'h-10 w-10 sm:h-14 sm:w-14'}`}>
+              {/* Icono: tamaño uniforme, excepto PocaComunicacion que es un poco más pequeño */}
+              <div className={`relative ${point === 'two' ? 'h-9 w-9 sm:h-10 sm:w-10' : 'h-10 w-10 sm:h-12 sm:w-12'}`}>
                 <Image
                   src={t(`icons.${point}`)}
                   alt="Icono de problema"
@@ -83,7 +144,7 @@ export async function ProblemSection() {
                 />
               </div>
                 <p className="mt-6 sm:mt-8 text-card-title">
-                {t(`points.${point}`)}
+                {renderPointWithHighlight(t(`points.${point}`), point)}
               </p>
             </div>
             </FadeIn>

@@ -61,8 +61,8 @@
     "logout": "Logout"
   },
   "hero": {
-    "title": "You have an incredible B2B product, but you don't know how to communicate all its value",
-    "subtitle": "We help B2B tech companies define what makes their complex products unique, create key messages, and expand them across their website, LinkedIn, and content through conversion.",
+    "title": "Growth is impossible when your product’s value isn't clear within seconds",
+    "subtitle": "We help B2B tech companies clarify their value propositions, create differentiated messaging, and scale it across their website, LinkedIn, and content strategy",
     "ctaConversemos": "Let's Talk",
     "ctaViewTemplates": "View templates",
     "companiesTitle": "B2B technology and SaaS companies in LatAm have already trusted Núcleo:",
@@ -84,23 +84,22 @@
   },
   "problem": {
     "label": "THE PROBLEM",
-    "highlight": "Your marketing efforts fail",
-    "titleRest": " when you can't clearly explain what you sell, who you serve, and how you create value",
-    "subtitle": "Does this sound familiar?",
+    "highlight": "Your marketing would improve 10x if you communicated well what you sell, who you sell to, and how you create value",
+    "subtitle": "This sound familiar?",
     "points": {
-      "one": "It's hard to communicate your unique value through your site, LinkedIn, and meetings",
-      "two": "You juggle multiple segments and struggle to decide who to talk to and what to say",
-      "three": "You don't want to keep spending on content, ads, and outreach that don't resonate"
+      "one": "You have multiple segments or products and don't know who to talk to or what to say",
+      "two": "Your prospects don't capture your value in the first interaction and you waste time explaining the same",
+      "three": "You don't want to spend more on content, ads, and outreach that doesn't resonate"
     },
     "icons": {
-      "one": "/images/PocaComunicacion.svg",
-      "two": "/images/sitemap.svg",
+      "one": "/images/sitemap4.svg",
+      "two": "/images/PocaComunicacion.svg",
       "three": "/images/Broke_card.svg"
     }
   },
   "nivelesMensajes": {
     "label": "LEVELS",
-    "title": "With Nucleo, you move from confused to differentiated messages and increase your sales opportunities in your B2B channels",
+    "title": "Turn product complexity into clear messaging and stop losing high-value opportunities",
     "subtitle": "This requires clarity at 5 levels. Most tech companies are between 1 and 2.\nWe take you to level 5 with strategic guidance.",
     "benefitsTitle": "This is the impact of improving your messages:",
     "benefits": {
@@ -129,36 +128,35 @@
   },
   "steps": {
     "label": "SOLUTION",
-    "titleLine1": "This is how we'll guide you so",
-    "titleLine2": "you differentiate and stand out online",
+    "titleLine1": "This is how we’ll guide you to differentiate every one of your B2B products",
     "cards": {
       "stage1": {
-        "label": "STAGE 1",
-        "title": "We identify your unique differentiation opportunities",
-        "subtitle": "We analyze how your main competitors position themselves and analyze your customer information to identify insights that will make you stand out.",
+        "label": "RESEARCH & INSIGHTS",
+        "title": "We discover where you can stand out in your market",
+        "subtitle": "We analyze your competition, customers, and products; we deliver a differentiation opportunities map so you know exactly how to stand out.",
         "imageAlt": "Competitive research",
-        "image": "/images/card_1.png"
+        "image": "/images/card1.svg"
       },
       "stage2": {
-        "label": "STAGE 2",
-        "title": "We guide you to choose the segments you will focus on",
-        "subtitle": "To sell to B2B, you talk to users, final decision-makers, and influencers. We strategically select who to focus on to design messages that resonate.",
+        "label": "POSITIONING STRATEGY",
+        "title": "We clarify your value proposition and key segments",
+        "subtitle": "We determine what your main features, capabilities, and use cases are, and we define the priority segments where you should focus.",
         "imageAlt": "Key segment definition",
-        "image": "/images/card_2.png"
+        "image": "/images/card2.svg"
       },
       "stage3": {
-        "label": "STAGE 3",
-        "title": "We clarify the value proposition of your B2B services or products in your messages",
-        "subtitle": "We determine which features, capabilities, and use cases resonate most with your segments, create messages, and structure them in wireframes.",
+        "label": "MESSAGING & CONTENT",
+        "title": "We define WHAT to say and how to communicate it with your tone",
+        "subtitle": "From product messaging, content, or sales narrative: we provide you with the tools so your team has total clarity on what to communicate to each audience in each channel.",
         "imageAlt": "Prototypes and visual assets",
-        "image": "/images/card_3.png"
+        "image": "/images/card3.png"
       },
       "stage4": {
-        "label": "STAGE 4",
-        "title": "We create new content assets aligned with your positioning",
-        "subtitle": "We develop your new homepage, landing pages, sales presentation, or content to generate authority, nurture, and convert your new segments.",
+        "label": "CONTENT EXECUTION",
+        "title": "We create your content aligned to positioning",
+        "subtitle": "From redesigning the new homepage, sales deck, or first content pieces: we create the assets that your team can use from day 1 to generate authority, nurture leads, and close more sales.",
         "imageAlt": "Activation plan and metrics",
-        "image": "/images/card_4.png"
+        "image": "/images/card4.png"
       }
     }
   },
@@ -215,8 +213,7 @@
   },
   "metodologia": {
     "label": "METHODOLOGY",
-    "title": "We convert complex B2B products into clear messages and strategic content",
-    "subtitle": "We apply our methodology to transform complex products into messages that connect with your audience.",
+    "title": "Strategy is nothing without execution—we deploy it across all your B2B channels",
     "tabs": {
       "strategy": {
         "label": "Differentiation Strategy",

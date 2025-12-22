@@ -2,7 +2,7 @@
 import { useScroll, useTransform, motion } from 'framer-motion';
 import React, { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { FadeIn } from '@/components/motion/fade-in';
 
 interface Card {
@@ -17,8 +17,89 @@ const cards: Card[] = [
   { id: 4, key: 'stage4' }
 ];
 
+function renderCardSubtitleWithHighlight(text: string, cardKey: string, locale: string) {
+  // Textos a resaltar según el card y el idioma
+  const highlightTexts: Record<string, string[]> = {
+    stage1: locale === 'es' 
+      ? ['mapa de oportunidades']
+      : ['differentiation opportunities map'],
+    stage2: locale === 'es'
+      ? ['definimos los segmentos prioritarios']
+      : ['define the priority segments'],
+    stage3: locale === 'es'
+      ? ['qué comunicar a cada audiencia']
+      : ['what to communicate to each audience'],
+    stage4: locale === 'es'
+      ? ['assets que tu equipo puede usar desde el día 1']
+      : ['assets that your team can use from day 1']
+  }
+  
+  const textsToHighlight = highlightTexts[cardKey] || []
+  const parts: Array<{ text: string; highlight: boolean }> = []
+  let lastIndex = 0
+  
+  // Encontrar todas las coincidencias
+  const matches: Array<{ start: number; end: number; text: string }> = []
+  
+  textsToHighlight.forEach((highlightText) => {
+    const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(text)) !== null) {
+      matches.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        text: match[0] // Preservar el caso original
+      })
+    }
+  })
+  
+  // Ordenar matches por posición
+  matches.sort((a, b) => a.start - b.start)
+  
+  // Crear partes del texto
+  matches.forEach((match) => {
+    if (lastIndex < match.start) {
+      parts.push({
+        text: text.substring(lastIndex, match.start),
+        highlight: false,
+      })
+    }
+    parts.push({
+      text: match.text,
+      highlight: true,
+    })
+    lastIndex = match.end
+  })
+  
+  if (lastIndex < text.length) {
+    parts.push({
+      text: text.substring(lastIndex),
+      highlight: false,
+    })
+  }
+  
+  if (parts.length === 0) {
+    return text
+  }
+  
+  return (
+    <>
+      {parts.map((part, index) => 
+        part.highlight ? (
+          <span key={index} className="font-geist-super text-nucleo-light">
+            {part.text}
+          </span>
+        ) : (
+          <span key={index}>{part.text}</span>
+        )
+      )}
+    </>
+  )
+}
+
 export default function ScrollHorizontal() {
   const t = useTranslations('steps');
+  const locale = useLocale();
   const container = useRef<HTMLElement>(null);
   const cardsContainer = useRef<HTMLDivElement>(null);
   const cardsWrapper = useRef<HTMLDivElement>(null);
@@ -154,9 +235,9 @@ export default function ScrollHorizontal() {
                     {t('label')}
                   </span>
                 </div>
-                <div className="scroll-horizontal-title-container max-w-[900px] mx-auto">
+                <div className="scroll-horizontal-title-container mx-auto">
                   <h2 className="section-title text-nucleo-dark">
-                    {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
+                    {t('titleLine1')}
                   </h2>
                 </div>
               </div>
@@ -178,9 +259,9 @@ export default function ScrollHorizontal() {
                   {t('label')}
                 </span>
               </div>
-              <div className="scroll-horizontal-title-container max-w-[1200px] mx-auto">
+              <div className="scroll-horizontal-title-container max-w-5xl mx-auto">
                 <h2 className="scroll-horizontal-title">
-                  {t('titleLine1')} te {t('titleLine2').replace('te ', '')}
+                  {t('titleLine1')}
                 </h2>
               </div>
             </div>
@@ -226,7 +307,7 @@ export default function ScrollHorizontal() {
                       {t(`cards.${card.key}.title`)}
                     </h3>
                     <p className="heading-subtitle mt-6 text-sm text-nucleo-light opacity-80 sm:text-base lg:text-lg">
-                      {t(`cards.${card.key}.subtitle`)}
+                      {renderCardSubtitleWithHighlight(t(`cards.${card.key}.subtitle`), card.key, locale)}
                     </p>
                   </div>
                 </div>

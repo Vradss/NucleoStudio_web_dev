@@ -1,83 +1,79 @@
+'use client'
+
 import Image from 'next/image'
-import { getTranslations } from 'next-intl/server'
+import { useTranslations } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
+import { useEffect, useRef, useState } from 'react'
 
-function highlightTitle(title: string) {
-  // Patrones para resaltar en español e inglés
-  const patterns = [
-    { text: 'mensajes confusos a', className: 'text-nucleo-highlight' },
-    { text: 'diferenciados', className: 'text-nucleo-highlight' },
-    { text: 'confused', className: 'text-nucleo-highlight' },
-    { text: 'differentiated', className: 'text-nucleo-highlight' },
-  ]
+function TitleWithStrikethrough({ title }: { title: string }) {
+  const [isVisible, setIsVisible] = useState(false)
+  const titleRef = useRef<HTMLHeadingElement>(null)
 
-  let result = title
-  const parts: Array<{ text: string; highlight: boolean }> = []
-  let lastIndex = 0
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            // Una vez que se activa, ya no necesitamos observar más
+            observer.disconnect()
+          }
+        })
+      },
+      {
+        threshold: 0.3, // Se activa cuando el 30% del elemento es visible
+        rootMargin: '0px 0px -100px 0px', // Se activa un poco antes de que esté completamente visible
+      }
+    )
 
-  // Encontrar todas las coincidencias
-  const matches: Array<{ start: number; end: number; className: string }> = []
-  
-  patterns.forEach((pattern) => {
-    const regex = new RegExp(pattern.text, 'gi')
-    let match
-    while ((match = regex.exec(title)) !== null) {
-      matches.push({
-        start: match.index,
-        end: match.index + match[0].length,
-        className: pattern.className,
-      })
+    if (titleRef.current) {
+      observer.observe(titleRef.current)
     }
-  })
 
-  // Ordenar matches por posición
-  matches.sort((a, b) => a.start - b.start)
-
-  // Crear partes del texto
-  matches.forEach((match) => {
-    if (lastIndex < match.start) {
-      parts.push({
-        text: title.substring(lastIndex, match.start),
-        highlight: false,
-      })
+    return () => {
+      observer.disconnect()
     }
-    parts.push({
-      text: title.substring(match.start, match.end),
-      highlight: true,
-    })
-    lastIndex = match.end
-  })
+  }, [])
 
-  if (lastIndex < title.length) {
-    parts.push({
-      text: title.substring(lastIndex),
-      highlight: false,
-    })
+  // Buscar la palabra "complejos" para tacharla (case insensitive)
+  const wordToStrike = 'complejos'
+  const regex = new RegExp(wordToStrike.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+  const match = regex.exec(title)
+
+  if (match) {
+    const before = title.substring(0, match.index)
+    const word = match[0] // Preservar el caso original
+    const after = title.substring(match.index + match[0].length)
+
+    return (
+      <h2 ref={titleRef} className="section-title max-w-6xl">
+        {before}
+        <span
+          className={`relative inline-block ${isVisible ? 'strikethrough-animated' : ''}`}
+          style={{
+            color: 'inherit',
+          }}
+        >
+          {word}
+        </span>
+        {after}
+      </h2>
+    )
   }
 
-  return parts.length > 0 ? parts : [{ text: title, highlight: false }]
+  return <h2 className="section-title max-w-6xl">{title}</h2>
 }
 
-export async function NivelesMensajesSection() {
-  const t = await getTranslations('nivelesMensajes')
+export function NivelesMensajesSection() {
+  const t = useTranslations('nivelesMensajes')
   const benefits = ['one', 'two', 'three'] as const
-  const titleParts = highlightTitle(t('title'))
+  const title = t('title')
 
   return (
     <section className="section-layout relative z-20">
       <div className="section-container text-left">
         <FadeIn delay={0}>
-          <h2 className="section-title max-w-6xl">
-            {titleParts.map((part, index) => (
-              part.highlight ? (
-                <span key={index} className="text-nucleo-highlight">
-                  {part.text}
-                </span>
-              ) : (
-                <span key={index}>{part.text}</span>
-              )
-            ))}
-          </h2>
+          <TitleWithStrikethrough title={title} />
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="mt-6 max-w-6xl font-geist-light text-base text-nucleo-light/80 sm:text-lg whitespace-pre-line leading-normal">

@@ -65,7 +65,7 @@ export function PricingSection() {
       <div className="section-container">
         {/* Header */}
         <FadeIn delay={0.1}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <div className="flex items-center justify-center gap-2 text-nucleo-secondary mb-4">
               <Image
                 src="/images/isotipo_detail.svg"
@@ -79,7 +79,7 @@ export function PricingSection() {
                 {t('tagline')}
               </span>
             </div>
-            <h1 className="section-title mb-4">
+            <h1 className="section-title">
               <span className="block md:inline">
                 {t('title')}
               </span>
@@ -94,7 +94,7 @@ export function PricingSection() {
 
         {/* Pricing Cards */}
         <motion.div
-          className="grid md:grid-cols-3 items-stretch"
+          className="grid md:grid-cols-3 items-stretch pt-12 md:pt-16"
           style={{ gap: '30px' }}
           variants={containerVariants}
           initial="hidden"
@@ -110,7 +110,7 @@ export function PricingSection() {
               <motion.div
                 key={planId}
                 variants={cardVariants}
-                className="relative flex flex-col h-full"
+                className={`relative flex flex-col h-full ${isPositioningCard ? '-mt-8 md:-mt-12' : ''}`}
               >
                 <div
                   className={`relative flex flex-col h-full p-8 rounded-2xl border border-nucleo-dark-border overflow-hidden ${isPositioningCard ? 'bg-nucleo-surface-color' : 'bg-nucleo-dark-tertiary'}`}

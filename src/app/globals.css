@@ -90,7 +90,7 @@
     */
     --heading-h2-mobile: 34px;        /* 28px en móvil */
     --heading-h2-desktop: 3rem;        /* 40px en desktop (clamp max) */
-    --heading-h2-desktop-fixed: 44px;     /* 40px fijo en desktop (lg: 1024px+) */
+    --heading-h2-desktop-fixed: 48px;     /* 40px fijo en desktop (lg: 1024px+) */
     
     --heading-h3-mobile: 16px;         /* 24px en móvil */
     --heading-h3-desktop: 2rem;           /* 32px en desktop */
@@ -118,7 +118,7 @@
 @layer components {
   /* Layout estándar para todas las secciones */
   .section-layout {
-    @apply relative bg-nucleo-dark text-nucleo-light py-24 px-6 lg:px-24 lg:py-12;
+    @apply relative bg-nucleo-dark text-nucleo-light py-24 px-6 lg:px-24 lg:py-32;
   }
   
   /* Contenedor interno estándar para secciones */
@@ -230,6 +230,11 @@
     font-family: var(--font-geist-sans), system-ui, sans-serif;
     font-weight: var(--font-geist-weight-superbold);
   }
+
+  .font-geist-black {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    font-weight: 900 !important;
+  }
   
   /* ============================================
      CLASES PARA TEXTOS Y HEADINGS
@@ -305,7 +310,7 @@
   
   /* Título de card - Para títulos dentro de cards */
   .text-card-title {
-    @apply font-geist-medium text-nucleo-light;
+    @apply font-geist-regular text-nucleo-light;
     font-size: 1rem; /* text-base en mobile */
     line-height: 1.5;
   }
@@ -409,8 +414,7 @@
   .scroll-horizontal-title-container {
     margin-bottom: 60px;
     text-align: center;
-    display: flex;
-    justify-content: center;
+    width: 100%;
   }
   
   .scroll-horizontal-title {
@@ -710,6 +714,42 @@
   
     .scroll-horizontal-card-subtitle {
       font-size: 18px;
+    }
+  }
+
+  /* Animación de tachado para la palabra "complejos" */
+  .strikethrough-animated {
+    position: relative;
+  }
+
+  .strikethrough-animated::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 8px;
+    width: 100%;
+    background-color: var(--nucleo-highlight);
+    animation: strikethrough 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left center;
+  }
+
+  @keyframes strikethrough {
+    0% {
+      transform: translateY(-50%) scaleX(0);
+    }
+    15% {
+      transform: translateY(-50%) scaleX(1);
+    }
+    50% {
+      transform: translateY(-50%) scaleX(1);
+    }
+    65% {
+      transform: translateY(-50%) scaleX(0);
+    }
+    100% {
+      transform: translateY(-50%) scaleX(0);
     }
   }
 }

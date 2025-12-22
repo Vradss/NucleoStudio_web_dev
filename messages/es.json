@@ -61,8 +61,8 @@
     "logout": "Salir"
   },
   "hero": {
-    "title": "Es difícil crecer si no entienden /n/nqué haces ni cómo te diferencias",
-    "subtitle": "Ayudamos a empresas tech B2B a definir qué hace único a sus productos complejos, crear mensajes clave y expandirlos en su web, LinkedIn y contenido hasta su conversión.",
+    "title": "Es difícil crecer si no entienden qué hacen tus productos en pocos segundos",
+    "subtitle": "Ayudamos a empresas tech B2B a clarificar sus propuestas de valor, crear mensajes diferenciados y expandirlos en su web, LinkedIn y estrategia de contenido.",
     "ctaConversemos": "Conversemos",
     "ctaViewTemplates": "View templates",
     "companiesTitle": "Empresas B2B de tecnología y SaaS en LatAm ya confiaron en Núcleo:",
@@ -84,23 +84,22 @@
   },
   "problem": {
     "label": "PROBLEMA",
-    "highlight": "¿Tus acciones de marketing no funcionan?",
-    "titleRest": "Es porque no comunicas bien qué vendes,\na quién le vendes ni cómo generas valor",
+    "highlight": "Tu marketing mejoraría 10x si comunicaras bien qué vendes, a quién le vendes y cómo generas valor",
     "subtitle": "¿Te suena familiar?",
     "points": {
-      "one": "Tus prospectos no captan tu valor en la primera interacción y pierdes tiempo explicando lo mismo",
-      "two": "Tienes múltiples segmentos o productos y no sabes a quién hablarle ni qué decir",
+      "one": "Tienes múltiples segmentos o productos y no sabes a quién hablarle ni qué decir",
+      "two": "Tus prospectos no captan tu valor en la primera interacción y pierdes tiempo explicando lo mismo",
       "three": "No quieres gastar más en contenido, ads y outreach que NO resuena"
     },
     "icons": {
-      "one": "/images/PocaComunicacion.svg",
-      "two": "/images/sitemap4.svg",
+      "one": "/images/sitemap4.svg",
+      "two": "/images/PocaComunicacion.svg",
       "three": "/images/Broke_card.svg"
     }
   },
   "nivelesMensajes": {
     "label": "NIVELES",
-    "title": "Con Núcleo, pasas de mensajes confusos a diferenciados y aumentas tus oportunidades de venta en tus canales B2B",
+    "title": "Haz que tus productos complejos sean fáciles de entender y deja de perder oportunidades de venta",
     "subtitle": "Esto requiere claridad en 5 niveles. La mayoría de empresas tech está entre 1 y 2.\nNosotros te llevamos al 5 con guía estratégica.",
     "benefitsTitle": "Este es el impacto de mejorar tus mensajes:",
     "benefits": {
@@ -129,8 +128,7 @@
   },
   "steps": {
     "label": "SOLUCIÓN",
-    "titleLine1": "Así es cómo te guiaremos para que",
-    "titleLine2": "te diferencies con tus mensajes y contenidos B2B",
+    "titleLine1": "Así te guiaremos para que diferencies cada uno de tus productos B2B",
     "cards": {
       "stage1": {
         "label": "RESEARCH & INSIGHTS",
@@ -156,7 +154,7 @@
       "stage4": {
         "label": "EJECUCIÓN DE CONTENIDO",
         "title": "Creamos tus contenidos alineado al posicionamiento",
-        "subtitle": "Desde rediseñar la nueva homepage, sales deck o primeras piezas de contenido:  creamos los assets que tu equipo puede usar desde el día 1  para generar autoridad, nutrir leads y cerrar más ventas.",
+        "subtitle": "Desde rediseñar la nueva homepage, sales deck o primeras piezas de contenido:  creamos los assets que tu equipo puede usar desde el día 1 para generar autoridad, nutrir leads y cerrar más ventas.",
         "imageAlt": "Plan de activación y métricas",
         "image": "/images/card4.png"
       }
@@ -215,7 +213,7 @@
   },
   "metodologia": {
     "label": "METODOLOGÍA",
-    "title": "En B2B, comunicar de tus productos y\nluego lo tradúcelo en mensajes y contenido que resuena",
+    "title": "La estrategia no es nada sin ejecución, la aplicamos en todos tus canales B2B",
     "subtitle": "Aplicamos nuestra metodología para transformar productos complejos en mensajes que conectan con tu audiencia.",
     "tabs": {
       "strategy": {

@@ -264,32 +264,32 @@ export function Header() {
                       closeMenu()
                       window.scrollTo({ top: 0, behavior: 'smooth' })
                     }}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                    className="block text-lg font-geist-medium text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
                     {t('home')}
                   </button>
                   <button
                     onClick={() => scrollToSection('solucion')}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                    className="block text-lg font-geist-medium text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
                     {t('solution')}
                   </button>
                   <button
                     onClick={() => scrollToSection('entregables')}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full "
+                    className="block text-lg font-geist-medium text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full "
                   >
                     {t('deliverables')}
                   </button>
                   <Link
                     href="/pricing"
                     onClick={closeMenu}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                    className="block text-lg font-geist-medium text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
                     {t('pricing')}
                   </Link>
                   <button
                     onClick={() => scrollToSection('faqs')}
-                    className="block text-2xl font-geist-semibold text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
+                    className="block text-lg font-geist-medium text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
                     {t('faqs')}
                   </button>
@@ -306,7 +306,7 @@ export function Header() {
                 <Link
                   href="/contact"
                   onClick={closeMenu}
-                  className="block w-full rounded-full bg-nucleo-primary px-8 py-4 text-center text-lg font-geist-semibold text-nucleo-light transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark lowercase"
+                  className="block w-full rounded-full bg-nucleo-primary px-8 py-4 text-center text-lg font-geist-semibold text-nucleo-light transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark"
                 >
                   {t('contact')}
                 </Link>

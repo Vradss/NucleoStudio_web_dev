@@ -39,7 +39,7 @@ function renderLogo(company: CompanyLogo, key: string) {
   return (
     <div
       key={key}
-      className={`flex shrink-0 items-center justify-center transition-opacity hover:opacity-80 ${
+      className={`flex shrink-0 items-center justify-center ${
         isCompact ? 'h-20 px-1 py-0' : 'h-24'
       }`}
       style={{ width: '120px' }}
@@ -111,7 +111,7 @@ export async function CompaniesSection() {
     <section className="section-layout relative z-20">
       <div className="section-container">
         <FadeIn delay={0}>
-          <h2 className="section-title mb-12 text-center">
+          <h2 className="mx-auto max-w-3xl font-geist-regular text-base text-nucleo-light sm:text-base lg:text-base mb-1 text-center">
             {t('companiesTitle')}
           </h2>
         </FadeIn>

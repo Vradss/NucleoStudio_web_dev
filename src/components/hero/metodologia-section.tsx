@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
 
 const tabs = ['strategy', 'web', 'content', 'conversion'] as const
@@ -23,8 +23,141 @@ const tabImages = {
   conversion: '/images/toggle_1.webp',
 } as const
 
+function renderBulletPointWithHighlight(text: string, locale: string) {
+  // Textos a resaltar según el idioma
+  const highlightTexts = locale === 'es'
+    ? ['Quick research', 'Workshops', 'Arquitectura', 'Wireframes', 'Contenido de productos', 'Founder-led growth', 'thought leadership', 'Frameworks']
+    : ['Quick research', 'workshops', 'Message architecture', 'wireframes', 'Product content', 'Founder-led growth', 'Thought leadership', 'Frameworks']
+  
+  const parts: Array<{ text: string; highlight: boolean }> = []
+  let lastIndex = 0
+  
+  // Encontrar todas las coincidencias
+  const matches: Array<{ start: number; end: number; text: string }> = []
+  
+  highlightTexts.forEach((highlightText) => {
+    const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(text)) !== null) {
+      matches.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        text: match[0] // Preservar el caso original
+      })
+    }
+  })
+  
+  // Ordenar matches por posición
+  matches.sort((a, b) => a.start - b.start)
+  
+  // Crear partes del texto
+  matches.forEach((match) => {
+    if (lastIndex < match.start) {
+      parts.push({
+        text: text.substring(lastIndex, match.start),
+        highlight: false,
+      })
+    }
+    parts.push({
+      text: match.text,
+      highlight: true,
+    })
+    lastIndex = match.end
+  })
+  
+  if (lastIndex < text.length) {
+    parts.push({
+      text: text.substring(lastIndex),
+      highlight: false,
+    })
+  }
+  
+  if (parts.length === 0) {
+    return text
+  }
+  
+  return (
+    <>
+      {parts.map((part, index) => 
+        part.highlight ? (
+          <span key={index} className="font-geist-bold">{part.text}</span>
+        ) : (
+          <span key={index}>{part.text}</span>
+        )
+      )}
+    </>
+  )
+}
+
+function renderMetodologiaTitleWithHighlight(title: string, locale: string) {
+  // Texto a resaltar según el idioma
+  const highlightTexts = locale === 'es' 
+    ? ['aplicamos en todos tus canales B2B']
+    : ['we deploy it across all your B2B channels'] // El texto en inglés es diferente, no hay texto equivalente para resaltar
+  
+  const parts: Array<{ text: string; highlight: boolean }> = []
+  let lastIndex = 0
+  
+  // Encontrar todas las coincidencias
+  const matches: Array<{ start: number; end: number; text: string }> = []
+  
+  highlightTexts.forEach((highlightText) => {
+    const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(title)) !== null) {
+      matches.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        text: match[0] // Preservar el caso original
+      })
+    }
+  })
+  
+  // Ordenar matches por posición
+  matches.sort((a, b) => a.start - b.start)
+  
+  // Crear partes del texto
+  matches.forEach((match) => {
+    if (lastIndex < match.start) {
+      parts.push({
+        text: title.substring(lastIndex, match.start),
+        highlight: false,
+      })
+    }
+    parts.push({
+      text: match.text,
+      highlight: true,
+    })
+    lastIndex = match.end
+  })
+  
+  if (lastIndex < title.length) {
+    parts.push({
+      text: title.substring(lastIndex),
+      highlight: false,
+    })
+  }
+  
+  if (parts.length === 0) {
+    return title
+  }
+  
+  return (
+    <>
+      {parts.map((part, index) => 
+        part.highlight ? (
+          <span key={index} className="text-nucleo-highlight font-geist-black" style={{ fontWeight: 900 }}>{part.text}</span>
+        ) : (
+          <span key={index}>{part.text}</span>
+        )
+      )}
+    </>
+  )
+}
+
 export function MetodologiaSection() {
   const t = useTranslations('metodologia')
+  const locale = useLocale()
   const [activeTab, setActiveTab] = useState<'strategy' | 'web' | 'content' | 'conversion'>('strategy')
   const [expandedTabs, setExpandedTabs] = useState<Set<string>>(new Set(['strategy']))
   
@@ -60,8 +193,8 @@ export function MetodologiaSection() {
           </div>
         </FadeIn>*/}
         <FadeIn delay={0.1}>
-          <h2 className="section-title mt-6 max-w-7xl whitespace-pre-line">
-            {t('title')}
+          <h2 className="section-title mt-6 max-w-6xl whitespace-pre-line">
+            {renderMetodologiaTitleWithHighlight(t('title'), locale)}
           </h2>
         </FadeIn>
         
@@ -159,7 +292,7 @@ export function MetodologiaSection() {
                       </div>
                       
                       <ul className="mt-6 space-y-2">
-                        {[0, 1, 2].map((index) => {
+                        {(tab === 'web' ? [0, 1] : [0, 1, 2]).map((index) => {
                           try {
                             const point = t(`tabs.${tab}.points.${index}`)
                             if (!point || typeof point !== 'string' || point.trim() === '') {
@@ -179,7 +312,7 @@ export function MetodologiaSection() {
                                   }}
                                 />
                                 <span className="font-geist-light text-base text-nucleo-light/80 leading-relaxed">
-                                  {point}
+                                  {renderBulletPointWithHighlight(point, locale)}
                                 </span>
                               </li>
                             )
@@ -254,7 +387,7 @@ export function MetodologiaSection() {
                 
                 {/* Bullet Points */}
                 <ul className="mt-8 space-y-5">
-                  {[0, 1, 2].map((index) => {
+                  {(activeTab === 'web' ? [0, 1] : [0, 1, 2]).map((index) => {
                     try {
                       const point = t(`tabs.${activeTab}.points.${index}`)
                       if (!point || typeof point !== 'string' || point.trim() === '') {
@@ -274,7 +407,7 @@ export function MetodologiaSection() {
                             }}
                           />
                           <span className="font-geist-light text-base text-nucleo-light/80 sm:text-base leading-relaxed">
-                            {point}
+                            {renderBulletPointWithHighlight(point, locale)}
                           </span>
                         </li>
                       )
