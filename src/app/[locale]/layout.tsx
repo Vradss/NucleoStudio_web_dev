@@ -1,6 +1,9 @@
 import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
+import { SmoothScroll } from '@/components/layout/smooth-scroll'
 
 interface LocaleLayoutProps {
   children: ReactNode
@@ -17,6 +20,13 @@ export default async function LocaleLayout({
     notFound()
   }
 
-  return children
+  const messages = await getMessages()
+
+  return (
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <SmoothScroll />
+      {children}
+    </NextIntlClientProvider>
+  )
 }
 

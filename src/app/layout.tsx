@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { NextIntlClientProvider } from 'next-intl'
-import { getLocale, getMessages } from 'next-intl/server'
 import './globals.css'
-import { SmoothScroll } from '@/components/layout/smooth-scroll'
 import {
   spaceMonoRegular,
   geistSans,
@@ -18,19 +15,13 @@ interface RootLayoutProps {
   children: ReactNode
 }
 
-export default async function RootLayout({ children }: RootLayoutProps) {
-  const locale = await getLocale()
-  const messages = await getMessages()
-
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body
         className={`${spaceMonoRegular.variable} ${geistSans.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <SmoothScroll />
-          {children}
-        </NextIntlClientProvider>
+        {children}
       </body>
     </html>
   )

@@ -1,32 +1,20 @@
 'use client'
 
-import { useTransition, useEffect, useState } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
+import { useTransition } from 'react'
+import { useRouter, usePathname } from '@/i18n/routing'
+import { useLocale } from 'next-intl'
 
 export function LanguageSelector() {
   const router = useRouter()
   const pathname = usePathname()
+  const currentLocale = useLocale()
   const [isPending, startTransition] = useTransition()
-  
-  // Extraer el locale directamente del pathname en el cliente
-  const currentLocale = pathname.split('/')[1] === 'en' ? 'en' : 'es'
 
   function switchLocale(newLocale: 'es' | 'en') {
     if (currentLocale === newLocale) return
-    
+
     startTransition(() => {
-      const parts = pathname.split('/')
-      
-      // Reemplazar el locale en el pathname
-      const newParts = parts.map((part, index) => {
-        if (index === 1 && (part === 'es' || part === 'en')) {
-          return newLocale
-        }
-        return part
-      })
-      
-      const newPath = newParts.join('/')
-      router.push(newPath || `/${newLocale}`)
+      router.replace(pathname, { locale: newLocale })
     })
   }
 
