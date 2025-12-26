@@ -142,15 +142,18 @@ export default function ScrollHorizontal() {
       // Usar gsap.context para limpieza automática
       ctx = gsap.context(() => {
         // Crear la animación horizontal
+        // Dividir scrollDistance para hacer el scroll más rápido
+        const scrollSpeed = scrollDistance * 0.5; // 50% más rápido
+
         const tween = gsap.to(track, {
           x: -scrollDistance,
           ease: 'none',
           scrollTrigger: {
             trigger: section,
             start: 'top top',
-            end: () => `+=${scrollDistance}`,
+            end: () => `+=${scrollSpeed}`,
             pin: true,
-            scrub: 1,
+            scrub: 0.5, // Más responsivo
             invalidateOnRefresh: true,
             anticipatePin: 1,
             // markers: true, // Descomentar para debug

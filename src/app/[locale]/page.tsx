@@ -7,24 +7,37 @@ import { MetodologiaSection } from '@/components/hero/metodologia-section'
 import { TestimonialsSection } from '@/components/hero/testimonials-section'
 import { FaqsSection } from '@/components/hero/faqs-section'
 import { Footer } from '@/components/layout/footer'
-import { SectionsEmbed } from '@/components/hero/sections-embed'
-import { CharacterHighlight } from '@/components/hero/character-highlight'
+import { UnicornEmbed } from '@/components/hero/unicorn-embed'
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className="relative">
+    <div className="relative">
+      {/* UnicornEmbed fijo como fondo global */}
+      <UnicornEmbed
+        projectId="mebwhEqAY4unIkmgWtfB"
+        className="fixed inset-0 z-0"
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+      />
+
+      <div className="relative z-10">
+        <Header />
         <HeroSection />
-        <ProblemSection />
-        <NivelesMensajesSection />
-        <ScrollHorizontal />
-        <MetodologiaSection />
-        <TestimonialsSection />
-        <FaqsSection />
-      </main>
-      <Footer />
-    </>
+
+        {/* Main con fondo blanco para tapar el UnicornEmbed */}
+        <main className="relative bg-white">
+          <ProblemSection />
+          <NivelesMensajesSection />
+          <ScrollHorizontal />
+          <MetodologiaSection />
+          <TestimonialsSection />
+          <FaqsSection />
+        </main>
+        <Footer />
+      </div>
+    </div>
   )
 }
 
