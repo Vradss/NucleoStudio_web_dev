@@ -175,7 +175,7 @@ export function MetodologiaSection() {
   }
 
   return (
-    <section id="entregables" className="section-layout relative z-20 min-h-[125vh] flex flex-col py-24 lg:py-12">
+    <section id="entregables" className="section-layout mt-10 relative z-20 min-h-[125vh] flex flex-col py-24 lg:py-12">
       <div className="section-container text-left flex-1 flex flex-col justify-center">
         {/*<FadeIn delay={0}>
           <div className="flex items-center gap-2">

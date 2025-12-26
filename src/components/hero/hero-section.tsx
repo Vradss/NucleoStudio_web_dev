@@ -4,13 +4,13 @@ import { CompaniesContent } from './companies-section'
 
 export async function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
-      <UnicornEmbed 
+    <section className="relative overflow-hidden min-h-screen">
+      <UnicornEmbed
         projectId="mebwhEqAY4unIkmgWtfB"
-        className="fixed inset-0 z-0"
+        className="absolute inset-0 z-0"
         style={{
-          width: '100vw',
-          height: '100vh',
+          width: '100%',
+          height: '100%',
         }}
       />
       <div className="relative z-10">

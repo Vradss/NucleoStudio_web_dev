@@ -182,7 +182,7 @@ export default function ScrollHorizontal() {
   // Mobile layout
   if (isMobile) {
     return (
-      <section id="solucion" className="scroll-horizontal-section scroll-horizontal-mobile">
+      <section id="solucion" className="section-layout scroll-horizontal-section scroll-horizontal-mobile">
         <div className="scroll-horizontal-mobile-wrapper">
           <FadeIn delay={0}>
             <div className="mx-auto max-w-8xl text-center px-5">
