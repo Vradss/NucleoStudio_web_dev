@@ -235,18 +235,22 @@ export function TestimonialsSection() {
             {/* Navegación: Dots a la izquierda, flechas a la derecha */}
             <div className="flex items-center justify-between w-full max-w-[1352px] mt-8 px-4 relative">
               {/* Indicadores (Dots) - Izquierda */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`h-2 rounded-full transition-all cursor-pointer ${
-                      index === currentIndex
-                        ? 'w-8 bg-nucleo-primary'
-                        : 'w-2 bg-gray-300'
-                    }`}
+                    className="min-w-[24px] min-h-[24px] flex items-center justify-center cursor-pointer"
                     aria-label={`Ir al testimonio ${index + 1}`}
-                  />
+                  >
+                    <span
+                      className={`h-2 rounded-full transition-all ${
+                        index === currentIndex
+                          ? 'w-8 bg-nucleo-primary'
+                          : 'w-2 bg-gray-300'
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
 

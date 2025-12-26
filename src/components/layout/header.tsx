@@ -129,28 +129,28 @@ export function Header() {
           </Link>
           
           {/* Navegación en el centro */}
-          <nav className="hidden items-center gap-10 md:flex flex-1 justify-center">
+          <nav className="hidden items-center gap-6 md:flex flex-1 justify-center">
             <button
               onClick={() => scrollToSection('solucion')}
-              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
+              className="font-geist-regular text-sm text-nucleo-light/90 transition-colors hover:text-nucleo-secondary md:text-base py-2 px-3 min-h-[44px] flex items-center"
             >
               {t('solution')}
             </button>
             <button
               onClick={() => scrollToSection('entregables')}
-              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
+              className="font-geist-regular text-sm text-nucleo-light/90 transition-colors hover:text-nucleo-secondary md:text-base py-2 px-3 min-h-[44px] flex items-center"
             >
               {t('deliverables')}
             </button>
             <Link
               href="/pricing"
-              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
+              className="font-geist-regular text-sm text-nucleo-light/90 transition-colors hover:text-nucleo-secondary md:text-base py-2 px-3 min-h-[44px] flex items-center"
             >
               {t('pricing')}
             </Link>
             <button
               onClick={() => scrollToSection('faqs')}
-              className="font-geist-regular text-sm text-nucleo-light/80 transition-colors hover:text-nucleo-secondary md:text-base"
+              className="font-geist-regular text-sm text-nucleo-light/90 transition-colors hover:text-nucleo-secondary md:text-base py-2 px-3 min-h-[44px] flex items-center"
             >
               {t('faqs')}
             </button>
@@ -160,7 +160,7 @@ export function Header() {
           <div className="flex items-center gap-4 flex-shrink-0">
             <Link
               href="/contact"
-              className="hidden rounded-full bg-nucleo-dark-secondary border border-nucleo-dark-secondary px-5 py-2 text-sm font-medium text-nucleo-light transition-colors hover:bg-nucleo-dark hover:text-nucleo-light md:inline-block"
+              className="hidden rounded-full bg-nucleo-dark-secondary border border-nucleo-dark-secondary px-5 py-2.5 text-sm font-medium text-nucleo-light transition-colors hover:bg-nucleo-dark hover:text-nucleo-light md:inline-flex items-center min-h-[44px]"
             >
               {t('contact')}
             </Link>

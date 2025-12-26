@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import './globals.css'
-import {
-  spaceMonoRegular,
-  geistSans,
-} from '@/lib/fonts'
 
 export const metadata: Metadata = {
   title: 'Nucleo Studio',
@@ -16,15 +12,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <html suppressHydrationWarning>
-      <body
-        className={`${spaceMonoRegular.variable} ${geistSans.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  )
+  return children
 }
 
 

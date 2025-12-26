@@ -38,13 +38,13 @@
     --nucleo-dark-quaternary: #111111;   /* Negro cuaternario */
     --nucleo-dark-border: #3F3F50;       /* Negro para bordes */
     --nucleo-dark-hover: #151515;        /* Negro para hover */
-    --nucleo-dark-hover-light: #A0A0A0;  /* Negro para hover más claro */
+    --nucleo-dark-hover-light: #C0C0C0;  /* Gris claro para mejor contraste (WCAG AA) */
     --nucleo-bg-selector: #141214;       /* Fondo para selector de idioma */
     --nucleo-highlight: #BF9FFF;         /* Morado highlight */
     --nucleo-surface-color: #27273F;     /* Color de superficie para cards */
     
     /* Variables para opacidades y bordes */
-    --nucleo-light-opacity-80: rgba(255, 255, 238, 0.8);  /* Texto claro con 80% opacidad */
+    --nucleo-light-opacity-80: rgba(255, 255, 238, 0.9);  /* Texto claro con 90% opacidad (mejor contraste) */
     --nucleo-light-opacity-10: rgba(255, 255, 255, 0.1);  /* Borde blanco con 10% opacidad */
     --nucleo-secondary-opacity-06: rgba(195, 189, 255, 0.06);  /* Morado claro con 6% opacidad (grid pattern) */
     --nucleo-primary-opacity-08: rgba(111, 49, 255, 0.08);    /* Morado principal con 8% opacidad (grid pattern) */
