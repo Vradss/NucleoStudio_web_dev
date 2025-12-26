@@ -16,6 +16,7 @@ const config: Config = {
         'geist-semibold': ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
         'geist-bold': ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
         'geist-super': ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        'geist-black': ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
       },
       colors: {
         background: 'var(--background)',

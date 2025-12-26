@@ -210,7 +210,7 @@ export function HeroContent() {
       </motion.div>
 
       <motion.h1
-        className="mx-auto font-geist-bold text-[41px] leading-tight sm:text-5xl lg:text-[80px] whitespace-pre-line"
+        className="mx-auto font-geist-black text-[41px] leading-tight sm:text-5xl lg:text-[75px] whitespace-pre-line"
         variants={itemVariants}
       >
         {renderTitleWithHighlight(t('title'), locale)}
