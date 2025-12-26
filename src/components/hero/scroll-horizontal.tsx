@@ -110,10 +110,10 @@ export default function ScrollHorizontal() {
     setIsClient(true);
   }, []);
 
-  // Detectar si es mobile
+  // Detectar si es mobile o tablet (< 1024px usa layout vertical)
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
 
     checkMobile();
@@ -145,6 +145,9 @@ export default function ScrollHorizontal() {
         // Dividir scrollDistance para hacer el scroll más rápido
         const scrollSpeed = scrollDistance * 0.5; // 50% más rápido
 
+        // Buscar el elemento de fondo para la transición de color
+        const bgElement = document.querySelector('.scroll-color-bg') as HTMLElement;
+
         const tween = gsap.to(track, {
           x: -scrollDistance,
           ease: 'none',
@@ -157,6 +160,18 @@ export default function ScrollHorizontal() {
             invalidateOnRefresh: true,
             anticipatePin: 1,
             // markers: true, // Descomentar para debug
+            onLeave: () => {
+              // Cuando termina el scroll horizontal, cambiar a negro
+              if (bgElement) {
+                bgElement.style.backgroundColor = '#17171A';
+              }
+            },
+            onEnterBack: () => {
+              // Si vuelve atrás, restaurar blanco
+              if (bgElement) {
+                bgElement.style.backgroundColor = '#FFFFFA';
+              }
+            }
           }
         });
 
@@ -179,6 +194,38 @@ export default function ScrollHorizontal() {
       if (ctx) {
         ctx.revert();
       }
+    };
+  }, [isClient, isMobile]);
+
+  // Mobile: ScrollTrigger para transición de color
+  useEffect(() => {
+    if (!isClient || !isMobile) return;
+
+    const section = document.getElementById('solucion');
+    const bgElement = document.querySelector('.scroll-color-bg') as HTMLElement;
+
+    if (!section || !bgElement) return;
+
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'bottom 50%',
+        end: 'bottom 0%',
+        onLeave: () => {
+          if (bgElement) {
+            bgElement.style.backgroundColor = '#17171A';
+          }
+        },
+        onEnterBack: () => {
+          if (bgElement) {
+            bgElement.style.backgroundColor = '#FFFFFA';
+          }
+        }
+      });
+    });
+
+    return () => {
+      ctx.revert();
     };
   }, [isClient, isMobile]);
 

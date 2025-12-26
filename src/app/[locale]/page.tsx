@@ -8,6 +8,19 @@ import { TestimonialsSection } from '@/components/hero/testimonials-section'
 import { FaqsSection } from '@/components/hero/faqs-section'
 import { Footer } from '@/components/layout/footer'
 import { UnicornEmbed } from '@/components/hero/unicorn-embed'
+import { ScrollColorSections } from '@/components/hero/scroll-color-transition'
+
+// Transiciones de color basadas en secciones
+// La transición blanco → negro se maneja en ScrollHorizontal basándose en el progress del scroll
+const colorTransitions = [
+  {
+    // Oscuro → Blanco cuando entra ScrollHorizontal
+    triggerSelector: '#solucion',
+    toColor: '#FFFFFA',
+    start: 'top 80%',
+    end: 'top 30%',
+  },
+]
 
 export default function Home() {
   return (
@@ -29,9 +42,14 @@ export default function Home() {
         {/* Main con fondo blanco para tapar el UnicornEmbed */}
         <main className="relative bg-white">
           <ProblemSection />
-          <NivelesMensajesSection />
-          <ScrollHorizontal />
-          <MetodologiaSection />
+
+          {/* Secciones con transición de color animada */}
+          <ScrollColorSections initialColor="#17171A" transitions={colorTransitions}>
+            <NivelesMensajesSection />
+            <ScrollHorizontal />
+            <MetodologiaSection />
+          </ScrollColorSections>
+
           <TestimonialsSection />
           <FaqsSection />
         </main>

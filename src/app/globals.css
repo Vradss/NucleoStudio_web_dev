@@ -376,6 +376,15 @@
     }
   }
 
+  /* Secciones con fondo transparente dentro del wrapper de transición de color */
+  .scroll-color-wrapper .section-layout {
+    background-color: transparent !important;
+  }
+
+  .scroll-color-wrapper .scroll-horizontal-section {
+    background-color: transparent !important;
+  }
+
   /* Scroll Horizontal Component Styles */
   .scroll-horizontal-section {
     position: relative;
@@ -632,8 +641,8 @@
     opacity: 0.8;
   }
   
-  /* Responsive - Mobile */
-  @media (max-width: 767px) {
+  /* Responsive - Mobile y Tablet (layout vertical) */
+  @media (max-width: 1023px) {
     .scroll-horizontal-title-container {
       padding: 0 20px;
       margin-bottom: 40px;
@@ -715,9 +724,69 @@
     .scroll-horizontal-card-title {
       font-size: 32px;
     }
-  
+
     .scroll-horizontal-card-subtitle {
       font-size: 18px;
+    }
+  }
+
+  /* Ajustes específicos para Tablet (768px - 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .scroll-horizontal-cards-mobile {
+      padding: 20px 40px;
+      gap: 40px;
+    }
+
+    .scroll-horizontal-card {
+      flex-direction: row;
+      height: auto;
+      min-height: 350px;
+    }
+
+    .scroll-horizontal-card-image {
+      flex: 1;
+      border-top-left-radius: var(--scroll-border-radius-md);
+      border-bottom-left-radius: var(--scroll-border-radius-md);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      min-height: 300px;
+    }
+
+    .scroll-horizontal-card-content {
+      flex: 1;
+      padding: 30px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: var(--scroll-border-radius-md);
+      border-bottom-right-radius: var(--scroll-border-radius-md);
+    }
+
+    .scroll-horizontal-card-title {
+      font-size: 28px;
+    }
+
+    .scroll-horizontal-card-subtitle {
+      font-size: 16px;
+    }
+  }
+
+  /* Ajustes específicos para Mobile pequeño (< 480px) */
+  @media (max-width: 480px) {
+    .scroll-horizontal-cards-mobile {
+      padding: 16px;
+      gap: 24px;
+    }
+
+    .scroll-horizontal-card-content {
+      padding: 20px 16px;
+    }
+
+    .scroll-horizontal-card-title {
+      font-size: 26px;
+    }
+
+    .scroll-horizontal-card-subtitle {
+      font-size: 16px;
     }
   }
 
