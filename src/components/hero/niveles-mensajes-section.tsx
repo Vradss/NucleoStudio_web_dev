@@ -3,41 +3,11 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
-import { useEffect, useRef, useState } from 'react'
 
-function TitleWithStrikethrough({ title }: { title: string }) {
-  const [isVisible, setIsVisible] = useState(false)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-            // Una vez que se activa, ya no necesitamos observar más
-            observer.disconnect()
-          }
-        })
-      },
-      {
-        threshold: 0.3, // Se activa cuando el 30% del elemento es visible
-        rootMargin: '0px 0px -100px 0px', // Se activa un poco antes de que esté completamente visible
-      }
-    )
-
-    if (titleRef.current) {
-      observer.observe(titleRef.current)
-    }
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
-  // Buscar la palabra "complejos" para tacharla (case insensitive)
-  const wordToStrike = 'complejos'
-  const regex = new RegExp(wordToStrike.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+function TitleWithDisabledWord({ title }: { title: string }) {
+  // Buscar la palabra "complejos" para desactivarla (case insensitive)
+  const wordToDisable = 'complejos'
+  const regex = new RegExp(wordToDisable.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
   const match = regex.exec(title)
 
   if (match) {
@@ -46,14 +16,9 @@ function TitleWithStrikethrough({ title }: { title: string }) {
     const after = title.substring(match.index + match[0].length)
 
     return (
-      <h2 ref={titleRef} className="section-title max-w-6xl">
+      <h2 className="section-title max-w-7xl">
         {before}
-        <span
-          className={`relative inline-block ${isVisible ? 'strikethrough-animated' : ''}`}
-          style={{
-            color: 'inherit',
-          }}
-        >
+        <span className="text-nucleo-dark-hover-light">
           {word}
         </span>
         {after}
@@ -73,7 +38,7 @@ export function NivelesMensajesSection() {
     <section className="section-layout relative z-20">
       <div className="section-container text-left">
         <FadeIn delay={0}>
-          <TitleWithStrikethrough title={title} />
+          <TitleWithDisabledWord title={title} />
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="mt-6 max-w-6xl font-geist-light text-base text-nucleo-light/80 sm:text-lg whitespace-pre-line leading-normal">

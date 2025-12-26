@@ -15,19 +15,11 @@ const tabIcons = {
   conversion: '/images/ChartLineUp.svg',
 } as const
 
-// Mapeo de imágenes para cada tab
-const tabImages = {
-  strategy: '/images/toggle_1.webp',
-  web: '/images/toggle_2.webp',
-  content: '/images/toggle_3.webp',
-  conversion: '/images/toggle_1.webp',
-} as const
-
 function renderBulletPointWithHighlight(text: string, locale: string) {
   // Textos a resaltar según el idioma
   const highlightTexts = locale === 'es'
-    ? ['Quick research', 'Workshops', 'Arquitectura', 'Wireframes', 'Contenido de productos', 'Founder-led growth', 'thought leadership', 'Frameworks']
-    : ['Quick research', 'workshops', 'Message architecture', 'wireframes', 'Product content', 'Founder-led growth', 'Thought leadership', 'Frameworks']
+    ? ['Quick research', 'Workshops', 'Arquitectura', 'Wireframes', 'Contenido de productos', 'Founder-led growth', 'thought leadership', 'Frameworks' , 'Contenido sales enablement', 'Contenido de generación de leads', 'Contenido de lifecycle']
+    : ['Quick research', 'workshops', 'Message architecture', 'wireframes', 'Product content', 'Founder-led growth', 'Thought leadership', 'Frameworks', 'Sales enablement content', 'Lead generation content', 'Lifecycle content']
   
   const parts: Array<{ text: string; highlight: boolean }> = []
   let lastIndex = 0
@@ -206,10 +198,10 @@ export function MetodologiaSection() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex items-center justify-center gap-2 py-0 pb-5 font-geist-regular text-[20px] transition-all ${
+                  className={`flex items-center justify-center gap-2 py-0 pb-5 text-[20px] transition-all ${
                     activeTab === tab
-                      ? 'border-b-2'
-                      : ''
+                      ? 'border-b-2 font-geist-medium'
+                      : 'font-geist-regular'
                   }`}
                   style={{
                     color: activeTab === tab ? 'var(--nucleo-secondary)' : 'var(--nucleo-dark-hover-light)',
@@ -242,7 +234,9 @@ export function MetodologiaSection() {
               <div key={tab} className="mb-4">
                 <button
                   onClick={() => toggleTab(tab)}
-                  className="w-full flex items-center justify-between py-3 px-4 font-geist-medium text-[18px] transition-all rounded-lg"
+                  className={`w-full flex items-center justify-between py-3 px-4 text-[18px] transition-all rounded-lg ${
+                    isExpanded ? 'font-geist-semibold' : 'font-geist-medium'
+                  }`}
                   style={{
                     color: isExpanded ? 'var(--nucleo-secondary)' : 'var(--nucleo-dark-hover-light)',
                     backgroundColor: isExpanded ? '#27273F' : 'transparent',
@@ -324,11 +318,11 @@ export function MetodologiaSection() {
                       
                       <div className="mt-6 flex items-center justify-center">
                         <Image
-                          src={tabImages[tab]}
+                          src={t(`tabs.${tab}.image`)}
                           alt={t(`tabs.${tab}.imageAlt`)}
                           width={800}
                           height={600}
-                          className="w-full max-w-[500px] h-auto object-contain"
+                          className="w-full max-w-[650px] h-auto object-contain"
                           style={{ borderRadius: '12px' }}
                         />
                       </div>
@@ -343,7 +337,7 @@ export function MetodologiaSection() {
         {/* Desktop: Tab Content */}
         <FadeIn delay={0.4}>
           <div 
-            className="hidden md:flex mt-4 border flex-1 flex-col min-h-0" 
+            className="hidden md:flex mt-4 border flex-1 flex-col min-h-0 py-6" 
             style={{ 
               borderColor: '#3F3F50', 
               borderRadius: '12px'
@@ -423,11 +417,11 @@ export function MetodologiaSection() {
               <div className="flex items-center justify-center p-6 lg:p-6 min-h-0">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
-                    src={tabImages[activeTab]}
+                    src={t(`tabs.${activeTab}.image`)}
                     alt={t(`tabs.${activeTab}.imageAlt`)}
                     width={800}
                     height={600}
-                    className="w-full max-w-[500px] h-full object-contain"
+                    className="w-full max-w-[650px] h-full object-contain"
                     style={{ borderRadius: '12px' }}
                     priority={activeTab === 'strategy'}
                   />

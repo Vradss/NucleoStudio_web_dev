@@ -100,7 +100,7 @@
   "nivelesMensajes": {
     "label": "NIVELES",
     "title": "Haz que tus productos complejos sean fáciles de entender y deja de perder oportunidades de venta",
-    "subtitle": "Esto requiere claridad en 5 niveles. La mayoría de empresas tech está entre 1 y 2.\nNosotros te llevamos al 5 con guía estratégica.",
+    "subtitle": "Esto requiere claridad en 5 niveles para que pases de confuso a diferenciado",
     "benefitsTitle": "Este es el impacto de mejorar tus mensajes:",
     "benefits": {
       "one": {
@@ -217,7 +217,7 @@
     "subtitle": "Aplicamos nuestra metodología para transformar productos complejos en mensajes que conectan con tu audiencia.",
     "tabs": {
       "strategy": {
-        "label": "Estrategia de diferenciación",
+        "label": "Estrategia de posicionamiento",
         "description1": "Comenzamos clarificando tu propuesta de valor antes de crear contenido.",
         "description2": "Aplicamos nuestra metodología y definimos tu nueva arquitectura de mensajes clave de cada producto.",
         "points": {
@@ -225,7 +225,8 @@
           "1": "Workshops de posicionamiento y messaging",
           "2": "Arquitectura de mensajes: qué decir en cada contenido"
         },
-        "imageAlt": "Estrategia de diferenciación"
+        "image": "/images/estrategia_diferenciacion.webp",
+        "imageAlt": "Estrategia de posicionamiento y mensajes"
       },
       "web": {
         "label": "Web & Landing pages",
@@ -235,6 +236,7 @@
           "0": "Wireframes de homepage y landing pages",
           "1": "Contenido de productos en sitio web: casos de uso,comparativos, entre otros"
         },
+        "image": "/images/web_landing_pages.webp",
         "imageAlt": "Web y Landing pages"
       },
       "content": {
@@ -246,17 +248,19 @@
           "1": "Contenido thought leadership: newsletter, lead magnets",
           "2": "Frameworks propios"
         },
+        "image": "/images/Contenido_referente.webp",
         "imageAlt": "Contenido para ser referente"
       },
       "conversion": {
-        "label": "Contenido de conversión",
-        "description1": "Diseñamos contenido que acelera el proceso de venta y reduce fricción.",
-        "description2": "Creamos recursos que ayudan a tus equipos comerciales a cerrar más y más rápido.",
+        "label": "Contenido de venta",
+        "description1": "Creamos contenido que ayude a acelerar tus ciclos de venta, desde la nutrición hasta el cierre.",
+        "description2": "",
         "points": {
-          "0": "Sales decks y presentaciones",
-          "1": "One-pagers y hojas de producto",
-          "2": "Email sequences y nurtures"
+          "0": "Contenido sales enablement: casos de éxito, casos de estudio, sales deck, one pagers",
+          "1": "Contenido de generación de leads: descargables o lead magnets.",
+          "2": "Contenido de lifecycle: Email workflows, nutrición de emailing."
         },
+        "image": "/images/contenido_Venta.webp",
         "imageAlt": "Contenido de conversión"
       }
     }

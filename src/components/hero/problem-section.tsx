@@ -26,72 +26,6 @@ function renderPointWithHighlight(text: string, point: 'one' | 'two' | 'three') 
   return text
 }
 
-function renderHighlightWithColors(text: string, locale: string) {
-  // Definir los textos a resaltar según el idioma
-  const highlightTexts = locale === 'es' 
-    ? ['qué vendes']
-    : ['what you sell']
-  
-  let result = text
-  let lastIndex = 0
-  const parts: Array<{ text: string; highlight: boolean }> = []
-  
-  // Encontrar todas las coincidencias (case insensitive)
-  const matches: Array<{ start: number; end: number; originalText: string }> = []
-  
-  highlightTexts.forEach((highlightText) => {
-    const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
-    let match
-    while ((match = regex.exec(result)) !== null) {
-      matches.push({
-        start: match.index,
-        end: match.index + match[0].length,
-        originalText: match[0] // Preservar el caso original
-      })
-    }
-  })
-  
-  // Ordenar matches por posición
-  matches.sort((a, b) => a.start - b.start)
-  
-  // Crear partes del texto
-  matches.forEach((match) => {
-    if (lastIndex < match.start) {
-      parts.push({
-        text: result.substring(lastIndex, match.start),
-        highlight: false,
-      })
-    }
-    parts.push({
-      text: match.originalText,
-      highlight: true,
-    })
-    lastIndex = match.end
-  })
-  
-  if (lastIndex < result.length) {
-    parts.push({
-      text: result.substring(lastIndex),
-      highlight: false,
-    })
-  }
-  
-  if (parts.length === 0) {
-    return text
-  }
-  
-  return (
-    <>
-      {parts.map((part, index) => 
-        part.highlight ? (
-          <span key={index} className="text-nucleo-highlight">{part.text}</span>
-        ) : (
-          <span key={index}>{part.text}</span>
-        )
-      )}
-    </>
-  )
-}
 
 export async function ProblemSection() {
   const t = await getTranslations('problem')
@@ -119,7 +53,7 @@ export async function ProblemSection() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <h3 className="section-title mx-auto max-w-8xl text-center">
-            <span className="block">{renderHighlightWithColors(highlightText, locale)}</span>
+            <span className="block">{highlightText}</span>
           </h3>
         </FadeIn>
         <FadeIn delay={0.1}>

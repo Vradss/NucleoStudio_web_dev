@@ -224,6 +224,7 @@
           "1": "Positioning and messaging workshops",
           "2": "Message architecture: what to say in each content"
         },
+        "image": "/images/toggle_1.webp",
         "imageAlt": "Differentiation Strategy"
       },
       "web": {
@@ -234,6 +235,7 @@
           "0": "Homepage and landing page wireframes",
           "1": "Product content on website: use cases, comparisons, among others"
         },
+        "image": "/images/toggle_2.webp",
         "imageAlt": "Web and Landing pages"
       },
       "content": {
@@ -245,18 +247,20 @@
           "1": "Thought leadership content: newsletter, lead magnets",
           "2": "Own frameworks"
         },
+        "image": "/images/toggle_3.webp",
         "imageAlt": "Content to be a reference"
       },
       "conversion": {
-        "label": "Conversion Content",
-        "description1": "We design content that accelerates the sales process and reduces friction.",
-        "description2": "We create resources that help your sales teams close more and faster.",
+        "label": "Sales Content",
+        "description1": "We create content that helps accelerate your sales cycles, from nurturing to closing.",
+        "description2": "",
         "points": {
-          "0": "Sales decks and presentations",
-          "1": "One-pagers and product sheets",
-          "2": "Email sequences and nurtures"
+          "0": "Sales enablement content: success stories, case studies, sales decks, one-pagers",
+          "1": "Lead generation content: downloadable resources or lead magnets.",
+          "2": "Lifecycle content: email workflows, email nurturing."
         },
-        "imageAlt": "Conversion Content"
+        "image": "/images/toggle_1.webp",
+        "imageAlt": "Sales Content"
       }
     }
   },
