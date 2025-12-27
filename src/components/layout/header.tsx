@@ -63,6 +63,9 @@ export function Header() {
     setIsMenuOpen(false)
   }
 
+  // Detectar si estamos en la página de pricing
+  const isPricingPage = pathname?.includes('/pricing')
+
   const scrollToSection = (sectionId: string) => {
     closeMenu()
     
@@ -111,8 +114,10 @@ export function Header() {
         initial={{ y: 0 }}
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className={`sticky top-0 z-50 bg-transparent transition-all duration-300 ${
-          hasScrolled ? 'backdrop-blur-md' : ''
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          isPricingPage 
+            ? 'bg-nucleo-dark' 
+            : `bg-transparent ${hasScrolled ? 'backdrop-blur-md' : ''}`
         }`}
       >
         <div className="mx-auto max-w-7xl flex h-16 items-center justify-between p-4 text-nucleo-light">

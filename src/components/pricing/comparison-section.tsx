@@ -1,11 +1,14 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useState } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
 import { Link } from '@/i18n/routing'
 import { FadeIn } from '@/components/motion/fade-in'
 
 export function ComparisonSection() {
   const t = useTranslations('pricing.afterEstrategia')
+  const locale = useLocale()
+  const [isMonthly, setIsMonthly] = useState(false) // false = quarterly (default), true = monthly
 
   const planIds = ['starter', 'pro', 'fractional'] as const
   const categoryIds = ['estrategia', 'ejecucion', 'operaciones'] as const
@@ -13,7 +16,9 @@ export function ComparisonSection() {
   const getPlanData = (planId: typeof planIds[number]) => ({
     name: t(`plans.${planId}.name`),
     description: t(`plans.${planId}.description`),
-    price: t(`plans.${planId}.price`),
+    price: isMonthly 
+      ? t(`plans.${planId}.priceMonthly`)
+      : t(`plans.${planId}.priceQuarterly`),
     priceSubtext: t(`plans.${planId}.priceSubtext`),
     cta: t(`plans.${planId}.cta`),
     ctaLink: t(`plans.${planId}.ctaLink`),
@@ -98,14 +103,65 @@ export function ComparisonSection() {
       <div className="section-container">
         {/* Title */}
         <FadeIn delay={0.1}>
-          <div className="text-center mb-16">
-            <h2 className="section-title mb-4 whitespace-pre-line">
-              {t('title').split('necesitas')[0]}necesitas
-              {'\n'}
-              {t('title').split('necesitas')[1].split('Aquí va.')[0]}
-              {'\n'}
-              <span className="text-nucleo-highlight">Aquí va.</span>
+          <div className="text-center mb-8">
+            <h2 className="section-title mb-8 whitespace-pre-line">
+              {(() => {
+                const title = t('title')
+                if (locale === 'es') {
+                  const parts = title.split('necesitas')
+                  if (parts.length > 1) {
+                    const secondPart = parts[1].split('Aquí va.')
+                    return (
+                      <>
+                        {parts[0]}necesitas
+                        {'\n'}
+                        {secondPart[0]}
+                        {'\n'}
+                        <span className="text-nucleo-highlight">Aquí va.</span>
+                      </>
+                    )
+                  }
+                } else {
+                  // English version
+                  const parts = title.split('Here it is.')
+                  if (parts.length > 1) {
+                    return (
+                      <>
+                        {parts[0]}
+                        <span className="text-nucleo-highlight">Here it is.</span>
+                      </>
+                    )
+                  }
+                }
+                // Fallback: show title as is
+                return title
+              })()}
             </h2>
+            
+            {/* Pricing Toggle */}
+            <div className="flex items-center justify-center gap-4">
+              <span className={`font-geist-regular text-base transition-colors ${!isMonthly ? 'text-nucleo-light' : 'text-nucleo-dark-hover-light'}`}>
+                {t('quarterlyLabel')}
+              </span>
+              <button
+                onClick={() => setIsMonthly(!isMonthly)}
+                className="relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-nucleo-highlight focus:ring-offset-2"
+                style={{
+                  backgroundColor: isMonthly ? '#6F31FF' : '#3F3F50',
+                }}
+                role="switch"
+                aria-checked={isMonthly}
+              >
+                <span
+                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                    isMonthly ? 'translate-x-7' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className={`font-geist-regular text-base transition-colors ${isMonthly ? 'text-nucleo-light' : 'text-nucleo-dark-hover-light'}`}>
+                {t('monthlyLabel')}
+              </span>
+            </div>
           </div>
         </FadeIn>
 
@@ -254,6 +310,38 @@ export function ComparisonSection() {
               )
             })}
           </div>
+
+        {/* Subtext with link */}
+        <FadeIn delay={0.5}>
+          <div className="text-left mt-12 md:mt-16">
+            <p className="font-geist-regular text-base text-nucleo-dark-hover-light">
+              {(() => {
+                const subtext = t('subtext')
+                const linkText = t('subtextLink')
+                const linkUrl = t('subtextLinkUrl')
+                const parts = subtext.split(linkText)
+                
+                if (parts.length === 2) {
+                  return (
+                    <>
+                      {parts[0]}
+                      <a
+                        href={linkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-geist-super text-nucleo-light hover:text-nucleo-highlight transition-colors underline"
+                      >
+                        {linkText}
+                      </a>
+                      {parts[1]}
+                    </>
+                  )
+                }
+                return subtext
+              })()}
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

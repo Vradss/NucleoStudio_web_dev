@@ -16,6 +16,7 @@ interface PricingPlan {
   cta: string
   ctaLink: string
   features: string[]
+  addons: string[]
 }
 
 export function PricingSection() {
@@ -27,6 +28,10 @@ export function PricingSection() {
     // Get features as raw object first
     const featuresRaw = t.raw(`plans.${planId}.features`)
     const features = Array.isArray(featuresRaw) ? featuresRaw : []
+    
+    // Get addons as raw object
+    const addonsRaw = t.raw(`plans.${planId}.addons`)
+    const addons = Array.isArray(addonsRaw) ? addonsRaw : []
 
     return {
       name: t(`plans.${planId}.name`),
@@ -38,6 +43,7 @@ export function PricingSection() {
       cta: t(`plans.${planId}.cta`),
       ctaLink: t(`plans.${planId}.ctaLink`),
       features: features as string[],
+      addons: addons as string[],
     }
   }
 
@@ -83,19 +89,13 @@ export function PricingSection() {
               <span className="block md:inline">
                 {t('title')}
               </span>
-              <span className="block md:inline md:ml-1">
-                <span className="block md:inline font-geist-bold text-nucleo-highlight">
-                  {t('titleQuestion')}
-                </span>
-              </span>
             </h1>
           </div>
         </FadeIn>
 
         {/* Pricing Cards */}
         <motion.div
-          className="grid md:grid-cols-3 items-stretch pt-12 md:pt-16"
-          style={{ gap: '30px' }}
+          className="grid grid-cols-1 md:grid-cols-3 items-stretch pt-12 md:pt-16 gap-6 md:gap-[30px]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -110,10 +110,10 @@ export function PricingSection() {
               <motion.div
                 key={planId}
                 variants={cardVariants}
-                className={`relative flex flex-col h-full ${isPositioningCard ? '-mt-8 md:-mt-12' : ''}`}
+                className={`relative flex flex-col h-full ${isPositioningCard ? 'md:-mt-12' : ''}`}
               >
                 <div
-                  className={`relative flex flex-col h-full p-8 rounded-2xl border border-nucleo-dark-border overflow-hidden ${isPositioningCard ? 'bg-nucleo-surface-color' : 'bg-nucleo-dark-tertiary'}`}
+                  className={`relative flex flex-col h-full p-6 md:p-8 rounded-2xl border border-nucleo-dark-border overflow-hidden ${isPositioningCard ? 'bg-nucleo-surface-color' : 'bg-nucleo-dark-tertiary'}`}
                 >
                   {isPositioningCard && (
                     <div
@@ -124,26 +124,26 @@ export function PricingSection() {
                     />
                   )}
                   {/* Timeline */}
-                  <div className="font-space-mono text-sm text-nucleo-secondary mb-[20px]">
+                  <div className="font-space-mono text-sm text-nucleo-secondary mb-4 md:mb-[20px]">
                     {plan.timeline}
                   </div>
 
                   {/* Plan Name */}
-                  <h3 className="font-geist-super text-2xl md:text-2xl mb-[30px] text-nucleo-light">
+                  <h3 className="font-geist-super text-xl md:text-2xl mb-6 md:mb-[30px] text-nucleo-light">
                     {plan.name}
                   </h3>
 
                   {/* Price */}
-                  <div className="mb-[30px]">
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-geist-regular text-base text-nucleo-dark-hover-light">
+                  <div className="mb-6 md:mb-[30px]">
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      <span className="font-geist-regular text-sm md:text-base text-nucleo-dark-hover-light">
                         {plan.pricePrefix}
                       </span>
-                      <span className="font-geist-semibold text-[42px] text-nucleo-light">
+                      <span className="font-geist-semibold text-[36px] md:text-[42px] text-nucleo-light">
                         {plan.price}
                       </span>
                       {plan.priceSubtext && (
-                        <span className="font-geist-regular text-base text-nucleo-dark-hover-light">
+                        <span className="font-geist-regular text-sm md:text-base text-nucleo-dark-hover-light">
                           {plan.priceSubtext}
                         </span>
                       )}
@@ -151,14 +151,14 @@ export function PricingSection() {
                   </div>
 
                   {/* Description */}
-                  <p className="font-geist-regular text-base text-nucleo-dark-hover-light mb-8 whitespace-pre-line">
+                  <p className="font-geist-regular text-sm md:text-base text-nucleo-dark-hover-light mb-6 md:mb-8 whitespace-pre-line leading-relaxed">
                     {plan.description.replace(/\\n/g, '\n')}
                   </p>
 
                   {/* CTA Button */}
                   <Link
                     href={plan.ctaLink}
-                    className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all mb-8 hover:opacity-90"
+                    className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all mb-6 md:mb-8 hover:opacity-90 w-full"
                     style={{
                       background: '#6F31FF',
                     }}
@@ -167,32 +167,72 @@ export function PricingSection() {
                   </Link>
 
                   {/* Features */}
-                  <ul className="space-y-4 flex-1">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-3">
-                        <div className="flex-shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M5 8L7 10L11 6"
-                              stroke="#C3BDFF"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <span className="font-geist-regular text-base text-nucleo-dark-hover-light leading-relaxed">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex-1 flex flex-col">
+                    <h4 className="font-geist-semibold text-sm md:text-base text-nucleo-light mb-3 md:mb-4">
+                      {t('includesLabel')}
+                    </h4>
+                    <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-2 md:gap-3">
+                          <div className="flex-shrink-0 mt-0.5 w-4 h-4 md:w-5 md:h-5 flex items-center justify-center">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M5 8L7 10L11 6"
+                                stroke="#C3BDFF"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </div>
+                          <span className="font-geist-regular text-sm md:text-base text-nucleo-dark-hover-light leading-relaxed">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {/* Addons */}
+                    {plan.addons && plan.addons.length > 0 && (
+                      <>
+                        <h4 className="font-geist-semibold text-sm md:text-base text-nucleo-light mb-3 md:mb-4">
+                          {t('addonsLabel')}
+                        </h4>
+                        <ul className="space-y-3 md:space-y-4">
+                          {plan.addons.map((addon, addonIndex) => (
+                            <li key={addonIndex} className="flex items-start gap-2 md:gap-3">
+                              <div className="flex-shrink-0 mt-0.5 w-4 h-4 md:w-5 md:h-5 flex items-center justify-center">
+                                <svg
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M5 8L7 10L11 6"
+                                    stroke="#C3BDFF"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                  />
+                                </svg>
+                              </div>
+                              <span className="font-geist-regular text-sm md:text-base text-nucleo-dark-hover-light leading-relaxed">
+                                {addon}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             )

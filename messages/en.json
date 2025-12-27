@@ -214,9 +214,10 @@
   "metodologia": {
     "label": "METHODOLOGY",
     "title": "Strategy is nothing without execution—we deploy it across all your B2B channels",
+    "subtitle": "We apply our methodology to transform complex products into messages that connect with your audience.",
     "tabs": {
       "strategy": {
-        "label": "Differentiation Strategy",
+        "label": "Positioning Strategy",
         "description1": "We start by clarifying your value proposition before creating content.",
         "description2": "We apply our methodology and define your new key message architecture for each product.",
         "points": {
@@ -224,8 +225,8 @@
           "1": "Positioning and messaging workshops",
           "2": "Message architecture: what to say in each content"
         },
-        "image": "/images/toggle_1.webp",
-        "imageAlt": "Differentiation Strategy"
+        "image": "/images/estrategia_diferenciacion.webp",
+        "imageAlt": "Positioning Strategy and Messages"
       },
       "web": {
         "label": "Web & Landing pages",
@@ -235,7 +236,7 @@
           "0": "Homepage and landing page wireframes",
           "1": "Product content on website: use cases, comparisons, among others"
         },
-        "image": "/images/toggle_2.webp",
+        "image": "/images/web_landing_pages.webp",
         "imageAlt": "Web and Landing pages"
       },
       "content": {
@@ -247,7 +248,7 @@
           "1": "Thought leadership content: newsletter, lead magnets",
           "2": "Own frameworks"
         },
-        "image": "/images/toggle_3.webp",
+        "image": "/images/Contenido_referente.webp",
         "imageAlt": "Content to be a reference"
       },
       "conversion": {
@@ -259,8 +260,8 @@
           "1": "Lead generation content: downloadable resources or lead magnets.",
           "2": "Lifecycle content: email workflows, email nurturing."
         },
-        "image": "/images/toggle_1.webp",
-        "imageAlt": "Sales Content"
+        "image": "/images/contenido_Venta.webp",
+        "imageAlt": "Conversion Content"
       }
     }
   },
@@ -326,120 +327,144 @@
     "label": "Frequently Asked Questions",
     "title": "FAQS",
     "faq1": {
-      "question": "Who is this service for?",
-      "answer": "Do you feel like your product is good but when you explain it, it sounds confusing? Do you lose opportunities because you can't differentiate yourself from competitors in sales meetings? This is for you. We work with founders and B2B tech companies that already have active clients and are ready to communicate their value with clarity. With our service, you'll have the strategic messages you need so your sales team closes faster and your prospects say 'this is exactly what I need'."
+      "question": "When should I choose a one-time project vs a monthly plan?",
+      "answer": "One-time project: If you need to clarify your value proposition once and your team will execute the content afterwards. Ideal for launches, defining your campaign messages, repositioning because your value proposition evolved, or when you prefer a closed deliverable without monthly commitment. Monthly plan: If you already have clear positioning and messages but need to execute consistent content without building a team, or you want a partner that handles strategy and content end-to-end."
     },
     "faq2": {
-      "question": "What makes Núcleo different from other agencies or freelancers?",
-      "answer": "Agencies do nice visual branding but don't solve your core problem: you don't know how to differentiate yourself. Copywriters write texts without strategic context. We work differently. First, we clarify your positioning so you understand who you're really competing against and why they choose you. Then we translate that strategy into concrete messages for web, sales deck, and content. It's not just about making things look nice, it's about making them strategically correct."
+      "question": "Can I pay for just 1 month of the content plans?",
+      "answer": "Of course, it's possible. Just make sure to choose \"monthly\" to update the prices. Download the complete content catalog here to see what content we can create for you → [link]"
     },
     "faq3": {
-      "question": "What exactly will I receive at the end of the project?",
-      "answer": "With Plan 1, you receive everything needed to clarify your commercial proposal: complete competitive analysis, strategic positioning of your product, wireframe copy of your homepage with the right messages, and a professional sales deck. With Plan 2, we amplify your credibility: LinkedIn content strategy, monthly editorial plan, and templates to position yourself as a reference. All deliverables are editable so you can use them with your team. It does not include web development or final UI design."
+      "question": "Do you specialize in any type of B2B companies?",
+      "answer": "Yes, we work with startups in education, financial services, B2B ecommerce, and consulting firms in technology, science, innovation and/or executive training. They usually have these characteristics: long sales cycles (>1 month), high tickets, have products that are difficult to understand or are in a new category (Example: AI)"
     },
     "faq4": {
-      "question": "How much does it cost?",
-      "answer": "The price depends on the complexity of your case: more products means more competitive analysis, multiple segments requires message differentiation by audience, and larger teams need more strategic alignment. Check our plans and prices here. You can also schedule a 30-minute discovery call for a budget tailored to your specific situation."
+      "question": "How does monthly content execution work?",
+      "answer": "In the STARTER plan you prioritize the content you need each month. In the PRO and FRACTIONAL plans we help you with planning and execution. Download the complete content catalog here → [link]"
     },
     "faq5": {
-      "question": "Do you design the homepage or just write the texts?",
-      "answer": "We deliver the complete wireframe copy: the structure of your homepage with all strategic messages and final texts, but in wireframe format without UI design. If you need visual design and web development, we can recommend trusted designers who work on our wireframes, or your team can implement it directly."
+      "question": "What if I don't have clarity on my target segment or my differentiation?",
+      "answer": "Our one-time positioning projects or Fractional plan are for you. Includes: → Customer interviews to understand why they choose you → Competitive analysis to identify where to win → Workshops to define your positioning. You don't need clarity before starting. Our process helps you discover it."
     },
     "faq6": {
-      "question": "How long does the project take and how much time do I need to invest?",
-      "answer": "The project takes between 4 and 5 weeks and you need to invest about 6 hours in total distributed across strategic workshops, deliverable validations, and sharing information about your product. It's collaborative because the knowledge of your business is in your head, not ours. We depend on you being the expert in your industry and customers for the project to work. Commercial results like better conversion typically appear 3-6 months after implementation."
+      "question": "Do I need to have a marketing team to work with you?",
+      "answer": "Not necessarily. Some clients have been CEOs or founders without a marketing team and start defining positioning before investing in marketing or with a LinkedIn strategy and delegate execution. In other cases, there are marketing managers who already have a clear strategy and want execution support."
     },
     "faq7": {
-      "question": "Will you interview our clients?",
-      "answer": "We don't interview your end clients. We work directly with you and your internal team: founders, decision makers, and marketing team if you have one. The project works because you already know your clients better than anyone, and we help you translate that knowledge into clear strategic messages. We depend on you sharing that expertise in the workshops to structure your value proposition in a way that resonates with your audience."
+      "question": "How long does it take to see results?",
+      "answer": "It depends on the type of plan you choose. The fastest result: clarity in your value proposition and marketing messages. Clients mention that their team knows exactly what to say after the first sessions. This directly impacts all your active marketing actions and their key metrics."
+    },
+    "faq8": {
+      "question": "What if I don't like the copy or content you create?",
+      "answer": "We work collaboratively: → All strategies are reviewed together in 1:1 sessions → Unlimited revisions included → We validate with your sales team. If your team doesn't feel comfortable selling with the message, we adjust it unlimited times. The goal is not for you to like it, it's to help you with your main objective."
+    },
+    "faq9": {
+      "question": "What happens after a one-time project? Can I continue with a monthly plan?",
+      "answer": "Yes. It's the most common path. After finishing your one-time project, you can choose a content plan (Starter, Pro or Fractional) according to your priorities and budget."
+    },
+    "faq10": {
+      "question": "Why should I invest in positioning and content now instead of waiting?",
+      "answer": "Every month without clarity you're losing sales because: → Your team doesn't know how to communicate your value (longer cycles) → Prospects don't understand your difference (you lose deals) → Your content doesn't generate qualified leads. Clients who clarified their positioning report: 30-50% less time explaining their proposal, more confidence from the sales team, better lead quality. The cost of NOT having clarity is greater than the investment."
     }
   },
   "pricing": {
-    "tagline": "Pricing!",
-    "title": "These are the plans for us to start working together",
+    "tagline": "Plans",
+    "title": "If your B2B product is hard to understand, it's hard to sell. We clarify your value proposition in weeks",
     "titleQuestion": "Which one is best for you?",
     "subtitle": "Choose the plan that best fits your company's needs",
+    "includesLabel": "YOU WILL GET:",
+    "addonsLabel": "ADD ONS:",
     "plans": {
       "starter": {
-        "name": "Starter",
+        "name": "New Launches",
         "pricePrefix": "from",
-        "price": "$0",
-        "priceSubtext": "+ compute / month",
-        "timeline": "3-4 weeks / one time project",
-        "description": "Built for small teams and independent developers looking to level up.",
-        "cta": "Get started with $30 / month free credit",
+        "price": "$1000",
+        "priceSubtext": "",
+        "timeline": "2 weeks, one-time project",
+        "description": "You're launching a new product or targeting a new segment and don't know how to communicate all the value you generate.",
+        "cta": "Reserve your spot",
         "ctaLink": "/contact",
         "features": [
-          "$30 / month free credits",
-          "3 workspace seats included",
-          "100 containers + 10 GPU concurrency",
-          "Crons and web endpoints (limited)",
-          "Real-time metrics and logs",
-          "Region selection"
+          "1 content audit.",
+          "1:1 strategic sessions to define how your product is positioned and differentiated.",
+          "Positioning deck to align your teams."
+        ],
+        "addons": [
+          "Content according to objective"
         ]
       },
       "team": {
-        "name": "Team",
+        "name": "B2B Website Positioning",
         "pricePrefix": "from",
-        "price": "$250",
-        "priceSubtext": "+ compute / month",
-        "timeline": "3-4 weeks / one time project",
-        "description": "Built for startups and larger organizations looking to scale quickly.",
-        "cta": "Sign in to upgrade",
+        "price": "$1,500",
+        "priceSubtext": "",
+        "timeline": "2-3 weeks, one-time project",
+        "description": "Make them know what makes your value proposition unique in seconds on your most important digital asset: your website.",
+        "cta": "Reserve your spot",
         "ctaLink": "/contact",
         "features": [
-          "$100 / month free credits",
-          "Unlimited seats",
-          "1000 containers + 50 GPU concurrency",
-          "Unlimited crons and web endpoints",
-          "Custom domains",
-          "Static IP proxy",
-          "Deployment rollbacks"
+          "1:1 strategic sessions to define how your product is positioned and differentiated.",
+          "Positioning and messaging deck to align your teams.",
+          "Wireframe of your web homepage with your new positioning."
+        ],
+        "addons": [
+          "UX/UI web",
+          "Webflow development",
+          "Webflow development"
         ]
       },
       "enterprise": {
-        "name": "Enterprise",
+        "name": "Full B2B Repositioning",
         "pricePrefix": "from",
-        "price": "Custom",
+        "price": "$3,500",
         "priceSubtext": "",
-        "timeline": "3-4 weeks / one time project",
-        "description": "For organizations prioritizing security, support, and everlasting confidence.",
-        "cta": "Get in touch",
+        "timeline": "8-10 weeks, one-time project",
+        "description": "Your value proposition changed and you need to align its communication in marketing, sales, and product to sell and stand out",
+        "cta": "Reserve your spot",
         "ctaLink": "/contact",
         "features": [
-          "Volume-based discounts",
-          "Unlimited seats",
-          "Higher GPU concurrency",
-          "Embedded ML engineering services",
-          "Support via private Slack",
-          "Audit logs, Okta SSO, and HIPAA"
-        ]
+          "1:1 strategic sessions to define how your product is positioned and differentiated.",
+          "Positioning and messaging deck to align your teams.",
+          "Wireframe of your web homepage with your new positioning.",
+          "Sales narrative: sales deck with your new value proposition",
+          "LinkedIn content strategy: new pillars and your first 10 LinkedIn content pieces",
+          "Company profile optimization and 1 personal profile with new positioning"
+        ],
+        "addons": []
       }
     },
     "afterEstrategia": {
-      "title": "You already know what to say, but you need help creating that content. Here it is.",
+      "title": "You already have clear differentiation, now we execute it in your content every month",
       "featuresLabel": "Features",
+      "monthlyLabel": "Monthly",
+      "quarterlyLabel": "Quarterly",
+      "subtext": "Want to know more about these plans? Download here how this system works.",
+      "subtextLink": "Download here",
+      "subtextLinkUrl": "https://google.com.pe",
       "plans": {
         "starter": {
           "name": "Starter",
-          "description": "Ideal for B2B teams that KNOW what to say and require specific support to create quality content",
-          "price": "$750",
+          "description": "You have a clear value proposition and know what to say, but you don't have time or a team to execute strategic content.",
+          "priceMonthly": "$850",
+          "priceQuarterly": "$750",
           "priceSubtext": "/month",
           "cta": "Let's Talk",
           "ctaLink": "/contact"
         },
         "pro": {
           "name": "Pro",
-          "description": "For teams that need strategic content and continuous support",
-          "price": "$1,500",
-          "priceSubtext": "/month",
+          "description": "Ideal if you need to sell but don't have a messaging strategy or defined content",
+          "priceMonthly": "$1,700",
+          "priceQuarterly": "$1,500",
+          "priceSubtext": "/ month",
           "cta": "Let's Talk",
           "ctaLink": "/contact"
         },
         "fractional": {
           "name": "Fractional partner",
-          "description": "For companies that require a full-time strategic content partner",
-          "price": "$3,000",
+          "description": "You need a partner that defines your positioning, what messages to say, and executes content every month without a full team.",
+          "priceMonthly": "$3,300",
+          "priceQuarterly": "$3,000",
           "priceSubtext": "/month",
           "cta": "Let's Talk",
           "ctaLink": "/contact"
@@ -486,9 +511,9 @@
           "features": {
             "founderLinkedIn": {
               "name": "Founder-led growth LinkedIn content",
-              "starter": "to generate visibility",
-              "pro": "to generate visibility",
-              "fractional": "to generate visibility"
+              "starter": "To generate visibility",
+              "pro": "To generate visibility",
+              "fractional": "To generate visibility"
             },
             "producto": {
               "name": "Product content",

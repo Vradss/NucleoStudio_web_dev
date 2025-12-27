@@ -9,7 +9,7 @@ import Image from 'next/image'
 export function FaqsSection() {
   const t = useTranslations('faqs')
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const faqs = [1, 2, 3, 4, 5, 6, 7] as const
+  const faqs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
