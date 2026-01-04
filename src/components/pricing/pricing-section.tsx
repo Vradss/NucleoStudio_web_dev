@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/routing'
 import { FadeIn } from '@/components/motion/fade-in'
 import Image from 'next/image'
+import { CalButton } from '@/components/ui/cal-button'
 
 interface PricingPlan {
   name: string
@@ -156,15 +156,14 @@ export function PricingSection() {
                   </p>
 
                   {/* CTA Button */}
-                  <Link
-                    href={plan.ctaLink}
-                    className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all mb-6 md:mb-8 hover:opacity-90 w-full"
+                  <CalButton
+                    className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all mb-6 md:mb-8 hover:opacity-90 w-full cursor-pointer"
                     style={{
                       background: '#6F31FF',
                     }}
                   >
                     {plan.cta}
-                  </Link>
+                  </CalButton>
 
                   {/* Features */}
                   <div className="flex-1 flex flex-col">

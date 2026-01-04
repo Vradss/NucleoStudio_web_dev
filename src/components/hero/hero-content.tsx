@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
-import { Link } from '@/i18n/routing'
 import { AnimatedCaso } from './animated-caso'
+import { CalButton } from '@/components/ui/cal-button'
 
 const heroCardIds = ['build', 'brand', 'ai'] as const
 
@@ -224,15 +224,14 @@ export function HeroContent() {
       </motion.p>
 
       <motion.div className="flex flex-col items-center justify-center gap-4 sm:flex-row" variants={itemVariants}>
-        <Link
-          href="/contact"
-          className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-nucleo-light transition-all hover:opacity-90 sm:px-10"
+        <CalButton
+          className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-nucleo-light transition-all hover:opacity-90 sm:px-10 cursor-pointer"
           style={{
             background: 'linear-gradient(135deg, #6F31FF 50%, #5F20E5 75%, #1A0B33 100%)',
           }}
         >
           {t('ctaConversemos')}
-        </Link>
+        </CalButton>
       </motion.div>
 
       <div role="presentation" aria-hidden="true" className="h-10 sm:h-12" />

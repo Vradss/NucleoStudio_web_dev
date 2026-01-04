@@ -40,12 +40,12 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net app.cal.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob: https:;
   font-src 'self';
   connect-src 'self' https:;
-  frame-src 'self' https://embed.unicornplatform.com;
+  frame-src 'self' https://embed.unicornplatform.com app.cal.com;
   media-src 'self';
 `
 

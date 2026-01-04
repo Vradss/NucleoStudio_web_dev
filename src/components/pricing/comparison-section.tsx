@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
-import { Link } from '@/i18n/routing'
 import { FadeIn } from '@/components/motion/fade-in'
+import { CalButton } from '@/components/ui/cal-button'
 
 export function ComparisonSection() {
   const t = useTranslations('pricing.afterEstrategia')
@@ -200,15 +200,14 @@ export function ComparisonSection() {
                         </span>
                       )}
                     </div>
-                    <Link
-                      href={plan.ctaLink}
-                      className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all hover:opacity-90 w-full"
+                    <CalButton
+                      className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all hover:opacity-90 w-full cursor-pointer"
                       style={{
                         background: '#6F31FF',
                       }}
                     >
                       {plan.cta}
-                    </Link>
+                    </CalButton>
                   </div>
                 </div>
               )
@@ -228,7 +227,7 @@ export function ComparisonSection() {
                     <h3 className="font-geist-super text-2xl mb-3 text-nucleo-light">
                       {plan.name}
                     </h3>
-                    <p className="font-geist-regular text-sm text-nucleo-dark-hover-light mb-4 leading-relaxed">
+                    <p className="font-geist-regular text-base text-nucleo-dark-hover-light mb-4 leading-relaxed">
                       {plan.description}
                     </p>
                   </div>
@@ -243,15 +242,14 @@ export function ComparisonSection() {
                         </span>
                       )}
                     </div>
-                    <Link
-                      href={plan.ctaLink}
-                      className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all hover:opacity-90 w-full"
+                    <CalButton
+                      className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-nucleo-light transition-all hover:opacity-90 w-full cursor-pointer"
                       style={{
                         background: '#6F31FF',
                       }}
                     >
                       {plan.cta}
-                    </Link>
+                    </CalButton>
                   </div>
                 </div>
               )

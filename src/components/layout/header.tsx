@@ -6,6 +6,7 @@ import { LanguageSelector } from './language-selector'
 import { Link, usePathname } from '@/i18n/routing'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { CalButton } from '@/components/ui/cal-button'
 
 export function Header() {
   const t = useTranslations('nav')
@@ -163,12 +164,11 @@ export function Header() {
 
           {/* CTA y controles a la derecha */}
           <div className="flex items-center gap-4 flex-shrink-0">
-            <Link
-              href="/contact"
-              className="hidden rounded-full bg-nucleo-dark-secondary border border-nucleo-dark-secondary px-5 py-2.5 text-sm font-medium text-nucleo-light transition-colors hover:bg-nucleo-dark hover:text-nucleo-light md:inline-flex items-center min-h-[44px]"
+            <CalButton
+              className="hidden rounded-full bg-nucleo-dark-secondary border border-nucleo-dark-secondary px-5 py-2.5 text-sm font-medium text-nucleo-light transition-colors hover:bg-nucleo-dark hover:text-nucleo-light md:inline-flex items-center min-h-[44px] cursor-pointer"
             >
               {t('contact')}
-            </Link>
+            </CalButton>
             <div className="hidden md:block">
               <LanguageSelector />
             </div>
@@ -308,13 +308,11 @@ export function Header() {
                 transition={{ delay: 0.2 }}
                 className="px-6 pb-8 space-y-4"
               >
-                <Link
-                  href="/contact"
-                  onClick={closeMenu}
-                  className="block w-full rounded-full bg-nucleo-primary px-8 py-4 text-center text-lg font-geist-semibold text-nucleo-light transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark"
+                <CalButton
+                  className="block w-full rounded-full bg-nucleo-primary px-8 py-4 text-center text-lg font-geist-semibold text-nucleo-light transition-colors hover:bg-nucleo-secondary hover:text-nucleo-dark cursor-pointer"
                 >
                   {t('contact')}
-                </Link>
+                </CalButton>
                 <div className="flex justify-center">
                   <LanguageSelector />
                 </div>
