@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+
+export const metadata: Metadata = {
+  title: 'Web Audit',
+  description:
+    'Auditoría de tu sitio web B2B. Analizamos tu propuesta de valor, mensajes y contenido para identificar oportunidades de mejora.',
+}
 
 interface WebAuditPageProps {
   params: Promise<{ locale: string }>

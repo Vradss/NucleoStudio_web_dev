@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { HeroSection } from '@/components/hero/hero-section'
 import { ProblemSection } from '@/components/hero/problem-section'
 import { NivelesMensajesSection } from '@/components/hero/niveles-mensajes-section'
@@ -9,6 +10,17 @@ import { FaqsSection } from '@/components/hero/faqs-section'
 import { Footer } from '@/components/layout/footer'
 import { UnicornEmbed } from '@/components/hero/unicorn-embed'
 import { ScrollColorSections } from '@/components/hero/scroll-color-transition'
+
+export const metadata: Metadata = {
+  title: 'Nucleo Studio | Posicionamiento y Contenido para Empresas Tech B2B',
+  description:
+    'Ayudamos a empresas tech B2B a clarificar sus propuestas de valor, crear mensajes diferenciados y expandirlos en web, LinkedIn y estrategia de contenido. Empresas de tecnología y SaaS en LatAm confían en nosotros.',
+  openGraph: {
+    title: 'Nucleo Studio | Posicionamiento y Contenido B2B',
+    description:
+      'Clarificamos tu propuesta de valor y creamos mensajes diferenciados para empresas tech B2B.',
+  },
+}
 
 // Transiciones de color basadas en secciones
 // La transición blanco → negro se maneja en ScrollHorizontal basándose en el progress del scroll

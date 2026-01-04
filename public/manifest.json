@@ -1,0 +1,17 @@
+{
+  "name": "Nucleo Studio",
+  "short_name": "Nucleo",
+  "description": "Posicionamiento y Contenido para Empresas Tech B2B",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#17171A",
+  "theme_color": "#6F31FF",
+  "icons": [
+    {
+      "src": "/images/isotipo_morado_fuerte.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+

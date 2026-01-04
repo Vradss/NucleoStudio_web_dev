@@ -99,7 +99,7 @@ export function ComparisonSection() {
   }
 
   return (
-    <section className="section-layout">
+    <section id="comparison-section" className="section-layout">
       <div className="section-container">
         {/* Title */}
         <FadeIn delay={0.1}>

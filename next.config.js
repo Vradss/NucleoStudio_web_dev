@@ -40,11 +40,11 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net app.cal.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net app.cal.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms;
   style-src 'self' 'unsafe-inline';
-  img-src 'self' data: blob: https:;
+  img-src 'self' data: blob: https: https://www.google-analytics.com https://www.googletagmanager.com;
   font-src 'self';
-  connect-src 'self' https:;
+  connect-src 'self' https: https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms;
   frame-src 'self' https://embed.unicornplatform.com app.cal.com;
   media-src 'self';
 `

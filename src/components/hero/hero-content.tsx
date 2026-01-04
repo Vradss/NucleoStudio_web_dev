@@ -210,14 +210,14 @@ export function HeroContent() {
       </motion.div>
 
       <motion.h1
-        className="mx-auto font-geist-black text-[41px] leading-tight sm:text-5xl lg:text-[75px] whitespace-pre-line"
+        className="mx-auto font-geist-black text-[36px] leading-tight sm:text-5xl lg:text-[75px] whitespace-pre-line"
         variants={itemVariants}
       >
         {renderTitleWithHighlight(t('title'), locale)}
       </motion.h1>
 
       <motion.p
-        className="mx-auto max-w-5xl font-geist-regular text-base text-nucleo-light sm:text-xl lg:text-[22px]"
+        className="mx-auto max-w-5xl font-geist-regular text-[15px] text-nucleo-light sm:text-xl lg:text-[22px]"
         variants={itemVariants}
       >
         {renderSubtitleWithHighlight(subtitle, locale)}

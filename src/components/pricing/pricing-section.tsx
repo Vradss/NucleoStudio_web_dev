@@ -67,7 +67,7 @@ export function PricingSection() {
   }
 
   return (
-    <section className="section-layout">
+    <section id="pricing-section" className="section-layout">
       <div className="section-container">
         {/* Header */}
         <FadeIn delay={0.1}>

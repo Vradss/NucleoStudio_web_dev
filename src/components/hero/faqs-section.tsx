@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function FaqsSection() {
   const t = useTranslations('faqs')
@@ -13,6 +14,58 @@ export function FaqsSection() {
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
+  }
+
+  const renderAnswer = (answer: string) => {
+    // Buscar enlaces en el formato [url]
+    const linkRegex = /\[([^\]]+)\]/g
+    const parts: Array<{ type: 'text' | 'link'; content: string }> = []
+    let lastIndex = 0
+    let match
+
+    while ((match = linkRegex.exec(answer)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push({
+          type: 'text',
+          content: answer.substring(lastIndex, match.index)
+        })
+      }
+      parts.push({
+        type: 'link',
+        content: match[1]
+      })
+      lastIndex = match.index + match[0].length
+    }
+
+    if (lastIndex < answer.length) {
+      parts.push({
+        type: 'text',
+        content: answer.substring(lastIndex)
+      })
+    }
+
+    if (parts.length === 0) {
+      return <span className="whitespace-pre-line">{answer}</span>
+    }
+
+    return (
+      <span className="whitespace-pre-line">
+        {parts.map((part, idx) => {
+          if (part.type === 'link') {
+            return (
+              <Link
+                key={idx}
+                href={part.content}
+                className="text-nucleo-primary hover:underline font-geist-semibold"
+              >
+                aquí
+              </Link>
+            )
+          }
+          return <span key={idx}>{part.content}</span>
+        })}
+      </span>
+    )
   }
 
   return (
@@ -80,7 +133,7 @@ export function FaqsSection() {
                       >
                         <div className="px-0 md:px-6 pb-4 md:pb-6">
                           <p className="font-geist-regular text-base text-gray-700 leading-relaxed">
-                            {t(`faq${faqIndex}.answer`)}
+                            {renderAnswer(t(`faq${faqIndex}.answer`))}
                           </p>
                         </div>
                       </motion.div>

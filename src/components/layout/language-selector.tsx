@@ -24,10 +24,10 @@ export function LanguageSelector() {
         onClick={() => switchLocale('es')}
         disabled={isPending}
         aria-label="Cambiar a español"
-        className={`min-w-[44px] min-h-[44px] px-4 py-2 text-sm font-medium transition-all ${
+        className={`min-w-[36px] h-8 px-3 py-1 text-sm font-medium transition-all ${
           currentLocale === 'es'
             ? 'bg-nucleo-primary text-foreground rounded-full'
-            : 'text-nucleo-secondary hover:text-foreground rounded-full'
+            : 'text-nucleo-secondary hover:text-foreground rounded'
         } ${isPending ? 'opacity-50' : ''}`}
       >
         ES
@@ -36,10 +36,10 @@ export function LanguageSelector() {
         onClick={() => switchLocale('en')}
         disabled={isPending}
         aria-label="Switch to English"
-        className={`min-w-[44px] min-h-[44px] px-4 py-2 text-sm font-medium transition-all ${
+        className={`min-w-[36px] h-8 px-3 py-1 text-sm font-medium transition-all ${
           currentLocale === 'en'
             ? 'bg-nucleo-primary text-foreground rounded-full'
-            : 'text-nucleo-secondary hover:text-foreground rounded-full'
+            : 'text-nucleo-secondary hover:text-foreground rounded'
         } ${isPending ? 'opacity-50' : ''}`}
       >
         EN

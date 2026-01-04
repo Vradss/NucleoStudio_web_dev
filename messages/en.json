@@ -328,35 +328,35 @@
     "title": "FAQS",
     "faq1": {
       "question": "When should I choose a one-time project vs a monthly plan?",
-      "answer": "One-time project: If you need to clarify your value proposition once and your team will execute the content afterwards. Ideal for launches, defining your campaign messages, repositioning because your value proposition evolved, or when you prefer a closed deliverable without monthly commitment. Monthly plan: If you already have clear positioning and messages but need to execute consistent content without building a team, or you want a partner that handles strategy and content end-to-end."
+      "answer": "One-time project: If you need to clarify your value proposition once and your team will execute the content afterwards. Ideal for launches, defining your campaign messages, repositioning because your value proposition evolved, or when you prefer a closed deliverable without monthly commitment.\n\nMonthly plan: If you already have clear positioning and messages but need to execute consistent content without building a team, or you want a partner that handles strategy and content end-to-end."
     },
     "faq2": {
       "question": "Can I pay for just 1 month of the content plans?",
-      "answer": "Of course, it's possible. Just make sure to choose \"monthly\" to update the prices. Download the complete content catalog here to see what content we can create for you → [link]"
+      "answer": "Of course, it's possible. Just make sure to choose \"monthly\" to update the prices. Download the complete content catalog here to see what content we can create for you [/pricing#comparison-section]"
     },
     "faq3": {
       "question": "Do you specialize in any type of B2B companies?",
-      "answer": "Yes, we work with startups in education, financial services, B2B ecommerce, and consulting firms in technology, science, innovation and/or executive training. They usually have these characteristics: long sales cycles (>1 month), high tickets, have products that are difficult to understand or are in a new category (Example: AI)"
+      "answer": "Yes, we work with startups in education, financial services, B2B ecommerce, and consulting firms in technology, science, innovation and/or executive training.\n\nThey usually have these characteristics: long sales cycles (>1 month), high tickets, have products that are difficult to understand or are in a new category (Example: AI)"
     },
     "faq4": {
       "question": "How does monthly content execution work?",
-      "answer": "In the STARTER plan you prioritize the content you need each month. In the PRO and FRACTIONAL plans we help you with planning and execution. Download the complete content catalog here → [link]"
+      "answer": "In the STARTER plan you prioritize the content you need each month. In the PRO and FRACTIONAL plans we help you with planning and execution. Download the complete content catalog here [/pricing#pricing-section]"
     },
     "faq5": {
       "question": "What if I don't have clarity on my target segment or my differentiation?",
-      "answer": "Our one-time positioning projects or Fractional plan are for you. Includes: → Customer interviews to understand why they choose you → Competitive analysis to identify where to win → Workshops to define your positioning. You don't need clarity before starting. Our process helps you discover it."
+      "answer": "Our one-time positioning projects or Fractional plan are for you. Includes:\n→ Customer interviews to understand why they choose you\n→ Competitive analysis to identify where to win\n→ Workshops to define your positioning\n\nYou don't need clarity before starting. Our process helps you discover it."
     },
     "faq6": {
       "question": "Do I need to have a marketing team to work with you?",
-      "answer": "Not necessarily. Some clients have been CEOs or founders without a marketing team and start defining positioning before investing in marketing or with a LinkedIn strategy and delegate execution. In other cases, there are marketing managers who already have a clear strategy and want execution support."
+      "answer": "Not necessarily.\n\nSome clients have been CEOs or founders without a marketing team and start defining positioning before investing in marketing or with a LinkedIn strategy and delegate execution.\n\nIn other cases, there are marketing managers who already have a clear strategy and want execution support."
     },
     "faq7": {
       "question": "How long does it take to see results?",
-      "answer": "It depends on the type of plan you choose. The fastest result: clarity in your value proposition and marketing messages. Clients mention that their team knows exactly what to say after the first sessions. This directly impacts all your active marketing actions and their key metrics."
+      "answer": "It depends on the type of plan you choose.\n\nThe fastest result: clarity in your value proposition and marketing messages. Clients mention that their team knows exactly what to say after the first sessions.\n\nThis directly impacts all your active marketing actions and their key metrics."
     },
     "faq8": {
       "question": "What if I don't like the copy or content you create?",
-      "answer": "We work collaboratively: → All strategies are reviewed together in 1:1 sessions → Unlimited revisions included → We validate with your sales team. If your team doesn't feel comfortable selling with the message, we adjust it unlimited times. The goal is not for you to like it, it's to help you with your main objective."
+      "answer": "We work collaboratively:\n→ All strategies are reviewed together in 1:1 sessions\n→ Unlimited revisions included\n→ We validate with your sales team.\n\nIf your team doesn't feel comfortable selling with the message, we adjust it unlimited times. The goal is not for you to like it, it's to help you with your main objective."
     },
     "faq9": {
       "question": "What happens after a one-time project? Can I continue with a monthly plan?",
@@ -364,7 +364,7 @@
     },
     "faq10": {
       "question": "Why should I invest in positioning and content now instead of waiting?",
-      "answer": "Every month without clarity you're losing sales because: → Your team doesn't know how to communicate your value (longer cycles) → Prospects don't understand your difference (you lose deals) → Your content doesn't generate qualified leads. Clients who clarified their positioning report: 30-50% less time explaining their proposal, more confidence from the sales team, better lead quality. The cost of NOT having clarity is greater than the investment."
+      "answer": "Every month without clarity you're losing sales because:\n→ Your team doesn't know how to communicate your value (longer cycles)\n→ Prospects don't understand your difference (you lose deals)\n→ Your content doesn't generate qualified leads.\n\nClients who clarified their positioning report:\n→ 30-50% less time explaining their proposal\n→ More confidence from the sales team\n→ Better lead quality.\n\nThe cost of NOT having clarity is greater than the investment."
     }
   },
   "pricing": {
@@ -603,9 +603,41 @@
       }
     }
   },
+  "cases": {
+    "tagline": "CASE STUDIES",
+    "title": "Learn from the experience of other B2B tech companies working with us",
+    "viewCase": "View case",
+    "challengeLabel": "Challenge",
+    "resultsLabel": "Results",
+    "noResults": "No cases in this category yet.",
+    "categories": {
+      "all": "All",
+      "fintech": "Fintech",
+      "education": "Education",
+      "innovation": "Innovation",
+      "consulting": "Consulting",
+      "saas": "SaaS"
+    },
+    "case1": {
+      "company": "SHIFT",
+      "logo": "/images/logos/shift.svg",
+      "webImage": "/images/cases/shift-web.png",
+      "category": "innovation",
+      "industry": "Innovation community for corporates",
+      "challenge": "Communicating what SHIFT does was a years-long challenge. They weren't showing everything they offered to attract new corporate partners."
+    },
+    "case2": {
+      "company": "InvoiNet",
+      "logo": "/images/logos/invoinet.svg",
+      "webImage": "/images/cases/invoinet-web.png",
+      "category": "fintech",
+      "industry": "Fintech & SaaS",
+      "challenge": "They needed to align their product strategy with their business strategy to scale effectively."
+    }
+  },
   "footer": {
     "description": "We transform how B2B tech companies communicate their value. We create clear messages, positioning strategies, and digital experiences that connect with your audience.",
-    "contactEmail": "hey@nucleostudio.com",
+    "contactEmail": "vradis@nucleostudio.co",
     "newsletterPlaceholder": "Work Email",
     "newsletterButton": "→",
     "company": "Company",
@@ -622,6 +654,115 @@
     "allRightsReserved": "All rights reserved",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
+  },
+  "legal": {
+    "backToHome": "Back to home",
+    "questionsContact": "Have questions? Contact us at",
+    "subtitle": "All these terms apply to all our clients",
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: January 2025",
+      "intro": "At Nucleo Studio, we are committed to protecting your privacy. This policy describes how we collect, use, and protect your personal information when you use our B2B positioning and content consulting services.",
+      "sections": {
+        "dataCollection": {
+          "title": "1. Information We Collect",
+          "content": "We collect information you provide directly, including:",
+          "items": [
+            "Name and contact details (email, phone)",
+            "Company information (name, industry, size)",
+            "Information about your products and services to develop your positioning strategy",
+            "Communications you have with us"
+          ]
+        },
+        "dataUse": {
+          "title": "2. How We Use Your Information",
+          "content": "We use the collected information to:",
+          "items": [
+            "Develop personalized positioning strategies for your company",
+            "Create marketing content aligned with your value proposition",
+            "Communicate with you about our services and projects",
+            "Improve our services and customer experience"
+          ]
+        },
+        "dataProtection": {
+          "title": "3. Data Protection",
+          "content": "We implement technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        "dataSharing": {
+          "title": "4. Data Sharing",
+          "content": "We do not sell, rent, or share your personal information with third parties for their own marketing purposes. We may share information with service providers who help us operate our business, always under confidentiality agreements."
+        },
+        "cookies": {
+          "title": "5. Cookies and Tracking Technologies",
+          "content": "We use cookies and similar technologies to analyze website traffic and improve your experience. You can configure your browser to reject cookies, although this may affect some functionalities."
+        },
+        "rights": {
+          "title": "6. Your Rights",
+          "content": "You have the right to access, correct, or delete your personal information. To exercise these rights, contact us at vradis@nucleostudio.co."
+        },
+        "changes": {
+          "title": "7. Changes to This Policy",
+          "content": "We may update this policy occasionally. We will notify you of significant changes by posting the new policy on our website."
+        },
+        "contact": {
+          "title": "8. Contact",
+          "content": "If you have questions about this privacy policy, contact us at vradis@nucleostudio.co."
+        }
+      }
+    },
+    "termsOfService": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated: January 2025",
+      "intro": "These terms of service govern the use of Nucleo Studio's services. By hiring our B2B positioning and content consulting services, you accept these terms.",
+      "sections": {
+        "services": {
+          "title": "1. Service Description",
+          "content": "Nucleo Studio offers services including:",
+          "items": [
+            "Positioning strategy and value proposition for B2B companies",
+            "Development of differentiated marketing messages",
+            "Content creation for web, LinkedIn, and other channels",
+            "Go-to-market and product communication consulting"
+          ]
+        },
+        "engagement": {
+          "title": "2. Engagement and Payments",
+          "content": "Services are contracted according to available plans (one-time projects or monthly plans). Prices and specific conditions are detailed in each commercial proposal. Payments must be made according to the terms agreed upon in each project."
+        },
+        "deliverables": {
+          "title": "3. Deliverables",
+          "content": "Specific deliverables are defined in each project and may include positioning decks, web wireframes, content strategies, and other materials as agreed."
+        },
+        "intellectualProperty": {
+          "title": "4. Intellectual Property",
+          "content": "Once payment is completed, deliverables developed specifically for your company will be your property. Nucleo Studio retains rights to its own methodologies, frameworks, and proprietary tools."
+        },
+        "confidentiality": {
+          "title": "5. Confidentiality",
+          "content": "We commit to maintaining the confidentiality of all your company and product information that you share with us during project development."
+        },
+        "revisions": {
+          "title": "6. Revisions",
+          "content": "Our plans include revisions as specified in each proposal. We work collaboratively to ensure deliverables meet your expectations and business objectives."
+        },
+        "liability": {
+          "title": "7. Limitation of Liability",
+          "content": "Nucleo Studio is not responsible for specific business results, as success depends on multiple factors outside our control. We commit to delivering high-quality services according to industry standards."
+        },
+        "termination": {
+          "title": "8. Termination",
+          "content": "Either party may terminate the business relationship with prior notice according to the terms agreed upon in each project. Payments for services already rendered are non-refundable."
+        },
+        "changes": {
+          "title": "9. Modifications",
+          "content": "We reserve the right to modify these terms. Changes will be communicated and will apply to new projects contracted after the modification."
+        },
+        "contact": {
+          "title": "10. Contact",
+          "content": "For any questions about these terms, contact us at vradis@nucleostudio.co."
+        }
+      }
+    }
   }
 }
 

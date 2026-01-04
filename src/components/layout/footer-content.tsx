@@ -75,26 +75,7 @@ export function FooterContent() {
                 />
               </Link>
  
-              {/* Newsletter */}
-              <div className="mb-4">
-                <p className="font-geist-semibold text-base text-nucleo-light mb-3">Newsletter</p>
-                <form onSubmit={handleSubmit} className="flex gap-2 max-w-md">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder={t('newsletterPlaceholder')}
-                    className="flex-1 px-4 py-3 rounded bg-nucleo-dark-border border border-nucleo-dark-border text-nucleo-light placeholder:text-nucleo-light/50 focus:outline-none focus:border-nucleo-primary transition-colors"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="w-12 h-12 rounded bg-nucleo-light text-nucleo-dark font-geist-semibold text-lg transition-colors hover:bg-nucleo-light/90 flex items-center justify-center"
-                  >
-                    {t('newsletterButton')}
-                  </button>
-                </form>
-              </div>
+              
             </div>
 
             {/* 3 Columnas juntas - Right Side */}
@@ -198,7 +179,7 @@ export function FooterContent() {
         {/* Logo watermark - Sin padding inferior */}
         <div className="flex w-full justify-center mt-8" style={{ paddingBottom: 0, marginBottom: 0 }}>
           <Image
-            src="/images/LOGO_DESKTOP.svg"
+            src="/images/logo_footer.svg"
             alt="Nucleo"
             width={1368}
             height={363}

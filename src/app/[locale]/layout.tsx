@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { SmoothScroll } from '@/components/layout/smooth-scroll'
+import { ClarityAnalytics } from '@/components/analytics/clarity-analytics'
+import { GoogleAnalytics } from '@/components/analytics/google-analytics'
 import {
   spaceMonoRegular,
   geistSans,
@@ -31,6 +33,8 @@ export default async function LocaleLayout({
       <body
         className={`${spaceMonoRegular.variable} ${geistSans.variable} antialiased`}
       >
+        <GoogleAnalytics />
+        <ClarityAnalytics />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SmoothScroll />
           {children}
