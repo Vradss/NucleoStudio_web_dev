@@ -376,11 +376,11 @@
     }
   },
   "pricing": {
-    "tagline": "Planes",
+    "tagline": "Proyectos one-time",
     "title": "Si tu producto B2B es difícil de entender, es difícil de vender. Clarificamos tu propuesta de valor en semanas",
     "subtitle": "Elige el plan que mejor se adapte a las necesidades de tu empresa",
     "includesLabel": "INCLUYE:",
-    "addonsLabel": "ADD ONS:",
+    "addonsLabel": "ADICIONALES:",
     "plans": {
       "starter": {
         "name": "Nuevos lanzamientos",
@@ -392,18 +392,18 @@
         "cta": "Reserva tu spot",
         "ctaLink": "/contact",
         "features": [
-          "1 auditoría de contenido.",
           "Sesiones estratégicas 1:1 para definir cómo se posiciona y diferencia tu producto.",
-          "Deck de posicionamiento para alinear a tus equipos."
+          "Deck de posicionamiento para alinear a tus equipos.",
+          "1 auditoría de contenido."
         ],
         "addons": [
           "Contenidos según objetivo"
         ]
       },
       "team": {
-        "name": "Posicionamiento B2B en Website",
+        "name": "Posicionamiento B2B en Homepage",
         "pricePrefix": "desde",
-        "price": "$1,500",
+        "price": "$1,750",
         "priceSubtext": "",
         "timeline": "2-3 semanas, one-time project",
         "description": "Haz que sepan qué hace única a tu propuesta de valor en segundos en tu activo digital más importante: tu sitio web.",
@@ -433,13 +433,14 @@
           "Deck de posicionamiento y mensajes para alinear a tus equipos.",
           "Wireframe de tu homepage web con tu nuevo posicionamiento.",
           "Narrativa de venta: sales deck con tu nueva propuesta de valor",
-          "LinkedIn content strategy: nuevos pilares y tus primeros 10 contenidos para LinkedIn",
-          "Optimización de perfil de empresa y 1 perfil personal con nuevo posicionamiento"
+          "LinkedIn Content Strategy: nuevos pilares y tus primeros 10 contenidos para LinkedIn",
+          "LinkedIn Optimization: Alinear perfil de empresa y 1 perfil personal con nuevo posicionamiento"
         ],
         "addons": []
       }
     },
     "afterEstrategia": {
+      "tagline": "PLANES",
       "title": "Ya tienes clara tu diferenciación, ahora la ejecutamos en tus contenidos cada mes",
       "featuresLabel": "Features",
       "monthlyLabel": "Mensual",

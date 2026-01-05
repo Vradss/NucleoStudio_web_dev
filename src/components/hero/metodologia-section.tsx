@@ -87,8 +87,8 @@ function renderMetodologiaTitleWithHighlight(title: string, locale: string) {
   
   // Texto a resaltar según el idioma
   const highlightTexts = locale === 'es' 
-    ? ['aplicamos en todos tus canales B2B']
-    : ['we deploy it across all your B2B channels'] // El texto en inglés es diferente, no hay texto equivalente para resaltar
+    ? ['estrategia', 'la aplicamos en tus canales B2B claves']
+    : ['strategy', 'we bring it to life across your key B2B channels'] // El texto en inglés es diferente
   
   const parts: Array<{ text: string; highlight: boolean }> = []
   let lastIndex = 0

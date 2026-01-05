@@ -2,8 +2,75 @@
 
 import { useState } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
+import Image from 'next/image'
 import { FadeIn } from '@/components/motion/fade-in'
 import { CalButton } from '@/components/ui/cal-button'
+
+function renderComparisonTitleWithHighlight(title: string, locale: string) {
+  // Texto a resaltar según el idioma
+  const highlightTexts = locale === 'es' 
+    ? ['tus contenidos cada mes']
+    : ['your content every month']
+  
+  const parts: Array<{ text: string; highlight: boolean }> = []
+  let lastIndex = 0
+  
+  // Encontrar todas las coincidencias
+  const matches: Array<{ start: number; end: number; text: string }> = []
+  
+  highlightTexts.forEach((highlightText) => {
+    const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(title)) !== null) {
+      matches.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        text: match[0] // Preservar el caso original
+      })
+    }
+  })
+  
+  // Ordenar matches por posición
+  matches.sort((a, b) => a.start - b.start)
+  
+  // Crear partes del texto
+  matches.forEach((match) => {
+    if (lastIndex < match.start) {
+      parts.push({
+        text: title.substring(lastIndex, match.start),
+        highlight: false,
+      })
+    }
+    parts.push({
+      text: match.text,
+      highlight: true,
+    })
+    lastIndex = match.end
+  })
+  
+  if (lastIndex < title.length) {
+    parts.push({
+      text: title.substring(lastIndex),
+      highlight: false,
+    })
+  }
+  
+  if (parts.length === 0) {
+    return title
+  }
+  
+  return (
+    <>
+      {parts.map((part, index) => 
+        part.highlight ? (
+          <span key={index} className="text-nucleo-highlight font-geist-black" style={{ fontWeight: 900 }}>{part.text}</span>
+        ) : (
+          <span key={index}>{part.text}</span>
+        )
+      )}
+    </>
+  )
+}
 
 export function ComparisonSection() {
   const t = useTranslations('pricing.afterEstrategia')
@@ -101,41 +168,29 @@ export function ComparisonSection() {
   return (
     <section id="comparison-section" className="section-layout">
       <div className="section-container">
+        {/* Tagline con isotipo */}
+        <FadeIn delay={0}>
+          <div className="flex items-center justify-center gap-2 text-nucleo-secondary mb-4">
+            <Image
+              src="/images/isotipo_detail.svg"
+              alt="Detalle isotipo decorativo"
+              width={26}
+              height={25}
+              className="h-3 w-3 sm:h-5 sm:w-5"
+              priority
+              unoptimized
+            />
+            <span className="tagline-secondary">
+              {t('tagline')}
+            </span>
+          </div>
+        </FadeIn>
+
         {/* Title */}
         <FadeIn delay={0.1}>
           <div className="text-center mb-8">
             <h2 className="section-title mb-8 whitespace-pre-line">
-              {(() => {
-                const title = t('title')
-                if (locale === 'es') {
-                  const parts = title.split('necesitas')
-                  if (parts.length > 1) {
-                    const secondPart = parts[1].split('Aquí va.')
-                    return (
-                      <>
-                        {parts[0]}necesitas
-                        {'\n'}
-                        {secondPart[0]}
-                        {'\n'}
-                        <span className="text-nucleo-highlight">Aquí va.</span>
-                      </>
-                    )
-                  }
-                } else {
-                  // English version
-                  const parts = title.split('Here it is.')
-                  if (parts.length > 1) {
-                    return (
-                      <>
-                        {parts[0]}
-                        <span className="text-nucleo-highlight">Here it is.</span>
-                      </>
-                    )
-                  }
-                }
-                // Fallback: show title as is
-                return title
-              })()}
+              {renderComparisonTitleWithHighlight(t('title'), locale)}
             </h2>
             
             {/* Pricing Toggle */}

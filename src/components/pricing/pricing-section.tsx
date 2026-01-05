@@ -1,10 +1,76 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
 import Image from 'next/image'
 import { CalButton } from '@/components/ui/cal-button'
+
+function renderPricingTitleWithHighlight(title: string, locale: string) {
+  // Texto a resaltar según el idioma
+  const highlightTexts = locale === 'es' 
+    ? ['clarificamos tu propuesta de valor en semanas']
+    : ['We clarify your value proposition in weeks']
+  
+  const parts: Array<{ text: string; highlight: boolean }> = []
+  let lastIndex = 0
+  
+  // Encontrar todas las coincidencias
+  const matches: Array<{ start: number; end: number; text: string }> = []
+  
+  highlightTexts.forEach((highlightText) => {
+    const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(title)) !== null) {
+      matches.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        text: match[0] // Preservar el caso original
+      })
+    }
+  })
+  
+  // Ordenar matches por posición
+  matches.sort((a, b) => a.start - b.start)
+  
+  // Crear partes del texto
+  matches.forEach((match) => {
+    if (lastIndex < match.start) {
+      parts.push({
+        text: title.substring(lastIndex, match.start),
+        highlight: false,
+      })
+    }
+    parts.push({
+      text: match.text,
+      highlight: true,
+    })
+    lastIndex = match.end
+  })
+  
+  if (lastIndex < title.length) {
+    parts.push({
+      text: title.substring(lastIndex),
+      highlight: false,
+    })
+  }
+  
+  if (parts.length === 0) {
+    return title
+  }
+  
+  return (
+    <>
+      {parts.map((part, index) => 
+        part.highlight ? (
+          <span key={index} className="text-nucleo-highlight font-geist-black" style={{ fontWeight: 900 }}>{part.text}</span>
+        ) : (
+          <span key={index}>{part.text}</span>
+        )
+      )}
+    </>
+  )
+}
 
 interface PricingPlan {
   name: string
@@ -21,6 +87,7 @@ interface PricingPlan {
 
 export function PricingSection() {
   const t = useTranslations('pricing')
+  const locale = useLocale()
 
   const plans = ['starter', 'team', 'enterprise'] as const
 
@@ -88,7 +155,7 @@ export function PricingSection() {
             </div>
             <h1 className="section-title">
               <span className="block md:inline">
-                {t('title')}
+                {renderPricingTitleWithHighlight(t('title'), locale)}
               </span>
             </h1>
           </div>
@@ -208,21 +275,9 @@ export function PricingSection() {
                           {plan.addons.map((addon, addonIndex) => (
                             <li key={addonIndex} className="flex items-start gap-2 md:gap-3">
                               <div className="flex-shrink-0 mt-0.5 w-4 h-4 md:w-5 md:h-5 flex items-center justify-center">
-                                <svg
-                                  width="16"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M5 8L7 10L11 6"
-                                    stroke="#C3BDFF"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                  />
-                                </svg>
+                                <span className="text-nucleo-secondary font-geist-semibold text-lg md:text-xl leading-none">
+                                  +
+                                </span>
                               </div>
                               <span className="font-geist-regular text-sm md:text-base text-nucleo-dark-hover-light leading-relaxed">
                                 {addon}

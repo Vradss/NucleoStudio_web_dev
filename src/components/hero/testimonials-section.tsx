@@ -144,7 +144,15 @@ export function TestimonialsSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen overflow-hidden py-24 px-6 lg:px-24 lg:py-24" style={{ backgroundColor: '#FFFFFA', position: 'relative', zIndex: 50 }}>
+    <section 
+      className="relative min-h-screen overflow-hidden py-24 px-6 lg:px-24 lg:py-24" 
+      style={{ 
+        backgroundColor: '#FFFFFA', 
+        position: 'relative', 
+        zIndex: 50,
+        isolation: 'isolate' // Asegura que el contexto de apilamiento sea independiente
+      }}
+    >
       {/* Contenido */}
       <div className="relative z-10">
         <div className="mx-auto max-w-7xl">

@@ -377,7 +377,7 @@
     }
   },
   "pricing": {
-    "tagline": "Plans",
+    "tagline": "One-time projects",
     "title": "If your B2B product is hard to understand, it's hard to sell. We clarify your value proposition in weeks",
     "titleQuestion": "Which one is best for you?",
     "subtitle": "Choose the plan that best fits your company's needs",
@@ -394,18 +394,18 @@
         "cta": "Reserve your spot",
         "ctaLink": "/contact",
         "features": [
-          "1 content audit.",
           "1:1 strategic sessions to define how your product is positioned and differentiated.",
-          "Positioning deck to align your teams."
+          "Positioning deck to align your teams.",
+          "1 content audit."
         ],
         "addons": [
           "Content according to objective"
         ]
       },
       "team": {
-        "name": "B2B Website Positioning",
+        "name": "B2B Homepage Positioning",
         "pricePrefix": "from",
-        "price": "$1,500",
+        "price": "$1,750",
         "priceSubtext": "",
         "timeline": "2-3 weeks, one-time project",
         "description": "Make them know what makes your value proposition unique in seconds on your most important digital asset: your website.",
@@ -436,13 +436,14 @@
           "Positioning and messaging deck to align your teams.",
           "Wireframe of your web homepage with your new positioning.",
           "Sales narrative: sales deck with your new value proposition",
-          "LinkedIn content strategy: new pillars and your first 10 LinkedIn content pieces",
-          "Company profile optimization and 1 personal profile with new positioning"
+          "LinkedIn Content Strategy: new pillars and your first 10 LinkedIn content pieces",
+          "LinkedIn Optimization: Aligning company and personal profiles with new positioning"
         ],
         "addons": []
       }
     },
     "afterEstrategia": {
+      "tagline": "PRICING",
       "title": "You already have clear differentiation, now we execute it in your content every month",
       "featuresLabel": "Features",
       "monthlyLabel": "Monthly",
