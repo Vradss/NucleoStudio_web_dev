@@ -229,10 +229,17 @@ export default function ScrollHorizontal() {
     };
   }, [isClient, isMobile]);
 
-  // Mobile layout
-  if (isMobile) {
-    return (
-      <section id="solucion" className="section-layout scroll-horizontal-section scroll-horizontal-mobile">
+  // Renderizar siempre el mismo HTML inicial para evitar errores de hidratación
+  // Usar CSS para mostrar/ocultar según el tamaño de pantalla
+  // El estado isMobile solo se usa para la lógica de GSAP, no para el renderizado condicional
+  
+  return (
+    <div id="solucion" suppressHydrationWarning>
+      {/* Mobile layout - siempre renderizado, oculto en desktop con CSS */}
+      <section 
+        className="section-layout scroll-horizontal-section scroll-horizontal-mobile lg:hidden"
+        suppressHydrationWarning
+      >
         <div className="scroll-horizontal-mobile-wrapper">
           <FadeIn delay={0}>
             <div className="mx-auto max-w-8xl text-center px-5">
@@ -302,82 +309,84 @@ export default function ScrollHorizontal() {
           </div>
         </div>
       </section>
-    );
-  }
 
-  // Desktop layout con scroll horizontal
-  return (
-    <section ref={sectionRef} id="solucion" className="scroll-horizontal-section">
-      {/* Header con título */}
-      <div className="scroll-horizontal-header">
-        <div className="mx-auto max-w-7xl text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Image
-              src="/images/isotipo_morado_fuerte.svg"
-              alt="Detalle isotipo decorativo"
-              width={26}
-              height={25}
-              className="h-4 w-4 sm:h-5 sm:w-5"
-              priority
-              unoptimized
-            />
-            <span className="tagline-primary">
-              {t('label')}
-            </span>
-          </div>
-          <div className="scroll-horizontal-title-container max-w-5xl mx-auto">
-            <h2 className="scroll-horizontal-title">
-              {t('titleLine1')}
-            </h2>
+      {/* Desktop layout con scroll horizontal - siempre renderizado, oculto en mobile con CSS */}
+      <section 
+        ref={sectionRef} 
+        className="scroll-horizontal-section hidden lg:block"
+        suppressHydrationWarning
+      >
+        {/* Header con título */}
+        <div className="scroll-horizontal-header">
+          <div className="mx-auto max-w-7xl text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Image
+                src="/images/isotipo_morado_fuerte.svg"
+                alt="Detalle isotipo decorativo"
+                width={26}
+                height={25}
+                className="h-4 w-4 sm:h-5 sm:w-5"
+                priority
+                unoptimized
+              />
+              <span className="tagline-primary">
+                {t('label')}
+              </span>
+            </div>
+            <div className="scroll-horizontal-title-container max-w-5xl mx-auto">
+              <h2 className="scroll-horizontal-title">
+                {t('titleLine1')}
+              </h2>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Track horizontal - se mueve con GSAP */}
-      <div ref={trackRef} className="scroll-horizontal-track">
-        {/* Spacer inicial para que los cards aparezcan desde la derecha */}
-        <div className="scroll-horizontal-spacer" aria-hidden="true" />
+        {/* Track horizontal - se mueve con GSAP */}
+        <div ref={trackRef} className="scroll-horizontal-track">
+          {/* Spacer inicial para que los cards aparezcan desde la derecha */}
+          <div className="scroll-horizontal-spacer" aria-hidden="true" />
 
-        {cards.map((card) => (
-          <div key={card.id} className="scroll-horizontal-card">
-            <div className={`scroll-horizontal-card-image card-${card.id}`}>
-              <Image
-                src={t(`cards.${card.key}.image`)}
-                alt={t(`cards.${card.key}.imageAlt`)}
-                width={600}
-                height={500}
-                className="scroll-horizontal-image"
-                unoptimized={true}
-                style={{
-                  objectFit: 'contain',
-                  objectPosition: 'center',
-                }}
-              />
-            </div>
-            <div className="scroll-horizontal-card-content">
-              <div className="flex items-center gap-2">
+          {cards.map((card) => (
+            <div key={card.id} className="scroll-horizontal-card">
+              <div className={`scroll-horizontal-card-image card-${card.id}`}>
                 <Image
-                  src="/images/isotipo_detail.svg"
-                  alt="Detalle isotipo decorativo"
-                  width={26}
-                  height={25}
-                  className="h-4 w-4 sm:h-5 sm:w-5"
-                  unoptimized
+                  src={t(`cards.${card.key}.image`)}
+                  alt={t(`cards.${card.key}.imageAlt`)}
+                  width={600}
+                  height={500}
+                  className="scroll-horizontal-image"
+                  unoptimized={true}
+                  style={{
+                    objectFit: 'contain',
+                    objectPosition: 'center',
+                  }}
                 />
-                <p className="tagline-secondary">
-                  {t(`cards.${card.key}.label`)}
+              </div>
+              <div className="scroll-horizontal-card-content">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/images/isotipo_detail.svg"
+                    alt="Detalle isotipo decorativo"
+                    width={26}
+                    height={25}
+                    className="h-4 w-4 sm:h-5 sm:w-5"
+                    unoptimized
+                  />
+                  <p className="tagline-secondary">
+                    {t(`cards.${card.key}.label`)}
+                  </p>
+                </div>
+                <h3 className="font-geist-semibold text-[30px] sm:text-3xl lg:text-[40px] text-nucleo-light mt-6 leading-tight lg:leading-[1.2]">
+                  {t(`cards.${card.key}.title`)}
+                </h3>
+                <p className="heading-subtitle mt-6 text-sm text-nucleo-light opacity-80 sm:text-base lg:text-lg">
+                  {renderCardSubtitleWithHighlight(t(`cards.${card.key}.subtitle`), card.key, locale)}
                 </p>
               </div>
-              <h3 className="font-geist-semibold text-[30px] sm:text-3xl lg:text-[40px] text-nucleo-light mt-6 leading-tight lg:leading-[1.2]">
-                {t(`cards.${card.key}.title`)}
-              </h3>
-              <p className="heading-subtitle mt-6 text-sm text-nucleo-light opacity-80 sm:text-base lg:text-lg">
-                {renderCardSubtitleWithHighlight(t(`cards.${card.key}.subtitle`), card.key, locale)}
-              </p>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

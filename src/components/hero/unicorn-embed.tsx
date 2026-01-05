@@ -83,6 +83,9 @@ const loadUnicornScript = (): Promise<void> => {
   })
 }
 
+// Color de fondo que coincide con el gradiente de Unicorn (extraído del JSON)
+const UNICORN_BG_COLOR = '#17171A'
+
 export function UnicornEmbed({ 
   className = '', 
   style = {},
@@ -91,7 +94,7 @@ export function UnicornEmbed({
 }: UnicornEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const sceneRef = useRef<{ destroy: () => void } | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoaded, setIsLoaded] = useState(false)
   const elementId = 'unicorn-bg'
 
   useEffect(() => {
@@ -99,46 +102,43 @@ export function UnicornEmbed({
 
     const init = async () => {
       try {
-        // Esperar un poco para no bloquear el render inicial
-        // Esto permite que el contenido crítico se renderice primero
-        await new Promise(resolve => setTimeout(resolve, 100))
-
         if (!isMounted) return
 
-        // Cargar script de forma no bloqueante
+        // Cargar script inmediatamente
         await loadUnicornScript()
 
         if (!isMounted || !window.UnicornStudio) return
 
-        // Inicializar la escena
+        // Inicializar la escena sin lazy load para carga inmediata
         const scene = await window.UnicornStudio.addScene({
           elementId,
           fps: 60,
           scale: 1,
           dpi,
           filePath,
-          lazyLoad: true, // Cambiar a true para carga diferida
+          lazyLoad: false, // Carga inmediata
           production: true
         })
         
         if (isMounted) {
           sceneRef.current = scene
-          setIsLoading(false)
+          setIsLoaded(true)
         } else {
           scene.destroy()
         }
       } catch (error) {
         console.error('[Unicorn] Error loading animation:', error)
-        setIsLoading(false)
+        setIsLoaded(true) // Marcar como cargado para mostrar el fallback
       }
     }
 
-    // Iniciar carga después de que la página esté lista
+    // Iniciar carga tan pronto como sea posible (DOMContentLoaded o inmediato)
     if (typeof window !== 'undefined') {
-      if (document.readyState === 'complete') {
-        init()
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true })
       } else {
-        window.addEventListener('load', init, { once: true })
+        // DOM ya está listo, iniciar inmediatamente
+        init()
       }
     }
 
@@ -158,6 +158,7 @@ export function UnicornEmbed({
       style={{
         width: '100%',
         height: '100%',
+        backgroundColor: UNICORN_BG_COLOR, // Fondo de fallback mientras carga
         ...style
       }}
     />

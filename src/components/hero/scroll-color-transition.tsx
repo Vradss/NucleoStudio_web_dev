@@ -59,7 +59,7 @@ export function ScrollColorSections({
   }, [transitions])
 
   return (
-    <div ref={containerRef} className={`relative scroll-color-wrapper ${className}`}>
+    <div ref={containerRef} className={`relative scroll-color-wrapper ${className}`} suppressHydrationWarning>
       {/* Fondo animado */}
       <div
         ref={bgRef}
@@ -70,7 +70,7 @@ export function ScrollColorSections({
         }}
       />
       {/* Contenido */}
-      <div className="relative z-10">
+      <div className="relative z-10" suppressHydrationWarning>
         {children}
       </div>
     </div>

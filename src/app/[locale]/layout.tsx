@@ -36,13 +36,19 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-        {/* Preload animación de fondo (diferida, baja prioridad) */}
+        {/* Preload script de Unicorn Studio - alta prioridad */}
+        <link
+          rel="preload"
+          href="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.0/dist/unicornStudio.umd.js"
+          as="script"
+          crossOrigin="anonymous"
+        />
+        {/* Preload animación de fondo - alta prioridad */}
         <link
           rel="preload"
           href="/animations/unicorn-bg.json"
           as="fetch"
           crossOrigin="anonymous"
-          fetchPriority="low"
         />
         {/* Preload recursos críticos */}
         <link
@@ -77,7 +83,7 @@ export default async function LocaleLayout({
         <ClarityAnalytics />
       </head>
       <body
-        className={`${spaceMonoRegular.variable} ${geistSans.variable} antialiased`}
+        className={`${spaceMonoRegular.variable} ${geistSans.variable} antialiased bg-[#17171A]`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SmoothScroll />

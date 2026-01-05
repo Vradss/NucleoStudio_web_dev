@@ -46,16 +46,16 @@ const colorTransitions = [
 
 export default function Home() {
   return (
-    <div className="relative">
-      {/* UnicornEmbed fijo como fondo global - lazy loaded */}
-      <Suspense fallback={null}>
+    <div className="relative bg-[#17171A]" suppressHydrationWarning>
+      {/* UnicornEmbed fijo como fondo global */}
+      <Suspense fallback={<div className="fixed inset-0 z-0 bg-[#17171A]" />}>
         <UnicornEmbed
           className="fixed inset-0 z-0"
           dpi={1.5}
         />
       </Suspense>
 
-      <div className="relative z-10">
+      <div className="relative z-10" suppressHydrationWarning>
         <Header />
         <HeroSection />
 
