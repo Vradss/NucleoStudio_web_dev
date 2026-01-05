@@ -57,8 +57,8 @@ export function FooterContent() {
   }
 
   return (
-    <footer className="bg-nucleo-dark text-nucleo-light w-full min-h-full" style={{ paddingBottom: 0, marginBottom: 0 }}>
-      <div className="container mx-auto px-6 pt-8 md:pt-16 lg:pt-24 pb-0 min-h-full flex flex-col" style={{ paddingBottom: 0, marginBottom: 0 }}>
+    <footer className="bg-nucleo-dark text-nucleo-light w-full" style={{ paddingBottom: 0, marginBottom: 0 }}>
+      <div className="container mx-auto px-6 pt-8 md:pt-16 lg:pt-24 pb-0 flex flex-col" style={{ paddingBottom: 0, marginBottom: 0 }}>
         {/* Layout - Mobile and Desktop */}
         <div className="mb-8 md:mb-12">
           <div className="flex flex-col md:flex-row items-start md:items-start justify-between gap-8 md:gap-0">
@@ -176,14 +176,14 @@ export function FooterContent() {
           </div>
         </div>
 
-        {/* Logo watermark - Sin padding inferior */}
-        <div className="flex w-full justify-center mt-8" style={{ paddingBottom: 0, marginBottom: 0 }}>
+        {/* Logo watermark - Al final sin espaciado */}
+        <div className="flex w-full justify-center mt-8 mb-0 pb-0" style={{ paddingBottom: 0, marginBottom: 0 }}>
           <Image
             src="/images/logo_footer.svg"
             alt="Nucleo"
             width={1368}
             height={363}
-            className="h-auto w-full max-w-full opacity-20"
+            className="h-auto w-full max-w-full opacity-20 mb-0 pb-0"
             style={{ paddingBottom: 0, marginBottom: 0, display: 'block' }}
             priority
           />

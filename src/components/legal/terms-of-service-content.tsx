@@ -103,7 +103,7 @@ export function TermsOfServiceContent() {
               {tLegal('questionsContact')}{' '}
               <a 
                 href="mailto:vradis@nucleostudio.co" 
-                className="text-nucleo-primary hover:underline"
+                className="text-nucleo-secondary hover:underline"
               >
                 vradis@nucleostudio.co
               </a>

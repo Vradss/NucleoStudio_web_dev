@@ -271,7 +271,7 @@
     "testimonial1": {
       "companyName": "Company 1",
       "companyLogo": "/images/logos/Colectivo_23.png",
-      "image": "/images/alejandor_colectivo.png",
+      "image": "/images/testimonios/jeferson_leguia.png",
       "quote": "We had a very low response rate on first contact. As we grew from 3 to 9 programs, the need to better nurture prospects to convert became critical. Núcleo completely restructured the narrative. Thanks to this, the response rate increased significantly and today we close faster.",
       "name": "Jefferson Leguía",
       "position": "Former Marketing manager @Colectivo23",
@@ -280,7 +280,7 @@
     "testimonial2": {
       "companyName": "Company 2",
       "companyLogo": "/images/logos/Logo_shift.svg",
-      "image": "/images/cinthia_aibar_shift.png",
+      "image": "/images/testimonios/cinthia_aibar.png",
       "quote": "Communicating what SHIFT does was a challenge for years. We weren't showing everything we offered to get new partners./n/nNúcleo came with deep research from day 1. They have very fine criteria that you don't see just anywhere in the market. They repositioned our value proposition via homepage and landing pages from scratch.",
       "name": "Cinthia Aibar",
       "position": "Head of Partnerships @SHIFT",
@@ -289,7 +289,7 @@
     "testimonial3": {
       "companyName": "Company 3",
       "companyLogo": "/images/logos/INVOINET_LOGO.svg",
-      "image": "/images/tomas_lanzillota_invoinet.png",
+      "image": "/images/testimonios/tomas_lanzillota.png",
       "quote": "The methodology they used was key to aligning our product strategy and rethinking our business strategy. /n/nFrom market analysis to implementing the new positioning, the entire process created a clearer foundation for scaling other initiatives.",
       "name": "Tomás Lanzillota",
       "position": "CEO @InvoiNet",
@@ -306,8 +306,8 @@
     },
     "testimonial5": {
       "companyName": "Company 5",
-      "companyLogo": "/images/logos/reevalua_logo.svg",
-      "image": "/images/made_silva.png",
+      "companyLogo": "/images/testimonios/logo_okr_university.png",
+      "image": "/images/testimonios/made_silva.png",
       "quote": "We had several AHA moments about how to communicate our services with content, and they took us out of our comfort zone as leaders./n/nIf you want to stay in the status quo, don't work with Laurita. But if you want a powerful, clear and precise message that impacts your sales, hire her.",
       "name": "Made Silva",
       "position": "CEO @OKR University",
@@ -316,11 +316,20 @@
     "testimonial6": {
       "companyName": "Company 6",
       "companyLogo": "/images/logos/Logo_BioActiva.svg",
-      "image": "/images/Katia_samanamud_bioactiva.png",
+      "image": "/images/testimonios/katia_samanamud.png",
       "quote": "Our technology innovation services are so specialized that it was difficult for us to explain them, we could lose opportunities because it wasn't well understood how we differentiate ourselves./n/nNúcleo was key to questioning and adjusting the value proposition. They guided us to clarify it and maintained our own technical language. That clarity impacted conversion rates.",
       "name": "Katia Samanamud",
       "position": "General Manager @BioActiva",
       "industria": "B2B Consulting & innovation hub"
+    },
+    "testimonial7": {
+      "companyName": "Company 7",
+      "companyLogo": "/images/logos/ngrowth.svg",
+      "image": "/images/testimonios/nicole_ngrowth.png",
+      "quote": "Nicole's testimonial from Ngrowth",
+      "name": "Nicole",
+      "position": "CEO @Ngrowth",
+      "industria": "Sales B2B"
     }
   },
   "faqs": {

@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/footer'
 import { PricingSection } from '@/components/pricing/pricing-section'
 import { CompaniesSection } from '@/components/hero/companies-section'
 import { ComparisonSection } from '@/components/pricing/comparison-section'
+import { TestimonialsSection } from '@/components/hero/testimonials-section'
 import { FaqsSection } from '@/components/hero/faqs-section'
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default async function PricingPage({ params }: PricingPageProps) {
         <PricingSection />
         <CompaniesSection />
         <ComparisonSection />
+        <TestimonialsSection />
         <FaqsSection />
       </main>
       <Footer />

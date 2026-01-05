@@ -5,11 +5,25 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
 
+// Helper function to map testimonial logos to actual file paths
+function getLogoPath(logoPath: string): string {
+  const logoMap: Record<string, string> = {
+    '/images/logos/Colectivo_23.png': '/images/testimonios/logo_colectivo.svg',
+    '/images/logos/Logo_shift.svg': '/images/testimonios/logo_shift.svg',
+    '/images/logos/INVOINET_LOGO.svg': '/images/testimonios/logo_invoinet.svg',
+    '/images/logos/reevalua_logo.svg': '/images/testimonios/logo_okr_university.png',
+    '/images/logos/Logo_BioActiva.svg': '/images/testimonios/Logo_BioActiva.svg',
+    '/images/logos/ngrowth.svg': '/images/testimonios/ngrowth_logo.svg',
+  }
+  
+  return logoMap[logoPath] || logoPath
+}
+
 export function TestimonialsSection() {
   const t = useTranslations('testimonials')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
-  const testimonials = [1, 2, 3, /* 4 */ 5, 6] as const // Comentado: Luis Chao (testimonial 4)
+  const testimonials = [1, 2, 3, /* 4 */ 5, 6, 7] as const // Comentado: Luis Chao (testimonial 4)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const autoScrollIntervalRef = useRef<number | null>(null)
   const pauseTimeoutRef = useRef<number | null>(null)
@@ -163,6 +177,51 @@ export function TestimonialsSection() {
             </h2>
           </FadeIn>
 
+          {/* Botones de navegación - Debajo del título, encima de los cards, lado derecho */}
+          <div className="flex items-center justify-end gap-2 mb-8">
+            {/* Flecha izquierda */}
+            <button
+              onClick={goToPrevious}
+              className="border border-nucleo-primary rounded-full p-3 hover:bg-nucleo-primary/10 transition-colors flex items-center justify-center"
+              aria-label="Testimonio anterior"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-nucleo-primary"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+
+            {/* Flecha derecha */}
+            <button
+              onClick={goToNext}
+              className="border border-nucleo-primary rounded-full p-3 hover:bg-nucleo-primary/10 transition-colors flex items-center justify-center"
+              aria-label="Siguiente testimonio"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-nucleo-primary"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+
           {/* Carrusel */}
           <div className="relative flex flex-col items-center w-full">
 
@@ -181,48 +240,78 @@ export function TestimonialsSection() {
                 className="flex gap-6 relative z-10 w-fit items-stretch"
               >
                 {testimonials.map((testimonialIndex, index) => {
+                  const companyLogo = getLogoPath(t(`testimonial${testimonialIndex}.companyLogo`))
+                  const quote = t(`testimonial${testimonialIndex}.quote`)
+                  const name = t(`testimonial${testimonialIndex}.name`)
+                  const position = t(`testimonial${testimonialIndex}.position`)
+                  const image = t(`testimonial${testimonialIndex}.image`)
+                  
                   return (
                     <div
                       key={`testimonial-${testimonialIndex}-${index}`}
-                      className="w-[calc(100vw-3rem)] md:w-[800px] lg:max-w-[1000px] lg:w-[1000px] flex-shrink-0 h-full"
+                      className="w-[calc(100vw-3rem)] md:w-[800px] lg:max-w-[1000px] lg:w-[1000px] flex-shrink-0 h-full lg:h-[550px]"
                     >
-                      <div className="bg-nucleo-dark-secondary rounded-3xl p-6 md:p-8 lg:p-12 relative h-full flex flex-col md:flex-row overflow-hidden">
-                        {/* Div izquierda: Contenido */}
-                        <div className="w-full md:w-3/5 flex flex-col justify-center md:pr-4 lg:pr-8">
-                          {/* Testimonio con saltos de línea */}
-                          <div className="font-geist-regular text-base md:text-lg lg:text-xl text-nucleo-light mb-6 md:mb-8 leading-relaxed text-left">
-                            {t(`testimonial${testimonialIndex}.quote`).split('/n/n').map((paragraph, index, array) => (
-                              <p key={index} className={index < array.length - 1 ? 'mb-4' : ''}>
+                      <div className="bg-nucleo-dark-secondary rounded-3xl p-6 md:p-8 lg:p-12 relative h-full flex flex-col overflow-hidden">
+                        {/* Testimonio con comillas */}
+                        <div className="relative mb-8 md:mb-10 flex-1">
+                          {/* Logo de la empresa - Alineado con el texto */}
+                          <div className="mb-6 md:mb-16 flex items-center justify-start">
+                            <div className="relative h-8 md:h-10 lg:h-12 w-auto">
+                              <Image
+                                src={companyLogo}
+                                alt={t(`testimonial${testimonialIndex}.companyName`)}
+                                width={200}
+                                height={80}
+                                className="h-full w-auto object-contain object-left"
+                                style={{ maxWidth: '200px' }}
+                              />
+                            </div>
+                          </div>
+                          
+                          {/* Texto del testimonio */}
+                          <div className="relative z-10 font-geist-regular text-base md:text-lg lg:text-xl text-nucleo-light leading-relaxed text-left">
+                            {quote.split('/n/n').map((paragraph, pIndex, array) => (
+                              <p key={pIndex} className={pIndex < array.length - 1 ? 'mb-4' : ''}>
                                 {paragraph}
                               </p>
                             ))}
                           </div>
-
-                          {/* Nombre */}
-                          <div className="text-left mb-1">
-                            <p className="font-geist-bold text-base md:text-lg lg:text-xl text-nucleo-highlight uppercase">
-                              {t(`testimonial${testimonialIndex}.name`).replace(/,/g, '').toUpperCase()}
-                            </p>
-                          </div>
-
-                          {/* Posición */}
-                          <div className="text-left">
-                            <p className="font-geist-regular text-sm md:text-sm lg:text-base text-nucleo-dark-hover-light">
-                              {t(`testimonial${testimonialIndex}.position`)}
-                            </p>
+                          
+                          {/* Comillas decorativas - Al final del texto, a la altura del logo */}
+                          <div className="absolute top-0 right-0 z-0">
+                            <Image
+                              src="/images/testimonios/comillas2.png"
+                              alt="Comillas decorativas"
+                              width={80}
+                              height={80}
+                              className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 opacity-30"
+                            />
                           </div>
                         </div>
 
-                        {/* Div derecha: Imagen - Solo visible en desktop */}
-                        <div className="hidden md:flex md:w-2/5 flex-shrink-0 items-center justify-start">
-                          <div className="relative w-full max-w-[280px] lg:max-w-[300px] aspect-[3/4] rounded-2xl overflow-hidden">
-                            <Image
-                              src={t(`testimonial${testimonialIndex}.image`)}
-                              alt={t(`testimonial${testimonialIndex}.name`)}
-                              fill
-                              className="object-contain"
-                              sizes="(max-width: 1024px) 280px, 300px"
-                            />
+                        {/* Información de la persona - Parte inferior */}
+                        <div className="flex items-center gap-4 md:gap-6">
+                          {/* Foto circular */}
+                          <div className="relative flex-shrink-0">
+                            <div className="relative w-16 h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 rounded-full overflow-hidden">
+                              <Image
+                                src={image}
+                                alt={name}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 64px, (max-width: 1024px) 80px, 96px"
+                              />
+                            </div>
+                          </div>
+
+                          {/* Nombre y posición */}
+                          <div className="flex flex-col">
+                            <p className="font-geist-bold text-base md:text-lg lg:text-xl text-nucleo-highlight uppercase">
+                              {name.replace(/,/g, '').toUpperCase()}
+                            </p>
+                            <p className="font-geist-regular text-sm md:text-base lg:text-lg text-nucleo-dark-hover-light">
+                              {position}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -232,72 +321,24 @@ export function TestimonialsSection() {
               </div>
             </div>
 
-            {/* Navegación: Dots a la izquierda, flechas a la derecha */}
-            <div className="flex items-center justify-between w-full max-w-[1352px] mt-8 px-4 relative">
-              {/* Indicadores (Dots) - Izquierda */}
-              <div className="flex items-center gap-1">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className="min-w-[24px] min-h-[24px] flex items-center justify-center cursor-pointer"
-                    aria-label={`Ir al testimonio ${index + 1}`}
-                  >
-                    <span
-                      className={`h-2 rounded-full transition-all ${
-                        index === currentIndex
-                          ? 'w-8 bg-nucleo-primary'
-                          : 'w-2 bg-gray-300'
-                      }`}
-                    />
-                  </button>
-                ))}
-              </div>
-
-              {/* Flechas - Derecha */}
-              <div className="flex items-center gap-2">
-                {/* Flecha izquierda */}
+            {/* Indicadores (Dots) */}
+            <div className="flex items-center justify-center gap-1 mt-8">
+              {testimonials.map((_, index) => (
                 <button
-                  onClick={goToPrevious}
-                  className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors flex items-center justify-center"
-                  aria-label="Testimonio anterior"
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className="min-w-[24px] min-h-[24px] flex items-center justify-center cursor-pointer"
+                  aria-label={`Ir al testimonio ${index + 1}`}
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-nucleo-dark"
-                  >
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
+                  <span
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentIndex
+                        ? 'w-8 bg-nucleo-primary'
+                        : 'w-2 bg-gray-300'
+                    }`}
+                  />
                 </button>
-
-                {/* Flecha derecha */}
-                <button
-                  onClick={goToNext}
-                  className="bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors flex items-center justify-center"
-                  aria-label="Siguiente testimonio"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-nucleo-dark"
-                  >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </button>
-              </div>
+              ))}
             </div>
           </div>
         </div>
