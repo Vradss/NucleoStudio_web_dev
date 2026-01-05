@@ -30,11 +30,13 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <GoogleAnalytics />
+        <ClarityAnalytics />
+      </head>
       <body
         className={`${spaceMonoRegular.variable} ${geistSans.variable} antialiased`}
       >
-        <GoogleAnalytics />
-        <ClarityAnalytics />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SmoothScroll />
           {children}

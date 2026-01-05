@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
-    "@microsoft/clarity": "^1.0.2",
     "@types/three": "^0.181.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
