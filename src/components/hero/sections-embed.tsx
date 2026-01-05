@@ -10,12 +10,8 @@ export function SectionsEmbed({ children }: SectionsEmbedProps) {
   return (
     <div className="relative">
       <UnicornEmbed
-        projectId="mebwhEqAY4unIkmgWtfB"
         className="fixed inset-0 z-0"
-        style={{
-          width: '100vw',
-          height: '100vh',
-        }}
+        dpi={1.5}
       />
       <div className="relative z-10">
         {children}

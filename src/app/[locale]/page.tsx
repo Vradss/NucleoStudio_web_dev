@@ -39,12 +39,8 @@ export default function Home() {
     <div className="relative">
       {/* UnicornEmbed fijo como fondo global */}
       <UnicornEmbed
-        projectId="mebwhEqAY4unIkmgWtfB"
         className="fixed inset-0 z-0"
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
+        dpi={1.5}
       />
 
       <div className="relative z-10">

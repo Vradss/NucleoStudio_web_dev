@@ -1,114 +1,108 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { usePathname } from '@/i18n/routing'
 
-// Extender la interfaz Window para incluir UnicornStudio
 declare global {
   interface Window {
     UnicornStudio?: {
-      init: () => void
-      isInitialized: boolean
+      addScene: (config: Record<string, unknown>) => Promise<{ destroy: () => void }>
+      destroy: () => void
     }
   }
 }
 
 interface UnicornEmbedProps {
-  projectId: string
   className?: string
   style?: React.CSSProperties
+  filePath?: string
+  dpi?: number
 }
 
 export function UnicornEmbed({ 
-  projectId, 
   className = '', 
-  style = {} 
+  style = {},
+  filePath = '/animations/unicorn-bg.json',
+  dpi = 1.5
 }: UnicornEmbedProps) {
-  const pathname = usePathname()
-  const scriptLoadedRef = useRef(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  const lastPathnameRef = useRef<string>('')
+  const sceneRef = useRef<{ destroy: () => void } | null>(null)
+  const elementId = 'unicorn-bg'
 
   useEffect(() => {
-    // Cargar el script de Unicorn Studio solo una vez (global)
-    if (!scriptLoadedRef.current && typeof window !== 'undefined') {
-      scriptLoadedRef.current = true
-      
-      // Verificar si el script ya existe
-      const existingScript = document.querySelector('script[src*="unicornStudio.umd.js"]')
-      if (existingScript) {
-        scriptLoadedRef.current = true
-        // Si el script ya existe, solo inicializar
-        if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
-          window.UnicornStudio.init()
-          window.UnicornStudio.isInitialized = true
-        }
-      } else {
-        window.UnicornStudio = window.UnicornStudio || { 
-          init: () => {},
-          isInitialized: false 
-        }
-        
+    let isMounted = true
+
+    const init = async () => {
+      // Cargar script si no existe
+      if (!window.UnicornStudio) {
         const script = document.createElement('script')
-        script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.5.3/dist/unicornStudio.umd.js'
-        script.async = true
-        script.onload = function() {
-          if (window.UnicornStudio) {
-            window.UnicornStudio.init()
-            window.UnicornStudio.isInitialized = true
+        script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.0/dist/unicornStudio.umd.js'
+        document.head.appendChild(script)
+        
+        await new Promise<void>((resolve) => {
+          script.onload = () => {
+            console.log('[Unicorn] Script loaded')
+            resolve()
           }
+        })
+        
+        // Esperar a que se inicialice
+        await new Promise<void>((resolve) => {
+          const check = setInterval(() => {
+            if (window.UnicornStudio) {
+              clearInterval(check)
+              resolve()
+            }
+          }, 100)
+        })
+      }
+
+      if (!isMounted || !window.UnicornStudio) return
+
+      console.log('[Unicorn] Initializing scene with filePath:', filePath)
+
+      try {
+        const scene = await window.UnicornStudio.addScene({
+          elementId,
+          fps: 60,
+          scale: 1,
+          dpi,
+          filePath,
+          lazyLoad: false,
+          production: true
+        })
+        
+        console.log('[Unicorn] Scene created successfully')
+        
+        if (isMounted) {
+          sceneRef.current = scene
+        } else {
+          scene.destroy()
         }
-        script.onerror = function() {
-          console.error('Failed to load Unicorn Studio script')
-          scriptLoadedRef.current = false
-        }
-        document.body.appendChild(script)
+      } catch (error) {
+        console.error('[Unicorn] Error:', error)
       }
     }
 
-    // Reinicializar el embed cuando cambia la ruta (incluyendo cambios de idioma)
-    if (pathname !== lastPathnameRef.current && 
-        window.UnicornStudio && 
-        window.UnicornStudio.isInitialized && 
-        containerRef.current) {
-      
-      lastPathnameRef.current = pathname
-      
-      // Reinicializar el embed con un delay para asegurar que la navegación se complete
-      const timeoutId = setTimeout(() => {
-        const embedElement = containerRef.current
-        if (embedElement && window.UnicornStudio) {
-          const currentProjectId = embedElement.getAttribute('data-us-project')
-          
-          if (currentProjectId) {
-            // Remover y re-agregar el atributo para forzar reinicialización
-            embedElement.removeAttribute('data-us-project')
-            requestAnimationFrame(() => {
-              if (embedElement && currentProjectId && window.UnicornStudio) {
-                embedElement.setAttribute('data-us-project', currentProjectId)
-                // Reinicializar Unicorn Studio
-                window.UnicornStudio.init()
-              }
-            })
-          }
-        }
-      }, 500) // Delay más largo para producción
+    init()
 
-      return () => {
-        clearTimeout(timeoutId)
+    return () => {
+      isMounted = false
+      if (sceneRef.current) {
+        sceneRef.current.destroy()
       }
-    } else {
-      lastPathnameRef.current = pathname
     }
-  }, [pathname, projectId])
+  }, [filePath, dpi])
 
   return (
     <div 
       ref={containerRef}
-      data-us-project={projectId} 
+      id={elementId}
       className={className}
-      style={style}
+      style={{
+        width: '100%',
+        height: '100%',
+        ...style
+      }}
     />
   )
 }
-
