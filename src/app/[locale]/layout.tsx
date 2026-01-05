@@ -31,6 +31,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/images/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/images/favico-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/images/favico-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/images/isotipo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+        <meta name="theme-color" content="#6F31FF" />
         <GoogleAnalytics />
         <ClarityAnalytics />
       </head>

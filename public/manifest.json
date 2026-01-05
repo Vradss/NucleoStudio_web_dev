@@ -8,9 +8,19 @@
   "theme_color": "#6F31FF",
   "icons": [
     {
-      "src": "/images/isotipo_morado_fuerte.svg",
+      "src": "/images/isotipo.svg",
       "sizes": "any",
       "type": "image/svg+xml"
+    },
+    {
+      "src": "/images/favico-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ]
 }

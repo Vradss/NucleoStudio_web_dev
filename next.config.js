@@ -40,12 +40,12 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net app.cal.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net app.cal.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://vercel.live;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob: https: https://www.google-analytics.com https://www.googletagmanager.com;
   font-src 'self';
-  connect-src 'self' https: https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms;
-  frame-src 'self' https://embed.unicornplatform.com app.cal.com;
+  connect-src 'self' https: https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://vercel.live wss://ws-us3.pusher.com;
+  frame-src 'self' https://embed.unicornplatform.com app.cal.com https://vercel.live;
   media-src 'self';
 `
 
