@@ -86,11 +86,22 @@ const loadUnicornScript = (): Promise<void> => {
 // Color de fondo que coincide con el gradiente de Unicorn (extraído del JSON)
 const UNICORN_BG_COLOR = '#17171A'
 
+// Detectar si es móvil para ajustar DPI
+const getOptimalDpi = (): number => {
+  if (typeof window === 'undefined') return 1.5
+  const isMobile = window.innerWidth < 768
+  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024
+  // Menor DPI en móvil para mejor rendimiento
+  if (isMobile) return 1
+  if (isTablet) return 1.25
+  return 1.5
+}
+
 export function UnicornEmbed({ 
   className = '', 
   style = {},
   filePath = '/animations/unicorn-bg.json',
-  dpi = 1.5
+  dpi
 }: UnicornEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const sceneRef = useRef<{ destroy: () => void } | null>(null)
@@ -109,12 +120,15 @@ export function UnicornEmbed({
 
         if (!isMounted || !window.UnicornStudio) return
 
+        // Usar DPI óptimo según el dispositivo
+        const optimalDpi = dpi ?? getOptimalDpi()
+
         // Inicializar la escena sin lazy load para carga inmediata
         const scene = await window.UnicornStudio.addScene({
           elementId,
           fps: 60,
           scale: 1,
-          dpi,
+          dpi: optimalDpi,
           filePath,
           lazyLoad: false, // Carga inmediata
           production: true

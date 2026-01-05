@@ -51,7 +51,6 @@ export default function Home() {
       <Suspense fallback={<div className="fixed inset-0 z-0 bg-[#17171A]" />}>
         <UnicornEmbed
           className="fixed inset-0 z-0"
-          dpi={1.5}
         />
       </Suspense>
 

@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       'Clarificamos tu propuesta de valor y creamos mensajes diferenciados para empresas tech B2B. Posicionamiento, web, LinkedIn y estrategia de contenido.',
     images: [
       {
-        url: '/images/og-image.png',
+        url: '/images/open_graph.jpg',
         width: 1200,
         height: 630,
         alt: 'Nucleo Studio - Posicionamiento y Contenido B2B',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: 'Nucleo Studio | Posicionamiento y Contenido B2B',
     description:
       'Clarificamos tu propuesta de valor y creamos mensajes diferenciados para empresas tech B2B.',
-    images: ['/images/og-image.png'],
+    images: ['/images/open_graph.jpg'],
     creator: '@nucleostudio',
   },
   robots: {

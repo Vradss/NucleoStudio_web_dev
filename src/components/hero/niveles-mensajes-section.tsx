@@ -18,7 +18,7 @@ function TitleWithDisabledWord({ title }: { title: string }) {
     return (
       <h2 className="section-title max-w-7xl">
         {before}
-        <span className="text-nucleo-dark-hover-light">
+        <span className="text-nucleo-dark-hover-light line-through">
           {word}
         </span>
         {after}
