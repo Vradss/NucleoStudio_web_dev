@@ -31,6 +31,41 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        {/* Preconnect para recursos externos */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        {/* Preload animación de fondo (diferida, baja prioridad) */}
+        <link
+          rel="preload"
+          href="/animations/unicorn-bg.json"
+          as="fetch"
+          crossOrigin="anonymous"
+          fetchPriority="low"
+        />
+        {/* Preload recursos críticos */}
+        <link
+          rel="preload"
+          href="/fonts/ArtificTrial/artifictrial-regular.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ArtificTrial/artifictrial-semibold.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ArtificTrial/artifictrial-superbold.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/images/favico-16x16.png" sizes="16x16" type="image/png" />

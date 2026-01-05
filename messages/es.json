@@ -289,7 +289,7 @@
       "companyName": "Empresa 3",
       "companyLogo": "/images/logos/INVOINET_LOGO.svg",
       "image": "/images/testimonios/tomas_lanzillota.png",
-      "quote": "La metodología que usaron fue clave para alinear nuestra estrategia de producto y repensar la de negocio. /n/nDesde el análisis del mercado hasta la implementación del nuevo posicionamiento, todo el proceso generó una base más clara para escalar otras iniciativas.",
+      "quote": "Necesitábamos un cambio visible que reflejara nuestra evolución cultural y nueva visión de negocio./n/nEl proceso estructurado y documentado que seguimos no solo transformó nuestra comunicación - se convirtió en una base que usamos para tomar decisiones estratégicas, desarrollar productos y escalar otras iniciativas.",
       "name": "Tomás Lanzillota",
       "position": "CEO @InvoiNet",
       "industria": "Fintech & SaaS"
@@ -590,7 +590,7 @@
               "name": "Premium support",
               "starter": null,
               "pro": null,
-              "fractional": "Quick calls y rptas en 24 horas"
+              "fractional": "Quick calls y respuestas en 24 horas"
             },
             "contentOperations": {
               "name": "Content operations + documentación de información",
@@ -650,7 +650,7 @@
     "solution": "Solución",
     "deliverables": "Entregables",
     "products": "Productos",
-    "pricing": "Precios",
+    "pricing": "Planes",
     "socials": "Redes sociales",
     "allRightsReserved": "Todos los derechos reservados",
     "privacyPolicy": "Política de Privacidad",

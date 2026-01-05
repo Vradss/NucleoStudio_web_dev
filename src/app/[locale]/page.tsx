@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
 import { HeroSection } from '@/components/hero/hero-section'
 import { ProblemSection } from '@/components/hero/problem-section'
 import { NivelesMensajesSection } from '@/components/hero/niveles-mensajes-section'
@@ -8,8 +10,16 @@ import { MetodologiaSection } from '@/components/hero/metodologia-section'
 import { TestimonialsSection } from '@/components/hero/testimonials-section'
 import { FaqsSection } from '@/components/hero/faqs-section'
 import { Footer } from '@/components/layout/footer'
-import { UnicornEmbed } from '@/components/hero/unicorn-embed'
 import { ScrollColorSections } from '@/components/hero/scroll-color-transition'
+
+// Lazy load componentes pesados
+const UnicornEmbed = dynamic(
+  () => import('@/components/hero/unicorn-embed').then((mod) => mod.UnicornEmbed),
+  {
+    ssr: false,
+    loading: () => null, // No mostrar nada mientras carga
+  }
+)
 
 export const metadata: Metadata = {
   title: 'Nucleo Studio | Posicionamiento y Contenido para Empresas Tech B2B',
@@ -37,11 +47,13 @@ const colorTransitions = [
 export default function Home() {
   return (
     <div className="relative">
-      {/* UnicornEmbed fijo como fondo global */}
-      <UnicornEmbed
-        className="fixed inset-0 z-0"
-        dpi={1.5}
-      />
+      {/* UnicornEmbed fijo como fondo global - lazy loaded */}
+      <Suspense fallback={null}>
+        <UnicornEmbed
+          className="fixed inset-0 z-0"
+          dpi={1.5}
+        />
+      </Suspense>
 
       <div className="relative z-10">
         <Header />

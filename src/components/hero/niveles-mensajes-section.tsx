@@ -56,6 +56,7 @@ export function NivelesMensajesSection() {
                 height={519}
                 className="w-full h-auto md:hidden"
                 priority
+                unoptimized
               />
               {/* Imagen para desktop */}
               <Image
@@ -65,6 +66,7 @@ export function NivelesMensajesSection() {
                 height={519}
                 className="hidden md:block w-full h-auto"
                 priority
+                unoptimized
               />
             </div>
           </div>
@@ -85,6 +87,7 @@ export function NivelesMensajesSection() {
                     alt={t(`benefits.${benefit}.alt`)}
                     fill
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <p className="font-geist-regular text-base text-nucleo-light sm:text-lg whitespace-pre-line">

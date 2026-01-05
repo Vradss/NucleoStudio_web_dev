@@ -56,6 +56,7 @@ function renderLogo(company: CompanyLogo, key: string) {
               maxWidth: '150px',
               maxHeight: '80px',
             }}
+            unoptimized
           />
         </div>
       ) : (
@@ -73,6 +74,7 @@ function renderLogo(company: CompanyLogo, key: string) {
               objectFit: 'contain',
             }),
           }}
+          unoptimized
         />
       )}
     </div>

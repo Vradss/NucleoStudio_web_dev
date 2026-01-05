@@ -80,6 +80,7 @@ export function PricingSection() {
                 height={25}
                 className="h-3 w-3 sm:h-5 sm:w-5"
                 priority
+                unoptimized
               />
               <span className="tagline-secondary">
                 {t('tagline')}

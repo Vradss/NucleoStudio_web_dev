@@ -203,6 +203,7 @@ export function HeroContent() {
           height={25}
           className="h-3 w-3 flex-shrink-0 sm:h-5 sm:w-5"
           priority
+          unoptimized
         />
         <span className="tagline whitespace-nowrap text-[12px] sm:text-sm tracking-[0.1em] sm:tracking-[0.1em]">
           {t('tagline')}

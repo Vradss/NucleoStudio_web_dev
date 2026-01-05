@@ -178,6 +178,7 @@ export function MetodologiaSection() {
               height={25}
               className="h-4 w-4 sm:h-5 sm:w-5"
               priority
+              unoptimized
             />
             <span className="tagline-secondary">
               {t('label')}
@@ -216,6 +217,7 @@ export function MetodologiaSection() {
                         width={20}
                         height={20}
                         className="h-full w-full"
+                        unoptimized
                       />
                     </div>
                   )}
@@ -324,6 +326,7 @@ export function MetodologiaSection() {
                           height={600}
                           className="w-full max-w-[650px] h-auto object-contain"
                           style={{ borderRadius: '12px' }}
+                          unoptimized
                         />
                       </div>
                     </div>
@@ -424,6 +427,7 @@ export function MetodologiaSection() {
                     className="w-full max-w-[650px] h-full object-contain"
                     style={{ borderRadius: '12px' }}
                     priority={activeTab === 'strategy'}
+                    unoptimized
                   />
                 </div>
               </div>

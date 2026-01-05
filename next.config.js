@@ -6,16 +6,23 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts')
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  compress: true,
 
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 días
+    dangerouslyAllowSVG: true,
   },
 
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      'gsap',
+      'react-icons',
+    ],
   },
 
   async headers() {
@@ -25,8 +32,38 @@ const nextConfig = {
         headers: securityHeaders,
       },
       {
-        // Cache estático para assets
+        // Cache estático para imágenes
         source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache para fuentes
+        source: '/fonts/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache para assets estáticos
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache para animaciones JSON
+        source: '/animations/:path*',
         headers: [
           {
             key: 'Cache-Control',
@@ -44,8 +81,19 @@ const nextConfig = {
         source: '/:locale/manifest.json',
         destination: '/manifest.json',
       },
+      {
+        // Redirige /es/fonts y /en/fonts a /fonts
+        source: '/:locale/fonts/:path*',
+        destination: '/fonts/:path*',
+      },
     ]
   },
+
+  // Optimizaciones de compilación
+  swcMinify: true,
+  
+  // Optimizar producción
+  productionBrowserSourceMaps: false,
 }
 
 const ContentSecurityPolicy = `

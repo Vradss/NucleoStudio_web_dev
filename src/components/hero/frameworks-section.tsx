@@ -19,6 +19,7 @@ export function FrameworksSection() {
               height={25}
               className="h-4 w-4 sm:h-5 sm:w-5"
               priority
+              unoptimized
             />
             <span className="tagline-secondary">
               {t('label')}
@@ -37,6 +38,7 @@ export function FrameworksSection() {
               alt="Frameworks"
               width={900}
               height={720}
+              unoptimized
             />
           </div>
         </FadeIn>

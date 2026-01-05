@@ -131,6 +131,7 @@ export function Header() {
               height={32}
               className="h-5 w-auto md:h-6"
               priority
+              unoptimized
             />
           </Link>
           
@@ -235,6 +236,7 @@ export function Header() {
                     height={32}
                     className="h-5 w-auto md:h-8"
                     priority
+                    unoptimized
                   />
                 </Link>
                 <button

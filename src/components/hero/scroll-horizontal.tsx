@@ -244,6 +244,7 @@ export default function ScrollHorizontal() {
                   height={25}
                   className="h-4 w-4 sm:h-5 sm:w-5"
                   priority
+                  unoptimized
                 />
                 <span className="tagline-primary">
                   {t('label')}
@@ -282,6 +283,7 @@ export default function ScrollHorizontal() {
                         width={26}
                         height={25}
                         className="h-4 w-4 sm:h-5 sm:w-5"
+                        unoptimized
                       />
                       <p className="tagline-secondary">
                         {t(`cards.${card.key}.label`)}
@@ -317,6 +319,7 @@ export default function ScrollHorizontal() {
               height={25}
               className="h-4 w-4 sm:h-5 sm:w-5"
               priority
+              unoptimized
             />
             <span className="tagline-primary">
               {t('label')}
@@ -359,6 +362,7 @@ export default function ScrollHorizontal() {
                   width={26}
                   height={25}
                   className="h-4 w-4 sm:h-5 sm:w-5"
+                  unoptimized
                 />
                 <p className="tagline-secondary">
                   {t(`cards.${card.key}.label`)}

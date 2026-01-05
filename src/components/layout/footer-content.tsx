@@ -72,6 +72,7 @@ export function FooterContent() {
                   height={32}
                   className="h-8 w-auto"
                   priority
+                  unoptimized
                 />
               </Link>
  
@@ -186,6 +187,7 @@ export function FooterContent() {
             className="h-auto w-full max-w-full opacity-20 mb-0 pb-0"
             style={{ paddingBottom: 0, marginBottom: 0, display: 'block' }}
             priority
+            unoptimized
           />
         </div>
       </div>

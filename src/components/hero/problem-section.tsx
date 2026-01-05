@@ -45,6 +45,7 @@ export async function ProblemSection() {
             height={25}
             className="h-4 w-4 sm:h-5 sm:w-5"
             priority
+            unoptimized
           />
           <span className="tagline-secondary">
               {t('label')}
@@ -75,6 +76,7 @@ export async function ProblemSection() {
                   alt="Icono de problema"
                   fill
                   className="object-contain"
+                  unoptimized
                 />
               </div>
                 <p className="mt-6 sm:mt-8 text-card-title">

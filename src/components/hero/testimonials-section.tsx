@@ -158,6 +158,7 @@ export function TestimonialsSection() {
                 height={25}
                 className="h-4 w-4 sm:h-5 sm:w-5"
                 priority
+                unoptimized
               />
               <span className="tagline-primary">
                 {t('label')}
@@ -264,6 +265,7 @@ export function TestimonialsSection() {
                                 height={80}
                                 className="h-full w-auto object-contain object-left"
                                 style={{ maxWidth: '200px' }}
+                                unoptimized
                               />
                             </div>
                           </div>
@@ -285,6 +287,7 @@ export function TestimonialsSection() {
                               width={80}
                               height={80}
                               className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 opacity-30"
+                              unoptimized
                             />
                           </div>
                         </div>
@@ -300,6 +303,7 @@ export function TestimonialsSection() {
                                 fill
                                 className="object-cover"
                                 sizes="(max-width: 768px) 64px, (max-width: 1024px) 80px, 96px"
+                                unoptimized
                               />
                             </div>
                           </div>
