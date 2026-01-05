@@ -178,51 +178,6 @@ export function TestimonialsSection() {
             </h2>
           </FadeIn>
 
-          {/* Botones de navegación - Debajo del título, encima de los cards, lado derecho */}
-          <div className="flex items-center justify-end gap-2 mb-8">
-            {/* Flecha izquierda */}
-            <button
-              onClick={goToPrevious}
-              className="border border-nucleo-primary rounded-full p-3 hover:bg-nucleo-primary/10 transition-colors flex items-center justify-center"
-              aria-label="Testimonio anterior"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-nucleo-primary"
-              >
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </button>
-
-            {/* Flecha derecha */}
-            <button
-              onClick={goToNext}
-              className="border border-nucleo-primary rounded-full p-3 hover:bg-nucleo-primary/10 transition-colors flex items-center justify-center"
-              aria-label="Siguiente testimonio"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-nucleo-primary"
-              >
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </button>
-          </div>
-
           {/* Carrusel */}
           <div className="relative flex flex-col items-center w-full">
 
@@ -325,24 +280,72 @@ export function TestimonialsSection() {
               </div>
             </div>
 
-            {/* Indicadores (Dots) */}
-            <div className="flex items-center justify-center gap-1 mt-8">
-              {testimonials.map((_, index) => (
+            {/* Controles: Pointers a la izquierda, Botones a la derecha */}
+            <div className="flex items-center justify-between w-full mt-4">
+              {/* Indicadores (Dots) - Izquierda */}
+              <div className="flex items-center justify-start gap-1">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className="min-w-[24px] min-h-[24px] flex items-center justify-center cursor-pointer"
+                    aria-label={`Ir al testimonio ${index + 1}`}
+                  >
+                    <span
+                      className={`h-2 rounded-full transition-all ${
+                        index === currentIndex
+                          ? 'w-8 bg-nucleo-primary'
+                          : 'w-2 bg-gray-300'
+                      }`}
+                    />
+                  </button>
+                ))}
+              </div>
+
+              {/* Botones de navegación - Derecha */}
+              <div className="flex items-center gap-2">
+                {/* Flecha izquierda */}
                 <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className="min-w-[24px] min-h-[24px] flex items-center justify-center cursor-pointer"
-                  aria-label={`Ir al testimonio ${index + 1}`}
+                  onClick={goToPrevious}
+                  className="border border-nucleo-primary rounded-full p-3 hover:bg-nucleo-primary/10 transition-colors flex items-center justify-center"
+                  aria-label="Testimonio anterior"
                 >
-                  <span
-                    className={`h-2 rounded-full transition-all ${
-                      index === currentIndex
-                        ? 'w-8 bg-nucleo-primary'
-                        : 'w-2 bg-gray-300'
-                    }`}
-                  />
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-nucleo-primary"
+                  >
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
                 </button>
-              ))}
+
+                {/* Flecha derecha */}
+                <button
+                  onClick={goToNext}
+                  className="border border-nucleo-primary rounded-full p-3 hover:bg-nucleo-primary/10 transition-colors flex items-center justify-center"
+                  aria-label="Siguiente testimonio"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-nucleo-primary"
+                  >
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>

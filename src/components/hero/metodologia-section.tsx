@@ -82,6 +82,9 @@ function renderBulletPointWithHighlight(text: string, locale: string) {
 }
 
 function renderMetodologiaTitleWithHighlight(title: string, locale: string) {
+  // Convertir /n/n a saltos de línea dobles y /n a saltos de línea simples
+  const processedTitle = title.replace(/\/n\/n/g, '\n\n').replace(/\/n/g, '\n')
+  
   // Texto a resaltar según el idioma
   const highlightTexts = locale === 'es' 
     ? ['aplicamos en todos tus canales B2B']
@@ -96,7 +99,7 @@ function renderMetodologiaTitleWithHighlight(title: string, locale: string) {
   highlightTexts.forEach((highlightText) => {
     const regex = new RegExp(highlightText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
     let match
-    while ((match = regex.exec(title)) !== null) {
+    while ((match = regex.exec(processedTitle)) !== null) {
       matches.push({
         start: match.index,
         end: match.index + match[0].length,
@@ -112,7 +115,7 @@ function renderMetodologiaTitleWithHighlight(title: string, locale: string) {
   matches.forEach((match) => {
     if (lastIndex < match.start) {
       parts.push({
-        text: title.substring(lastIndex, match.start),
+        text: processedTitle.substring(lastIndex, match.start),
         highlight: false,
       })
     }
@@ -123,15 +126,15 @@ function renderMetodologiaTitleWithHighlight(title: string, locale: string) {
     lastIndex = match.end
   })
   
-  if (lastIndex < title.length) {
+  if (lastIndex < processedTitle.length) {
     parts.push({
-      text: title.substring(lastIndex),
+      text: processedTitle.substring(lastIndex),
       highlight: false,
     })
   }
   
   if (parts.length === 0) {
-    return title
+    return processedTitle
   }
   
   return (
@@ -340,7 +343,7 @@ export function MetodologiaSection() {
         {/* Desktop: Tab Content */}
         <FadeIn delay={0.4}>
           <div 
-            className="hidden md:flex mt-4 border flex-1 flex-col min-h-0 py-6" 
+            className="hidden md:flex mt-4 border flex-1 flex-col min-h-0" 
             style={{ 
               borderColor: '#3F3F50', 
               borderRadius: '12px'
@@ -348,7 +351,7 @@ export function MetodologiaSection() {
           >
             <div className="grid lg:grid-cols-2 flex-1 min-h-0">
               {/* Left: Text Content */}
-              <div className="p-6 lg:p-8 flex flex-col justify-center lg:overflow-y-auto">
+              <div className="p-6 lg:p-4 flex flex-col justify-center lg:overflow-y-auto">
                 <div className="space-y-4">
                   {(() => {
                     try {
@@ -417,7 +420,7 @@ export function MetodologiaSection() {
               </div>
 
               {/* Right: Image */}
-              <div className="flex items-center justify-center p-6 lg:p-6 min-h-0">
+              <div className="flex items-center justify-center p-6 lg:p-4 min-h-0">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={t(`tabs.${activeTab}.image`)}
