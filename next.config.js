@@ -36,11 +36,21 @@ const nextConfig = {
       },
     ]
   },
+
+  async rewrites() {
+    return [
+      {
+        // Redirige /es/manifest.json y /en/manifest.json a /manifest.json
+        source: '/:locale/manifest.json',
+        destination: '/manifest.json',
+      },
+    ]
+  },
 }
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net app.cal.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://vercel.live;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.jsdelivr.net app.cal.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://vercel.live;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob: https: https://www.google-analytics.com https://www.googletagmanager.com;
   font-src 'self';

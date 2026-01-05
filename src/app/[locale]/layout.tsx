@@ -32,7 +32,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/images/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/images/favico-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/images/favico-32x32.png" sizes="32x32" type="image/png" />
         <link rel="icon" href="/images/isotipo.svg" type="image/svg+xml" />
