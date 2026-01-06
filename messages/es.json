@@ -248,7 +248,7 @@
           "1": "Contenido thought leadership: newsletter, lead magnets",
           "2": "Frameworks propios"
         },
-        "image": "/images/Contenido_referente.webp",
+        "image": "/images/Contenido_referente.jpg",
         "imageAlt": "Contenido para ser referente"
       },
       "conversion": {
@@ -381,6 +381,7 @@
     "subtitle": "Elige el plan que mejor se adapte a las necesidades de tu empresa",
     "includesLabel": "INCLUYE:",
     "addonsLabel": "ADICIONALES:",
+    "taxNote": "* Los precios no incluyen impuestos. Se aplicarán según la normativa fiscal del país del cliente.",
     "plans": {
       "starter": {
         "name": "Nuevos lanzamientos",
@@ -448,6 +449,7 @@
       "subtext": "¿Quieres saber más sobre estos planes? Descarga aquí cómo funciona este sistema.",
       "subtextLink": "Descarga aquí",
       "subtextLinkUrl": "https://google.com.pe",
+      "taxNote": "* Los precios no incluyen impuestos. Se aplicarán según la normativa fiscal del país del cliente.",
       "plans": {
         "starter": {
           "name": "Starter",

@@ -364,9 +364,9 @@ export function ComparisonSection() {
             })}
           </div>
 
-        {/* Subtext with link */}
+        {/* Subtext with link
         <FadeIn delay={0.5}>
-          <div className="text-left mt-12 md:mt-16">
+          <div className="text-left mt-6 md:mt-6">
             <p className="font-geist-regular text-base text-nucleo-dark-hover-light">
               {(() => {
                 const subtext = t('subtext')
@@ -394,6 +394,13 @@ export function ComparisonSection() {
               })()}
             </p>
           </div>
+        </FadeIn>*/}
+        
+        {/* Tax Note */}
+        <FadeIn delay={0.4}>
+          <p className="text-left mt-6 md:mt-6 text-xs md:text-sm text-nucleo-dark-hover-light">
+            {t('taxNote')}
+          </p>
         </FadeIn>
       </div>
     </section>

@@ -89,17 +89,31 @@ export function TestimonialsSection() {
       return
     }
 
-    autoScrollIntervalRef.current = window.setInterval(() => {
-      goToNext()
-    }, 5000) // Cambiar cada 5 segundos
+    // Esperar 3 segundos antes de iniciar el auto-scroll para que el usuario vea el primer testimonio
+    const initialDelay = setTimeout(() => {
+      autoScrollIntervalRef.current = window.setInterval(() => {
+        goToNext()
+      }, 5000) // Cambiar cada 5 segundos
+    }, 3000)
 
     return () => {
+      clearTimeout(initialDelay)
       if (autoScrollIntervalRef.current) {
         clearInterval(autoScrollIntervalRef.current)
         autoScrollIntervalRef.current = null
       }
     }
   }, [isPaused, goToNext])
+
+  // Inicializar scroll a la posición 0 al montar
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current
+    if (!scrollContainer) return
+    
+    // Asegurar que el scroll esté en la posición inicial (0)
+    scrollContainer.scrollLeft = 0
+    setCurrentIndex(0)
+  }, [])
 
   // Detectar el índice actual basado en el scroll
   useEffect(() => {

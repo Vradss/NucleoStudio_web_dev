@@ -293,6 +293,13 @@ export function PricingSection() {
             )
           })}
         </motion.div>
+        
+        {/* Tax Note */}
+        <FadeIn delay={0.4}>
+          <p className="text-left mt-6 md:mt-6 text-xs md:text-sm text-nucleo-dark-hover-light">
+            {t('taxNote')}
+          </p>
+        </FadeIn>
       </div>
     </section>
   )
