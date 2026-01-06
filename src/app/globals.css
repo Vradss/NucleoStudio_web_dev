@@ -381,6 +381,11 @@
     background-color: transparent !important;
   }
 
+  /* Excepción: la sección de entregables tiene su propio fondo oscuro */
+  .scroll-color-wrapper #entregables {
+    background-color: #17171A !important;
+  }
+
   .scroll-color-wrapper .scroll-horizontal-section {
     background-color: transparent !important;
   }
