@@ -33,7 +33,6 @@ export const metadata: Metadata = {
 }
 
 // Transiciones de color basadas en secciones
-// La transición blanco → negro se maneja en ScrollHorizontal basándose en el progress del scroll
 const colorTransitions = [
   {
     // Oscuro → Blanco cuando entra ScrollHorizontal

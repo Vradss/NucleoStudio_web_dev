@@ -69,10 +69,10 @@ export function Header() {
 
   const scrollToSection = (sectionId: string) => {
     closeMenu()
-    
+
     // Verificar si estamos en la página principal (puede ser /, /es, o /en)
     const isHomePage = pathname === '/' || pathname === '/es' || pathname === '/en'
-    
+
     // Si no estamos en la página principal, navegar primero
     if (!isHomePage) {
       const locale = pathname.startsWith('/en') ? '/en' : '/es'
