@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
 
 function TitleWithDisabledWord({ title }: { title: string }) {
@@ -31,13 +31,34 @@ function TitleWithDisabledWord({ title }: { title: string }) {
 
 export function NivelesMensajesSection() {
   const t = useTranslations('nivelesMensajes')
+  const locale = useLocale()
   const benefits = ['one', 'two', 'three'] as const
   const title = t('title')
 
+  // Determinar las rutas de las imágenes según el idioma
+  const mobileImage = `/images/niveles/niveles_mobile_${locale}.svg`
+  const desktopImage = `/images/niveles/niveles_${locale}.svg`
+
   return (
-    <section className="section-layout relative z-20">
+    <section id="niveles" className="section-layout relative z-20">
       <div className="section-container text-left">
         <FadeIn delay={0}>
+          <div className="flex items-center gap-2 mb-4">
+            <Image
+              src="/images/isotipo_detail.svg"
+              alt="Detalle isotipo decorativo"
+              width={26}
+              height={25}
+              className="h-4 w-4 sm:h-5 sm:w-5"
+              priority
+              unoptimized
+            />
+            <span className="tagline-secondary">
+              {t('label')}
+            </span>
+          </div>
+        </FadeIn>
+        <FadeIn delay={0.05}>
           <TitleWithDisabledWord title={title} />
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -50,7 +71,7 @@ export function NivelesMensajesSection() {
             <div className="max-w-5xl w-full">
               {/* Imagen para mobile */}
               <Image
-                src="/images/NIVELES_MOBILE.svg"
+                src={mobileImage}
                 alt="Niveles de claridad"
                 width={1100}
                 height={519}
@@ -60,7 +81,7 @@ export function NivelesMensajesSection() {
               />
               {/* Imagen para desktop */}
               <Image
-                src="/images/niveles_msj.svg"
+                src={desktopImage}
                 alt="Niveles de claridad"
                 width={1100}
                 height={519}

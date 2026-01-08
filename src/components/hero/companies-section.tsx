@@ -15,6 +15,8 @@ const companies = [
   { name: 'VTEX', logo: '/images/logos/vtex.svg', alt: 'Logo de VTEX' },
   { name: 'Worthit', logo: '/images/logos/worthit.svg', alt: 'Logo de Worthit', textOnly: true },
   { name: 'Invoinet', logo: '/images/logos/invoinet.svg', alt: 'Logo de Invoinet' },
+  { name: 'Revenue', logo: '/images/logos/revenue.svg', alt: 'Logo de Revenue' },
+  { name: 'OKR University', logo: '/images/logos/okr_university.svg', alt: 'Logo de OKR University' },
 ]
 
 // Helper function to encode file names with spaces
@@ -93,8 +95,8 @@ export async function CompaniesContent() {
       </FadeIn>
       <FadeIn delay={0.1}>
         <div className="relative overflow-hidden">
-          {/* Marquee container */}
-          <div className="flex animate-marquee md:animate-marquee-desktop gap-6 md:gap-24">
+          {/* Marquee container - w-max asegura que el ancho sea el contenido total */}
+          <div className="flex w-max animate-marquee md:animate-marquee-desktop gap-6 md:gap-24">
             {/* Primera fila de logos */}
             {companies.map((company) => renderLogo(company, company.name))}
             {/* Duplicar logos para efecto infinito */}
@@ -124,8 +126,8 @@ export async function CompaniesSection() {
             {/* Gradiente derecho */}
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-nucleo-dark to-transparent" />
             
-            {/* Marquee container */}
-            <div className="flex animate-marquee md:animate-marquee-desktop gap-6 md:gap-24">
+            {/* Marquee container - w-max asegura que el ancho sea el contenido total */}
+            <div className="flex w-max animate-marquee md:animate-marquee-desktop gap-6 md:gap-24">
               {/* Primera fila de logos */}
               {companies.map((company) => renderLogo(company, company.name))}
               {/* Duplicar logos para efecto infinito */}

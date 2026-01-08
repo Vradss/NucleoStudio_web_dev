@@ -138,16 +138,10 @@ export function Header() {
           {/* Navegación en el centro */}
           <nav className="hidden items-center gap-6 md:flex flex-1 justify-center">
             <button
-              onClick={() => scrollToSection('solucion')}
+              onClick={() => scrollToSection('niveles')}
               className="font-geist-regular text-sm text-nucleo-light/90 transition-colors hover:text-nucleo-secondary md:text-base py-2 px-3 min-h-[44px] flex items-center"
             >
               {t('solution')}
-            </button>
-            <button
-              onClick={() => scrollToSection('entregables')}
-              className="font-geist-regular text-sm text-nucleo-light/90 transition-colors hover:text-nucleo-secondary md:text-base py-2 px-3 min-h-[44px] flex items-center"
-            >
-              {t('deliverables')}
             </button>
             <Link
               href="/pricing"
@@ -166,7 +160,10 @@ export function Header() {
           {/* CTA y controles a la derecha */}
           <div className="flex items-center gap-4 flex-shrink-0">
             <CalButton
-              className="hidden rounded-full bg-nucleo-dark-secondary border border-nucleo-dark-secondary px-5 py-2.5 text-sm font-medium text-nucleo-light transition-colors hover:bg-nucleo-dark hover:text-nucleo-light md:inline-flex items-center min-h-[44px] cursor-pointer"
+              className="hidden rounded-full px-5 py-2.5 text-sm font-medium text-nucleo-light transition-opacity hover:opacity-90 md:inline-flex items-center min-h-[44px] cursor-pointer"
+              style={{
+                background: 'linear-gradient(135deg, #6F31FF 50%, #5F20E5 75%, #1A0B33 100%)',
+              }}
             >
               {t('contact')}
             </CalButton>
@@ -276,17 +273,12 @@ export function Header() {
                     {t('home')}
                   </button>
                   <button
-                    onClick={() => scrollToSection('solucion')}
+                    onClick={() => scrollToSection('niveles')}
                     className="block text-lg font-geist-medium text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full"
                   >
                     {t('solution')}
                   </button>
-                  <button
-                    onClick={() => scrollToSection('entregables')}
-                    className="block text-lg font-geist-medium text-nucleo-light transition-colors hover:text-nucleo-secondary text-left w-full "
-                  >
-                    {t('deliverables')}
-                  </button>
+
                   <Link
                     href="/pricing"
                     onClick={closeMenu}

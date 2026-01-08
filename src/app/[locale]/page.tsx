@@ -69,7 +69,7 @@ export default function Home() {
           </ScrollColorSections>
 
           <TestimonialsSection />
-          <FaqsSection />
+          <FaqsSection faqIds={[11, 3, 5, 6, 7, 8, 10] as const} />
         </main>
         <Footer />
       </div>

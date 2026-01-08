@@ -7,10 +7,15 @@ import { FadeIn } from '@/components/motion/fade-in'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function FaqsSection() {
+interface FaqsSectionProps {
+  faqIds?: readonly number[]
+}
+
+export function FaqsSection({ faqIds }: FaqsSectionProps) {
   const t = useTranslations('faqs')
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const faqs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const
+  // Si no se proporciona faqIds, mostrar todas las preguntas (1-11)
+  const faqs = faqIds || ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as const)
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)

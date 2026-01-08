@@ -84,7 +84,7 @@
   },
   "problem": {
     "label": "THE PROBLEM",
-    "highlight": "Your marketing would improve 10x if you communicated well what you sell, who you sell to, and how you create value",
+    "highlight": "Your marketing would improve 2x if you communicated well what you sell, who you sell to, and how you create value",
     "subtitle": "This sound familiar?",
     "points": {
       "one": "You have multiple segments or products and don't know who to talk to or what to say",
@@ -98,7 +98,7 @@
     }
   },
   "nivelesMensajes": {
-    "label": "LEVELS",
+    "label": "SOLUTION",
     "title": "Make your complex products easy to understand and stop missing out on sales",
     "subtitle": "Achieve clarity across 5 levels and move from obscurity to differentiation.",
     "benefitsTitle": "This is the impact of improving your messages:",
@@ -127,7 +127,7 @@
     "title": "We make your product understood in your customers' language, so they say 'this is what I need' from the first interaction"
   },
   "steps": {
-    "label": "SOLUTION",
+    "label": "METHODOLOGY",
     "titleLine1": "Here is how we’ll guide you to differentiate each of your B2B products",
     "cards": {
       "stage1": {
@@ -135,28 +135,28 @@
         "title": "We discover where you can stand out in your market",
         "subtitle": "We analyze your competition, customers, and products; we deliver a differentiation opportunities map so you know exactly how to stand out.",
         "imageAlt": "Competitive research",
-        "image": "/images/card1.svg"
+        "image": "/images/solucion/card1_en.svg"
       },
       "stage2": {
         "label": "POSITIONING STRATEGY",
         "title": "We clarify your value proposition and key segments",
         "subtitle": "We determine what your main features, capabilities, and use cases are, and we define the priority segments where you should focus.",
         "imageAlt": "Key segment definition",
-        "image": "/images/card2.svg"
+        "image": "/images/solucion/card2_en.svg"
       },
       "stage3": {
         "label": "MESSAGING & CONTENT",
         "title": "We define WHAT to say and how to communicate it with your tone",
         "subtitle": "From product messaging, content, or sales narrative: we provide you with the tools so your team has total clarity on what to communicate to each audience in each channel.",
         "imageAlt": "Prototypes and visual assets",
-        "image": "/images/card3.png"
+        "image": "/images/solucion/card3_en.png"
       },
       "stage4": {
         "label": "CONTENT EXECUTION",
         "title": "We create your content aligned to positioning",
         "subtitle": "From redesigning the new homepage, sales deck, or first content pieces: we create the assets that your team can use from day 1 to generate authority, nurture leads, and close more sales.",
         "imageAlt": "Activation plan and metrics",
-        "image": "/images/card4.png"
+        "image": "/images/solucion/card4_en.png"
       }
     }
   },
@@ -213,7 +213,7 @@
   },
   "metodologia": {
     "label": "METHODOLOGY",
-    "title": "Strategy is nothing without execution. We bring it to life across your key B2B channels.",
+    "title": "Strategy is nothing without execution. We bring it to life across your key B2B content assets.",
     "subtitle": "We apply our methodology to transform complex products into messages that connect with your audience.",
     "tabs": {
       "strategy": {
@@ -272,7 +272,7 @@
       "companyName": "Company 1",
       "companyLogo": "/images/logos/Colectivo_23.png",
       "image": "/images/testimonios/jeferson_leguia.png",
-      "quote": "We grew from 3 to 9 programs without a clear messaging architecture. Our first-contact response rate was low, and we needed better lead nurturing to convert./n/nLaurita restructured our brochure narratives, proposed new communication hierarchies, and created strategic lead magnets./n/nThis increased our response rate significantly. Our sales team now explains our programs more easily and closes deals faster. This became the foundation for our product marketing plan.",
+      "quote": "We grew from 3 to 9 programs without a clear messaging architecture. Our first-contact response rate was low, and we needed better lead nurturing to convert./n/nNúcleo restructured our brochure narratives, proposed new communication hierarchies, and created strategic lead magnets./n/nThis increased our response rate significantly. Our sales team now explains our programs more easily and closes deals faster. This became the foundation for our product marketing plan.",
       "name": "Jefferson Leguía",
       "position": "Former Marketing Manager @Colectivo23",
       "industria": "Education startup"
@@ -293,7 +293,7 @@
       "quote": "We needed a visible change that reflected our cultural evolution and new business vision./n/nThe structured, documented process we followed didn't just transform our communication—it became a foundation we use to make strategic decisions, develop products, and scale other initiatives.",
       "name": "Tomás Lanzillota",
       "position": "CEO @InvoiNet",
-      "industria": "Fintech & SaaS"
+      "industria": "Financial Services Platform"
     },
     "testimonial4": {
       "companyName": "Company 4",
@@ -308,7 +308,7 @@
       "companyName": "Company 5",
       "companyLogo": "/images/testimonios/logo_okr_university.png",
       "image": "/images/testimonios/made_silva.png",
-      "quote": "We had several 'aha' moments about how to communicate our services through content, and they pushed us out of our comfort zone as leaders./n/nIf you want to maintain the status quo, don't work with Laurita. But if you want a powerful, clear, and precise message that impacts your sales, hire her.",
+      "quote": "Working with Núcleo gave us multiple AHA moments regarding our content strategy, pushing us beyond our comfort zones as leaders./n/nIf you're looking to maintain the status quo, Núcleo isn't for you. But if you're after a powerful, clear, and sharp message that impacts your bottom line, you need to hire them.",
       "name": "Made Silva",
       "position": "CEO @OKR University",
       "industria": "B2B Education & consulting"
@@ -317,7 +317,7 @@
       "companyName": "Company 6",
       "companyLogo": "/images/logos/Logo_BioActiva.svg",
       "image": "/images/testimonios/katia_samanamud.png",
-      "quote": "Our technology innovation services are so specialized that it was difficult to explain them. We were losing opportunities because prospects didn't understand how we differentiate ourselves./n/nLaurita was key to questioning and refining our value proposition. She guided us to clarify it while maintaining our technical language./n/nShe was instrumental in relaunching our website. That clarity directly impacted our conversion rates.",
+      "quote": "Our technology innovation services are so specialized that it was difficult to explain them. We were losing opportunities because prospects didn't understand how we differentiate ourselves./n/nNúcleo was key to questioning and refining our value proposition. She guided us to clarify it while maintaining our technical language./n/nShe was instrumental in relaunching our website. That clarity directly impacted our conversion rates.",
       "name": "Katia Samanamud",
       "position": "General Manager @BioActiva",
       "industria": "B2B Consulting & innovation hub"
@@ -374,6 +374,10 @@
     "faq10": {
       "question": "Why should I invest in positioning and content now instead of waiting?",
       "answer": "Every month without clarity you're losing sales because:\n→ Your team doesn't know how to communicate your value (longer cycles)\n→ Prospects don't understand your difference (you lose deals)\n→ Your content doesn't generate qualified leads.\n\nClients who clarified their positioning report:\n→ 30-50% less time explaining their proposal\n→ More confidence from the sales team\n→ Better lead quality.\n\nThe cost of NOT having clarity is greater than the investment."
+    },
+    "faq11": {
+      "question": "Okay, but... what exactly do you do in Product & Content Marketing?",
+      "answer": "Let's start with product marketing: it's the FOUNDATION of all B2B marketing. Without a clear value proposition, all marketing efforts are weak.\n\nIn B2B tech, it's the backbone, especially when your products have technical complexity. Everything else is built on those foundations.\n\nProduct marketing: Define WHAT to say about your product to differentiate yourself and have your ICP understand it in 30 seconds. It's the clarity that makes all your marketing work.\n\nB2B Content marketing: Use that clarity to create content that attracts educated leads. It's not 'posting for posting' – it's amplifying your value proposition so prospects arrive saying 'I already understand what you do, let's talk to learn more'."
     }
   },
   "pricing": {
@@ -655,7 +659,7 @@
     "company": "Company",
     "careers": "Careers",
     "about": "About",
-    "solution": "Solution",
+    "solution": "Methodology",
     "products": "Products",
     "pricing": "Pricing",
     "deliverables": "Deliverables",

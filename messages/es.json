@@ -25,7 +25,7 @@
     "admin": "Admin",
     "logout": "Salir",
     "login": "Login",
-    "pricing": "Planes",
+    "pricing": "Precios",
     "webAudit": "Web Audit",
     "product": "Producto",
     "resources": "Recursos",
@@ -84,7 +84,7 @@
   },
   "problem": {
     "label": "PROBLEMA",
-    "highlight": "Tu marketing mejoraría 10x si comunicaras bien qué vendes, a quién le vendes y cómo generas valor",
+    "highlight": "Tu marketing mejoraría 2x si comunicaras bien qué vendes, a quién le vendes y cómo generas valor",
     "subtitle": "¿Te suena familiar?",
     "points": {
       "one": "Tienes múltiples segmentos o productos y no sabes a quién hablarle ni qué decir",
@@ -98,7 +98,7 @@
     }
   },
   "nivelesMensajes": {
-    "label": "NIVELES",
+    "label": "SOLUCIÓN",
     "title": "Haz que tus productos complejos sean fáciles de entender y deja de perder oportunidades de venta",
     "subtitle": "Esto requiere claridad en 5 niveles para que pases de confuso a diferenciado.",
     "benefitsTitle": "Este es el impacto de mejorar tus mensajes:",
@@ -127,7 +127,7 @@
     "title": "Hacemos que tu producto se entienda en el lenguaje de tus clientes, para que digan 'esto es lo que necesito' desde la primera interacción"
   },
   "steps": {
-    "label": "SOLUCIÓN",
+    "label": "METODOLOGÍA",
     "titleLine1": "Así te guiaremos para que diferencies cada uno de tus productos B2B",
     "cards": {
       "stage1": {
@@ -135,28 +135,28 @@
         "title": "Descubrimos dónde puedes destacar en tu mercado",
         "subtitle": "Analizamos a tu competencia, clientes y productos;  te entregamos un mapa de oportunidades de diferenciación para  que sepas exactamente cómo destacar.",
         "imageAlt": "Investigación competitiva",
-        "image": "/images/card1.svg"
+        "image": "/images/solucion/card1_es.svg"
       },
       "stage2": {
         "label": "ESTRATEGIA DE POSICIONAMIENTO",
         "title": "Clarificamos tu propuesta de valor y segmentos clave",
         "subtitle": "Determinamos cuáles son tus características, capacidades y  casos de uso principales, y definimos los segmentos prioritarios  donde debes enfocarte.",
         "imageAlt": "Definición de segmentos clave",
-        "image": "/images/card2.svg"
+        "image": "/images/solucion/card2_es.svg"
       },
       "stage3": {
         "label": "MESSAGING & CONTENIDO",
         "title": "Definimos QUÉ decir y cómo comunicarlo con tu tono",
         "subtitle": "Desde messaging de producto, contenido o narrativa de venta:  te entregamos las herramientas para que tu equipo tenga claridad  total sobre qué comunicar a cada audiencia en cada canal.",
         "imageAlt": "Prototipos y assets visuales",
-        "image": "/images/card3.png"
+        "image": "/images/solucion/card3_es.svg"
       },
       "stage4": {
         "label": "EJECUCIÓN DE CONTENIDO",
         "title": "Creamos tus contenidos alineado al posicionamiento",
         "subtitle": "Desde rediseñar la nueva homepage, sales deck o primeras piezas de contenido:  creamos los assets que tu equipo puede usar desde el día 1 para generar autoridad, nutrir leads y cerrar más ventas.",
         "imageAlt": "Plan de activación y métricas",
-        "image": "/images/card4.png"
+        "image": "/images/solucion/card4_es.svg"
       }
     }
   },
@@ -213,7 +213,7 @@
   },
   "metodologia": {
     "label": "METODOLOGÍA",
-    "title": "La estrategia no es nada sin ejecución,/nla aplicamos en tus canales B2B claves",
+    "title": "La estrategia no es nada sin ejecución,/nla aplicamos en tus contenidos B2B claves",
     "subtitle": "Aplicamos nuestra metodología para transformar productos complejos en mensajes que conectan con tu audiencia.",
     "tabs": {
       "strategy": {
@@ -272,7 +272,7 @@
       "companyName": "Empresa 1",
       "companyLogo": "/images/logos/Colectivo_23.png",
       "image": "/images/testimonios/jeferson_leguia.png",
-      "quote": "Crecimos de 3 a 9 programas sin arquitectura clara de mensajes. La tasa de respuesta en el primer contacto era baja y necesitábamos nutrir mejor para convertir./n/nLaurita reestructuró la narrativa de los brochures, propuso nuevas jerarquías de comunicación y creó lead magnets estratégicos./n/nEsto aumentó la tasa de respuesta, el equipo comercial explicaba los programas más fácil y cerraba más rápido. Fue la primera base para nuestro plan de product marketing.",
+      "quote": "Crecimos de 3 a 9 programas sin arquitectura clara de mensajes. La tasa de respuesta en el primer contacto era baja y necesitábamos nutrir mejor para convertir./n/nNúcleo reestructuró la narrativa de los brochures, propuso nuevas jerarquías de comunicación y creó lead magnets estratégicos./n/nEsto aumentó la tasa de respuesta, el equipo comercial explicaba los programas más fácil y cerraba más rápido. Fue la primera base para nuestro plan de product marketing.",
       "name": "Jefferson Leguía",
       "position": "Former Marketing Manager @Colectivo23",
       "industria": "Startup de educación"},
@@ -292,7 +292,7 @@
       "quote": "Necesitábamos un cambio visible que reflejara nuestra evolución cultural y nueva visión de negocio./n/nEl proceso estructurado y documentado que seguimos no solo transformó nuestra comunicación - se convirtió en una base que usamos para tomar decisiones estratégicas, desarrollar productos y escalar otras iniciativas.",
       "name": "Tomás Lanzillota",
       "position": "CEO @InvoiNet",
-      "industria": "Fintech & SaaS"
+      "industria": "Plataforma de servicios financieros"
     },
     "testimonial4": {
       "companyName": "Empresa 4",
@@ -307,7 +307,7 @@
       "companyName": "Empresa 5",
       "companyLogo": "/images/testimonios/logo_okr_university.png",
       "image": "/images/testimonios/made_silva.png",
-      "quote": "Tuvimos varios AHA moments sobre cómo comunicar nuestros servicios con contenido, y nos sacaron de nuestra zona de comfort como líderes./n/nSi deseas mantenerte en el status quo, no trabajes con Laurita. Pero si deseas un mensaje poderoso, claro y preciso que impacte en tus ventas, contrátala.",
+      "quote": "Tuvimos varios AHA moments sobre cómo comunicar nuestros servicios con contenido, y nos sacaron de nuestra zona de comfort como líderes./n/nSi deseas mantenerte en el status quo, no trabajes con Núcleo. Pero si deseas un mensaje poderoso, claro y preciso que impacte en tus ventas, contrátalos.",
       "name": "Made Silva",
       "position": "CEO @OKR University",
       "industria": " Educación & consultoría B2B"
@@ -316,7 +316,7 @@
       "companyName": "Empresa 6",
       "companyLogo": "/images/logos/Logo_BioActiva.svg",
       "image": "/images/testimonios/katia_samanamud.png",
-      "quote": "Nuestros servicios de innovación tecnológica son tan especializados que nos resultaba difícil explicarlos, podíamos perder oportunidades porque no se entendía bien cómo nos diferenciamos./n/nLaurita fue clave para cuestionar y ajustar la propuesta de valor. Nos guió para clarificarla y mantuvo nuestro propio lenguaje técnico./n/nFue de gran ayuda para relanzar nuestra web. Esa claridad impactó en los ratios de conversión.",
+      "quote": "Nuestros servicios de innovación tecnológica son tan especializados que nos resultaba difícil explicarlos, podíamos perder oportunidades porque no se entendía bien cómo nos diferenciamos./n/nNúcleo fue clave para cuestionar y ajustar la propuesta de valor. Nos guió para clarificarla y mantuvo nuestro propio lenguaje técnico./n/nFue de gran ayuda para relanzar nuestra web. Esa claridad impactó en los ratios de conversión.",
       "name": "Katia Samanamud",
       "position": "Gerente General @BioActiva",
       "industria": "Consultoría B2B & Hub de innovación"
@@ -373,6 +373,10 @@
     "faq10": {
       "question": "¿Por qué debería invertir en posicionamiento y contenido ahora en vez de esperar?",
       "answer": "Cada mes sin claridad estás perdiendo ventas porque:\n→ Tu equipo no sabe comunicar tu valor (ciclos más largos)\n→ Prospectos no entienden tu diferencia (pierdes deals)\n→ Tu contenido no genera leads calificados.\n\nClientes que clarificaron su posicionamiento reportan:\n→ 30-50% menos tiempo explicando su propuesta\n→ Más confianza del equipo comercial\n→ Mejor calidad de leads.\n\nEl costo de NO tener claridad es mayor que la inversión."
+    },
+    "faq11": {
+      "question": "Okay, pero... ¿qué hacen exactamente en Product & Content Marketing?",
+      "answer": "Comencemos por el product marketing: es la BASE de todo marketing B2B. Sin una propuesta de valor clara, todos los esfuerzos de marketing son débiles.\n\nEn B2B tech, es la columna vertebral, más aún cuando tus productos tienen complejidad técnica. Todo lo demás se construye sobre esos fundamentos.\n\nProduct marketing: Definir QUÉ decir sobre tu producto para diferenciarte y que tu ICP lo entienda en 30 segundos. Es la claridad que hace funcionar todo tu marketing.\n\nContent marketing B2B: Usar esa claridad para crear contenido que atrae leads educados. No es 'postear por postear' – es amplificar tu propuesta de valor para que prospectos lleguen diciendo 'ya entiendo qué hacen, hablemos para saber más'."
     }
   },
   "pricing": {
@@ -650,10 +654,10 @@
     "newsletterPlaceholder": "Email",
     "newsletterButton": "→",
     "company": "Empresa",
-    "solution": "Solución",
+    "solution": "Metodología",
     "deliverables": "Entregables",
     "products": "Productos",
-    "pricing": "Planes",
+    "pricing": "Precios",
     "socials": "Redes sociales",
     "allRightsReserved": "Todos los derechos reservados",
     "privacyPolicy": "Política de Privacidad",

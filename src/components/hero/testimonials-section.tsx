@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
 
 // Helper function to map testimonial logos to actual file paths
@@ -19,8 +19,96 @@ function getLogoPath(logoPath: string): string {
   return logoMap[logoPath] || logoPath
 }
 
+// Helper function to highlight specific phrases in testimonials
+function renderTestimonialWithHighlights(text: string, testimonialIndex: number, locale: string): React.ReactNode {
+  // Definir las frases a resaltar por testimonio según el idioma
+  const highlightPhrases: Record<string, Record<number, string[]>> = {
+    es: {
+      1: ['Núcleo reestructuró la narrativa','aumentó la tasa de respuesta, el equipo comercial explicaba los programas más fácil y cerraba más rápido'],
+      2: ['research profundo', 'Reposicionaron nuestra propuesta de valor vía homepage y landing pages de cero', 'Ahora comunicamos con coherencia y sabemos qué destacar'],
+      3: ['convirtió en una base que usamos para tomar decisiones estratégicas, desarrollar productos y escalar otras iniciativas'],
+      5: ['Tuvimos varios AHA moments', 'nos sacaron de nuestra zona de comfort como líderes'],
+      6: ['Núcleo fue clave para cuestionar y ajustar la propuesta de valor'],
+    },
+    en: {
+      1: ['This increased our response rate significantly. Our sales team now explains our programs more easily and closes deals faster'],
+      2: ['deep research', 'They repositioned our value proposition through our homepage and landing pages from the ground up'],
+      3: ['it became a foundation we use to make strategic decisions, develop products, and scale other initiatives'],
+      5: ["We had several 'aha' moments", 'they pushed us out of our comfort zone as leaders'],
+      6: ['Núcleo was key to questioning and refining our value proposition'],
+    },
+  }
+
+  const phrasesToHighlight = highlightPhrases[locale]?.[testimonialIndex] || []
+  
+  if (phrasesToHighlight.length === 0) {
+    return <>{text}</>
+  }
+
+  const parts: Array<{ text: string; highlight: boolean }> = []
+  let lastIndex = 0
+  const matches: Array<{ start: number; end: number; text: string }> = []
+
+  // Buscar todas las coincidencias
+  phrasesToHighlight.forEach((phrase) => {
+    const regex = new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(text)) !== null) {
+      matches.push({
+        start: match.index,
+        end: match.index + match[0].length,
+        text: match[0] // Preservar el caso original
+      })
+    }
+  })
+
+  // Ordenar matches por posición
+  matches.sort((a, b) => a.start - b.start)
+
+  // Crear partes del texto
+  matches.forEach((match) => {
+    if (lastIndex < match.start) {
+      parts.push({
+        text: text.substring(lastIndex, match.start),
+        highlight: false,
+      })
+    }
+    parts.push({
+      text: match.text,
+      highlight: true,
+    })
+    lastIndex = match.end
+  })
+
+  if (lastIndex < text.length) {
+    parts.push({
+      text: text.substring(lastIndex),
+      highlight: false,
+    })
+  }
+
+  if (parts.length === 0) {
+    return <>{text}</>
+  }
+
+  return (
+    <>
+      {parts.map((part, index) =>
+        part.highlight ? (
+          <span key={index} className="font-geist-super">
+            {part.text}
+          </span>
+        ) : (
+          <span key={index}>{part.text}</span>
+        )
+      )}
+    </>
+  )
+}
+
 export function TestimonialsSection() {
   const t = useTranslations('testimonials')
+  const locale = useLocale()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const testimonials = [1, 2, 3, /* 4 */ 5, 6] as const // Comentado: Luis Chao (testimonial 4), Nicole Ngrowth (testimonial 7)
@@ -222,6 +310,7 @@ export function TestimonialsSection() {
                   const quote = t(`testimonial${testimonialIndex}.quote`)
                   const name = t(`testimonial${testimonialIndex}.name`)
                   const position = t(`testimonial${testimonialIndex}.position`)
+                  const industria = t(`testimonial${testimonialIndex}.industria`)
                   const image = t(`testimonial${testimonialIndex}.image`)
                   
                   return (
@@ -251,7 +340,7 @@ export function TestimonialsSection() {
                           <div className="relative z-10 font-geist-regular text-base md:text-lg lg:text-xl text-nucleo-light leading-relaxed text-left">
                             {quote.split('/n/n').map((paragraph, pIndex, array) => (
                               <p key={pIndex} className={pIndex < array.length - 1 ? 'mb-4' : ''}>
-                                {paragraph}
+                                {renderTestimonialWithHighlights(paragraph, testimonialIndex, locale)}
                               </p>
                             ))}
                           </div>
@@ -285,14 +374,19 @@ export function TestimonialsSection() {
                             </div>
                           </div>
 
-                          {/* Nombre y posición */}
-                          <div className="flex flex-col">
+                          {/* Nombre, posición e industria */}
+                          <div className="flex-1 flex flex-col">
                             <p className="font-geist-bold text-base md:text-lg lg:text-xl text-nucleo-highlight uppercase">
                               {name.replace(/,/g, '').toUpperCase()}
                             </p>
-                            <p className="font-geist-regular text-sm md:text-base lg:text-lg text-nucleo-dark-hover-light">
-                              {position}
-                            </p>
+                            <div className="flex items-center justify-between gap-4">
+                              <p className="font-geist-regular text-sm md:text-base lg:text-lg text-nucleo-dark-hover-light">
+                                {position}
+                              </p>
+                              <p className="font-geist-regular text-xs md:text-sm lg:text-base text-nucleo-dark-hover-light opacity-80">
+                                / {industria}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
