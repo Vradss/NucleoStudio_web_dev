@@ -1,6 +1,6 @@
 'use client'
 
-import { Link } from '@/i18n/routing'
+import { useLocale } from 'next-intl'
 
 interface CalButtonProps {
   children: React.ReactNode
@@ -9,14 +9,16 @@ interface CalButtonProps {
 }
 
 export function CalButton({ children, className, style }: CalButtonProps) {
+  const locale = useLocale()
+
   return (
-    <Link
-      href="/conversemos"
+    <a
+      href={`/${locale}/conversemos`}
       className={className}
       style={style}
     >
       {children}
-    </Link>
+    </a>
   )
 }
 
