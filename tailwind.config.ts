@@ -42,6 +42,7 @@ const config: Config = {
           'dark-hover': 'var(--nucleo-dark-hover)',
           'dark-hover-light': 'var(--nucleo-dark-hover-light)',
           'bg-selector': 'var(--nucleo-bg-selector)',
+          'bg-light': 'var(--nucleo-bg-light)',
           highlight: 'var(--nucleo-highlight)',
           'surface-color': 'var(--nucleo-surface-color)',
         },
