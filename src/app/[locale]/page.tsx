@@ -8,6 +8,7 @@ import { Header } from '@/components/layout/header'
 import ScrollHorizontal from '@/components/hero/scroll-horizontal'
 import { MetodologiaSection } from '@/components/hero/metodologia-section'
 import { TestimonialsSection } from '@/components/hero/testimonials-section'
+import { TimelineProcessSection } from '@/components/hero/timeline-process-section'
 import { FaqsSection } from '@/components/hero/faqs-section'
 import { Footer } from '@/components/layout/footer'
 import { ScrollColorSections } from '@/components/hero/scroll-color-transition'
@@ -69,6 +70,7 @@ export default function Home() {
           </ScrollColorSections>
 
           <TestimonialsSection />
+          <TimelineProcessSection />
           <FaqsSection faqIds={[11, 3, 5, 6, 7, 8, 10] as const} />
         </main>
         <Footer />

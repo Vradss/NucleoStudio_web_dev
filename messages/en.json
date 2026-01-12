@@ -122,6 +122,58 @@
       "three": "/images/presentation.svg"
     }
   },
+  "timelineProcess": {
+    "label": "PROCESS",
+    "title": "How we'll work together in the first 30 days",
+    "stages": {
+      "before": {
+        "label": "Before starting",
+        "title": "Tell us everything about your products",
+        "tu": [
+          "You fill out 1 form with details of your segments, products, and how you sell today (45 min)",
+          "You share sales calls, demos, or current materials (if you have them)"
+        ],
+        "nosotros": [
+          "We analyze your information, do research, and generate a map of differentiation opportunities"
+        ]
+      },
+      "week1": {
+        "label": "Week 1",
+        "title": "We decide strategic direction",
+        "tu": [
+          "Kick-off (45 min) where we decide direction"
+        ],
+        "nosotros": [
+          "We present an opportunities map",
+          "We facilitate decision on positioning approach"
+        ]
+      },
+      "week2_3": {
+        "label": "Week 2-3",
+        "title": "We define how your product differentiates itself",
+        "tu": [
+          "3-4 strategic sessions (60 min) where we jointly decide your positioning and messages",
+          "Review and approval"
+        ],
+        "nosotros": [
+          "We prepare 3 positioning and messaging proposals",
+          "Strategic presentation session"
+        ]
+      },
+      "week4_plus": {
+        "label": "Week 4+",
+        "title": "We develop B2B content",
+        "tu": [
+          "Review and feedback on drafts",
+          "Final approval of content assets"
+        ],
+        "nosotros": [
+          "We create content defined in kick-off (homepage, sales deck, one-pager, etc.)",
+          "Time varies according to agreed scope"
+        ]
+      }
+    }
+  },
   "frameworks": {
     "label": "FRAMEWORKS",
     "title": "We make your product understood in your customers' language, so they say 'this is what I need' from the first interaction"

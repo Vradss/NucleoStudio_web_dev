@@ -122,6 +122,58 @@
       "three": "/images/presentation.svg"
     }
   },
+  "timelineProcess": {
+    "label": "PROCESO",
+    "title": "Cómo trabajaremos juntos los primeros 30 días",
+    "stages": {
+      "before": {
+        "label": "Antes de empezar",
+        "title": "Cuéntanos todo sobre tus productos",
+        "tu": [
+          "Llenas 1 formulario con detalles de tus segmentos, productos y cómo vendes hoy (45 min)",
+          "Compartes sales calls, demos, o materiales actuales (si los tienes)"
+        ],
+        "nosotros": [
+          "Analizamos tu información, hacemos research y generamos un mapa de oportunidades de diferenciación"
+        ]
+      },
+      "week1": {
+        "label": "Semana 1",
+        "title": "Decidimos dirección estratégica",
+        "tu": [
+          "Kick-off (45 min) donde decidimos dirección"
+        ],
+        "nosotros": [
+          "Presentamos mapa de oportunidades",
+          "Facilitamos decisión sobre enfoque de posicionamiento"
+        ]
+      },
+      "week2_3": {
+        "label": "Semana 2-3",
+        "title": "Definimos cómo se diferencia tu producto",
+        "tu": [
+          "3-4 sesiones estratégicas (60 min) donde decidimos juntos tu posicionamiento y mensajes",
+          "Revisión y aprobación"
+        ],
+        "nosotros": [
+          "Preparamos 3 propuestas de posicionamiento y mensajes",
+          "Sesión estratégica de presentación"
+        ]
+      },
+      "week4_plus": {
+        "label": "Semana 4+",
+        "title": "Desarrollamos los contenidos B2B",
+        "tu": [
+          "Revisión y feedback de borradores",
+          "Aprobación final de activos de contenido"
+        ],
+        "nosotros": [
+          "Creamos contenido definido en kick-off (homepage, sales deck, one-pager, etc.)",
+          "El tiempo varía según alcance acordado"
+        ]
+      }
+    }
+  },
   "frameworks": {
     "label": "FRAMEWORKS",
     "title": "Hacemos que tu producto se entienda en el lenguaje de tus clientes, para que digan 'esto es lo que necesito' desde la primera interacción"
