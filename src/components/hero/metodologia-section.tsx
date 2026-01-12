@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
+import { CalButton } from '@/components/ui/cal-button'
 
 const tabs = ['strategy', 'web', 'content', 'conversion'] as const
 
@@ -152,6 +153,7 @@ function renderMetodologiaTitleWithHighlight(title: string, locale: string) {
 
 export function MetodologiaSection() {
   const t = useTranslations('metodologia')
+  const tHero = useTranslations('hero')
   const locale = useLocale()
   const [activeTab, setActiveTab] = useState<'strategy' | 'web' | 'content' | 'conversion'>('strategy')
   const [expandedTabs, setExpandedTabs] = useState<Set<string>>(new Set(['strategy']))
@@ -435,6 +437,20 @@ export function MetodologiaSection() {
                 </div>
               </div>
             </div>
+          </div>
+        </FadeIn>
+
+        {/* CTA */}
+        <FadeIn delay={0.5}>
+          <div className="flex flex-col items-center justify-center mt-12 lg:mt-16">
+            <CalButton
+              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-nucleo-light transition-all hover:opacity-90 sm:px-10 cursor-pointer"
+              style={{
+                background: 'linear-gradient(135deg, #6F31FF 50%, #5F20E5 75%, #1A0B33 100%)',
+              }}
+            >
+              {tHero('ctaConversemos')}
+            </CalButton>
           </div>
         </FadeIn>
       </div>

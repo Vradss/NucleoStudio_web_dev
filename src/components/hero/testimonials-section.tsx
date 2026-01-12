@@ -379,11 +379,11 @@ export function TestimonialsSection() {
                             <p className="font-geist-bold text-base md:text-lg lg:text-xl text-nucleo-highlight uppercase">
                               {name.replace(/,/g, '').toUpperCase()}
                             </p>
-                            <div className="flex items-center justify-between gap-4">
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1 md:gap-4">
                               <p className="font-geist-regular text-sm md:text-base lg:text-lg text-nucleo-dark-hover-light">
                                 {position}
                               </p>
-                              <p className="font-geist-regular text-xs md:text-sm lg:text-base text-nucleo-dark-hover-light opacity-80">
+                              <p className="font-geist-regular text-xs md:text-sm lg:text-base text-nucleo-dark-hover-light md:opacity-80">
                                 / {industria}
                               </p>
                             </div>

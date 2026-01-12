@@ -67,6 +67,9 @@
     "ctaViewTemplates": "View templates",
     "companiesTitle": "Empresas B2B de tecnología y SaaS en LatAm ya confiaron en Núcleo:",
     "tagline": "Studio de producto & content marketing",
+    "conversemosTagline": "Agenda tu llamada",
+    "conversemosTitle": "¿Tus prospectos entienden tu\n\npropuesta en 30 segundos?",
+    "conversemosSubtitle": "Si la respuesta es \"no\" o \"no estoy seguro\", conversemos",
     "cards": {
       "build": {
         "title": "Tu producto evolucionó, buscas reposicionamiento y alineación en canales",
@@ -442,7 +445,7 @@
       "starter": {
         "name": "Nuevos lanzamientos",
         "pricePrefix": "desde",
-        "price": "$1,000",
+        "price": "$1,200",
         "priceSubtext": "",
         "timeline": "2 semanas, one-time project",
         "description": "Lanzas un nuevo producto o te diriges a un nuevo segmento y no sabes cómo comunicar todo el valor que generas.",
@@ -460,7 +463,7 @@
       "team": {
         "name": "Posicionamiento B2B en Homepage",
         "pricePrefix": "desde",
-        "price": "$1,750",
+        "price": "$1,850",
         "priceSubtext": "",
         "timeline": "2-3 semanas, one-time project",
         "description": "Haz que sepan qué hace única a tu propuesta de valor en segundos en tu activo digital más importante: tu sitio web.",
@@ -479,7 +482,7 @@
       "enterprise": {
         "name": "Full- reposicionamiento B2B",
         "pricePrefix": "desde",
-        "price": "$3,500",
+        "price": "$3,600",
         "priceSubtext": "",
         "timeline": "8-10 semanas, one-time project",
         "description": "Tu propuesta de valor cambió y necesitas alinear su comunicación en marketing, ventas y producto para vender y destacar",

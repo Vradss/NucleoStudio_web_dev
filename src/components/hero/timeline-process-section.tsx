@@ -2,9 +2,11 @@
 
 import { useTranslations, useLocale } from 'next-intl'
 import { FadeIn } from '@/components/motion/fade-in'
+import { CalButton } from '@/components/ui/cal-button'
 
 export function TimelineProcessSection() {
   const t = useTranslations('timelineProcess')
+  const tHero = useTranslations('hero')
   const locale = useLocale()
   const stages = ['before', 'week1', 'week2_3', 'week4_plus'] as const
 
@@ -283,6 +285,20 @@ export function TimelineProcessSection() {
             })}
           </div>
         </div>
+
+        {/* CTA */}
+        <FadeIn delay={0.2}>
+          <div className="flex flex-col items-center justify-center mt-12 lg:mt-16">
+            <CalButton
+              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-nucleo-light transition-all hover:opacity-90 sm:px-10 cursor-pointer"
+              style={{
+                backgroundColor: 'var(--nucleo-dark)',
+              }}
+            >
+              {tHero('ctaConversemos')}
+            </CalButton>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )
