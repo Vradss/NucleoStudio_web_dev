@@ -303,7 +303,7 @@
           "1": "Contenido thought leadership: newsletter, lead magnets",
           "2": "Frameworks propios"
         },
-        "image": "/images/metodologia/Contenido_referente_4.webp",
+        "image": "/images/metodologia/Contenido_referente_2.webp",
         "imageAlt": "Contenido para ser referente"
       },
       "conversion": {
@@ -826,6 +826,12 @@
         }
       }
     }
+  },
+  "marketingThinking": {
+    "description": "Marketing Thinking es un medio enfocado en ayudar a founders, CEOs y líderes de marketing a hacer mejor marketing B2B.",
+    "imageAlt": "Marketing Thinking",
+    "viewEpisodes": "Ver episodios",
+    "learnMore": "Conoce más"
   }
 }
 

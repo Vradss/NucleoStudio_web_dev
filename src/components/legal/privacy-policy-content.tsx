@@ -25,7 +25,6 @@ export function PrivacyPolicyContent() {
     <section className="py-16 px-6 lg:px-24 lg:py-24 bg-nucleo-dark min-h-screen">
       <div className="mx-auto max-w-4xl">
         {/* Back button */}
-        <FadeIn>
           <Link 
             href="/"
             className="inline-flex items-center gap-2 text-white hover:text-nucleo-secondary transition-colors mb-8 font-geist-medium"
@@ -35,10 +34,8 @@ export function PrivacyPolicyContent() {
             </svg>
             {tLegal('backToHome')}
           </Link>
-        </FadeIn>
 
         {/* Header */}
-        <FadeIn delay={0.05}>
           <div className="mb-8">
             <h1 className="font-geist-bold text-4xl md:text-5xl text-nucleo-light mb-3">
               {t('title')}
@@ -47,10 +44,9 @@ export function PrivacyPolicyContent() {
               {tLegal('subtitle')}
             </p>
           </div>
-        </FadeIn>
+
 
         {/* Intro */}
-        <FadeIn delay={0.1}>
           <div className="mb-8 pb-6 border-b border-nucleo-dark-border">
             <p className="font-geist-regular text-base text-nucleo-light/80 leading-relaxed">
               {t('intro')}
@@ -59,7 +55,7 @@ export function PrivacyPolicyContent() {
               {t('lastUpdated')}
             </p>
           </div>
-        </FadeIn>
+
 
         {/* Sections */}
         <div className="space-y-6">
@@ -67,7 +63,6 @@ export function PrivacyPolicyContent() {
             const hasItems = sectionsWithItems.includes(sectionKey)
             
             return (
-              <FadeIn key={sectionKey} delay={0.15 + index * 0.03}>
                 <div className="group">
                   <h2 className="font-geist-semibold text-lg md:text-xl text-nucleo-light mb-2">
                     {t(`sections.${sectionKey}.title`)}
@@ -89,7 +84,6 @@ export function PrivacyPolicyContent() {
                     </ul>
                   )}
                 </div>
-              </FadeIn>
             )
           })}
         </div>

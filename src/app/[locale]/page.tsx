@@ -9,6 +9,7 @@ import ScrollHorizontal from '@/components/hero/scroll-horizontal'
 import { MetodologiaSection } from '@/components/hero/metodologia-section'
 import { TestimonialsSection } from '@/components/hero/testimonials-section'
 import { TimelineProcessSection } from '@/components/hero/timeline-process-section'
+import { MarketingThinkingSection } from '@/components/hero/marketing-thinking-section'
 import { FaqsSection } from '@/components/hero/faqs-section'
 import { Footer } from '@/components/layout/footer'
 import { ScrollColorSections } from '@/components/hero/scroll-color-transition'
@@ -71,6 +72,7 @@ export default function Home() {
 
           <TestimonialsSection />
           <TimelineProcessSection />
+          <MarketingThinkingSection />
           <FaqsSection faqIds={[11, 3, 5, 6, 7, 8, 10] as const} />
         </main>
         <Footer />
