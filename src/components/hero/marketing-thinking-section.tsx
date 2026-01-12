@@ -19,7 +19,7 @@ export async function MarketingThinkingSection() {
                     alt="Núcleo Logo"
                     width={120}
                     height={40}
-                    className="h-14 w-auto"
+                    className="h-9 lg:h-14 w-auto"
                     unoptimized
                   />
                   <div className="flex items-start mt-10">
@@ -31,7 +31,7 @@ export async function MarketingThinkingSection() {
                       alt="Marketing Thinking Logo"
                       width={120}
                       height={60}
-                      className="h-16 w-auto"
+                      className="h-12 lg:h-16 w-auto"
                       unoptimized
                     />
                   </div>

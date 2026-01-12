@@ -17,7 +17,7 @@ export function TimelineProcessSection() {
       <div className="section-container text-left px-4 lg:px-6">
         {/* Título */}
         <FadeIn delay={0.1}>
-          <h2 className="section-title text-left mb-12 lg:mb-16 text-nucleo-dark">
+          <h2 className="section-title text-center mb-12 lg:mb-16 text-nucleo-dark">
             {t('title')}
           </h2>
         </FadeIn>
@@ -85,18 +85,18 @@ export function TimelineProcessSection() {
                       style={{ gridTemplateRows: 'auto 1fr auto' }}
                     >
                       {/* Título */}
-                      <h3 className="text-lg font-geist-bold text-nucleo-dark mb-4">
+                      <h3 className={`text-lg font-geist-bold mb-4 ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#6B6B6B' } : {}}>
                         {stageData.title}
                       </h3>
 
                       {/* Sección "Tus acciones" */}
                       <div className="flex flex-col mb-4">
-                        <h4 className="text-sm font-geist-bold text-nucleo-dark mb-3">
+                        <h4 className={`text-sm font-geist-bold mb-3 ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#A0A0A0' } : {}}>
                           {locale === 'es' ? 'Tus acciones :' : 'Your actions:'}
                         </h4>
                         <ul className="space-y-2">
                           {stageData.tu.map((item: string, itemIndex: number) => (
-                            <li key={itemIndex} className="text-sm leading-relaxed text-nucleo-dark flex items-start">
+                            <li key={itemIndex} className={`text-sm leading-relaxed flex items-start ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#A0A0A0' } : {}}>
                               <span className="mr-2 flex-shrink-0">✓</span>
                               <span>{item}</span>
                             </li>
@@ -147,7 +147,7 @@ export function TimelineProcessSection() {
                     }`}
                   />
                   {isFirst ? (
-                    <span className="text-sm font-space-mono px-3 py-1 rounded-lg inline-block border border-[#A0A0A0]" style={{ color: '#A0A0A0' }}>
+                    <span className="text-sm font-space-mono px-3 py-1 rounded-lg inline-block border border-[#A0A0A0]" style={{ color: '#6B6B6B' }}>
                       {stageData.label}
                     </span>
                   ) : (
@@ -160,18 +160,18 @@ export function TimelineProcessSection() {
                 {/* Card con contenido */}
                 <div className="bg-nucleo-bg-light rounded-lg p-5 border border-gray-300 shadow-sm flex flex-col h-full">
                   {/* Título */}
-                  <h3 className="text-lg font-geist-bold text-nucleo-dark mb-4">
+                  <h3 className={`text-lg font-geist-bold mb-4 ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#6B6B6B' } : {}}>
                     {stageData.title}
                   </h3>
 
                   {/* Sección "Tus acciones" */}
                   <div className="mb-4 flex-1">
-                    <h4 className="text-sm font-geist-bold text-nucleo-dark mb-3">
+                    <h4 className={`text-sm font-geist-bold mb-3 ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#6B6B6B' } : {}}>
                       {locale === 'es' ? 'Tus acciones :' : 'Your actions:'}
                     </h4>
                     <ul className="space-y-2">
                       {stageData.tu.map((item: string, itemIndex: number) => (
-                        <li key={itemIndex} className="text-sm leading-relaxed text-nucleo-dark flex items-start">
+                        <li key={itemIndex} className={`text-sm leading-relaxed flex items-start ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#6B6B6B' } : {}}>
                           <span className="mr-2 flex-shrink-0">✓</span>
                           <span>{item}</span>
                         </li>
@@ -246,18 +246,18 @@ export function TimelineProcessSection() {
                   {/* Card con contenido */}
                   <div className="bg-nucleo-bg-light rounded-lg p-4 border border-gray-200 shadow-sm">
                     {/* Título */}
-                    <h3 className="text-base font-geist-bold text-nucleo-dark mb-3">
+                    <h3 className={`text-base font-geist-bold mb-3 ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#6B6B6B' } : {}}>
                       {stageData.title}
                     </h3>
 
                     {/* Sección "Tus acciones" */}
                     <div className="mb-4">
-                      <h4 className="text-sm font-geist-bold text-nucleo-dark mb-2">
+                      <h4 className={`text-sm font-geist-bold mb-2 ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#A0A0A0' } : {}}>
                         {locale === 'es' ? 'Tus acciones :' : 'Your actions:'}
                       </h4>
                       <ul className="space-y-1.5">
                         {stageData.tu.map((item: string, itemIndex: number) => (
-                          <li key={itemIndex} className="text-sm leading-relaxed text-nucleo-dark flex items-start">
+                          <li key={itemIndex} className={`text-sm leading-relaxed flex items-start ${isFirst ? '' : 'text-nucleo-dark'}`} style={isFirst ? { color: '#A0A0A0' } : {}}>
                             <span className="mr-2 flex-shrink-0 text-gray-500">✓</span>
                             <span>{item}</span>
                           </li>
