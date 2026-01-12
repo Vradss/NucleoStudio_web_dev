@@ -5,7 +5,10 @@ import { getCalApi } from '@calcom/embed-react'
 
 export function CalEmbed() {
   useEffect(() => {
-    (async function () {
+    // Scroll to top on mount
+    window.scrollTo({ top: 0, behavior: 'instant' })
+
+    ;(async function () {
       const cal = await getCalApi({ namespace: 'discovery-meeting' })
       cal('ui', {
         theme: 'dark',
