@@ -61,9 +61,9 @@ export function TermsOfServiceContent() {
         <div className="space-y-6">
           {sections.map((sectionKey, index) => {
             const hasItems = sectionsWithItems.includes(sectionKey)
-            
+
             return (
-                <div className="group">
+                <div key={sectionKey} className="group">
                   <h2 className="font-geist-semibold text-lg md:text-xl text-nucleo-light mb-2">
                     {t(`sections.${sectionKey}.title`)}
                   </h2>
