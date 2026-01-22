@@ -445,7 +445,7 @@
       "starter": {
         "name": "Nuevos lanzamientos",
         "pricePrefix": "desde",
-        "price": "$1,400",
+        "price": "$1,600",
         "priceSubtext": "",
         "timeline": "2 semanas, one-time project",
         "description": "Lanzas un nuevo producto o te diriges a un nuevo segmento y no sabes cómo comunicar todo el valor que generas.",
@@ -463,7 +463,7 @@
       "team": {
         "name": "Posicionamiento B2B en Homepage",
         "pricePrefix": "desde",
-        "price": "$2,000",
+        "price": "$2,400",
         "priceSubtext": "",
         "timeline": "2-3 semanas, one-time project",
         "description": "Haz que sepan qué hace única a tu propuesta de valor en segundos en tu activo digital más importante: tu sitio web.",
@@ -482,7 +482,7 @@
       "enterprise": {
         "name": "Full- reposicionamiento B2B",
         "pricePrefix": "desde",
-        "price": "$3,800",
+        "price": "$4,000",
         "priceSubtext": "",
         "timeline": "8-10 semanas, one-time project",
         "description": "Tu propuesta de valor cambió y necesitas alinear su comunicación en marketing, ventas y producto para vender y destacar",
@@ -513,8 +513,8 @@
         "starter": {
           "name": "Starter",
           "description": "Tienes propuesta de valor clara y sabes qué decir, pero no tienes tiempo ni equipo para ejecutar contenido estratégico.",
-          "priceMonthly": "$950",
-          "priceQuarterly": "$750",
+          "priceMonthly": "$1100",
+          "priceQuarterly": "$990",
           "priceSubtext": "/mes",
           "cta": "Conversemos",
           "ctaLink": "/contact"
@@ -522,8 +522,8 @@
         "pro": {
           "name": "Pro",
           "description": "Ideal si necesitas vender pero no tienes estrategia de mensajes ni contenidos definidos",
-          "priceMonthly": "$2,000",
-          "priceQuarterly": "$1,800",
+          "priceMonthly": "$2,100",
+          "priceQuarterly": "$1,900",
           "priceSubtext": "/mes",
           "cta": "Conversemos",
           "ctaLink": "/contact"
@@ -531,8 +531,8 @@
         "fractional": {
           "name": "Fractional partner",
           "description": "Necesitas un partner que defina tu posicionamiento, qué mensajes decir y ejecute contenido cada mes sin un equipo completo.",
-          "priceMonthly": "$3,500",
-          "priceQuarterly": "$3,150",
+          "priceMonthly": "$3,900",
+          "priceQuarterly": "$3,500",
           "priceSubtext": "/mes",
           "cta": "Conversemos",
           "ctaLink": "/contact"
@@ -557,7 +557,7 @@
             "messaging": {
               "name": "Estrategia de messaging",
               "starter": null,
-              "pro": "De Producto, contenido o venta",
+              "pro": null,
               "fractional": "Personalizada, Multiproducto"
             },
             "contenido": {
@@ -569,8 +569,8 @@
             "equipo": {
               "name": "Equipo",
               "starter": null,
-              "pro": "Estratega senior",
-              "fractional": "Estratega senior"
+              "pro": "Estratega Senior",
+              "fractional": "Estratega Senior"
             }
           }
         },
